@@ -90,19 +90,28 @@ sequenceDiagram
     Note over B: Met à jour l'état React (setProgress) sans recharger la page
 ```
 
-## 5. Application mobile (différences)
+## 5. Application mobile (autonome)
 
-Sur Android, il n'y a **pas de serveur** :
+Sur Android, il n'y a **aucun serveur** : le catalogue est bundlé, la lecture passe par
+YouTube, et le téléchargement est fait **directement sur l'appareil** via yt-dlp embarqué.
 
 ```mermaid
 sequenceDiagram
     participant M as App Expo (React Native)
     participant A as AsyncStorage (local)
     participant W as WebView YouTube
+    participant Y as ytdlp-react-native (yt-dlp embarqué)
+    participant F as Stockage app (Android/data/...)
 
     Note over M: Catalogue chargé depuis le JSON bundlé (assets/)
-    M->>A: charge "watched" / "completed"
-    M->>W: ouvre https://www.youtube.com/embed/{videoId}
-    Note over W: Lecture streaming YouTube (pas de téléchargement local)
-    M->>A: sauvegarde la progression
+    M->>A: charge "watched" / "completed" / téléchargements
+    M->>W: lecture streaming YouTube (embed)
+
+    alt Téléchargement local (build natif uniquement)
+        M->>Y: YtDlp.download({ url, format: 'best' })
+        Y-->>M: DownloadTask (progression via listeners)
+        Y->>F: écrit <id>.mp4
+        M->>A: sauvegarde l'uri du fichier
+        M->>M: lecture locale via expo-video (fichier)
+    end
 ```

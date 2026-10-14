@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const WATCHED_KEY = "arset.watched.v1";
 const COMPLETED_KEY = "arset.completed.v1";
+const DOWNLOADS_KEY = "arset.downloads.v1";
 
 async function readSet(key: string): Promise<Set<string>> {
   try {
@@ -38,4 +39,24 @@ export async function toggleCompleted(key: string): Promise<Set<string>> {
   else set.add(key);
   await writeSet(COMPLETED_KEY, set);
   return set;
+}
+
+/** Map videoId → uri local du fichier téléchargé. */
+export async function loadDownloads(): Promise<Record<string, string>> {
+  try {
+    const raw = await AsyncStorage.getItem(DOWNLOADS_KEY);
+    return raw ? (JSON.parse(raw) as Record<string, string>) : {};
+  } catch {
+    return {};
+  }
+}
+
+export async function saveDownload(
+  id: string,
+  uri: string,
+): Promise<Record<string, string>> {
+  const all = await loadDownloads();
+  all[id] = uri;
+  await AsyncStorage.setItem(DOWNLOADS_KEY, JSON.stringify(all));
+  return all;
 }

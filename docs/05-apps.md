@@ -53,20 +53,29 @@ Fichiers :
 
 | Fichier | Rôle |
 |---|---|
-| `App.tsx` | Tout l'écran : 3 vues (modules / module / player). |
+| `App.tsx` | Tout l'écran : 3 vues (modules / module / player) + téléchargement. |
 | `src/types.ts` | Types du catalogue (copie locale, indépendante de `@arset/core`). |
 | `src/catalog.ts` | `buildIndex` + `formatDuration` (logique locale). |
-| `src/storage.ts` | Progression via `AsyncStorage` (clés `arset.watched.v1`, `arset.completed.v1`). |
-| `app.json` | Config Expo (nom, slug, icônes, package Android). |
-| `eas.json` | Profils de build EAS (`preview` = APK, `production` = AAB). |
+| `src/storage.ts` | Progression + fichiers téléchargés via `AsyncStorage`. |
+| `src/ytdlp.ts` | Façade autour de `ytdlp-react-native` (détection Expo Go + erreurs lisibles). |
+| `app.json` | Config Expo (nom, slug, icônes, package Android, plugins). |
+| `eas.json` | Profils de build EAS (`preview`, `development`, `production`). |
 
-Différences majeures avec le desktop :
+L'app est **autonome** (aucun serveur requis) :
 
-- **Pas de serveur** : le catalogue est **bundlé** (`assets/video_catalog.json`).
-- **Lecture** : via un `WebView` qui charge `https://www.youtube.com/embed/{id}`.
-- **Progression** : `AsyncStorage` (persistance locale), pas de `progress.json`.
-- **Pas de téléchargement local** sur mobile (yt-dlp ne tourne pas sur Android) ;
-  le mobile lit en streaming. C'est le backend PC qui télécharge.
+- **Catalogue bundlé** : `assets/video_catalog.json` (pas d'appel réseau pour lister).
+- **Lecture par défaut** : `WebView` vers `https://www.youtube.com/embed/{id}` (avec en-tête
+  `Referer` — requis par YouTube, sinon erreur 153).
+- **Progression** : `AsyncStorage` (persistance locale).
+- **Téléchargement local** : via **`ytdlp-react-native`**, un module natif qui embarque
+  **Python + yt-dlp** (extracteurs complets). `YtDlp.download({ format: 'best' })` récupère
+  un stream mp4 progressif (audio+vidéo), la progression arrive via `task.addListener('progress')`
+  et le chemin final via `'completed'`. La lecture se fait ensuite en local avec `expo-video`.
+
+> Le module `ytdlp-react-native` repose sur `dev.ffmpegkit-maintained:yt-dlp-android`
+> (yt-dlp + Python embarqués). Il **nécessite un build natif** (pas Expo Go) : en Expo Go,
+> le bouton ⬇ affiche un message d'erreur, mais le streaming reste fonctionnel.
+> `format: 'best'` = stream progressif unique (pas de merge ffmpeg 1080p, FFmpeg non embarqué).
 
 Le dossier `android/` est généré automatiquement (Continuous Native Generation) et
 n'est **pas versionné** — on configure le natif via `app.json` et les config plugins.

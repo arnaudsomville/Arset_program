@@ -15,7 +15,8 @@ FFMPEG   := $(shell command -v ffmpeg 2>/dev/null)
 
 .PHONY: help install install-js install-resources install-tools ensure-data \
         sync sync-catalog sync-notes build-core dev-server dev-desktop pc \
-        dev-mobile build-desktop build-android typecheck test clean
+        dev-mobile build-desktop typecheck test clean \
+        android-eas android-dev-client android-login android-local android-check build-android
 
 ## ── Cibles principales ──────────────────────────────────────────────────────
 
@@ -30,8 +31,11 @@ help:
 	@printf "  make dev-mobile        Expo (Android)\n"
 	@printf "  make build-core        Compile @arset/core\n"
 	@printf "  make build-desktop     Build production React\n"
-	@printf "  make build-android     Build APK via EAS (cloud)\n"
-	@printf "  make typecheck         Typecheck core + server + desktop\n"
+	@printf "  make android-eas       APK Android via EAS (cloud, sans SDK)\n"
+	@printf "  make android-local     Build + installe via USB (SDK local requis)\n"
+	@printf "  make android-check     Vérifie les prérequis du build local\n"
+	@printf "  make android-login     Connexion au compte Expo (une fois)\n"
+	@printf "  make typecheck         Typecheck core + server + desktop + mobile\n"
 	@printf "  make test              Lance les tests\n"
 	@printf "  make clean             Supprime node_modules et artefacts\n"
 
@@ -119,10 +123,34 @@ dev-mobile:
 build-desktop: build-core
 	$(NPM) run build -w @arset/desktop
 
-# build-android: build APK via EAS (nécessite un compte Expo + configuration EAS)
-build-android:
-	@printf "🤖 Build Android via EAS...\n"
+## ── Android ─────────────────────────────────────────────────────────────────
+
+# android-login: connexion au compte Expo (une seule fois, nécessaire pour EAS)
+android-login:
+	cd apps/mobile && npx eas-cli login
+
+# android-eas: APK Android autonome via EAS (cloud — aucun SDK local requis)
+android-eas:
+	@printf "🤖 Build APK via EAS (cloud)...\n"
 	cd apps/mobile && npx eas-cli build -p android --profile preview
+
+# android-dev-client: client de développement via EAS (pour itérer avec Metro)
+android-dev-client:
+	@printf "🤖 Build client de développement via EAS...\n"
+	cd apps/mobile && npx eas-cli build -p android --profile development
+
+# build-android: alias historique de android-eas
+build-android: android-eas
+
+# android-check: vérifie les prérequis du build local (sans installer)
+android-check:
+	@bash scripts/check-android.sh
+
+# android-local: build + installation sur le téléphone branché en USB.
+# Nécessite JDK 17+, SDK Android, adb et un appareil en débogage USB.
+android-local: android-check
+	@printf "📱 Build + installation locale via USB...\n"
+	cd apps/mobile && npx expo run:android
 
 ## ── Qualité ─────────────────────────────────────────────────────────────────
 

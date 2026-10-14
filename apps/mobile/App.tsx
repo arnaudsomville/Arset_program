@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
+  Alert,
+  BackHandler,
   FlatList,
-  SafeAreaView,
   SectionList,
   StyleSheet,
   Text,
@@ -10,7 +11,9 @@ import {
   View,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
+import { useVideoPlayer, VideoView } from "expo-video";
 
 import catalogJson from "./assets/video_catalog.json";
 import learningPathJson from "./assets/learning_path.json";
@@ -18,14 +21,25 @@ import type { Video, VideoCatalog, LearningPath } from "./src/types";
 import { buildIndex, categoryOf, formatDuration } from "./src/catalog";
 import {
   loadCompleted,
+  loadDownloads,
   loadWatched,
+  saveDownload,
   toggleCompleted,
   toggleWatched,
 } from "./src/storage";
+import {
+  humanizeDownloadError,
+  isExpoGo,
+  startDownload as ytdlpDownload,
+} from "./src/ytdlp";
 
 const catalog = catalogJson as unknown as VideoCatalog;
 const learningPath = learningPathJson as unknown as LearningPath;
 const index = buildIndex(catalog);
+
+// YouTube exige désormais un en-tête `Referer` valide pour les vidéos embarquées
+// (sinon erreur 153). On utilise l'ID d'application comme origine.
+const YOUTUBE_REFERER = "https://com.absolutsensing.arsetviewer";
 
 const CATEGORY_LABELS: Record<string, string> = {
   agriculture: "Agriculture",
@@ -72,27 +86,58 @@ function buildSections(query: string): Section[] {
     cats.set(cat, list);
   }
   for (const [cat, data] of cats) {
-    sections.push({ title: `Complementaire — ${CATEGORY_LABELS[cat] ?? cat}`, data });
+    sections.push({
+      title: `Complementaire — ${CATEGORY_LABELS[cat] ?? cat}`,
+      data,
+    });
   }
   return sections;
 }
 
 type Screen = "modules" | "module" | "player";
 
+type DownloadState = {
+  status: "downloading" | "error";
+  progress: number;
+  error?: string;
+};
+
+function watchUrl(video: Video): string {
+  return video.youtube_url || `https://www.youtube.com/watch?v=${video.youtube_video_id}`;
+}
+
 export default function App() {
   const [watched, setWatched] = useState<Set<string>>(new Set());
   const [completed, setCompleted] = useState<Set<string>>(new Set());
+  const [downloadedFiles, setDownloadedFiles] = useState<Record<string, string>>({});
   const [query, setQuery] = useState("");
   const [screen, setScreen] = useState<Screen>("modules");
   const [currentModule, setCurrentModule] = useState<ModuleEntry | null>(null);
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null);
+  const [downloads, setDownloads] = useState<Record<string, DownloadState>>({});
 
   useEffect(() => {
     (async () => {
       setWatched(await loadWatched());
       setCompleted(await loadCompleted());
+      setDownloadedFiles(await loadDownloads());
     })();
   }, []);
+
+  useEffect(() => {
+    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
+      if (screen === "player") {
+        setScreen("module");
+        return true;
+      }
+      if (screen === "module") {
+        setScreen("modules");
+        return true;
+      }
+      return false;
+    });
+    return () => sub.remove();
+  }, [screen]);
 
   const sections = useMemo(() => buildSections(query), [query]);
 
@@ -106,9 +151,64 @@ export default function App() {
     setScreen("player");
   };
 
+  const startDownload = useCallback(async (video: Video) => {
+    const id = String(video.id);
+    if (isExpoGo()) {
+      Alert.alert(
+        "Téléchargement indisponible",
+        "Le téléchargement ne fonctionne pas dans Expo Go. Installe un build de développement : make android-eas (APK) ou make android-local (USB).",
+      );
+      return;
+    }
+
+    setDownloads((d) => ({ ...d, [id]: { status: "downloading", progress: 0 } }));
+    try {
+      const task = await ytdlpDownload({
+        url: watchUrl(video),
+        format: "best",
+        output: { directory: "videos", filename: `${video.id}.mp4` },
+      });
+
+      task.addListener("progress", (p) => {
+        const progress = p.percent !== undefined ? p.percent / 100 : 0;
+        setDownloads((d) => ({ ...d, [id]: { status: "downloading", progress } }));
+      });
+
+      task.addListener("completed", async (result) => {
+        const uri = result.uri ?? (result.path ? `file://${result.path}` : null);
+        if (uri) {
+          setDownloadedFiles(await saveDownload(id, uri));
+        }
+        setDownloads((d) => {
+          const next = { ...d };
+          delete next[id];
+          return next;
+        });
+      });
+
+      task.addListener("error", (err) => {
+        const msg = humanizeDownloadError(err);
+        setDownloads((d) => ({
+          ...d,
+          [id]: { status: "error", progress: 0, error: msg },
+        }));
+        Alert.alert("Échec du téléchargement", msg);
+      });
+    } catch (e) {
+      const msg = humanizeDownloadError(e);
+      setDownloads((d) => ({
+        ...d,
+        [id]: { status: "error", progress: 0, error: msg },
+      }));
+      Alert.alert("Échec du téléchargement", msg);
+    }
+  }, []);
+
   if (screen === "player" && currentVideo) {
+    const localUri = downloadedFiles[String(currentVideo.id)];
     return (
-      <SafeAreaView style={styles.safe}>
+      <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
+        <StatusBar style="light" />
         <View style={styles.topBar}>
           <TouchableOpacity onPress={() => setScreen("module")}>
             <Text style={styles.back}>← Retour</Text>
@@ -124,13 +224,25 @@ export default function App() {
         <Text style={styles.playerTitle} numberOfLines={2}>
           {currentVideo.name}
         </Text>
-        <WebView
-          style={styles.webview}
-          source={{ uri: `https://www.youtube.com/embed/${currentVideo.youtube_video_id}?autoplay=1` }}
-          allowsFullscreenVideo
-          javaScriptEnabled
-          mediaPlaybackRequiresUserAction={false}
-        />
+        {localUri ? (
+          <LocalVideoPlayer uri={localUri} />
+        ) : (
+          <WebView
+            style={styles.webview}
+            source={{
+              uri: `https://www.youtube.com/embed/${currentVideo.youtube_video_id}?autoplay=1&playsinline=1`,
+              headers: { Referer: YOUTUBE_REFERER },
+            }}
+            javaScriptEnabled
+            domStorageEnabled
+            thirdPartyCookiesEnabled
+            mediaPlaybackRequiresUserAction={false}
+            allowsFullscreenVideo
+            allowsInlineMediaPlayback
+            originWhitelist={["*"]}
+            startInLoadingState
+          />
+        )}
       </SafeAreaView>
     );
   }
@@ -138,7 +250,8 @@ export default function App() {
   if (screen === "module" && currentModule) {
     const videos = index.videosByKey.get(currentModule.key) ?? [];
     return (
-      <SafeAreaView style={styles.safe}>
+      <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
+        <StatusBar style="light" />
         <View style={styles.topBar}>
           <TouchableOpacity onPress={() => setScreen("modules")}>
             <Text style={styles.back}>← Modules</Text>
@@ -156,35 +269,53 @@ export default function App() {
           data={videos}
           keyExtractor={(v) => String(v.id)}
           contentContainerStyle={styles.videoList}
-          renderItem={({ item }) => (
-            <View style={styles.videoRow}>
-              <TouchableOpacity style={styles.videoInfo} onPress={() => openVideo(item)}>
-                <Text style={styles.videoTitle} numberOfLines={2}>
-                  {item.name}
-                </Text>
-                <Text style={styles.videoMeta}>{formatDuration(item.duration_seconds)}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={async () => setWatched(await toggleWatched(String(item.id)))}
-              >
-                <Text style={styles.action}>
-                  {watched.has(String(item.id)) ? "✓" : "○"}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          )}
+          renderItem={({ item }) => {
+            const dl = downloads[String(item.id)];
+            const downloaded = !!downloadedFiles[String(item.id)];
+            return (
+              <View style={styles.videoRow}>
+                <TouchableOpacity
+                  style={styles.videoInfo}
+                  onPress={() => openVideo(item)}
+                >
+                  <Text style={styles.videoTitle} numberOfLines={2}>
+                    {item.name}
+                  </Text>
+                  <Text style={styles.videoMeta}>
+                    {formatDuration(item.duration_seconds)}
+                    {downloaded ? "  ·  ✓ téléchargé" : ""}
+                  </Text>
+                </TouchableOpacity>
+
+                <DownloadButton
+                  downloaded={downloaded}
+                  entry={dl}
+                  onDownload={() => startDownload(item)}
+                />
+
+                <TouchableOpacity
+                  onPress={async () => setWatched(await toggleWatched(String(item.id)))}
+                >
+                  <Text style={styles.action}>
+                    {watched.has(String(item.id)) ? "✓" : "○"}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            );
+          }}
         />
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={styles.safe}>
+    <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
       <StatusBar style="light" />
       <View style={styles.topBar}>
         <Text style={styles.header}>Earth Viewer</Text>
         <Text style={styles.sub}>Parcours ARSET</Text>
       </View>
+
       <TextInput
         style={styles.search}
         placeholder="Rechercher un module…"
@@ -208,6 +339,58 @@ export default function App() {
         )}
       />
     </SafeAreaView>
+  );
+}
+
+function LocalVideoPlayer({ uri }: { uri: string }) {
+  const player = useVideoPlayer(uri, (p) => {
+    p.loop = false;
+    p.play();
+  });
+  return (
+    <VideoView
+      style={styles.webview}
+      player={player}
+      nativeControls
+      contentFit="contain"
+    />
+  );
+}
+
+function DownloadButton({
+  downloaded,
+  entry,
+  onDownload,
+}: {
+  downloaded: boolean;
+  entry: DownloadState | undefined;
+  onDownload: () => void;
+}) {
+  if (downloaded) {
+    return (
+      <View style={styles.dlDone}>
+        <Text style={styles.dlDoneText}>✓</Text>
+      </View>
+    );
+  }
+  if (entry?.status === "downloading") {
+    return (
+      <View style={styles.dlBadge}>
+        <Text style={styles.dlText}>{Math.round(entry.progress * 100)}%</Text>
+      </View>
+    );
+  }
+  if (entry?.status === "error") {
+    return (
+      <TouchableOpacity style={styles.dlBadge} onPress={onDownload}>
+        <Text style={styles.dlTextError}>↻</Text>
+      </TouchableOpacity>
+    );
+  }
+  return (
+    <TouchableOpacity style={styles.dlBadge} onPress={onDownload}>
+      <Text style={styles.dlText}>⬇</Text>
+    </TouchableOpacity>
   );
 }
 
@@ -268,7 +451,28 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "rgba(255,255,255,0.04)",
   },
-  videoInfo: { flex: 1 },
+  videoInfo: { flex: 1, marginRight: 8 },
   videoTitle: { fontSize: 14, color: "#e8edf5", marginBottom: 4 },
   videoMeta: { fontSize: 12, color: "#6a7a90" },
+  dlBadge: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(100,180,255,0.12)",
+    marginHorizontal: 6,
+  },
+  dlText: { color: "#64b5f6", fontWeight: "700", fontSize: 12 },
+  dlTextError: { color: "#ff9b9b", fontWeight: "700", fontSize: 14 },
+  dlDone: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(66,230,149,0.15)",
+    marginHorizontal: 6,
+  },
+  dlDoneText: { color: "#42e695", fontWeight: "800", fontSize: 14 },
 });

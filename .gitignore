@@ -32,7 +32,6 @@ resources/videos/
 # Caches yt-dlp / youtube régénérables
 resources/catalog/youtube_metadata_cache.json
 resources/catalog/youtube_search_cache.json
-apps/mobile/assets/*.json
 
 # Environnement
 .env

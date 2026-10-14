@@ -89,7 +89,10 @@ Installe **tout** en une fois :
 | `make dev-mobile` | Expo (dev Android) |
 | `make build-core` | Compile `@arset/core` |
 | `make build-desktop` | Build production de l'app React |
-| `make build-android` | Build APK via EAS (cloud) |
+| `make android-eas` | APK Android via EAS (cloud, sans SDK local) |
+| `make android-local` | Build + installation Android via USB (SDK local requis) |
+| `make android-check` | Vérifie les prérequis du build local (sans installer) |
+| `make android-login` | Connexion au compte Expo (une fois) |
 | `make typecheck` | Typecheck core + server + desktop + mobile |
 | `make test` | Tests de `@arset/core` |
 | `make clean` | Supprime `node_modules` et artefacts |
@@ -143,73 +146,56 @@ npx serve apps/desktop/dist
 
 ## Version Android
 
-Le mobile bundle le catalogue et lit les vidéos via YouTube (WebView). La progression est
-stockée localement (AsyncStorage). Le dossier `android/` est généré automatiquement
-(Continuous Native Generation) et **n'est pas versionné**.
+L'app Android est **100 % autonome** : elle bundle le catalogue et lit les vidéos via
+YouTube (WebView). Le **téléchargement local** se fait directement sur l'appareil grâce à
+**`ytdlp-react-native`**, un module natif qui embarque **Python + yt-dlp** : le bouton ⬇
+télécharge le mp4 (stream `best`) dans le stockage de l'app, avec progression. La lecture
+se fait ensuite avec `expo-video`. La progression est stockée en `AsyncStorage`.
 
-### A. Développement rapide — Expo Go (recommandé)
+> ⚠️ **Le téléchargement nécessite un build natif** (pas Expo Go) : le module yt-dlp n'est
+> pas embarqué dans Expo Go. En Expo Go, tout le reste marche (navigation, **streaming**,
+> progression) mais le bouton ⬇ affiche un message d'erreur.
 
-1. Installe **Expo Go** (Play Store) sur le téléphone.
-2. Téléphone et PC sur le **même Wi-Fi**.
+Le dossier `android/` est généré automatiquement (Continuous Native Generation) et
+**n'est pas versionné**.
 
-```bash
-make dev-mobile       # = expo start
-```
+### Deux façons de construire l'APK
 
-3. Scanne le **QR code** avec Expo Go, **ou** branche le téléphone en USB (débogage actif)
-   et appuie sur **`a`** dans le terminal.
-
-> `react-native-webview` et `async-storage` sont inclus dans Expo Go → l'app tourne
-> directement sans build natif.
-
-### B. Débogage USB + build natif local (installe un APK debug sur le téléphone)
-
-Prérequis : **Android Studio + SDK + JDK 17**, et `adb` dans le `PATH`.
-
-1. Téléphone : *Paramètres → À propos → taper 7× le numéro de build → Options développeur →
-   Débogage USB*.
-2. Branche l'USB, vérifie que l'appareil est vu :
+#### 1. EAS (cloud) — recommandé, aucun SDK/câble nécessaire
 
 ```bash
-adb devices
+make android-login     # connexion compte Expo (gratuit, une seule fois)
+make android-eas       # → APK téléchargeable + installable sur le téléphone
 ```
 
-3. Build + installation :
+À la fin, EAS donne un **lien de téléchargement** de l'APK. C'est l'APK autonome (JS bundlé
++ module yt-dlp embarqué), idéal pour tester le téléchargement sans câble.
+
+> Optionnel : `make android-dev-client` construit un **client de développement** (pour
+> itérer avec Metro au lieu d'un APK autonome). Pour un AAB Play Store :
+> `cd apps/mobile && npx eas-cli build -p android --profile production`.
+
+#### 2. Local (USB) — build sur ton PC, installé via câble
+
+Prérequis : **JDK 17+** (21 recommandé), **Android Studio + SDK**, **`adb`**, et un
+téléphone en **débogage USB**.
 
 ```bash
-cd apps/mobile
-npx expo run:android
+make android-check     # vérifie les prérequis (échoue proprement s'il en manque)
+make android-local     # génère android/, compile et installe sur le téléphone via adb
 ```
 
-Cela génère `android/`, compile et installe l'APK debug sur le téléphone. Pour les logs :
-`adb logcat`.
+`make android-local` lance `expo run:android` (build debug + installation USB). Pour voir
+les logs : `adb logcat`.
 
-### C. APK partageable via EAS (cloud, sans SDK local)
-
-Prérequis : un **compte Expo** (gratuit).
-
-1. Connexion (une seule fois) :
+### Développement rapide sans build (Expo Go)
 
 ```bash
-cd apps/mobile
-npx eas-cli login
+make dev-mobile        # = expo start → scanne le QR avec Expo Go
 ```
 
-2. Build de l'APK :
-
-```bash
-make build-android     # = eas build -p android --profile preview
-```
-
-Le fichier `apps/mobile/eas.json` définit le profil `preview` (APK, distribution interne).
-À la fin, EAS donne un **lien de téléchargement** de l'APK à installer sur le téléphone.
-
-Pour un bundle Play Store (AAB) en release :
-
-```bash
-cd apps/mobile
-npx eas-cli build -p android --profile production
-```
+En Expo Go : navigation, streaming YouTube et progression fonctionnent ; **seul le
+téléchargement est indisponible** (message d'erreur explicite au clic).
 
 ---
 
@@ -247,5 +233,6 @@ Source configurable : `make sync ARSET_SOURCE=/chemin/vers/le/dossier`.
   Installer `ffmpeg` permet d'utiliser des formats plus élevés (merge audio/vidéo).
 - **Ports occupés** : backend `4000`, desktop `5173`. Configurables via `PORT` et
   `apps/desktop/vite.config.ts`.
-- **`make build-android` échoue (pas de compte)** : faire `cd apps/mobile && npx eas-cli login`
-  d'abord.
+- **`make android-eas` échoue (pas de compte)** : faire `make android-login` d'abord.
+- **Téléchargement indisponible en Expo Go** : normal — le module yt-dlp n'est pas dans
+  Expo Go. Utilise un build natif (`make android-eas` ou `make android-local`).
