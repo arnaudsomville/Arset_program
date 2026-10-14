@@ -21,7 +21,7 @@ Trois versions partagent la même source de vérité (les ressources centralisé
 ## Architecture
 
 ```
-Arset_programm/
+Arset_program/
 ├── Makefile                   # orchestration : install / sync / dev / build
 ├── package.json               # npm workspaces (apps/* + packages/*)
 ├── resources/                 # 🗂 ressources centralisées (committées, légères)

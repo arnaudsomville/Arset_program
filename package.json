@@ -1,5 +1,5 @@
 {
-  "name": "arset-programm",
+  "name": "arset-program",
   "version": "0.1.0",
   "private": true,
   "description": "ARSET viewer v2 — monorepo (React PC + Expo Android + Node backend), ressources centralisées.",
