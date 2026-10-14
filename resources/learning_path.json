@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "description": "Parcours d'apprentissage ARSET en 4 phases. Chaque module référence une clé du catalog (resources/catalog/video_catalog.json).",
+  "phases": [
+    {
+      "name": "Phase 1 — Fondations",
+      "modules": [
+        { "key": "organized/self-paced/01-fundamentals-of-remote-sensing", "title": "Fundamentals of Remote Sensing" }
+      ]
+    },
+    {
+      "name": "Phase 2 — Tronc commun polyvalent",
+      "modules": [
+        { "key": "organized/skill-building/090-fundamentals-of-machine-learning-for-earth-science", "title": "Fundamentals of Machine Learning for Earth Science" },
+        { "key": "organized/ecological-conservation/080-spectral-indices-for-land-and-aquatic-applications", "title": "Spectral Indices for Land & Aquatic Applications" },
+        { "key": "organized/ecological-conservation/071-using-google-earth-engine-for-land-monitoring-applications", "title": "Google Earth Engine for Land Monitoring" },
+        { "key": "organized/disasters/037-an-introduction-to-synthetic-aperture-radar-and-its-applications", "title": "Introduction to Synthetic Aperture Radar (SAR)" },
+        { "key": "organized/ecological-conservation/083-remote-sensing-of-drought", "title": "Remote Sensing of Drought" },
+        { "key": "organized/ecological-conservation/054-new-sensor-highlight-ecostress", "title": "New Sensor Highlight: ECOSTRESS" }
+      ]
+    },
+    {
+      "name": "Phase 3 — Spécialisation Eau & Qualité",
+      "modules": [
+        { "key": "organized/water-resources/hydrology/03-agricultural-water-management", "title": "Agricultural Water Management" },
+        { "key": "organized/water-resources/water-quality/06-water-quality-monitoring-program", "title": "Integrating RS into a Water Quality Monitoring Program" },
+        { "key": "organized/water-resources/water-quality/07-processing-water-quality-imagery", "title": "Processing Water Quality Imagery" },
+        { "key": "organized/water-resources/water-quality/08-stream-water-quality", "title": "Water Quality with STREAM" },
+        { "key": "organized/water-resources/water-quality/10-harmful-algal-blooms", "title": "Harmful Algal Blooms" },
+        { "key": "organized/ecological-conservation/066-monitoring-aquatic-vegetation-with-remote-sensing", "title": "Monitoring Aquatic Vegetation" },
+        { "key": "organized/climate/026-earth-observations-of-blue-carbon-ecosystems", "title": "Earth Observations of Blue Carbon Ecosystems" }
+      ]
+    },
+    {
+      "name": "Phase 4 — Ouverture",
+      "modules": [
+        { "key": "organized/disasters/floods/11-disaster-risk-management", "title": "Disaster Risk Management" },
+        { "key": "organized/disasters/urban-heat-islands/12-urban-heat-islands", "title": "Urban Heat Islands" },
+        { "key": "organized/wildland-fire/13-wildfire-applications", "title": "Wildfire Applications" }
+      ]
+    }
+  ]
+}

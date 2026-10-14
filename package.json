@@ -1,0 +1,22 @@
+{
+  "name": "arset-programm",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ARSET viewer v2 — monorepo (React PC + Expo Android + Node backend), ressources centralisées.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build:core": "npm run build -w @arset/core",
+    "dev:server": "npm run dev -w @arset/server",
+    "dev:desktop": "npm run dev -w @arset/desktop",
+    "dev:mobile": "npm run start -w @arset/mobile",
+    "typecheck": "npm run typecheck -w @arset/core && npm run typecheck -w @arset/server && npm run typecheck -w @arset/desktop && npm run typecheck -w @arset/mobile",
+    "lint": "echo \"no linter configured yet\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "typescript": "^5.6.3"
+  }
+}

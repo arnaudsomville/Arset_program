@@ -1,0 +1,44 @@
+# Dépendances
+node_modules/
+
+# Builds / artefacts
+dist/
+build/
+.expo/
+.expo-shared/
+web-build/
+*.tsbuildinfo
+.next/
+.turbo/
+
+# Données runtime (jamais committées)
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Vidéos & médias lourds — jamais dans le repo
+*.mp4
+*.webm
+*.mkv
+*.mov
+*.m4v
+*.part
+*.ytdl
+*.tmp
+resources/videos/
+
+# Caches yt-dlp / youtube régénérables
+resources/catalog/youtube_metadata_cache.json
+resources/catalog/youtube_search_cache.json
+apps/mobile/assets/*.json
+
+# Environnement
+.env
+.env.*
+!.env.example
+
+# OS / éditeurs
+.DS_Store
+*.log

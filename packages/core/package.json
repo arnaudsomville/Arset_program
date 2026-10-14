@@ -1,0 +1,20 @@
+{
+  "name": "@arset/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Types + loaders partagés pour le catalog ARSET et le parcours d'apprentissage.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test dist/"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
