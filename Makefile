@@ -158,6 +158,13 @@ build-android: android-check
 
 android-local: build-android
 
+# build-android-release: build release autonome (JS embarqué dans l'APK).
+# Fonctionne sans ordinateur / sans Metro / sans USB — idéal pour un usage perso.
+build-android-release: android-check
+	@printf "📱 Build release autonome + installation via USB...\n"
+	@. "$$HOME/.arset-android-env" 2>/dev/null || true; \
+	cd apps/mobile && npx expo run:android --variant release
+
 ## ── Qualité ─────────────────────────────────────────────────────────────────
 
 typecheck: build-core
