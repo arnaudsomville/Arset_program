@@ -1,0 +1,25 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'expo.modules.youtubedl'
+version = '0.1.0'
+
+android {
+  namespace "expo.modules.youtubedl"
+  compileSdk 35
+  defaultConfig {
+    minSdk 24
+    versionCode 1
+    versionName "0.1.0"
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+dependencies {
+  // yt-dlp + Python embarqués (bundle un runtime JS quickjs pour YouTube).
+  implementation 'io.github.junkfood02.youtubedl-android:library:0.18.1'
+}

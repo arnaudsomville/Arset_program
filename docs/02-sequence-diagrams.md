@@ -100,7 +100,7 @@ sequenceDiagram
     participant M as App Expo (React Native)
     participant A as AsyncStorage (local)
     participant W as WebView YouTube
-    participant Y as ytdlp-react-native (yt-dlp embarqué)
+    participant Y as modules/youtubedl (yt-dlp embarqué)
     participant F as Stockage app (Android/data/...)
 
     Note over M: Catalogue chargé depuis le JSON bundlé (assets/)
@@ -108,8 +108,9 @@ sequenceDiagram
     M->>W: lecture streaming YouTube (embed)
 
     alt Téléchargement local (build natif uniquement)
-        M->>Y: YtDlp.download({ url, format: 'best' })
-        Y-->>M: DownloadTask (progression via listeners)
+        M->>Y: Youtubedl.init() + Youtubedl.download(url, filename, processId)
+        Y-->>M: événements progress (0-100)
+        Y-->>M: DownloadResult { filePath, exitCode }
         Y->>F: écrit <id>.mp4
         M->>A: sauvegarde l'uri du fichier
         M->>M: lecture locale via expo-video (fichier)

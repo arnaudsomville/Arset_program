@@ -4,6 +4,9 @@
 # faire si un prérequis manque. Sort en erreur (code 1) au premier problème.
 set -u
 
+# Charger l'environnement Android local (JAVA_HOME/ANDROID_HOME) s'il existe.
+[ -f "$HOME/.arset-android-env" ] && . "$HOME/.arset-android-env"
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -72,11 +75,13 @@ echo ""
 if [ "$failures" -gt 0 ]; then
   printf "${RED}%d prérequis manquant(s).${NC}\n" "$failures"
   echo ""
-  echo "Pour un build SANS SDK local (recommandé), utilise plutôt :"
+  echo "Pour installer JDK + SDK Android automatiquement :"
+  echo "  make install-sdk"
+  echo "Ou, pour un APK sans SDK local (cloud) :"
   echo "  make android-eas         # APK via EAS (cloud)"
   echo "  make android-login       # connexion compte Expo (une fois)"
   exit 1
 fi
 
-echo "Tous les prérequis sont présents. Tu peux lancer : make android-local"
+echo "Tous les prérequis sont présents. Tu peux lancer : make build-android"
 exit 0

@@ -57,7 +57,7 @@ Fichiers :
 | `src/types.ts` | Types du catalogue (copie locale, indépendante de `@arset/core`). |
 | `src/catalog.ts` | `buildIndex` + `formatDuration` (logique locale). |
 | `src/storage.ts` | Progression + fichiers téléchargés via `AsyncStorage`. |
-| `src/ytdlp.ts` | Façade autour de `ytdlp-react-native` (détection Expo Go + erreurs lisibles). |
+| `src/ytdlp.ts` | Façade autour du module local `modules/youtubedl` (détection Expo Go + erreurs lisibles). |
 | `app.json` | Config Expo (nom, slug, icônes, package Android, plugins). |
 | `eas.json` | Profils de build EAS (`preview`, `development`, `production`). |
 
@@ -67,15 +67,19 @@ L'app est **autonome** (aucun serveur requis) :
 - **Lecture par défaut** : `WebView` vers `https://www.youtube.com/embed/{id}` (avec en-tête
   `Referer` — requis par YouTube, sinon erreur 153).
 - **Progression** : `AsyncStorage` (persistance locale).
-- **Téléchargement local** : via **`ytdlp-react-native`**, un module natif qui embarque
-  **Python + yt-dlp** (extracteurs complets). `YtDlp.download({ format: 'best' })` récupère
-  un stream mp4 progressif (audio+vidéo), la progression arrive via `task.addListener('progress')`
-  et le chemin final via `'completed'`. La lecture se fait ensuite en local avec `expo-video`.
+- **Téléchargement local** : via un **module natif local** (`modules/youtubedl`) qui
+  appelle **Python + yt-dlp** embarqués (lib `youtubedl-android` de yausername).
+  `downloadVideo(id, url)` lance le téléchargement ; la progression arrive via les
+  événements `progress` du module natif, et le chemin final via `DownloadResult.filePath`.
+  La lecture se fait ensuite en local avec `expo-video`.
 
-> Le module `ytdlp-react-native` repose sur `dev.ffmpegkit-maintained:yt-dlp-android`
-> (yt-dlp + Python embarqués). Il **nécessite un build natif** (pas Expo Go) : en Expo Go,
-> le bouton ⬇ affiche un message d'erreur, mais le streaming reste fonctionnel.
-> `format: 'best'` = stream progressif unique (pas de merge ffmpeg 1080p, FFmpeg non embarqué).
+> Le module `modules/youtubedl` repose sur `io.github.junkfood02.youtubedl-android:library:0.18.1`
+> (yt-dlp + Python embarqués, avec **quickjs** pour déchiffrer les tokens YouTube —
+> pas besoin de curl-cffi, contrairement à l'ancien `ytdlp-react-native`).
+> Il **nécessite un build natif** (pas Expo Go) : en Expo Go, le bouton ⬇ affiche un
+> message d'erreur, mais le streaming reste fonctionnel.
+> Format `best[ext=mp4]/best` = stream progressif unique (pas de merge ffmpeg —
+> FFmpeg non embarqué).
 
 Le dossier `android/` est généré automatiquement (Continuous Native Generation) et
 n'est **pas versionné** — on configure le natif via `app.json` et les config plugins.

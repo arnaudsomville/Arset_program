@@ -73,7 +73,8 @@ Installe **tout** en une fois :
 1. `install-js` — `npm install` sur tous les workspaces (+ compilation de `@arset/core`),
 2. `install-resources` — copie du catalogue + notes depuis `~/Documents/Remote Sensing Classes`,
 3. `install-tools` — vérifie/installe `yt-dlp` et `ffmpeg`,
-4. `ensure-data` — crée `~/.arset-data/videos`.
+4. `install-sdk` — installe **JDK 17+ + SDK Android** si absents (pour le build local),
+5. `ensure-data` — crée `~/.arset-data/videos`.
 
 ---
 
@@ -89,8 +90,8 @@ Installe **tout** en une fois :
 | `make dev-mobile` | Expo (dev Android) |
 | `make build-core` | Compile `@arset/core` |
 | `make build-desktop` | Build production de l'app React |
+| `make build-android` | Build local Android (vérifie JDK/SDK puis compile via USB) |
 | `make android-eas` | APK Android via EAS (cloud, sans SDK local) |
-| `make android-local` | Build + installation Android via USB (SDK local requis) |
 | `make android-check` | Vérifie les prérequis du build local (sans installer) |
 | `make android-login` | Connexion au compte Expo (une fois) |
 | `make typecheck` | Typecheck core + server + desktop + mobile |
@@ -148,9 +149,10 @@ npx serve apps/desktop/dist
 
 L'app Android est **100 % autonome** : elle bundle le catalogue et lit les vidéos via
 YouTube (WebView). Le **téléchargement local** se fait directement sur l'appareil grâce à
-**`ytdlp-react-native`**, un module natif qui embarque **Python + yt-dlp** : le bouton ⬇
-télécharge le mp4 (stream `best`) dans le stockage de l'app, avec progression. La lecture
-se fait ensuite avec `expo-video`. La progression est stockée en `AsyncStorage`.
+un **module natif local** (`modules/youtubedl`) qui embarque **Python + yt-dlp** (lib
+`youtubedl-android`) : le bouton ⬇ télécharge le mp4 (stream `best`) dans le stockage de
+l'app, avec progression. La lecture se fait ensuite avec `expo-video`. La progression est
+stockée en `AsyncStorage`.
 
 > ⚠️ **Le téléchargement nécessite un build natif** (pas Expo Go) : le module yt-dlp n'est
 > pas embarqué dans Expo Go. En Expo Go, tout le reste marche (navigation, **streaming**,
@@ -161,7 +163,7 @@ Le dossier `android/` est généré automatiquement (Continuous Native Generatio
 
 ### Deux façons de construire l'APK
 
-#### 1. EAS (cloud) — recommandé, aucun SDK/câble nécessaire
+#### 1. EAS (cloud) — aucun SDK/câble nécessaire
 
 ```bash
 make android-login     # connexion compte Expo (gratuit, une seule fois)
@@ -177,16 +179,21 @@ make android-eas       # → APK téléchargeable + installable sur le télépho
 
 #### 2. Local (USB) — build sur ton PC, installé via câble
 
-Prérequis : **JDK 17+** (21 recommandé), **Android Studio + SDK**, **`adb`**, et un
-téléphone en **débogage USB**.
-
 ```bash
-make android-check     # vérifie les prérequis (échoue proprement s'il en manque)
-make android-local     # génère android/, compile et installe sur le téléphone via adb
+make install          # installe JDK 17+ + SDK Android si absents (une fois)
+make build-android    # vérifie les prérequis puis compile + installe via adb
 ```
 
-`make android-local` lance `expo run:android` (build debug + installation USB). Pour voir
-les logs : `adb logcat`.
+`make build-android` **vérifie d'abord** JDK 17+ / SDK / `adb` / appareil (`make android-check`)
+et **plante** avec un message clair s'il en manque. `make install` installe le JDK (Temurin 21)
+et le SDK Android dans `~/Android/Sdk` s'ils ne sont pas déjà là (sans sudo).
+
+#### 3. CI (GitHub Actions) — APK reproductible sans SDK local
+
+Un workflow `.github/workflows/android.yml` build l'APK en release et le stocke en
+**artefact** (téléchargeable depuis l'onglet *Actions*). Déclenchement **manuel**
+(*Actions → Build Android APK → Run workflow*) ou sur **tag `v*`**. Gratuit (repo privé :
+2000 min/mois). Aucun keystore requis (APK signé avec la clé debug, installable tel quel).
 
 ### Développement rapide sans build (Expo Go)
 

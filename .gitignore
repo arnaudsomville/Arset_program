@@ -4,12 +4,14 @@ node_modules/
 # Builds / artefacts
 dist/
 build/
+.gradle/
 .expo/
 .expo-shared/
 web-build/
 *.tsbuildinfo
 .next/
 .turbo/
+local.properties
 
 # Données runtime (jamais committées)
 data/

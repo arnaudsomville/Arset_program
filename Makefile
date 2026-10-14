@@ -13,7 +13,7 @@ NPM      := npm
 YT_DLP   := $(shell command -v yt-dlp 2>/dev/null)
 FFMPEG   := $(shell command -v ffmpeg 2>/dev/null)
 
-.PHONY: help install install-js install-resources install-tools ensure-data \
+.PHONY: help install install-js install-resources install-tools install-sdk ensure-data \
         sync sync-catalog sync-notes build-core dev-server dev-desktop pc \
         dev-mobile build-desktop typecheck test clean \
         android-eas android-dev-client android-login android-local android-check build-android
@@ -31,8 +31,8 @@ help:
 	@printf "  make dev-mobile        Expo (Android)\n"
 	@printf "  make build-core        Compile @arset/core\n"
 	@printf "  make build-desktop     Build production React\n"
+	@printf "  make build-android     Build local Android (vérifie JDK/SDK puis compile via USB)\n"
 	@printf "  make android-eas       APK Android via EAS (cloud, sans SDK)\n"
-	@printf "  make android-local     Build + installe via USB (SDK local requis)\n"
 	@printf "  make android-check     Vérifie les prérequis du build local\n"
 	@printf "  make android-login     Connexion au compte Expo (une fois)\n"
 	@printf "  make typecheck         Typecheck core + server + desktop + mobile\n"
@@ -40,7 +40,7 @@ help:
 	@printf "  make clean             Supprime node_modules et artefacts\n"
 
 # install: installe toutes les ressources nécessaires
-install: install-js install-resources install-tools ensure-data
+install: install-js install-resources install-tools install-sdk ensure-data
 	@printf "✅ Installation complète terminée.\n"
 
 # install-js: dépendances Node de tous les workspaces (construit aussi @arset/core)
@@ -65,6 +65,11 @@ install-tools:
 	else \
 		printf "✅ ffmpeg : $(FFMPEG)\n"; \
 	fi
+
+# install-sdk: installe JDK 17+ et le SDK Android SI absents (best-effort, ~3-4 Go)
+install-sdk:
+	@printf "🤖 Vérification/installation du SDK Android (JDK 17+ + SDK)...\n"
+	@bash scripts/install-android-sdk.sh || printf "⚠️  SDK Android non installé (voir messages ci-dessus). Pour le build local, relance : make install-sdk\n"
 
 # ensure-data: crée le dossier de données runtime (~/.arset-data/videos)
 ensure-data:
@@ -139,18 +144,19 @@ android-dev-client:
 	@printf "🤖 Build client de développement via EAS...\n"
 	cd apps/mobile && npx eas-cli build -p android --profile development
 
-# build-android: alias historique de android-eas
-build-android: android-eas
-
 # android-check: vérifie les prérequis du build local (sans installer)
 android-check:
 	@bash scripts/check-android.sh
 
-# android-local: build + installation sur le téléphone branché en USB.
-# Nécessite JDK 17+, SDK Android, adb et un appareil en débogage USB.
-android-local: android-check
+# build-android: build local générique.
+# Vérifie JDK 17+ / SDK / adb / appareil, puis compile et installe via USB.
+# (alias historique : android-local)
+build-android: android-check
 	@printf "📱 Build + installation locale via USB...\n"
+	@. "$$HOME/.arset-android-env" 2>/dev/null || true; \
 	cd apps/mobile && npx expo run:android
+
+android-local: build-android
 
 ## ── Qualité ─────────────────────────────────────────────────────────────────
 

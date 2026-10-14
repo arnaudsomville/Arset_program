@@ -4,7 +4,7 @@
 
 | Commande | Description |
 |---|---|
-| `make install` | Installe **tout** (JS + ressources + outils + data dir) |
+| `make install` | Installe **tout** (JS + ressources + outils + SDK Android + data dir) |
 | `make sync` | Re-copie catalogue + notes depuis la source |
 | `make pc` | Backend (4000) + desktop (5173) en parallèle |
 | `make dev-server` | Backend seul (dev) |
@@ -12,8 +12,8 @@
 | `make dev-mobile` | Expo (dev Android) |
 | `make build-core` | Compile `@arset/core` |
 | `make build-desktop` | Build production React |
+| `make build-android` | Build local Android (vérifie JDK/SDK puis compile via USB) |
 | `make android-eas` | APK via EAS (cloud, sans SDK local) |
-| `make android-local` | Build + installation via USB (SDK local requis) |
 | `make android-check` | Vérifie les prérequis du build local (sans installer) |
 | `make android-login` | Connexion compte Expo (une fois) |
 | `make typecheck` | Typecheck (core + server + desktop + mobile) |
@@ -48,8 +48,9 @@ npx serve apps/desktop/dist         # ou un serveur statique quelconque
 
 ## Android
 
-> ⚠️ Le **téléchargement local** repose sur `ytdlp-react-native` (module natif yt-dlp),
-> donc il **ne fonctionne pas dans Expo Go** : il faut un **build natif** (EAS ou local).
+> ⚠️ Le **téléchargement local** repose sur un module natif local (`modules/youtubedl`,
+> basé sur la lib `youtubedl-android` qui embarque yt-dlp + Python), donc il
+> **ne fonctionne pas dans Expo Go** : il faut un **build natif** (EAS ou local).
 > Le streaming, la navigation et la progression, eux, marchent dans Expo Go.
 
 Trois chemins :
@@ -60,7 +61,7 @@ Trois chemins :
 make dev-mobile     # scan le QR avec Expo Go
 ```
 
-### B. EAS (cloud) — recommandé, aucun SDK/câble
+### B. EAS (cloud) — aucun SDK/câble
 
 ```bash
 make android-login   # une seule fois (compte Expo gratuit)
@@ -72,16 +73,22 @@ ou `cd apps/mobile && npx eas-cli build -p android --profile production` (AAB Pl
 
 ### C. Local (USB) — build sur ton PC
 
-Prérequis : **JDK 17+**, **Android Studio + SDK**, **`adb`**, téléphone en **débogage USB**.
-
 ```bash
-make android-check    # vérifie les prérequis (échoue proprement sinon)
-make android-local    # génère android/, compile, installe via adb
+make install         # installe JDK 17+ + SDK Android si absents (une fois, ~3-4 Go)
+make build-android   # vérifie les prérequis puis compile + installe via adb
 ```
 
-`make android-check` (script `scripts/check-android.sh`) ne **fait aucune installation** :
-il contrôle JDK / adb / SDK / appareil, et sort en erreur avec les instructions si un
-prérequis manque.
+`make build-android` dépend de `android-check` (script `scripts/check-android.sh`) qui
+**vérifie JDK 17+ / adb / SDK / appareil** et **plante** avec les instructions si un
+prérequis manque. `make install` installe le JDK (Temurin 21) et le SDK dans
+`~/Android/Sdk` **s'il ne sont pas déjà là** (sans sudo, via `scripts/install-android-sdk.sh`).
+
+### D. CI (GitHub Actions) — APK reproductible
+
+`.github/workflows/android.yml` : `checkout → node 22 → JDK 21 → SDK → npm ci →
+expo prebuild → gradlew assembleRelease → upload de l'APK`. Déclenchement manuel
+(`workflow_dispatch`) ou sur tag `v*`. APK signé debug (installable), téléchargeable
+depuis l'onglet **Actions** (artefact).
 
 `apps/mobile/eas.json` :
 

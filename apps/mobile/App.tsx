@@ -28,9 +28,11 @@ import {
   toggleWatched,
 } from "./src/storage";
 import {
+  downloadVideo,
   humanizeDownloadError,
+  initYtDlp,
   isExpoGo,
-  startDownload as ytdlpDownload,
+  onProgress,
 } from "./src/ytdlp";
 
 const catalog = catalogJson as unknown as VideoCatalog;
@@ -38,8 +40,8 @@ const learningPath = learningPathJson as unknown as LearningPath;
 const index = buildIndex(catalog);
 
 // YouTube exige désormais un en-tête `Referer` valide pour les vidéos embarquées
-// (sinon erreur 153). On utilise l'ID d'application comme origine.
-const YOUTUBE_REFERER = "https://com.absolutsensing.arsetviewer";
+// (sinon erreur 153). On utilise une origine factice valide au format URL.
+const YOUTUBE_REFERER = "https://arsetviewer.arnaudsomville.fr";
 
 const CATEGORY_LABELS: Record<string, string> = {
   agriculture: "Agriculture",
@@ -125,6 +127,21 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    initYtDlp().catch(() => {});
+    const sub = onProgress((event) => {
+      setDownloads((d) => {
+        const current = d[event.processId];
+        if (!current || current.status !== "downloading") return d;
+        return {
+          ...d,
+          [event.processId]: { status: "downloading", progress: event.progress / 100 },
+        };
+      });
+    });
+    return () => sub.remove();
+  }, []);
+
+  useEffect(() => {
     const sub = BackHandler.addEventListener("hardwareBackPress", () => {
       if (screen === "player") {
         setScreen("module");
@@ -163,36 +180,14 @@ export default function App() {
 
     setDownloads((d) => ({ ...d, [id]: { status: "downloading", progress: 0 } }));
     try {
-      const task = await ytdlpDownload({
-        url: watchUrl(video),
-        format: "best",
-        output: { directory: "videos", filename: `${video.id}.mp4` },
-      });
-
-      task.addListener("progress", (p) => {
-        const progress = p.percent !== undefined ? p.percent / 100 : 0;
-        setDownloads((d) => ({ ...d, [id]: { status: "downloading", progress } }));
-      });
-
-      task.addListener("completed", async (result) => {
-        const uri = result.uri ?? (result.path ? `file://${result.path}` : null);
-        if (uri) {
-          setDownloadedFiles(await saveDownload(id, uri));
-        }
-        setDownloads((d) => {
-          const next = { ...d };
-          delete next[id];
-          return next;
-        });
-      });
-
-      task.addListener("error", (err) => {
-        const msg = humanizeDownloadError(err);
-        setDownloads((d) => ({
-          ...d,
-          [id]: { status: "error", progress: 0, error: msg },
-        }));
-        Alert.alert("Échec du téléchargement", msg);
+      const result = await downloadVideo(video.id, watchUrl(video));
+      if (result.filePath) {
+        setDownloadedFiles(await saveDownload(id, `file://${result.filePath}`));
+      }
+      setDownloads((d) => {
+        const next = { ...d };
+        delete next[id];
+        return next;
       });
     } catch (e) {
       const msg = humanizeDownloadError(e);
