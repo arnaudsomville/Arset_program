@@ -19,7 +19,8 @@ jobs:
           distribution: temurin
           java-version: "21"
 
-      - uses: android-actions/setup-android@v3
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses || true
 
       - name: Install dependencies
         run: npm ci
@@ -35,6 +36,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: arset-viewer-apk
+          name: arset-viewer-release.apk
           path: apps/mobile/android/app/build/outputs/apk/release/*.apk
           if-no-files-found: error
