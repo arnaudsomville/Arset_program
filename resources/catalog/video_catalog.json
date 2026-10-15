@@ -11,10 +11,10 @@
   },
   "summary": {
     "local_video_instances": 410,
-    "unique_sources": 270,
+    "unique_sources": 271,
     "duplicate_instances_collapsed": 141,
     "url_status_counts": {
-      "duration_verified": 65,
+      "duration_verified": 66,
       "manual_verified": 19,
       "verified": 186
     }
@@ -144,7 +144,10 @@
         106,
         166,
         270,
-        26
+        26,
+        271,
+        31,
+        260
       ]
     },
     {
@@ -2249,7 +2252,8 @@
       "module_ids": [
         10,
         31,
-        62
+        62,
+        12
       ],
       "local_filenames": [
         "NASA ARSET： Image Processing Hands-On Exercise, Session 3⧸3.mp4",
@@ -3152,7 +3156,8 @@
       "module_ids": [
         19,
         45,
-        54
+        54,
+        12
       ],
       "local_filenames": [
         "NASA ARSET： Large Scale Monitoring Using Remote Sensing and Citizen Science, Part 4⧸4.mp4",
@@ -8428,6 +8433,21 @@
       "duration_seconds": 5509,
       "youtube_url": "https://www.youtube.com/watch?v=UFDEllzDxE4",
       "youtube_video_id": "UFDEllzDxE4",
+      "url_status": "duration_verified",
+      "canonical_module_id": 12,
+      "module_ids": [
+        12
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 271,
+      "sha256": "",
+      "name": "Understanding HABs in the Coastal Environment, Part 3/4",
+      "duration_seconds": 4482,
+      "youtube_url": "https://www.youtube.com/watch?v=TH7y0YzPNSM",
+      "youtube_video_id": "TH7y0YzPNSM",
       "url_status": "duration_verified",
       "canonical_module_id": 12,
       "module_ids": [
