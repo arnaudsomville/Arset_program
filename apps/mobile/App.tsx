@@ -23,9 +23,9 @@ import {
   loadCompleted,
   loadDownloads,
   loadWatched,
+  saveCompleted,
   saveDownload,
-  toggleCompleted,
-  toggleWatched,
+  saveWatched,
 } from "./src/storage";
 import {
   downloadVideo,
@@ -168,6 +168,49 @@ export default function App() {
     setScreen("player");
   };
 
+  // Module terminé ⟺ toutes ses vidéos vues. Les deux sens sont propagés.
+  const markModule = useCallback(
+    async (key: string) => {
+      const videos = index.videosByKey.get(key) ?? [];
+      const nextCompleted = new Set(completed);
+      const nextWatched = new Set(watched);
+      const nowCompleted = !nextCompleted.has(key);
+      if (nowCompleted) nextCompleted.add(key);
+      else nextCompleted.delete(key);
+      for (const v of videos) {
+        const id = String(v.id);
+        if (nowCompleted) nextWatched.add(id);
+        else nextWatched.delete(id);
+      }
+      await Promise.all([saveCompleted(nextCompleted), saveWatched(nextWatched)]);
+      setCompleted(nextCompleted);
+      setWatched(nextWatched);
+    },
+    [completed, watched],
+  );
+
+  const markVideo = useCallback(
+    async (id: number) => {
+      const sid = String(id);
+      const nextWatched = new Set(watched);
+      if (nextWatched.has(sid)) nextWatched.delete(sid);
+      else nextWatched.add(sid);
+      const nextCompleted = new Set(completed);
+      for (const [key, videos] of index.videosByKey) {
+        if (!videos.some((v) => String(v.id) === sid)) continue;
+        const allWatched =
+          videos.length > 0 &&
+          videos.every((v) => nextWatched.has(String(v.id)));
+        if (allWatched) nextCompleted.add(key);
+        else nextCompleted.delete(key);
+      }
+      await Promise.all([saveWatched(nextWatched), saveCompleted(nextCompleted)]);
+      setWatched(nextWatched);
+      setCompleted(nextCompleted);
+    },
+    [completed, watched],
+  );
+
   const startDownload = useCallback(async (video: Video) => {
     const id = String(video.id);
     if (isExpoGo()) {
@@ -209,7 +252,7 @@ export default function App() {
             <Text style={styles.back}>← Retour</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={async () => setWatched(await toggleWatched(String(currentVideo.id)))}
+            onPress={() => markVideo(currentVideo.id)}
           >
             <Text style={styles.action}>
               {watched.has(String(currentVideo.id)) ? "✓ Vue" : "Marquer vue"}
@@ -252,7 +295,7 @@ export default function App() {
             <Text style={styles.back}>← Modules</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={async () => setCompleted(await toggleCompleted(currentModule.key))}
+            onPress={() => markModule(currentModule.key)}
           >
             <Text style={styles.action}>
               {completed.has(currentModule.key) ? "✓ Terminé" : "Terminer"}
@@ -289,7 +332,7 @@ export default function App() {
                 />
 
                 <TouchableOpacity
-                  onPress={async () => setWatched(await toggleWatched(String(item.id)))}
+                  onPress={() => markVideo(item.id)}
                 >
                   <Text style={styles.action}>
                     {watched.has(String(item.id)) ? "✓" : "○"}

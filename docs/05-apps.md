@@ -83,3 +83,32 @@ L'app est **autonome** (aucun serveur requis) :
 
 Le dossier `android/` est généré automatiquement (Continuous Native Generation) et
 n'est **pas versionné** — on configure le natif via `app.json` et les config plugins.
+
+## Ordre des vidéos dans un module
+
+L'ordre brut de `source_video_ids` n'est pas fiable (séries « ..., Part X/N » mélangées).
+Le numéro d'épisode est extrait du titre (`episodeNumber`, voir
+`packages/core/src/episode.ts` et sa copie `apps/mobile/src/catalog.ts`) :
+
+- `buildCatalogIndex` (`@arset/core`) trie les vidéos de chaque module — utilisé par le
+  **serveur** ET le **desktop** ;
+- `buildIndex` (mobile) applique le même tri sur le catalogue bundlé.
+
+→ Effet partout (serveur, desktop, mobile), et **survit à `make sync`** (le tri est dans
+le code, pas seulement dans les données). Le script `scripts/reorder-catalog.mjs`
+normalise aussi les fichiers JSON (`resources/` + `apps/mobile/assets/`).
+
+## Progression : module ⇄ vidéos
+
+Règle unique : **un module est « terminé » ⟺ toutes ses vidéos sont « vues »**. La mise
+à jour est **symétrique** (décocher propage aussi) :
+
+- marquer un module → marque/démarque toutes ses vidéos ;
+- marquer une vidéo → recalcule la complétion des modules la contenant.
+
+Côté **serveur**, les routes `POST /api/progress/module/:key` et
+`POST /api/progress/video/:id` renvoient désormais la **progression complète**
+(`ProgressData`) après avoir appliqué la cascade (`mutateProgress` dans `store.ts`).
+Le **desktop** (`staticApi.ts` en mode statique, backend en dev) fait de même ; `App.tsx`
+se contente de `setProgress(...)`. Le **mobile** applique la cascade en local via
+`index.videosByKey` (`markModule` / `markVideo` dans `App.tsx`).

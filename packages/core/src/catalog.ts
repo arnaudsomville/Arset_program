@@ -1,4 +1,5 @@
 import type { CatalogModule, Video, VideoCatalog } from "./types";
+import { episodeNumber } from "./episode";
 
 export interface CatalogIndex {
   videosById: Map<number, Video>;
@@ -22,7 +23,9 @@ export function parseCatalog(data: unknown): VideoCatalog {
 
 /**
  * Construit un index en mémoire à partir du catalog.
- * Les vidéos d'un module sont ordonnées par `source_video_ids`.
+ * Les vidéos d'un module sont ordonnées par `source_video_ids`, puis par
+ * numéro d'épisode extrait du titre (les séries « ..., Part X/N » remises dans
+ * l'ordre ; les vidéos sans numéro restent en fin, ordre d'origine conservé).
  */
 export function buildCatalogIndex(catalog: VideoCatalog): CatalogIndex {
   const videosById = new Map<number, Video>();
@@ -39,7 +42,8 @@ export function buildCatalogIndex(catalog: VideoCatalog): CatalogIndex {
   for (const m of catalog.modules) {
     const videos = m.source_video_ids
       .map((id) => videosById.get(id))
-      .filter((v): v is Video => v !== undefined);
+      .filter((v): v is Video => v !== undefined)
+      .sort((a, b) => episodeNumber(a.name) - episodeNumber(b.name));
     videosByModuleKey.set(m.key, videos);
   }
 

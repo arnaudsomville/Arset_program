@@ -29,6 +29,10 @@ export async function toggleWatched(id: string): Promise<Set<string>> {
   return set;
 }
 
+export async function saveWatched(set: Set<string>): Promise<void> {
+  await writeSet(WATCHED_KEY, set);
+}
+
 export async function loadCompleted(): Promise<Set<string>> {
   return readSet(COMPLETED_KEY);
 }
@@ -39,6 +43,10 @@ export async function toggleCompleted(key: string): Promise<Set<string>> {
   else set.add(key);
   await writeSet(COMPLETED_KEY, set);
   return set;
+}
+
+export async function saveCompleted(set: Set<string>): Promise<void> {
+  await writeSet(COMPLETED_KEY, set);
 }
 
 /** Map videoId → uri local du fichier téléchargé. */

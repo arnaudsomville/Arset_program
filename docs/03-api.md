@@ -96,17 +96,16 @@ Le champ `downloaded` détermine si le frontend affiche `<video src=streamUrl>`
 
 Body facultatif `{ "completed": true }` (si absent → **toggle**).
 
-```json
-{ "completed": true }
-```
+Marque aussi **toutes les vidéos du module** dans le même état (symétrie).
+Renvoie la progression complète (même forme que `GET /api/progress`).
 
 ### `POST /api/progress/video/:id`
 
 Body facultatif `{ "watched": true }` (si absent → **toggle**).
 
-```json
-{ "watched": true }
-```
+Recalcule la complétion des modules contenant la vidéo
+(`completed` ⟺ toutes les vidéos du module sont vues).
+Renvoie la progression complète (même forme que `GET /api/progress`).
 
 ### `POST /api/videos/:id/download`
 

@@ -21,7 +21,7 @@ const empty = (): ProgressData => ({ modules: {}, videos: {} });
 
 let cache: ProgressData | null = null;
 
-function now(): string {
+export function now(): string {
   return new Date().toISOString();
 }
 
@@ -38,6 +38,18 @@ export function loadProgress(): ProgressData {
 function persist(data: ProgressData): void {
   fs.mkdirSync(path.dirname(progressFile()), { recursive: true });
   fs.writeFileSync(progressFile(), JSON.stringify(data, null, 2));
+}
+
+/**
+ * Charge la progression, laisse `fn` la muter, persiste une seule fois et
+ * retourne l'état résultant. Utilisé pour les mises à jour en cascade
+ * (module ⇄ vidéos).
+ */
+export function mutateProgress(fn: (data: ProgressData) => void): ProgressData {
+  const data = loadProgress();
+  fn(data);
+  persist(data);
+  return data;
 }
 
 export function setModuleCompleted(key: string, completed: boolean): void {

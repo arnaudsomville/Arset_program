@@ -14,10 +14,8 @@ import {
 import { catalogFile, learningPathFile, PORT } from "./config";
 import {
   loadProgress,
-  setModuleCompleted,
-  setVideoWatched,
-  toggleModuleCompleted,
-  toggleVideoWatched,
+  mutateProgress,
+  now,
 } from "./store";
 import { isDownloaded, startDownload, statusOf, videoFile } from "./downloads";
 
@@ -98,28 +96,41 @@ app.get("/api/progress", (_req, res) => {
   res.json(loadProgress());
 });
 
+// Module terminé ⟺ toutes ses vidéos vues. Les deux routes renvoient la
+// progression complète ; les mises à jour sont propagées en cascade.
 app.post("/api/progress/module/:key", (req: Request, res: Response) => {
   const key = req.params.key;
   const body = req.body ?? {};
-  const completed =
-    typeof body.completed === "boolean" ? body.completed : toggleModuleCompleted(key);
-  if (typeof body.completed !== "boolean") {
-    return res.json({ completed });
-  }
-  setModuleCompleted(key, completed);
-  res.json({ completed });
+  const ids = (index.videosByModuleKey.get(key) ?? []).map((v) => String(v.id));
+  const result = mutateProgress((data) => {
+    const completed =
+      typeof body.completed === "boolean"
+        ? body.completed
+        : !(data.modules[key]?.completed ?? false);
+    data.modules[key] = { completed, updated: now() };
+    for (const id of ids) data.videos[id] = { watched: completed, updated: now() };
+  });
+  res.json(result);
 });
 
 app.post("/api/progress/video/:id", (req: Request, res: Response) => {
   const id = req.params.id;
   const body = req.body ?? {};
-  const watched =
-    typeof body.watched === "boolean" ? body.watched : toggleVideoWatched(id);
-  if (typeof body.watched !== "boolean") {
-    return res.json({ watched });
-  }
-  setVideoWatched(id, watched);
-  res.json({ watched });
+  const result = mutateProgress((data) => {
+    const watched =
+      typeof body.watched === "boolean"
+        ? body.watched
+        : !(data.videos[id]?.watched ?? false);
+    data.videos[id] = { watched, updated: now() };
+    for (const [key, videos] of index.videosByModuleKey) {
+      if (!videos.some((v) => String(v.id) === id)) continue;
+      const allWatched =
+        videos.length > 0 &&
+        videos.every((v) => data.videos[String(v.id)]?.watched ?? false);
+      data.modules[key] = { completed: allWatched, updated: now() };
+    }
+  });
+  res.json(result);
 });
 
 app.post("/api/videos/:id/download", (req: Request, res: Response) => {

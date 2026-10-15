@@ -35,8 +35,8 @@ export interface ArsetApi {
   complementary(): Promise<ComplementaryGroup[]>;
   progress(): Promise<ProgressData>;
   moduleVideos(key: string): Promise<ModuleVideos>;
-  toggleModule(key: string, completed?: boolean): Promise<{ completed: boolean }>;
-  toggleVideo(id: number, watched?: boolean): Promise<{ watched: boolean }>;
+  toggleModule(key: string, completed?: boolean): Promise<ProgressData>;
+  toggleVideo(id: number, watched?: boolean): Promise<ProgressData>;
   download(id: number): Promise<DownloadEntry>;
   downloadStatus(id: number): Promise<DownloadEntry>;
 }
@@ -65,12 +65,12 @@ const httpApi: ArsetApi = {
   moduleVideos: (key: string) =>
     getJSON<ModuleVideos>(`/api/modules/${encodeURIComponent(key)}/videos`),
   toggleModule: (key: string, completed?: boolean) =>
-    postJSON<{ completed: boolean }>(
+    postJSON<ProgressData>(
       `/api/progress/module/${encodeURIComponent(key)}`,
       completed === undefined ? undefined : { completed },
     ),
   toggleVideo: (id: number, watched?: boolean) =>
-    postJSON<{ watched: boolean }>(
+    postJSON<ProgressData>(
       `/api/progress/video/${id}`,
       watched === undefined ? undefined : { watched },
     ),

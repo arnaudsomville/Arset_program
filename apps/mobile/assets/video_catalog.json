@@ -34,8 +34,8 @@
       "key": "organized/skill-building/090-fundamentals-of-machine-learning-for-earth-science",
       "title": "090-fundamentals-of-machine-learning-for-earth-science",
       "source_video_ids": [
-        29,
         117,
+        29,
         211
       ]
     },
@@ -44,9 +44,9 @@
       "key": "organized/ecological-conservation/080-spectral-indices-for-land-and-aquatic-applications",
       "title": "080-spectral-indices-for-land-and-aquatic-applications",
       "source_video_ids": [
+        78,
         11,
         55,
-        78,
         198
       ]
     },
@@ -55,9 +55,9 @@
       "key": "organized/ecological-conservation/071-using-google-earth-engine-for-land-monitoring-applications",
       "title": "Module 071 - Using Google Earth Engine for Land Monitoring Applications",
       "source_video_ids": [
-        158,
         268,
-        269
+        269,
+        158
       ]
     },
     {
@@ -65,9 +65,9 @@
       "key": "organized/disasters/037-an-introduction-to-synthetic-aperture-radar-and-its-applications",
       "title": "037-an-introduction-to-synthetic-aperture-radar-and-its-applications",
       "source_video_ids": [
-        128,
         152,
-        255
+        255,
+        128
       ]
     },
     {
@@ -75,10 +75,10 @@
       "key": "organized/ecological-conservation/083-remote-sensing-of-drought",
       "title": "083-remote-sensing-of-drought",
       "source_video_ids": [
-        39,
-        57,
         130,
-        231
+        39,
+        231,
+        57
       ]
     },
     {
@@ -86,13 +86,13 @@
       "key": "organized/ecological-conservation/054-new-sensor-highlight-ecostress",
       "title": "054-new-sensor-highlight-ecostress",
       "source_video_ids": [
-        46,
-        128,
         149,
-        161,
+        218,
         204,
         212,
-        218
+        128,
+        161,
+        46
       ]
     },
     {
@@ -100,10 +100,10 @@
       "key": "organized/water-resources/hydrology/03-agricultural-water-management",
       "title": "Module 03 — Satellite Remote Sensing for Agricultural Water Management",
       "source_video_ids": [
-        74,
-        80,
         160,
-        206
+        206,
+        80,
+        74
       ]
     },
     {
@@ -121,9 +121,9 @@
       "key": "organized/water-resources/water-quality/07-processing-water-quality-imagery",
       "title": "Module 07 — Processing Satellite Imagery for Monitoring Water Quality",
       "source_video_ids": [
+        137,
         26,
-        31,
-        137
+        31
       ]
     },
     {
@@ -131,9 +131,9 @@
       "key": "organized/water-resources/water-quality/08-stream-water-quality",
       "title": "Module 08 — Monitoring Water Quality in Lakes and Coastal Regions Using STREAM",
       "source_video_ids": [
-        15,
         120,
-        125
+        125,
+        15
       ]
     },
     {
@@ -150,9 +150,9 @@
       "key": "organized/ecological-conservation/066-monitoring-aquatic-vegetation-with-remote-sensing",
       "title": "066-monitoring-aquatic-vegetation-with-remote-sensing",
       "source_video_ids": [
+        230,
         40,
-        162,
-        230
+        162
       ]
     },
     {
@@ -160,8 +160,8 @@
       "key": "organized/climate/026-earth-observations-of-blue-carbon-ecosystems",
       "title": "026-earth-observations-of-blue-carbon-ecosystems",
       "source_video_ids": [
-        75,
         111,
+        75,
         187
       ]
     },
@@ -170,12 +170,12 @@
       "key": "organized/disasters/floods/11-disaster-risk-management",
       "title": "Module 11 — Remote Sensing for Disaster Risk Management (Floods & Landslides)",
       "source_video_ids": [
+        174,
+        233,
         108,
         142,
-        174,
         201,
-        228,
-        233
+        228
       ]
     },
     {
@@ -183,9 +183,9 @@
       "key": "organized/disasters/urban-heat-islands/12-urban-heat-islands",
       "title": "Module 12 — Satellite Observations for Urban Heat Islands and Thermal Environment",
       "source_video_ids": [
-        73,
         114,
         227,
+        73,
         267
       ]
     },
@@ -214,9 +214,9 @@
       "title": "Large Scale Applications of Machine Learning using Remote Sensing for Building Agriculture Solutions",
       "source_video_ids": [
         54,
+        172,
         140,
         147,
-        172,
         260
       ]
     },
@@ -225,10 +225,10 @@
       "key": "other_modules/agriculture/003-crop-mapping-using-synthetic-aperture-radar-and-optical-remote-sensing",
       "title": "Crop Mapping using Synthetic Aperture Radar (SAR) and Optical Remote Sensing",
       "source_video_ids": [
-        51,
         83,
-        134,
-        167
+        167,
+        51,
+        134
       ]
     },
     {
@@ -236,8 +236,8 @@
       "key": "other_modules/agriculture/004-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remote-sensing",
       "title": "Mapping Crops and their Biophysical Characteristics with Polarimetric SAR and Optical Remote Sensing",
       "source_video_ids": [
-        37,
         76,
+        37,
         247,
         251
       ]
@@ -248,8 +248,8 @@
       "title": "Lidar Profiling Satellite Observations for Air Quality Applications",
       "source_video_ids": [
         60,
-        84,
-        240
+        240,
+        84
       ]
     },
     {
@@ -258,9 +258,9 @@
       "title": "An Inside Look at How NASA Measures Air Pollution",
       "source_video_ids": [
         41,
-        109,
+        234,
         185,
-        234
+        109
       ]
     },
     {
@@ -277,9 +277,9 @@
       "key": "other_modules/air-quality/008-introduction-to-satellite-remote-sensing-for-air-quality-applications",
       "title": "Introduction to Satellite Remote Sensing for Air Quality Applications",
       "source_video_ids": [
+        154,
         26,
-        128,
-        154
+        128
       ]
     },
     {
@@ -287,9 +287,9 @@
       "key": "other_modules/air-quality/009-geostationary-remote-sensing-of-trace-gases-for-air-quality-applications-in-north-america",
       "title": "Geostationary Remote Sensing of Trace Gases for Air Quality Applications in North America",
       "source_video_ids": [
+        256,
         100,
-        136,
-        256
+        136
       ]
     },
     {
@@ -297,9 +297,9 @@
       "key": "other_modules/air-quality/010-nasa-atmospheric-composition-ground-networks-supporting-air-quality-and-climate-applications",
       "title": "NASA Atmospheric Composition Ground Networks Supporting Air Quality and Climate Applications",
       "source_video_ids": [
-        1,
+        64,
         56,
-        64
+        1
       ]
     },
     {
@@ -307,9 +307,9 @@
       "key": "other_modules/air-quality/011-accessing-and-analyzing-air-quality-data-from-geostationary-satellites",
       "title": "Accessing and Analyzing Air Quality Data from Geostationary Satellites",
       "source_video_ids": [
-        109,
+        234,
         185,
-        234
+        109
       ]
     },
     {
@@ -326,8 +326,8 @@
       "key": "other_modules/air-quality/013-introduction-and-access-to-global-air-quality-forecasting-data-and-tools",
       "title": "Introduction and Access to Global Air Quality Forecasting Data and Tools",
       "source_video_ids": [
-        16,
         58,
+        16,
         236
       ]
     },
@@ -336,11 +336,11 @@
       "key": "other_modules/air-quality/014-modis-to-viirs-transition-for-air-quality-applications",
       "title": "MODIS to VIIRS Transition for Air Quality Applications",
       "source_video_ids": [
+        205,
         22,
         26,
-        31,
         34,
-        205,
+        31,
         216
       ]
     },
@@ -357,9 +357,9 @@
       "key": "other_modules/air-quality/016-data-analysis-tools-for-high-resolution-air-quality-satellite-datasets",
       "title": "Data Analysis Tools for High Resolution Air Quality Satellite Datasets",
       "source_video_ids": [
-        128,
         154,
-        241
+        241,
+        128
       ]
     },
     {
@@ -367,8 +367,8 @@
       "key": "other_modules/climate/017-sea-level-change-tools-for-planning-and-decision-support",
       "title": "Sea Level Change Tools for Planning and Decision Support",
       "source_video_ids": [
-        126,
-        254
+        254,
+        126
       ]
     },
     {
@@ -393,8 +393,8 @@
       "key": "other_modules/climate/020-selecting-climate-change-projection-sets-for-mitigation-adaptation-and-risk-management-applications",
       "title": "Selecting Climate Change Projection Sets for Mitigation, Adaptation, and Risk Management Applications",
       "source_video_ids": [
-        52,
         182,
+        52,
         231
       ]
     },
@@ -403,9 +403,9 @@
       "key": "other_modules/climate/021-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies",
       "title": "Measuring Atmospheric Carbon Dioxide from Space in Support of Climate Related Studies",
       "source_video_ids": [
-        88,
+        246,
         210,
-        246
+        88
       ]
     },
     {
@@ -430,8 +430,8 @@
       "title": "NASA Earth Observations for Energy Management",
       "source_video_ids": [
         67,
-        96,
-        259
+        259,
+        96
       ]
     },
     {
@@ -439,9 +439,9 @@
       "key": "other_modules/climate/025-introduction-to-nasa-resources-for-climate-change-applications",
       "title": "Introduction to NASA Resources for Climate Change Applications",
       "source_video_ids": [
-        16,
         58,
         220,
+        16,
         236
       ]
     },
@@ -450,8 +450,8 @@
       "key": "other_modules/climate/026-earth-observations-of-blue-carbon-ecosystems",
       "title": "Earth Observations of Blue Carbon Ecosystems",
       "source_video_ids": [
-        75,
         111,
+        75,
         187
       ]
     },
@@ -460,10 +460,10 @@
       "key": "other_modules/climate/027-applications-of-carbon-dioxide-measurements-for-climate-related-studies",
       "title": "Applications of Carbon Dioxide Measurements for Climate-Related Studies",
       "source_video_ids": [
-        16,
         58,
-        84,
-        236
+        16,
+        236,
+        84
       ]
     },
     {
@@ -472,9 +472,9 @@
       "title": "Monitoring Urban Floods using Remote Sensing",
       "source_video_ids": [
         35,
-        77,
         132,
         212,
+        77,
         260
       ]
     },
@@ -483,8 +483,8 @@
       "key": "other_modules/disasters/029-monitoring-and-modeling-floods-using-earth-observations",
       "title": "Monitoring and Modeling Floods using Earth Observations",
       "source_video_ids": [
-        146,
-        194
+        194,
+        146
       ]
     },
     {
@@ -509,9 +509,9 @@
       "title": "Introduction to Population Grids and their Integration with Remote Sensing Data",
       "source_video_ids": [
         69,
-        73,
         195,
-        227
+        227,
+        73
       ]
     },
     {
@@ -528,11 +528,11 @@
       "key": "other_modules/disasters/034-transforming-earth-observation-data-into-building-infrastructure-data-sets-for-disaster-risk-modeling",
       "title": "Transforming Earth Observation (EO) Data into Building Infrastructure Data Sets for Disaster Risk Modeling",
       "source_video_ids": [
+        183,
         26,
         121,
         148,
-        156,
-        183
+        156
       ]
     },
     {
@@ -540,9 +540,9 @@
       "key": "other_modules/disasters/035-use-of-solar-induced-fluorescence-and-lidar-to-assess-vegetation-change-and-vulnerability",
       "title": "Use of Solar Induced Fluorescence and LiDAR to Assess Vegetation Change and Vulnerability",
       "source_video_ids": [
+        119,
         79,
-        91,
-        119
+        91
       ]
     },
     {
@@ -550,10 +550,10 @@
       "key": "other_modules/disasters/036-solar-induced-fluorescence-observations-for-assessing-vegetation-changes-related-to-floods-drought-and-fire-impacts",
       "title": "Solar Induced Fluorescence (SIF) Observations for Assessing Vegetation Changes Related to Floods, Drought, and Fire Impacts",
       "source_video_ids": [
-        91,
-        116,
         119,
-        164
+        164,
+        91,
+        116
       ]
     },
     {
@@ -561,9 +561,9 @@
       "key": "other_modules/disasters/038-disaster-assessment-using-synthetic-aperture-radar",
       "title": "Disaster Assessment using Synthetic Aperture Radar",
       "source_video_ids": [
-        105,
         123,
         233,
+        105,
         260
       ]
     },
@@ -590,9 +590,9 @@
       "key": "other_modules/disasters/041-sar-for-disasters-and-hydrological-applications",
       "title": "SAR for Disasters and Hydrological Applications",
       "source_video_ids": [
+        127,
         50,
         71,
-        127,
         146
       ]
     },
@@ -601,8 +601,8 @@
       "key": "other_modules/disasters/042-radar-remote-sensing-for-land-water-and-disaster-applications",
       "title": "Radar Remote Sensing for Land, Water, and Disaster Applications",
       "source_video_ids": [
-        18,
-        217
+        217,
+        18
       ]
     },
     {
@@ -610,11 +610,11 @@
       "key": "other_modules/disasters/043-introduction-to-lightning-observations-and-applications",
       "title": "Introduction to Lightning Observations and Applications",
       "source_video_ids": [
-        42,
+        115,
+        125,
         44,
         97,
-        115,
-        125
+        42
       ]
     },
     {
@@ -631,11 +631,11 @@
       "key": "other_modules/disasters/045-monitoring-tropical-storms-for-emergency-preparedness",
       "title": "Monitoring Tropical Storms for Emergency Preparedness",
       "source_video_ids": [
+        150,
+        163,
         53,
         71,
-        150,
-        151,
-        163
+        151
       ]
     },
     {
@@ -643,11 +643,11 @@
       "key": "other_modules/disasters/046-overview-of-the-global-disasters-alert-and-coordination-system-gdacs",
       "title": "Overview of the Global Disasters Alert and Coordination System (GDACS)",
       "source_video_ids": [
-        31,
         35,
+        250,
         112,
         132,
-        250
+        31
       ]
     },
     {
@@ -655,8 +655,8 @@
       "key": "other_modules/disasters/047-satellite-observations-for-analyzing-natural-hazards-on-small-island-nations",
       "title": "Satellite Observations for Analyzing Natural Hazards on Small Island Nations",
       "source_video_ids": [
-        98,
-        105
+        105,
+        98
       ]
     },
     {
@@ -664,10 +664,10 @@
       "key": "other_modules/disasters/048-remote-sensing-for-disasters-scenarios",
       "title": "Remote Sensing for Disasters Scenarios",
       "source_video_ids": [
-        46,
-        161,
+        218,
         212,
-        218
+        161,
+        46
       ]
     },
     {
@@ -684,10 +684,10 @@
       "key": "other_modules/ecological-conservation/050-invasive-species-monitoring-with-remote-sensing",
       "title": "Invasive Species Monitoring with Remote Sensing",
       "source_video_ids": [
-        94,
-        162,
+        242,
         173,
-        242
+        94,
+        162
       ]
     },
     {
@@ -695,9 +695,9 @@
       "key": "other_modules/ecological-conservation/051-evaluating-ecosystem-services-with-remote-sensing",
       "title": "Evaluating Ecosystem Services with Remote Sensing",
       "source_video_ids": [
+        230,
         40,
-        162,
-        230
+        162
       ]
     },
     {
@@ -705,10 +705,10 @@
       "key": "other_modules/ecological-conservation/052-using-the-un-biodiversity-lab-to-support-national-conservation-and-sdgs",
       "title": "Using the UN Biodiversity Lab to Support National Conservation and SDGs",
       "source_video_ids": [
-        3,
         68,
+        241,
         223,
-        241
+        3
       ]
     },
     {
@@ -716,8 +716,8 @@
       "key": "other_modules/ecological-conservation/053-understanding-phenology-with-remote-sensing",
       "title": "Understanding Phenology with Remote Sensing",
       "source_video_ids": [
-        101,
         143,
+        101,
         264
       ]
     },
@@ -726,13 +726,13 @@
       "key": "other_modules/ecological-conservation/054-new-sensor-highlight-ecostress",
       "title": "New Sensor Highlight: ECOSTRESS",
       "source_video_ids": [
-        46,
-        128,
         149,
-        161,
+        218,
         204,
         212,
-        218
+        128,
+        161,
+        46
       ]
     },
     {
@@ -741,9 +741,9 @@
       "title": "Earth Observations for Indigenous-Led Land Management",
       "source_video_ids": [
         19,
+        149,
         47,
         135,
-        149,
         199
       ]
     },
@@ -760,10 +760,10 @@
       "key": "other_modules/ecological-conservation/058-introduction-to-remote-sensing-for-conservation-management",
       "title": "Introduction to Remote Sensing for Conservation Management",
       "source_video_ids": [
-        32,
-        131,
         143,
-        171
+        171,
+        131,
+        32
       ]
     },
     {
@@ -771,11 +771,11 @@
       "key": "other_modules/ecological-conservation/059-estimating-biomass-and-change-with-gedi-and-the-obiwan-api",
       "title": "Estimating Biomass and Change with GEDI and the OBIWAN API",
       "source_video_ids": [
-        79,
-        91,
         119,
+        180,
+        79,
         153,
-        180
+        91
       ]
     },
     {
@@ -793,9 +793,9 @@
       "title": "Biodiversity Applications for Airborne Imaging Systems",
       "source_video_ids": [
         21,
-        23,
         122,
-        159
+        159,
+        23
       ]
     },
     {
@@ -804,9 +804,9 @@
       "title": "Using the UN Biodiversity Lab to Monitor the Pulse of the Planet",
       "source_video_ids": [
         68,
-        223,
         237,
-        241
+        241,
+        223
       ]
     },
     {
@@ -814,8 +814,8 @@
       "key": "other_modules/ecological-conservation/063-species-distribution-modeling-with-remote-sensing",
       "title": "Species Distribution Modeling with Remote Sensing",
       "source_video_ids": [
-        4,
-        86
+        86,
+        4
       ]
     },
     {
@@ -823,10 +823,10 @@
       "key": "other_modules/ecological-conservation/064-remote-sensing-for-freshwater-habitats",
       "title": "Remote Sensing for Freshwater Habitats",
       "source_video_ids": [
-        40,
         155,
-        162,
-        230
+        230,
+        40,
+        162
       ]
     },
     {
@@ -835,10 +835,10 @@
       "title": "Airborne Data Applications for Invasive Species Mapping",
       "source_video_ids": [
         21,
-        23,
         33,
         122,
-        159
+        159,
+        23
       ]
     },
     {
@@ -846,9 +846,9 @@
       "key": "other_modules/ecological-conservation/066-monitoring-aquatic-vegetation-with-remote-sensing",
       "title": "Monitoring Aquatic Vegetation with Remote Sensing",
       "source_video_ids": [
+        230,
         40,
-        162,
-        230
+        162
       ]
     },
     {
@@ -856,9 +856,9 @@
       "key": "other_modules/ecological-conservation/067-remote-sensing-for-mangroves-in-support-of-the-un-sustainable-development-goals",
       "title": "Remote Sensing for Mangroves in Support of the UN Sustainable Development Goals",
       "source_video_ids": [
+        104,
         75,
-        93,
-        104
+        93
       ]
     },
     {
@@ -874,8 +874,8 @@
       "key": "other_modules/ecological-conservation/069-introduction-to-remote-sensing-for-coastal-and-ocean-applications",
       "title": "Introduction to Remote Sensing for Coastal and Ocean Applications",
       "source_video_ids": [
-        25,
         30,
+        25,
         162
       ]
     },
@@ -884,9 +884,9 @@
       "key": "other_modules/ecological-conservation/070-visualizing-land-cover-and-land-use-change-with-nasa-satellite-imagery",
       "title": "Visualizing Land Cover and Land Use Change with NASA Satellite Imagery",
       "source_video_ids": [
-        102,
         165,
         215,
+        102,
         266
       ]
     },
@@ -905,8 +905,8 @@
       "source_video_ids": [
         10,
         82,
-        190,
-        208
+        208,
+        190
       ]
     },
     {
@@ -914,14 +914,14 @@
       "key": "other_modules/ecological-conservation/073-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring",
       "title": "Remote Sensing of Forest Cover and Change Assessment for Carbon Monitoring",
       "source_video_ids": [
-        75,
         89,
+        119,
+        160,
+        75,
+        122,
         91,
         93,
-        119,
-        122,
         159,
-        160,
         219
       ]
     },
@@ -930,9 +930,9 @@
       "key": "other_modules/ecological-conservation/074-remote-sensing-for-monitoring-land-degradation-and-sustainable-cities-sdgs",
       "title": "Remote Sensing for Monitoring Land Degradation and Sustainable Cities SDGs",
       "source_video_ids": [
-        49,
         221,
-        241
+        241,
+        49
       ]
     },
     {
@@ -941,10 +941,10 @@
       "title": "Investigating Time Series of Satellite Imagery",
       "source_video_ids": [
         17,
+        165,
         79,
-        91,
         157,
-        165
+        91
       ]
     },
     {
@@ -952,8 +952,8 @@
       "key": "other_modules/ecological-conservation/076-change-detection-for-land-cover-mapping",
       "title": "Change Detection for Land Cover Mapping",
       "source_video_ids": [
-        102,
-        215
+        215,
+        102
       ]
     },
     {
@@ -961,9 +961,9 @@
       "key": "other_modules/ecological-conservation/077-accuracy-assessment-of-a-land-cover-classification",
       "title": "Accuracy Assessment of a Land Cover Classification",
       "source_video_ids": [
-        38,
         45,
-        176
+        176,
+        38
       ]
     },
     {
@@ -987,9 +987,9 @@
       "key": "other_modules/ecological-conservation/080-spectral-indices-for-land-and-aquatic-applications",
       "title": "Spectral Indices for Land and Aquatic Applications",
       "source_video_ids": [
+        78,
         11,
         55,
-        78,
         198
       ]
     },
@@ -998,11 +998,11 @@
       "key": "other_modules/ecological-conservation/081-forest-mapping-and-monitoring-with-sar-data",
       "title": "Forest Mapping and Monitoring with SAR Data",
       "source_video_ids": [
-        134,
-        138,
         200,
-        219,
-        247
+        138,
+        247,
+        134,
+        219
       ]
     },
     {
@@ -1010,9 +1010,9 @@
       "key": "other_modules/ecological-conservation/082-connecting-citizen-science-with-remote-sensing",
       "title": "Connecting Citizen Science with Remote Sensing",
       "source_video_ids": [
-        6,
+        189,
         47,
-        189
+        6
       ]
     },
     {
@@ -1029,14 +1029,14 @@
       "key": "other_modules/health/085-fundamentals-of-satellite-remote-sensing-for-health-monitoring",
       "title": "Fundamentals of Satellite Remote Sensing for Health Monitoring",
       "source_video_ids": [
-        43,
-        74,
-        124,
-        144,
         160,
         169,
+        43,
+        124,
         206,
-        209
+        144,
+        209,
+        74
       ]
     },
     {
@@ -1045,14 +1045,14 @@
       "title": "Methods in Using NASA Remote Sensing for Health Applications",
       "source_video_ids": [
         21,
-        23,
+        143,
+        230,
         40,
         101,
         122,
-        143,
         159,
         162,
-        230
+        23
       ]
     },
     {
@@ -1061,9 +1061,9 @@
       "title": "NASA's Earth Observing Fleet",
       "source_video_ids": [
         8,
+        245,
         129,
-        162,
-        245
+        162
       ]
     },
     {
@@ -1082,9 +1082,9 @@
       "key": "other_modules/self-paced/089-hyperspectral-data-for-land-and-coastal-systems",
       "title": "Hyperspectral Data for Land and Coastal Systems (Self-Paced)",
       "source_video_ids": [
-        92,
         170,
-        178
+        178,
+        92
       ]
     },
     {
@@ -1112,9 +1112,9 @@
       "title": "Introduction to Snow and Ice Data Products and Applications for Water Resources Management",
       "source_video_ids": [
         9,
-        59,
         95,
-        139
+        139,
+        59
       ]
     },
     {
@@ -1122,10 +1122,10 @@
       "key": "other_modules/water-resources/094-application-of-nasa-sport-land-information-system-soil-moisture-data-for-drought",
       "title": "Application of NASA SPoRT-Land Information System (SPoRT-LIS) Soil Moisture Data for Drought",
       "source_video_ids": [
-        52,
-        148,
         149,
-        168
+        168,
+        52,
+        148
       ]
     },
     {
@@ -1141,10 +1141,10 @@
       "key": "other_modules/water-resources/096-using-earth-observations-to-monitor-water-budgets-for-river-basin-management",
       "title": "Using Earth Observations to Monitor Water Budgets for River Basin Management",
       "source_video_ids": [
-        18,
-        133,
         196,
-        217
+        217,
+        18,
+        133
       ]
     },
     {
@@ -1152,9 +1152,9 @@
       "key": "other_modules/water-resources/098-water-resource-management-using-nasa-earth-science-data",
       "title": "Water Resource Management using NASA Earth Science Data",
       "source_video_ids": [
+        261,
         28,
-        177,
-        261
+        177
       ]
     },
     {
@@ -1162,9 +1162,9 @@
       "key": "other_modules/water-resources/099-applications-of-remote-sensing-based-evapotranspiration-data-products",
       "title": "Applications of Remote Sensing-Based Evapotranspiration Data Products",
       "source_video_ids": [
-        13,
+        232,
         85,
-        232
+        13
       ]
     },
     {
@@ -1172,9 +1172,9 @@
       "key": "other_modules/water-resources/100-applications-of-remote-sensing-to-soil-moisture-and-evapotranspiration",
       "title": "Applications of Remote Sensing to Soil Moisture and Evapotranspiration",
       "source_video_ids": [
-        13,
+        232,
         85,
-        232
+        13
       ]
     },
     {
@@ -1198,9 +1198,9 @@
       "key": "other_modules/water-resources/104-applications-of-gpm-imerg-reanalysis-for-assessing-extreme-dry-and-wet-periods",
       "title": "Applications of GPM IMERG Reanalysis for Assessing Extreme Dry and Wet Periods",
       "source_video_ids": [
+        262,
         197,
-        224,
-        262
+        224
       ]
     },
     {
@@ -1208,8 +1208,8 @@
       "key": "other_modules/water-resources/105-using-earth-observations-to-monitor-water-budgets-for-river-basin-management-ii",
       "title": "Using Earth Observations to Monitor Water Budgets for River Basin Management II",
       "source_video_ids": [
-        18,
-        217
+        217,
+        18
       ]
     },
     {
@@ -1218,8 +1218,8 @@
       "title": "Mapping and Monitoring Lakes and Reservoirs with Satellite Observations",
       "source_video_ids": [
         5,
-        14,
-        179
+        179,
+        14
       ]
     },
     {
@@ -1262,10 +1262,10 @@
       "key": "other_modules/water-resources/113-monitoring-water-quality-of-inland-lakes-using-remote-sensing",
       "title": "Monitoring Water Quality of Inland Lakes using Remote Sensing",
       "source_video_ids": [
-        110,
-        133,
         186,
-        193
+        110,
+        193,
+        133
       ]
     },
     {
@@ -1273,8 +1273,8 @@
       "key": "other_modules/water-resources/114-monitoring-coastal-and-estuarine-water-quality-using-remote-sensing-and-in-situ-data",
       "title": "Monitoring Coastal and Estuarine Water Quality using Remote Sensing and In Situ Data",
       "source_video_ids": [
-        34,
-        36
+        36,
+        34
       ]
     },
     {
@@ -1282,11 +1282,11 @@
       "key": "other_modules/wildland-fire/115-satellite-observations-and-tools-for-fire-risk-detection-and-analysis",
       "title": "Satellite Observations and Tools for Fire Risk, Detection, and Analysis",
       "source_video_ids": [
-        87,
-        202,
-        225,
         235,
-        238
+        202,
+        238,
+        87,
+        225
       ]
     },
     {
@@ -1294,9 +1294,9 @@
       "key": "other_modules/wildland-fire/116-assessing-the-impacts-of-fires-on-watershed-health",
       "title": "Assessing the Impacts of Fires on Watershed Health",
       "source_video_ids": [
+        245,
         129,
-        162,
-        245
+        162
       ]
     },
     {
@@ -1305,11 +1305,11 @@
       "title": "Using Earth Observations for Pre- and Post-Fire Monitoring",
       "source_video_ids": [
         63,
-        87,
         202,
-        225,
         238,
-        265
+        87,
+        265,
+        225
       ]
     }
   ],

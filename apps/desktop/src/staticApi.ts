@@ -123,21 +123,33 @@ export const staticApi: ArsetApi = {
     return { key: mod.key, title: mod.title, videos };
   },
 
-  async toggleModule(key: string, completed?: boolean): Promise<{ completed: boolean }> {
+  async toggleModule(key: string, completed?: boolean): Promise<ProgressData> {
+    const { index } = await load();
     const data = readProgress();
     const value = completed ?? !(data.modules[key]?.completed ?? false);
     data.modules[key] = { completed: value, updated: now() };
+    for (const v of index.videosByModuleKey.get(key) ?? []) {
+      data.videos[String(v.id)] = { watched: value, updated: now() };
+    }
     writeProgress(data);
-    return { completed: value };
+    return data;
   },
 
-  async toggleVideo(id: number, watched?: boolean): Promise<{ watched: boolean }> {
+  async toggleVideo(id: number, watched?: boolean): Promise<ProgressData> {
+    const { index } = await load();
     const data = readProgress();
     const k = String(id);
     const value = watched ?? !(data.videos[k]?.watched ?? false);
     data.videos[k] = { watched: value, updated: now() };
+    for (const [key, videos] of index.videosByModuleKey) {
+      if (!videos.some((v) => String(v.id) === k)) continue;
+      const allWatched =
+        videos.length > 0 &&
+        videos.every((v) => data.videos[String(v.id)]?.watched ?? false);
+      data.modules[key] = { completed: allWatched, updated: now() };
+    }
     writeProgress(data);
-    return { watched: value };
+    return data;
   },
 
   async download(_id: number): Promise<DownloadEntry> {

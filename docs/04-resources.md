@@ -61,6 +61,13 @@ resources/
 - Le `summary.url_status_counts` indique le niveau de confiance des URLs
   (`verified` = titre + durée confirmés ; `duration_verified` = durée seule ; `manual_verified` = revu manuellement).
 
+> **Ordre des vidéos.** L'ordre de `source_video_ids` n'est pas fiable. Le tri par
+> numéro d'épisode (`Part X/N`) est appliqué **dans le code** (`buildCatalogIndex` /
+> `buildIndex`), donc corrigé partout même après un `make sync`. Le script
+> `node scripts/reorder-catalog.mjs` (après `make build-core`) réordonne en plus les
+> fichiers JSON (`resources/catalog/video_catalog.json` + copie mobile) pour que les
+> données elles-mêmes soient propres.
+
 C'est ce fichier que **parsent** `@arset/core` (`parseCatalog` + `buildCatalogIndex`)
 et que **sert** le backend.
 
@@ -98,5 +105,5 @@ Ce que fait `sync` :
 2. `Plan.md`, `notes.md`, `Transcripts/` → `resources/notes/`
 3. `video_catalog.json` + `learning_path.json` → `apps/mobile/assets/` (bundlé pour Android)
 
-> Les JSON copiés dans `apps/mobile/assets/` sont **gitignorés** (régénérés par `make sync`),
-> pour ne pas dupliquer le catalogue dans le dépôt.
+> Les JSON copiés dans `apps/mobile/assets/` sont **committés** (catalogue + parcours
+> bundlés pour Android, régénérés par `make sync`).

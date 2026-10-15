@@ -81,21 +81,13 @@ export default function App() {
 
   const toggleModule = useCallback(
     async (key: string) => {
-      const res = await api.toggleModule(key);
-      setProgress((p) => ({
-        ...p,
-        modules: { ...p.modules, [key]: { completed: res.completed, updated: new Date().toISOString() } },
-      }));
+      setProgress(await api.toggleModule(key));
     },
     [],
   );
 
   const toggleVideo = useCallback(async (id: number) => {
-    const res = await api.toggleVideo(id);
-    setProgress((p) => ({
-      ...p,
-      videos: { ...p.videos, [String(id)]: { watched: res.watched, updated: new Date().toISOString() } },
-    }));
+    setProgress(await api.toggleVideo(id));
   }, []);
 
   const markVideoDownloaded = useCallback((id: number) => {
