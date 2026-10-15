@@ -4,8 +4,9 @@
 
 | Commande | Description |
 |---|---|
-| `make install` | Installe **tout** (JS + ressources + outils + SDK Android + data dir) |
-| `make sync` | Re-copie catalogue + notes depuis la source |
+| `make install` | Installe **tout** (JS + outils + SDK Android + data dir) |
+| `make sync-mobile` | Recopie catalogue + parcours dans `apps/mobile/assets/` |
+| `make build-desktop-pages` | Build statique pour GitHub Pages |
 | `make pc` | Backend (4000) + desktop (5173) en parallèle |
 | `make dev-server` | Backend seul (dev) |
 | `make dev-desktop` | Desktop seul (dev) |
@@ -137,7 +138,6 @@ depuis l'onglet **Actions** (artefact).
 ```mermaid
 flowchart LR
     install --> install-js --> build-core
-    install --> install-resources --> sync
     install --> install-tools
     install --> ensure-data
     dev-server --> build-core

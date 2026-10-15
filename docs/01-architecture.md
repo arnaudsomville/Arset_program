@@ -98,7 +98,7 @@ flowchart TB
     API -->|"lit/écrit"| STORE
     API -->|"stream (Range)"| VIDEOS
 
-    MBUNDLE -->|"bundlé au build (make sync)"| CATALOG
+    MBUNDLE -->|"bundlé au build (make sync-mobile)"| CATALOG
     PHONE --> MUI
     MUI --> MBUNDLE
     MUI --> ASYNC
@@ -126,7 +126,6 @@ Sans ces deux lignes, le navigateur recevrait du CommonJS qu'il ne sait pas exé
 | `PORT` | `4000` | Port du backend |
 | `ARSET_DATA_DIR` | `~/.arset-data` | Dossier des données runtime |
 | `ARSET_CATALOG_PATH` | (auto-détecté) | Chemin vers `video_catalog.json` |
-| `ARSET_SOURCE` (Makefile) | `~/Documents/Remote Sensing Classes` | Source du `make sync` |
 
 Le backend (4000) et le frontend de dev (5173) sont reliés par le **proxy Vite**
 (`/api` → `http://localhost:4000`).

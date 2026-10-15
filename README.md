@@ -36,9 +36,9 @@ Arset_program/
     └── mobile/                # app Expo / React Native — Android
 ```
 
-- **Ressources centralisées** : `resources/` est la seule source de vérité. Le desktop
-  l'interroge via l'API du serveur ; le mobile la *bundle* (les JSON sont copiés dans
-  `apps/mobile/assets/` par `make sync`).
+- **Ressources centralisées** : `resources/` est la seule source de vérité (curée dans le
+  repo). Le desktop l'interroge via l'API du serveur ; le mobile la *bundle* (les JSON sont
+  copiés dans `apps/mobile/assets/` par `make sync-mobile`).
 - **`@arset/core`** : types et logique partagés (parsing du catalogue, parcours, durées,
   formatage), consommé par le serveur et le desktop.
 - **Données runtime hors repo** : tout ce qui est généré à l'exécution (vidéos téléchargées,
@@ -71,10 +71,12 @@ make install
 Installe **tout** en une fois :
 
 1. `install-js` — `npm install` sur tous les workspaces (+ compilation de `@arset/core`),
-2. `install-resources` — copie du catalogue + notes depuis `~/Documents/Remote Sensing Classes`,
-3. `install-tools` — vérifie/installe `yt-dlp` et `ffmpeg`,
-4. `install-sdk` — installe **JDK 17+ + SDK Android** si absents (pour le build local),
-5. `ensure-data` — crée `~/.arset-data/videos`.
+2. `install-tools` — vérifie/installe `yt-dlp` et `ffmpeg`,
+3. `install-sdk` — installe **JDK 17+ + SDK Android** si absents (pour le build local),
+4. `ensure-data` — crée `~/.arset-data/videos`.
+
+> Le catalogue (`resources/`) est committé et curé : il n'y a plus d'import externe.
+> `make sync-mobile` recopie les JSON vers `apps/mobile/assets/` après une modif.
 
 ---
 
@@ -82,8 +84,8 @@ Installe **tout** en une fois :
 
 | Commande | Description |
 |---|---|
-| `make install` | Installe **tout** (JS + ressources + outils + data dir) |
-| `make sync` | Re-copie le catalogue + notes depuis la source |
+| `make install` | Installe **tout** (JS + outils + data dir) |
+| `make sync-mobile` | Recopie le catalogue + parcours dans `apps/mobile/assets/` |
 | `make pc` | Lance backend (4000) + desktop React (5173) en parallèle |
 | `make dev-server` | Backend Express seul (dev, port 4000) |
 | `make dev-desktop` | Desktop React/Vite seul (dev, port 5173) |
@@ -215,16 +217,17 @@ téléchargement est indisponible** (message d'erreur explicite au clic).
 - **Données runtime** : `~/.arset-data/` (vidéos + progression), hors repo, configurable via
   `ARSET_DATA_DIR`.
 
-### Synchronisation
+### Mise à jour des ressources
 
-Pour re-générer le catalogue depuis la source
-(`~/Documents/Remote Sensing Classes/viewer/`) :
+Le catalogue est la **source de vérité**, édité directement dans `resources/`.
+Après une modification, recopier les JSON bundlés du mobile :
 
 ```bash
-make sync
+make sync-mobile
 ```
 
-Source configurable : `make sync ARSET_SOURCE=/chemin/vers/le/dossier`.
+Les titres vidéo ont été réconciliés avec YouTube (`resources/catalog/youtube_titles.json`,
+généré par `node scripts/youtube-titles.cjs`).
 
 ---
 

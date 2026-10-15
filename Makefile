@@ -4,17 +4,18 @@
 # (Node/Express), apps/mobile (Expo Android).
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Répertoire source des données (catalog JSON, notes, transcripts).
-ARSET_SOURCE ?= $(HOME)/Documents/Remote Sensing Classes
 # Répertoire de données runtime (vidéos téléchargées, progression). Hors repo.
 ARSET_DATA_DIR ?= $(HOME)/.arset-data
+
+# Le catalogue (resources/) est la SOURCE DE VÉRITÉ, curé dans le repo.
+# Il n'y a plus de `make sync` (import externe destructif).
 
 NPM      := npm
 YT_DLP   := $(shell command -v yt-dlp 2>/dev/null)
 FFMPEG   := $(shell command -v ffmpeg 2>/dev/null)
 
-.PHONY: help install install-js install-resources install-tools install-sdk ensure-data \
-        sync sync-catalog sync-notes build-core dev-server dev-desktop pc \
+.PHONY: help install install-js install-tools install-sdk ensure-data \
+        sync-mobile build-core dev-server dev-desktop pc \
         dev-mobile build-desktop build-desktop-pages typecheck test clean \
         android-eas android-dev-client android-login android-local android-check build-android
 
@@ -23,8 +24,8 @@ FFMPEG   := $(shell command -v ffmpeg 2>/dev/null)
 # help: affiche cette aide
 help:
 	@printf "Arset Program — cibles disponibles :\n"
-	@printf "  make install           Installe TOUT (JS + ressources + outils + data dir)\n"
-	@printf "  make sync              Re-copie catalog + notes depuis la source\n"
+	@printf "  make install           Installe TOUT (JS + outils + data dir)\n"
+	@printf "  make sync-mobile       Recopie catalog + parcours dans apps/mobile/assets\n"
 	@printf "  make pc                Lance backend + desktop React (PC)\n"
 	@printf "  make dev-server        Backend Express (dev, port 4000)\n"
 	@printf "  make dev-desktop       Desktop React/Vite (dev, port 5173)\n"
@@ -41,16 +42,13 @@ help:
 	@printf "  make clean             Supprime node_modules et artefacts\n"
 
 # install: installe toutes les ressources nécessaires
-install: install-js install-resources install-tools install-sdk ensure-data
+install: install-js install-tools install-sdk ensure-data
 	@printf "✅ Installation complète terminée.\n"
 
 # install-js: dépendances Node de tous les workspaces (construit aussi @arset/core)
 install-js:
 	@printf "📦 npm install (workspaces)...\n"
 	$(NPM) install
-
-# install-resources: copie les ressources JSON + notes depuis la source
-install-resources: sync
 
 # install-tools: vérifie/installe yt-dlp et ffmpeg
 install-tools:
@@ -77,31 +75,16 @@ ensure-data:
 	@printf "📁 Préparation de $(ARSET_DATA_DIR)...\n"
 	@mkdir -p "$(ARSET_DATA_DIR)/videos"
 
-## ── Synchronisation des ressources ──────────────────────────────────────────
+## ── Ressources ──────────────────────────────────────────────────────────────
 
-# sync: re-copie catalog + notes depuis la source
-sync: sync-catalog sync-notes
-
-sync-catalog:
-	@printf "🔄 Copie du catalog depuis '$(ARSET_SOURCE)'...\n"
-	@mkdir -p resources/catalog
-	@cp -f "$(ARSET_SOURCE)/viewer/video_catalog.json" resources/catalog/video_catalog.json
-	@cp -f "$(ARSET_SOURCE)/viewer/video_urls.json" resources/catalog/video_urls.json
-	@printf "🔄 Copie du catalog + parcours dans l'app mobile (bundlés)...\n"
+# sync-mobile: recopie le catalogue + le parcours (source de vérité: resources/)
+# vers les assets bundlés de l'app mobile.
+sync-mobile:
+	@printf "🔄 Copie catalog + parcours → apps/mobile/assets...\n"
 	@mkdir -p apps/mobile/assets
 	@cp -f resources/catalog/video_catalog.json apps/mobile/assets/video_catalog.json
 	@cp -f resources/learning_path.json apps/mobile/assets/learning_path.json
-	@printf "✅ Catalog synchronisé.\n"
-
-sync-notes:
-	@printf "🔄 Copie des notes + transcripts...\n"
-	@mkdir -p resources/notes
-	@cp -f "$(ARSET_SOURCE)/Plan.md" resources/notes/Plan.md 2>/dev/null || true
-	@cp -f "$(ARSET_SOURCE)/notes.md" resources/notes/notes.md 2>/dev/null || true
-	@rm -rf resources/notes/transcripts
-	@mkdir -p resources/notes/transcripts
-	@cp -rf "$(ARSET_SOURCE)/Transcripts/." resources/notes/transcripts/ 2>/dev/null || true
-	@printf "✅ Notes synchronisées.\n"
+	@printf "✅ Assets mobile synchronisés.\n"
 
 ## ── Développement ───────────────────────────────────────────────────────────
 

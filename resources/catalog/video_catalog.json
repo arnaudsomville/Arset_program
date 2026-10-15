@@ -66,8 +66,8 @@
       "title": "037-an-introduction-to-synthetic-aperture-radar-and-its-applications",
       "source_video_ids": [
         152,
-        255,
-        128
+        128,
+        255
       ]
     },
     {
@@ -171,8 +171,8 @@
       "title": "Module 11 — Remote Sensing for Disaster Risk Management (Floods & Landslides)",
       "source_video_ids": [
         174,
-        212,
         233,
+        212,
         108,
         142,
         201,
@@ -196,7 +196,6 @@
       "title": "Module 13 — Satellite Remote Sensing for Forest Fire & Wildfire Applications",
       "source_video_ids": [
         90,
-        129,
         162
       ]
     },
@@ -214,9 +213,8 @@
       "key": "other_modules/agriculture/002-large-scale-applications-of-machine-learning-using-remote-sensing-for-building-agriculture-solutions",
       "title": "Large Scale Applications of Machine Learning using Remote Sensing for Building Agriculture Solutions",
       "source_video_ids": [
-        54,
         172,
-        140,
+        54,
         147,
         260
       ]
@@ -228,8 +226,8 @@
       "source_video_ids": [
         83,
         167,
-        51,
-        134
+        134,
+        51
       ]
     },
     {
@@ -239,8 +237,7 @@
       "source_video_ids": [
         76,
         37,
-        247,
-        251
+        247
       ]
     },
     {
@@ -430,9 +427,9 @@
       "key": "other_modules/climate/024-nasa-earth-observations-for-energy-management",
       "title": "NASA Earth Observations for Energy Management",
       "source_video_ids": [
+        96,
         67,
-        259,
-        96
+        259
       ]
     },
     {
@@ -532,8 +529,7 @@
         183,
         26,
         121,
-        148,
-        156
+        148
       ]
     },
     {
@@ -553,8 +549,8 @@
       "source_video_ids": [
         119,
         164,
-        91,
-        116
+        116,
+        91
       ]
     },
     {
@@ -573,8 +569,7 @@
       "key": "other_modules/disasters/039-sar-for-detecting-and-monitoring-floods-sea-ice-and-subsidence-from-groundwater-extraction",
       "title": "SAR for Detecting and Monitoring Floods, Sea Ice, and Subsidence from Groundwater Extraction",
       "source_video_ids": [
-        72,
-        263
+        72
       ]
     },
     {
@@ -614,7 +609,6 @@
         115,
         125,
         44,
-        97,
         42
       ]
     },
@@ -744,7 +738,6 @@
         19,
         149,
         47,
-        135,
         199
       ]
     },
@@ -763,8 +756,7 @@
       "source_video_ids": [
         143,
         171,
-        131,
-        32
+        131
       ]
     },
     {
@@ -920,9 +912,9 @@
         160,
         75,
         122,
-        91,
         93,
         159,
+        91,
         219
       ]
     },
@@ -1000,9 +992,9 @@
       "title": "Forest Mapping and Monitoring with SAR Data",
       "source_video_ids": [
         200,
+        134,
         138,
         247,
-        134,
         219
       ]
     },
@@ -1062,7 +1054,6 @@
       "source_video_ids": [
         8,
         245,
-        129,
         162
       ]
     },
@@ -1073,7 +1064,6 @@
       "source_video_ids": [
         141,
         145,
-        203,
         207
       ]
     },
@@ -1113,8 +1103,7 @@
       "source_video_ids": [
         9,
         95,
-        139,
-        59
+        139
       ]
     },
     {
@@ -1295,7 +1284,6 @@
       "title": "Assessing the Impacts of Fires on Watershed Health",
       "source_video_ids": [
         245,
-        129,
         162
       ]
     },
@@ -1386,7 +1374,7 @@
     {
       "id": 29,
       "sha256": "18d0d444e13244432d111f799c00aac7feb83b280137b124324a07d37f748e68",
-      "name": "Overview of Machine Learning, Part 2/3",
+      "name": "Training Data and Land Cover Classification Example, Part 2/3",
       "duration_seconds": 5533.849,
       "youtube_url": "https://www.youtube.com/watch?v=5RIoU9ImnH0",
       "youtube_video_id": "5RIoU9ImnH0",
@@ -1409,7 +1397,7 @@
     {
       "id": 211,
       "sha256": "ca4f913fa5df333dc3cca150ea2fb4bf9a82e0c1e2fdec3777c1f3ee169c7e86",
-      "name": "Overview of Machine Learning, Part 3/3",
+      "name": "Model Tuning, Parameter Optimization, & Additional Machine Learning Algorithms, Part 3/3",
       "duration_seconds": 5927.52,
       "youtube_url": "https://www.youtube.com/watch?v=M369bW8FJpQ",
       "youtube_video_id": "M369bW8FJpQ",
@@ -1525,7 +1513,7 @@
     {
       "id": 55,
       "sha256": "345e15b6f88125990b86b4ace4a44ad66fa344b6363dfdbccf0cd39097e7207d",
-      "name": "Spectral Indices for Land and Aquatic Applications, Part 3/3",
+      "name": "Spectral Indices for Land and Aquatic Applications, Part 3",
       "duration_seconds": 3755.108,
       "youtube_url": "https://www.youtube.com/watch?v=RkyhBnZyyqc",
       "youtube_video_id": "RkyhBnZyyqc",
@@ -1554,7 +1542,7 @@
     {
       "id": 268,
       "sha256": "11d38cb3c167645d7b1a3908fc7a615ca93fe49620f0a54554dab84abe269216",
-      "name": "NASA ARSET: Google Earth Engine Basics and General Applications, Part 1/3",
+      "name": "Google Earth Engine Basics and General Applications, Part 1/3",
       "duration_seconds": 7343.334,
       "youtube_url": "https://www.youtube.com/watch?v=-BwqcjgHh6A",
       "youtube_video_id": "-BwqcjgHh6A",
@@ -1577,7 +1565,7 @@
     {
       "id": 269,
       "sha256": "c83afb8483d434e261fb49062b691cc5ffbd24303c30a4e2fd6fe5afbeb22da6",
-      "name": "NASA ARSET: Land Cover Classification and Accuracy Assessment in Google Earth Engine, Part 2/3",
+      "name": "Land Cover Classification and Accuracy Assessment in Google Earth Engine, Part 2/3",
       "duration_seconds": 8064.174,
       "youtube_url": "https://www.youtube.com/watch?v=JFvxudueT_k",
       "youtube_video_id": "JFvxudueT_k",
@@ -1652,7 +1640,7 @@
     {
       "id": 255,
       "sha256": "f5a554d70d83ec4f22915f2a91352dec8e18a2ab4eddf080078c9445f20ab4b9",
-      "name": "An Introduction to Synthetic Aperture Radar (SAR) and Its Applications, Part 2/3",
+      "name": "Introduction to Interferometric SAR (InSAR)",
       "duration_seconds": 7567.801,
       "youtube_url": "https://www.youtube.com/watch?v=egP0aoGXHDs",
       "youtube_video_id": "egP0aoGXHDs",
@@ -1675,7 +1663,7 @@
     {
       "id": 128,
       "sha256": "8194ebbd62e9b3d20a7d2dd52d5704ebadcfc0af9df1515a5f80b2c9c0bb70fc",
-      "name": "An Introduction to Synthetic Aperture Radar (SAR) and Its Applications, Part 3/3",
+      "name": "An Overview of SAR Data Sources and Tools, Part 3/3",
       "duration_seconds": 7373.706,
       "youtube_url": "https://www.youtube.com/watch?v=Dw9XFtDrgtA",
       "youtube_video_id": "Dw9XFtDrgtA",
@@ -1747,7 +1735,7 @@
     {
       "id": 39,
       "sha256": "230c901616292a9be5b4343625e49b90c13b634bcd93e2cc0e42d0335eef5a19",
-      "name": "Overview of Drought Monitoring Data and Tools using Earth Observations, Part 2/4",
+      "name": "Drought Prediction using NASA Sub-seasonal to Seasonal (S2S) Predictions, Part 2/4",
       "duration_seconds": 5269.978,
       "youtube_url": "https://www.youtube.com/watch?v=rnBxGWjRiXw",
       "youtube_video_id": "rnBxGWjRiXw",
@@ -1770,7 +1758,7 @@
     {
       "id": 231,
       "sha256": "dd55e830a888703972918372f25388e6db96ad95381132646d21f1c5fd93857b",
-      "name": "Overview of Drought Monitoring Data and Tools using Earth Observations, Part 3/4",
+      "name": "Climate Change Projections and Droughts, Part 3/4",
       "duration_seconds": 5659.887,
       "youtube_url": "https://www.youtube.com/watch?v=RvgDLPlFr9s",
       "youtube_video_id": "RvgDLPlFr9s",
@@ -1800,7 +1788,7 @@
     {
       "id": 57,
       "sha256": "34d9b453eb1afaaba89c81c52150d805c874c7913a1b7667f7b2e28238c3aff1",
-      "name": "Overview of Drought Monitoring Data and Tools using Earth Observations, Part 4/4",
+      "name": "Demonstration of Regional Drought Monitoring Tools, Part 4/4",
       "duration_seconds": 7113.619,
       "youtube_url": "https://www.youtube.com/watch?v=dyXtQ0uiscA",
       "youtube_video_id": "dyXtQ0uiscA",
@@ -1823,7 +1811,7 @@
     {
       "id": 149,
       "sha256": "91df84cecc19688fdb6e6c896ba49ddb8d30e859f9f30731512de35e6044589a",
-      "name": "Introduction to ECOSTRESS ET, Part 1/3",
+      "name": "Introduction to OpenET, Part 1/3",
       "duration_seconds": 6068.674,
       "youtube_url": "https://www.youtube.com/watch?v=QHqWrO2HMco",
       "youtube_video_id": "QHqWrO2HMco",
@@ -1930,7 +1918,7 @@
     {
       "id": 212,
       "sha256": "cc0c10f02711474092fc25689d486827ad82457b64181c70474c9b339321030d",
-      "name": "NASA Remote Sensing and Socioeconomic Data for Disaster Risk Assessment, Part 2/4",
+      "name": "Assessing the Risk of Floods and Cyclones Using NASA Data, Part 2/4",
       "duration_seconds": 7237.683,
       "youtube_url": "https://www.youtube.com/watch?v=c84N22jegU4",
       "youtube_video_id": "c84N22jegU4",
@@ -1973,7 +1961,7 @@
     {
       "id": 161,
       "sha256": "9c43d040cd5cdccdf0f7f8f4f155f7524a64460797b0bb07ae7f78c462fd203b",
-      "name": "NASA Remote Sensing and Socioeconomic Data for Disaster Risk Assessment, Part 3/4",
+      "name": "Disaster Risk Assessment Case Studies Using Remote Sensing Data, Part 3/4",
       "duration_seconds": 5500.947,
       "youtube_url": "https://www.youtube.com/watch?v=EjJ0QTqi0ss",
       "youtube_video_id": "EjJ0QTqi0ss",
@@ -2008,7 +1996,7 @@
     {
       "id": 46,
       "sha256": "2aafc6c363d3a73df7e2e59b31aa2ad0dddf89c8cd123ae9bec3679d7a0678b7",
-      "name": "NASA Remote Sensing and Socioeconomic Data for Disaster Risk Assessment, Part 4/4",
+      "name": "Operational Application of Remote Sensing for Disaster Management, Part 4/4",
       "duration_seconds": 3060.367,
       "youtube_url": "https://www.youtube.com/watch?v=wt6j4qP2bn8",
       "youtube_video_id": "wt6j4qP2bn8",
@@ -2382,7 +2370,7 @@
     {
       "id": 15,
       "sha256": "097a379f489a0c1235195243872dbc233d2715834233ba568260b9528e5d9cc3",
-      "name": "Introduction and Demonstration of STREAM, Part 2/2",
+      "name": "Introduction to a Machine Learning Model to Estimate Water Quality Parameters, Part 2/2",
       "duration_seconds": 4934.844,
       "youtube_url": "https://www.youtube.com/watch?v=LxaoPnsMP0w",
       "youtube_video_id": "LxaoPnsMP0w",
@@ -2709,7 +2697,7 @@
     {
       "id": 75,
       "sha256": "49b9bb3e5e52a99b1c7ef295220bcb0d48835d9c3c5ab01d580bc82c57548e9c",
-      "name": "Overview of Blue Carbon Ecosystems & Mapping Mangrove Ecosystems, Part 2/2",
+      "name": "Mapping Mangrove Extent, Part 2/3",
       "duration_seconds": 6609.676,
       "youtube_url": "https://www.youtube.com/watch?v=5Venmt7t6BI",
       "youtube_video_id": "5Venmt7t6BI",
@@ -2752,7 +2740,7 @@
     {
       "id": 142,
       "sha256": "8dd9e73be89d4d1d8aadc8f4058d0e2c35147de03aedc7527265579957f22784",
-      "name": "NASA Remote Sensing and Socioeconomic Data for Disaster Risk Assessment, Part 3/4",
+      "name": "Disaster Risk Assessment Case Studies Using Remote Sensing Data, Part 3/4",
       "duration_seconds": 5500.981,
       "youtube_url": "https://www.youtube.com/watch?v=EjJ0QTqi0ss",
       "youtube_video_id": "EjJ0QTqi0ss",
@@ -2844,7 +2832,7 @@
     {
       "id": 201,
       "sha256": "c102b42a85d487b659bb9042a25650a46fd904716a80a5f421a09fc2eba319ab",
-      "name": "NASA Remote Sensing and Socioeconomic Data for Disaster Risk Assessment, Part 4/4",
+      "name": "Operational Application of Remote Sensing for Disaster Management, Part 4/4",
       "duration_seconds": 3060.381,
       "youtube_url": "https://www.youtube.com/watch?v=wt6j4qP2bn8",
       "youtube_video_id": "wt6j4qP2bn8",
@@ -2919,7 +2907,7 @@
     {
       "id": 227,
       "sha256": "dc9b359b8ee03b5ac6d44dafce68573aed962bf10d69b36519dea8c55c667acb",
-      "name": "NASA ARSET: Integrating Socioeconomic Data with Satellite Imagery for Constructing HVIs - Part 2/4",
+      "name": "Integrating Socioeconomic Data with Satellite Imagery for Constructing HVIs - Part 2/4",
       "duration_seconds": 5394.553,
       "youtube_url": "https://www.youtube.com/watch?v=v5NsOoXWdjo",
       "youtube_video_id": "v5NsOoXWdjo",
@@ -2949,7 +2937,7 @@
     {
       "id": 73,
       "sha256": "471d1c069ea39bd9454f8c2df490bba0f4bc1b8e3a04fae95659941a0714ab9a",
-      "name": "NASA ARSET: Integrating Socioeconomic Data with Satellite Imagery for Constructing HVIs, Part 3/4",
+      "name": "Integrating Socioeconomic Data with Satellite Imagery for Constructing HVIs, Part 3/4",
       "duration_seconds": 3974.676,
       "youtube_url": "https://www.youtube.com/watch?v=GgfqEiVw_mM",
       "youtube_video_id": "GgfqEiVw_mM",
@@ -2979,7 +2967,7 @@
     {
       "id": 267,
       "sha256": "8e7f206b8dcf880283a71c23a330c5bdff231015eedf21f6b73a6bb74da6d5ac",
-      "name": "NASA ARSET: Using Hot-Humid Heat Estimates & Population Data to Map Heat Exposure Worldwide, Part 4",
+      "name": "Using Hot-Humid Heat Estimates & Population Data to Map Heat Exposure Worldwide, Part 4",
       "duration_seconds": 3986.402,
       "youtube_url": "https://www.youtube.com/watch?v=P7i2cWpM9yc",
       "youtube_video_id": "P7i2cWpM9yc",
@@ -3025,7 +3013,7 @@
     {
       "id": 129,
       "sha256": "83d13a3f0dde0dacb3c75ad2e0de8647ab0e2d31d197a299f656c4b4a3511b40",
-      "name": "Satellite Observations and Tools for Fire Risk, Part 2/3",
+      "name": "Satellite Observations and Tools for Fire Risk, Part 1/3",
       "duration_seconds": 6022.002,
       "youtube_url": "https://www.youtube.com/watch?v=H3Q1pI-NFL8",
       "youtube_video_id": "H3Q1pI-NFL8",
@@ -3060,7 +3048,7 @@
     {
       "id": 175,
       "sha256": "aaf60b1f0ce697916829e6d242428e1450d8e1b55cd00c41705c1aa1d689189c",
-      "name": "Operational Crop Classification Roadmap using Optical and SAR Imagery 2, Part 3/5",
+      "name": "Operational Crop Classification Roadmap using Optical and SAR Imagery, Part 3/5",
       "duration_seconds": 8608.52,
       "youtube_url": "https://www.youtube.com/watch?v=6_bytSnJCc8",
       "youtube_video_id": "6_bytSnJCc8",
@@ -3129,7 +3117,7 @@
     {
       "id": 140,
       "sha256": "8c1a9b6290e0188f2975f1f46614fb32d5069eb8fda4c4825a1ed5624d249564",
-      "name": "Data Preparation of Imagery for Large-Scale ML Modeling, Part 2/3",
+      "name": "Data Preparation of Imagery for Large-Scale ML Modeling, Part 1/3",
       "duration_seconds": 6469.567,
       "youtube_url": "https://www.youtube.com/watch?v=wwhb14hDhEQ",
       "youtube_video_id": "wwhb14hDhEQ",
@@ -3189,7 +3177,7 @@
     {
       "id": 54,
       "sha256": "330229aa8585f61cddce75adbd6b0f1bbd8c650a63c0ad94a38b7472b1c3b9fd",
-      "name": "Training & Testing ML Models for Irregularly-Spaced Time Series of Imagery, Part 1/3",
+      "name": "Data Loaders for Training ML Models on Irregularly-Spaced Time-Series Imagery, Part 2/3",
       "duration_seconds": 5265.055,
       "youtube_url": "https://www.youtube.com/watch?v=w-zRfsTZBFY",
       "youtube_video_id": "w-zRfsTZBFY",
@@ -3304,7 +3292,7 @@
     {
       "id": 134,
       "sha256": "86543e26c69f6dbd35b3f8f401a652d087363448b60125a591032ad03d019053",
-      "name": "Synthetic Aperture Radar (SAR) Refresher, Part 4/5",
+      "name": "Basics of Synthetic Aperture Radar (SAR), Session 1/4",
       "duration_seconds": 3323.472,
       "youtube_url": "https://www.youtube.com/watch?v=Xemo2ZpduHA",
       "youtube_video_id": "Xemo2ZpduHA",
@@ -3364,7 +3352,7 @@
     {
       "id": 37,
       "sha256": "211163a5985fef943e3cda97acce5c2a99a28f0389b6c729519f343ceee7906e",
-      "name": "SAR Polarimetry for Agriculture (Theory and Practice), Part 2/4",
+      "name": "SAR Polarimetry with Sentinel-1, RCM, & SAOCOM Imagery for Agriculture, Part 2/4",
       "duration_seconds": 9166.681,
       "youtube_url": "https://www.youtube.com/watch?v=30x6XE6U4CU",
       "youtube_video_id": "30x6XE6U4CU",
@@ -3387,7 +3375,7 @@
     {
       "id": 247,
       "sha256": "ed783549cfd7034f9c0c179aed82d2dc4def4289845b3f03f7e3dbeb5dc34fcc",
-      "name": "SAR Polarimetry for Agriculture (Theory and Practice), Part 3/4",
+      "name": "Introduction to Polarimetric SAR, Session 3/4",
       "duration_seconds": 2682.021,
       "youtube_url": "https://www.youtube.com/watch?v=-xU4oE66pgY",
       "youtube_video_id": "-xU4oE66pgY",
@@ -3424,7 +3412,7 @@
     {
       "id": 251,
       "sha256": "f01980e96892a68d2b067e021776348e700d09f80a36e55fa80194e99dda9d3c",
-      "name": "SAR Polarimetry for Agriculture (Theory and Practice), Part 4/4",
+      "name": "SAR Polarimetry for Agriculture (Theory and Practice), Part 1/4",
       "duration_seconds": 9039.969,
       "youtube_url": "https://www.youtube.com/watch?v=-Mq5A9aXIuc",
       "youtube_video_id": "-Mq5A9aXIuc",
@@ -3522,7 +3510,7 @@
     {
       "id": 234,
       "sha256": "e1df1a910ea83df7bec5658b1711efe3053ee2d911d591c6524c80aaf16793c0",
-      "name": "AQ Products from GOES, Part 1/3",
+      "name": "Introduction to Geostationary AQ Observations and AQ Products from Himawari, Part 1/3",
       "duration_seconds": 6922.217,
       "youtube_url": "https://www.youtube.com/watch?v=ZkCcPGMWlLQ",
       "youtube_video_id": "ZkCcPGMWlLQ",
@@ -3582,7 +3570,7 @@
     {
       "id": 109,
       "sha256": "6ef000b62911e7e5cbc6bad61b5ad205451e37dcc1f8af00b36c3a81d5d5c242",
-      "name": "AQ Products from GOES, Part 3/3",
+      "name": "AQ Products from GEMS, Part 3/3",
       "duration_seconds": 4764.549,
       "youtube_url": "https://www.youtube.com/watch?v=lPb0wb_lZd8",
       "youtube_video_id": "lPb0wb_lZd8",
@@ -3901,7 +3889,7 @@
     {
       "id": 58,
       "sha256": "363bcdd4b52227e18a941121cfd8fc80801ac4104684e4f3e87d0765e03ea296",
-      "name": "Global Air Quality Forecasting by NASA, Part 1/3",
+      "name": "Introduction to Air Quality Forecasting, Part 1/3",
       "duration_seconds": 6752.456,
       "youtube_url": "https://www.youtube.com/watch?v=IJh13kRCFqA",
       "youtube_video_id": "IJh13kRCFqA",
@@ -3975,7 +3963,7 @@
     {
       "id": 236,
       "sha256": "e4072493313715e5d94c807abdc8daa62c5f6e4de0ae17be52d947e25ccaa7fc",
-      "name": "Global Air Quality Forecasting by NASA, Part 3/3",
+      "name": "Global Air Quality Forecasting by Copernicus Atmosphere Monitoring Service, Part 3/3",
       "duration_seconds": 7205.547,
       "youtube_url": "https://www.youtube.com/watch?v=hS0jzXIxBJQ",
       "youtube_video_id": "hS0jzXIxBJQ",
@@ -4058,7 +4046,7 @@
     {
       "id": 34,
       "sha256": "1e908ab89629fe4f90ce46074f13489294ea097b75c942019b44abf8615b9637",
-      "name": "Monitoring MODIS- and VIIRS-Based Water Quality in Selected Estuaries, Part 2/3",
+      "name": "Monitoring MODIS- and VIIRS-Based Water Quality in Selected Estuaries, Part 2/2",
       "duration_seconds": 4694.843,
       "youtube_url": "https://www.youtube.com/watch?v=V0pwwG8YOUg",
       "youtube_video_id": "V0pwwG8YOUg",
@@ -4146,7 +4134,7 @@
     {
       "id": 241,
       "sha256": "e7bbf9860ff49454f567296f511c26657b8264d788e752954d3db52d9ec05783",
-      "name": "Introduction to Datasets, Part 2/3",
+      "name": "UN Biodiversity Lab: Introduction and Training, Part 2/3",
       "duration_seconds": 5118.607,
       "youtube_url": "https://www.youtube.com/watch?v=lpfYd2TKq-c",
       "youtube_video_id": "lpfYd2TKq-c",
@@ -4305,7 +4293,7 @@
     {
       "id": 182,
       "sha256": "b14703dfe921b4e5fe73aa254ad62b90a7efd54aecb7007c5836f0eda4f11be6",
-      "name": "Climate Change Projections and Droughts, Part 1/4",
+      "name": "An Introduction to NISAR, Part 1 of 3",
       "duration_seconds": 7466.051,
       "youtube_url": "https://www.youtube.com/watch?v=lIDXtxFJi6M",
       "youtube_video_id": "lIDXtxFJi6M",
@@ -4328,7 +4316,7 @@
     {
       "id": 52,
       "sha256": "2ed7a9346e8dcd3b70a0ea3da5ede3cc933a8ece205382b9c3b3f5790a391dfe",
-      "name": "Climate Change Projections and Droughts, Part 2/4",
+      "name": "Early and Established Applications of LIS for Drought Analysis in Operations, Part 2/3",
       "duration_seconds": 5976.12,
       "youtube_url": "https://www.youtube.com/watch?v=5W_w5ZKX_BI",
       "youtube_video_id": "5W_w5ZKX_BI",
@@ -4381,7 +4369,7 @@
     {
       "id": 210,
       "sha256": "c9c680a0abcaf7538167350a3fa6e098bb4a98ba16171699fb42cf6d6a117ad3",
-      "name": "XCO2 in Support of Local and Regional Climate Related Studies, Part 3/4",
+      "name": "XCO2 in Support of Global and Regional Climate Related Studies, Part 3/4",
       "duration_seconds": 5887.35,
       "youtube_url": "https://www.youtube.com/watch?v=-uxGCX8l1gI",
       "youtube_video_id": "-uxGCX8l1gI",
@@ -4480,7 +4468,7 @@
     {
       "id": 96,
       "sha256": "5cb191f8a03a9c01fe0fa037ada844f37c144799e7ea5ddacb73e1c4757d19a1",
-      "name": "Introduction to Earth Observations (EOs) for Energy Management, Part 2/4",
+      "name": "Introduction to Earth Observations (EOs) for Energy Management, Part 1/4",
       "duration_seconds": 5381.317,
       "youtube_url": "https://www.youtube.com/watch?v=Wmagqj7_c8w",
       "youtube_video_id": "Wmagqj7_c8w",
@@ -4503,7 +4491,7 @@
     {
       "id": 67,
       "sha256": "4374353aa83f6e38692d70b0427d78b888aac4ee978187472bf8a3d92f00f603",
-      "name": "Resources for Renewable Energy and Building Energy Efficiency Applications, Part 1/4",
+      "name": "Resources for Renewable Energy and Building Energy Efficiency Applications, Part 3/4",
       "duration_seconds": 4683.906,
       "youtube_url": "https://www.youtube.com/watch?v=o83KNj85AJw",
       "youtube_video_id": "o83KNj85AJw",
@@ -4526,7 +4514,7 @@
     {
       "id": 259,
       "sha256": "f9eb5cd058fcc0d24e40bdf834708a187afcbbcfaaa3e998dd3b899fc22748ed",
-      "name": "Utilizing the NASA POWER Web Services for Energy Related Applications, Part 1/4",
+      "name": "Utilizing the NASA POWER Web Services for Energy Related Applications, Part 4/4",
       "duration_seconds": 5789.919,
       "youtube_url": "https://www.youtube.com/watch?v=SdQaSM_DScU",
       "youtube_video_id": "SdQaSM_DScU",
@@ -4625,7 +4613,7 @@
     {
       "id": 132,
       "sha256": "84b026b89ba811fb13c67579cbb0a1f795fc0c5953aba3aef68f194f8f68e95b",
-      "name": "Overview of Urban Flooding, Part 2/2",
+      "name": "Satellite Data for Monitoring Urban Flooding, Part 2/2",
       "duration_seconds": 7511.818,
       "youtube_url": "https://www.youtube.com/watch?v=jzZ_5bS4FWY",
       "youtube_video_id": "jzZ_5bS4FWY",
@@ -4823,7 +4811,7 @@
     {
       "id": 239,
       "sha256": "e6b048899cc0c19e649c669f464c809269012797425ebacb06cf38c4d1cb27f5",
-      "name": "Mapping Refugee Settlement Growth and Population Change, Part 3/4",
+      "name": "Detecting Agricultural & Vegetation Changes Surrounding Refugee Settlements, Part 3/4",
       "duration_seconds": 6758.354,
       "youtube_url": "https://www.youtube.com/watch?v=3UPjH_tSJ_M",
       "youtube_video_id": "3UPjH_tSJ_M",
@@ -4846,7 +4834,7 @@
     {
       "id": 183,
       "sha256": "b1bfffa26a88a36a62b31ff6506821cfbacaa95ec32fa7a22b57c94a4d9f1ff8",
-      "name": "Development of Site-specific Exposure Data with Earth Observations, Part 1/3",
+      "name": "Development of Regional Exposure Data with Earth Observations, Part 1/3",
       "duration_seconds": 7265.756,
       "youtube_url": "https://www.youtube.com/watch?v=bg3ioNmLuEg",
       "youtube_video_id": "bg3ioNmLuEg",
@@ -4892,7 +4880,7 @@
     {
       "id": 156,
       "sha256": "97b3925e456cd3c485679f907ae44d6ca88eb08b87206fd8c152c02714a28aaf",
-      "name": "Development of Site-specific Exposure Data with Earth Observations, Part 3/3",
+      "name": "Development of Site-specific Exposure Data with Earth Observations, Part 2/3",
       "duration_seconds": 6177.553,
       "youtube_url": "https://www.youtube.com/watch?v=R5JdP8msTbE",
       "youtube_video_id": "R5JdP8msTbE",
@@ -4915,7 +4903,7 @@
     {
       "id": 148,
       "sha256": "91706a49eb894f3c6e680270438c35b086c42f9a5e5c98a33b6dccb39dbf3d90",
-      "name": "Introduction to Image Processing & Data Access, Part 3/3",
+      "name": "Access Data at Organization and Individual Levels, Part 3/3",
       "duration_seconds": 5753.487,
       "youtube_url": "https://www.youtube.com/watch?v=myCgQ_EzCEA",
       "youtube_video_id": "myCgQ_EzCEA",
@@ -4945,7 +4933,7 @@
     {
       "id": 119,
       "sha256": "75e3a5066e8c4dab0ef7da6b73ae62532bff410f69e4948fbbd03ce3b79e27ef",
-      "name": "Accessing and Analyzing LIDAR Data for Vegetation Studies, Part 1/4",
+      "name": "LIDAR and its Applications, Part 1/4",
       "duration_seconds": 7364.301,
       "youtube_url": "https://www.youtube.com/watch?v=iuTm1jJy2XY",
       "youtube_video_id": "iuTm1jJy2XY",
@@ -5024,7 +5012,7 @@
     {
       "id": 91,
       "sha256": "576f41b880101566b8e0ad69474888b342f0c06e0df173ae122fe7751d31c19c",
-      "name": "Accessing and Analyzing LIDAR Data for Vegetation Studies, Part 3/4",
+      "name": "Accessing and Analyzing SIF Data for Vegetation Studies, Part 4/4",
       "duration_seconds": 5464.77,
       "youtube_url": "https://www.youtube.com/watch?v=jwsymP9_PrE",
       "youtube_video_id": "jwsymP9_PrE",
@@ -5143,7 +5131,7 @@
     {
       "id": 105,
       "sha256": "665459cd7210d8f2a7fefa7481c245b81e2166c02e2950bcd6a2eedb653e0819",
-      "name": "Remote Sensing for Landslide Science and Disaster Planning, Part 3/3",
+      "name": "Assessing Landslide Hazards Before and During an Event, Part 3/3",
       "duration_seconds": 4420.615,
       "youtube_url": "https://www.youtube.com/watch?v=irctKtTt0eE",
       "youtube_video_id": "irctKtTt0eE",
@@ -5173,7 +5161,7 @@
     {
       "id": 72,
       "sha256": "46cd02df498a699437aba553130a75c6d7145e8a2291882745da2687d283055b",
-      "name": "Measuring Surface Subsidence due to Groundwater Extraction with InSAR, Part 1/3",
+      "name": "Measuring Surface Subsidence due to Groundwater Extraction with InSAR, Part 2/3",
       "duration_seconds": 6858.64,
       "youtube_url": "https://www.youtube.com/watch?v=YE3DeQmd_IQ",
       "youtube_video_id": "YE3DeQmd_IQ",
@@ -5295,7 +5283,7 @@
     {
       "id": 217,
       "sha256": "d1f440d11c843b1161e04461ac487591c2e66009cc1bf59a563f545c82bba0ab",
-      "name": "Applications of Remote Sensing for River Basin Monitoring, Mekong Basin, Part 2/4",
+      "name": "Applications of Remote Sensing for River Basin Monitoring, Nile Basin, Session 2/4",
       "duration_seconds": 4471.211,
       "youtube_url": "https://www.youtube.com/watch?v=t09kon01dq8",
       "youtube_video_id": "t09kon01dq8",
@@ -5390,7 +5378,7 @@
     {
       "id": 97,
       "sha256": "5f3fb3fc97f041ffc95d72c6b8b278f10966063a149348d55bd4f8083adff726",
-      "name": "Background and History of Lightning Measurements, Part 2/3",
+      "name": "Background and History of Lightning Measurements, Part 1/3",
       "duration_seconds": 5457.014,
       "youtube_url": "https://www.youtube.com/watch?v=0RR37KuohEk",
       "youtube_video_id": "0RR37KuohEk",
@@ -5528,7 +5516,7 @@
     {
       "id": 151,
       "sha256": "93bdf09726396fbd2596550534bc8a18ca7eb34c87de2d49527f57fee32c40d9",
-      "name": "Disasters Scenarios, Tropical Storms, Part 3/3",
+      "name": "Escenarios de Desastres, Derrumbes y Terremotos, Sesión 3 de 3",
       "duration_seconds": 3867.608,
       "youtube_url": "https://www.youtube.com/watch?v=dvxloblhpUs",
       "youtube_video_id": "dvxloblhpUs",
@@ -5597,7 +5585,7 @@
     {
       "id": 112,
       "sha256": "7202deb5679813fd34b537950b18e8d923de531d8735cef15422a480ae357000",
-      "name": "Image Processing Hands-On Exercise, Part 2/3",
+      "name": "Onsite Training, Part 2/3",
       "duration_seconds": 3848.15,
       "youtube_url": "https://www.youtube.com/watch?v=9afQmM6ph5Q",
       "youtube_video_id": "9afQmM6ph5Q",
@@ -5788,7 +5776,7 @@
     {
       "id": 68,
       "sha256": "449c6ae08991c88b72c9ebd42f1deb27ae0f1ec18ac360f0703615652542b79e",
-      "name": "UN Biodiversity Lab: Introduction and Training, Part 1/3",
+      "name": "Using UN Biodiversity Lab to Support Biodiversity & Sustainable Development, Part 1/3",
       "duration_seconds": 6760.443,
       "youtube_url": "https://www.youtube.com/watch?v=PnkJPMstgco",
       "youtube_video_id": "PnkJPMstgco",
@@ -5818,7 +5806,7 @@
     {
       "id": 223,
       "sha256": "da400ba78ca32362e3b708933015cfe27c40b289ade92cfccd28761c1fa71f1a",
-      "name": "UN Biodiversity Lab: Introduction and Training, Part 3/3",
+      "name": "Technical Training: Exploring UN Biodiversity Lab Secure Workspaces, Part 3/3",
       "duration_seconds": 4594.881,
       "youtube_url": "https://www.youtube.com/watch?v=_FnVu_Wxc3o",
       "youtube_video_id": "_FnVu_Wxc3o",
@@ -5871,7 +5859,7 @@
     {
       "id": 143,
       "sha256": "8f5741c6102eb4699426146d1aa661ec4e3605ea6c3e83e7fbb249da01a13b7f",
-      "name": "Scales of Phenology, Part 1/3",
+      "name": "Overview of Phenology and Remote Sensing, Part 1/3",
       "duration_seconds": 5195.813,
       "youtube_url": "https://www.youtube.com/watch?v=2-c0tIZCOj4",
       "youtube_video_id": "2-c0tIZCOj4",
@@ -5938,7 +5926,7 @@
     {
       "id": 264,
       "sha256": "fe7440e59a2fb49286d75cce95e44d1bcdffc115983d7613297980d49b6002a7",
-      "name": "Scales of Phenology, Part 3/3",
+      "name": "Utility and Advantage of Multi-Scale Analysis, Part 3/3",
       "duration_seconds": 4649.68,
       "youtube_url": "https://www.youtube.com/watch?v=3WuW69A2uDc",
       "youtube_video_id": "3WuW69A2uDc",
@@ -5961,7 +5949,7 @@
     {
       "id": 47,
       "sha256": "2d0f70b70efe9da1e0a81bc8979dcb8becfe05ce4b7259a33ca681c2d8777168",
-      "name": "Early Warning & Alert Systems, Part 2/3",
+      "name": "NASA’s Citizen Science for Earth Systems Program, Part 2/3",
       "duration_seconds": 5539.608,
       "youtube_url": "https://www.youtube.com/watch?v=4tAmf3dBUxU",
       "youtube_video_id": "4tAmf3dBUxU",
@@ -6014,7 +6002,7 @@
     {
       "id": 135,
       "sha256": "8a116d6ff010d7af1873e78429f218e6ebae06e9fc98c8bf64d4312446dff305",
-      "name": "Introduction to Mapping, GIS, and Drones, Part 2/3",
+      "name": "Introduction to Mapping, GIS, and Drones, Session 1/3",
       "duration_seconds": 4713.21,
       "youtube_url": "https://www.youtube.com/watch?v=FwhvAPoWq4Y",
       "youtube_video_id": "FwhvAPoWq4Y",
@@ -6083,7 +6071,7 @@
     {
       "id": 32,
       "sha256": "1a319d8660187933703901cdea111fe7f35b1c4ff6712e002effd1dbac7ff775",
-      "name": "Introduction to Remote Sensing for Land Management, Part 3/3",
+      "name": "Introduction to Remote Sensing for Land Management, Session 2/3",
       "duration_seconds": 4254.267,
       "youtube_url": "https://www.youtube.com/watch?v=hyJ_ZG3qrPY",
       "youtube_video_id": "hyJ_ZG3qrPY",
@@ -6402,7 +6390,7 @@
     {
       "id": 237,
       "sha256": "e4eb8f7449b5742b51463f62bddfd1e7dec7775207bde835356db9902a5c3122",
-      "name": "Technical Training: Exploring UN Biodiversity Lab Secure Workspaces, Part 2/3",
+      "name": "Technical Training: Exploring the UN Biodiversity Lab Public Platform, Part 2/3",
       "duration_seconds": 4689.85,
       "youtube_url": "https://www.youtube.com/watch?v=hTdiwiLgCGc",
       "youtube_video_id": "hTdiwiLgCGc",
@@ -6540,7 +6528,7 @@
     {
       "id": 93,
       "sha256": "590e46538b667bf4196db0ce19a639e12f3e4f96acbe3614a726f887debf37ad",
-      "name": "Mapping Mangrove Extent, Part 3/3",
+      "name": "Mangrove Mapping, Part 3/4",
       "duration_seconds": 9144.018,
       "youtube_url": "https://www.youtube.com/watch?v=vaBEHALn-js",
       "youtube_video_id": "vaBEHALn-js",
@@ -6616,7 +6604,7 @@
     {
       "id": 25,
       "sha256": "16638be0afca9d1999be21c5cf0d82a9a15b6028e6142bf4358ca296b0b4128c",
-      "name": "Overview of Satellite Remote Sensing of Aquatic Environments, Part 2/4",
+      "name": "Overview of Satellite Remote Sensing of Aquatic Environments, Part 1/4",
       "duration_seconds": 3198.084,
       "youtube_url": "https://www.youtube.com/watch?v=kyfPIj27MR8",
       "youtube_video_id": "kyfPIj27MR8",
@@ -6669,7 +6657,7 @@
     {
       "id": 102,
       "sha256": "6483a113a5d0cd0a13eea401122fc7a3c153c43cdbf0ee34a56d40576891c5a0",
-      "name": "Introduction to Change Detection, Part 2/2",
+      "name": "Conducting a Change Detection Analysis, Session 2/2",
       "duration_seconds": 6573.917,
       "youtube_url": "https://www.youtube.com/watch?v=-IOiwRJPtlY",
       "youtube_video_id": "-IOiwRJPtlY",
@@ -6773,7 +6761,7 @@
     {
       "id": 10,
       "sha256": "05a015ca8b23255fe774101f720865357c1a5dfbeba756bdb2e38e8cc5ae0bd1",
-      "name": "SDG Target 15.1, Part 1/3",
+      "name": "Overview of SDG 15, Part 1/3",
       "duration_seconds": 3776.54,
       "youtube_url": "https://www.youtube.com/watch?v=RsVEv0PboPI",
       "youtube_video_id": "RsVEv0PboPI",
@@ -6842,7 +6830,7 @@
     {
       "id": 219,
       "sha256": "d3eecebe3dc9fe1565915d1a6c650b694a94ab57bb2b4e5a84253abd9af870e8",
-      "name": "Mangrove Mapping, Part 4/4",
+      "name": "Forest Stand Height (with Guest Speaker Paul Siqueria), Part 4/4",
       "duration_seconds": 8130.212,
       "youtube_url": "https://www.youtube.com/watch?v=RROJ_4Ud78g",
       "youtube_video_id": "RROJ_4Ud78g",
@@ -7079,7 +7067,7 @@
     {
       "id": 138,
       "sha256": "8b64c5d6e16da93a1e6c5802fb45ceac401c26578fe9a563f5d3674e3ed1e549",
-      "name": "SAR for Mapping Land Cover, Part 2/4",
+      "name": "Land Cover Classification with Radar and Optical Data, Part 2/4",
       "duration_seconds": 7323.272,
       "youtube_url": "https://www.youtube.com/watch?v=raXA3gnb94Q",
       "youtube_video_id": "raXA3gnb94Q",
@@ -7263,7 +7251,7 @@
     {
       "id": 43,
       "sha256": "274a45d89a7bc8747844a67e5c5257df8cee66d146a0dda8964d4c62dcc75a8e",
-      "name": "Remote Sensing-Based Drought Monitoring, Part 2/2",
+      "name": "Drought Monitoring Analysis and Application, Session 2/2",
       "duration_seconds": 6118.179,
       "youtube_url": "https://www.youtube.com/watch?v=o-NBWXiyC3k",
       "youtube_video_id": "o-NBWXiyC3k",
@@ -7309,7 +7297,7 @@
     {
       "id": 144,
       "sha256": "8f85a345775e3800232798dac02f3e6822b71000dabf0c162b65446eec61298e",
-      "name": "Soil Moisture for Agricultural Applications, Part 3/4",
+      "name": "Sen4Stat Open-Source Toolbox (Theory and Practical), Part 3/4",
       "duration_seconds": 7079.114,
       "youtube_url": "https://www.youtube.com/watch?v=IQXtWowwkAs",
       "youtube_video_id": "IQXtWowwkAs",
@@ -7453,7 +7441,7 @@
     {
       "id": 170,
       "sha256": "a5d4697b869ba35ae9d8924201ea167dbc26eaf3dd442ea2cb2359bf955050d9",
-      "name": "Hyperspectral Data for Coastal and Ocean Systems, Part 1/3",
+      "name": "Overview of Hyperspectral Data, Part 1/3",
       "duration_seconds": 5642.983,
       "youtube_url": "https://www.youtube.com/watch?v=FjKVptgr3uU",
       "youtube_video_id": "FjKVptgr3uU",
@@ -7545,7 +7533,7 @@
     {
       "id": 184,
       "sha256": "b23a2c31850ccf6bc5ce673991723fa3864ac7dfae25b103fb1a33ebeebcdc80",
-      "name": "Onsite Training, Part 3/3",
+      "name": "Online Training, Part 3/3",
       "duration_seconds": 4427.07,
       "youtube_url": "https://www.youtube.com/watch?v=Ixmu1gsus6o",
       "youtube_video_id": "Ixmu1gsus6o",
@@ -7637,7 +7625,7 @@
     {
       "id": 139,
       "sha256": "8b819730487fecd2147967a706ce6cc37aa1a015dfaec42520c37b326a7ed3ee",
-      "name": "Overview of NASA Snow and Ice Data Products, Part 2/3",
+      "name": "Access, Analysis, and Visualization of NASA Snow and Ice Data Products, Part 2/3",
       "duration_seconds": 5737.279,
       "youtube_url": "https://www.youtube.com/watch?v=K8sDFnp5bZI",
       "youtube_video_id": "K8sDFnp5bZI",
@@ -7660,7 +7648,7 @@
     {
       "id": 59,
       "sha256": "3675e2887bd62983cb4e1d8981e643e9325f8a53da5f88bed35514a056502f87",
-      "name": "Overview of NASA Snow and Ice Data Products, Part 3/3",
+      "name": "Overview of NASA Snow and Ice Data Products, Part 1/3",
       "duration_seconds": 6270.015,
       "youtube_url": "https://www.youtube.com/watch?v=IqiYndJxyrg",
       "youtube_video_id": "IqiYndJxyrg",
@@ -7729,7 +7717,7 @@
     {
       "id": 196,
       "sha256": "bb4b7ed521b9afac45525d43d1953f2d9598dbb50c893c883789145831a19396",
-      "name": "Assess Water Quality using Satellite and In Situ Observations, Part 1/3",
+      "name": "Overview of Remote Sensing Observations to Assess Water Quality, Part 1/3",
       "duration_seconds": 6069.719,
       "youtube_url": "https://www.youtube.com/watch?v=UaDybXuIW1c",
       "youtube_video_id": "UaDybXuIW1c",
@@ -7752,7 +7740,7 @@
     {
       "id": 133,
       "sha256": "85a81f89a4f96f4ee3740a49aedcd1c420bce0bb1992ea5292d033562743427b",
-      "name": "Overview of Remote Sensing Observations to Assess Water Quality, Part 3/3",
+      "name": "Assess Water Quality using Satellite and In Situ Observations, Part 3/3",
       "duration_seconds": 6158.977,
       "youtube_url": "https://www.youtube.com/watch?v=tetTo4i_Etg",
       "youtube_video_id": "tetTo4i_Etg",
@@ -7880,7 +7868,7 @@
     {
       "id": 85,
       "sha256": "51a31ab8545607ac51176a7b9fa68506ad39af661b8f04d5554f4aa7fb1732e7",
-      "name": "Introduction to Soil Moisture, Evapotranspiration & the SMAP Satellite Mission, Part 2/5",
+      "name": "Applications of SMAP Data, Part 2/5",
       "duration_seconds": 3342.814,
       "youtube_url": "https://www.youtube.com/watch?v=DTQ1FPyCm_w",
       "youtube_video_id": "DTQ1FPyCm_w",
@@ -7909,7 +7897,7 @@
     {
       "id": 13,
       "sha256": "06d4c4d3ed474e048425c3aee87c526fb5d6a58626400d3405f1e3833ea34dbc",
-      "name": "Introduction to Soil Moisture, Evapotranspiration & the SMAP Satellite Mission, Part 3/5",
+      "name": "Accessing SMAP Data, Part 3/5",
       "duration_seconds": 2425.487,
       "youtube_url": "https://www.youtube.com/watch?v=CKIqVpWu3c0",
       "youtube_video_id": "CKIqVpWu3c0",
@@ -8175,7 +8163,7 @@
     {
       "id": 186,
       "sha256": "b40a6c82db139724e6db00b6804410095088f66c4a8e6a75026362dcfab54e5e",
-      "name": "Assess Water Quality using Satellite and In Situ Observations, Part 1/3",
+      "name": "Overview of Remote Sensing Observations to Assess Water Quality, Part 1/3",
       "duration_seconds": 6069.719,
       "youtube_url": "https://www.youtube.com/watch?v=UaDybXuIW1c",
       "youtube_video_id": "UaDybXuIW1c",
@@ -8198,7 +8186,7 @@
     {
       "id": 193,
       "sha256": "ba7c4a0665db309c4a1322476a678a719d3595def334a4513556d1496dd35f01",
-      "name": "Assess Water Quality using Satellite and In Situ Observations, Part 2/3",
+      "name": "assess water quality using satellite and in situ observations part 2",
       "duration_seconds": 5367.385,
       "youtube_url": "https://www.youtube.com/watch?v=GuLDj2eBgGI",
       "youtube_video_id": "GuLDj2eBgGI",
@@ -8274,7 +8262,7 @@
     {
       "id": 225,
       "sha256": "db7cdaf18a9facd0a95f989279c02e48db10c99d1af1b04059167c8e25240db8",
-      "name": "Satellites and Sensors for Active Fire Monitoring (During-Fire), Part 5/6",
+      "name": "Satellites and Sensors for Vegetation-Based Wildfire Applications (Post-Fire), Part 6/6",
       "duration_seconds": 7354.619,
       "youtube_url": "https://www.youtube.com/watch?v=oG-pNayqaEo",
       "youtube_video_id": "oG-pNayqaEo",
@@ -8357,7 +8345,7 @@
     {
       "id": 202,
       "sha256": "c1a61b3a5cefdd9a43f25044b959cc283835877113dc06dfbfc28e8d7b3f3fb3",
-      "name": "Using the Fire Mapping Tools to Map Fires, Part 2/2",
+      "name": "Post-Fire Mapping, Part 2/2",
       "duration_seconds": 8331.877,
       "youtube_url": "https://www.youtube.com/watch?v=poWjCS3bxb0",
       "youtube_video_id": "poWjCS3bxb0",

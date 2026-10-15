@@ -94,9 +94,12 @@ Le numéro d'épisode est extrait du titre (`episodeNumber`, voir
   **serveur** ET le **desktop** ;
 - `buildIndex` (mobile) applique le même tri sur le catalogue bundlé.
 
-→ Effet partout (serveur, desktop, mobile), et **survit à `make sync`** (le tri est dans
-le code, pas seulement dans les données). Le script `scripts/reorder-catalog.mjs`
+→ Effet partout (serveur, desktop, mobile). Le script `scripts/reorder-catalog.mjs`
 normalise aussi les fichiers JSON (`resources/` + `apps/mobile/assets/`).
+
+Les titres (`name`) sont, eux, alignés sur la **vérité YouTube**
+(`scripts/youtube-titles.cjs` → `resources/catalog/youtube_titles.json`) : pour un même
+`youtube_video_id`, le titre est identique dans tous les modules.
 
 ## Progression : module ⇄ vidéos
 

@@ -1,12 +1,13 @@
 # 04 — Ressources (données centralisées)
 
 Les données vivent dans `resources/`. Elles sont **committées** (légères : ~1 Mo) et
-synchronisées depuis la source par `make sync`.
+**curées directement dans le repo** — c'est la source de vérité (plus d'import externe).
 
 ```
 resources/
 ├── catalog/
 │   ├── video_catalog.json     # ← LA source de vérité (269 vidéos, 126 modules)
+│   ├── youtube_titles.json    #   titres YouTube de référence (id → titre/channel)
 │   └── video_urls.json        #   mapping module → [{file, url}] (historique)
 ├── learning_path.json         # parcours 4 phases → clés de modules
 └── notes/                     # Plan.md, notes.md, transcripts (markdown)
@@ -57,16 +58,19 @@ resources/
 
 - Un **module** pointe vers des vidéos via `source_video_ids`.
 - Une **vidéo** est unique (dédupliquée par `sha256`) et porte l'URL YouTube, la durée,
-  le titre vérifié (`name`), et la liste des fichiers locaux d'origine (`instances`).
+  le titre (`name`), et la liste des fichiers locaux d'origine (`instances`).
 - Le `summary.url_status_counts` indique le niveau de confiance des URLs
   (`verified` = titre + durée confirmés ; `duration_verified` = durée seule ; `manual_verified` = revu manuellement).
 
-> **Ordre des vidéos.** L'ordre de `source_video_ids` n'est pas fiable. Le tri par
-> numéro d'épisode (`Part X/N`) est appliqué **dans le code** (`buildCatalogIndex` /
-> `buildIndex`), donc corrigé partout même après un `make sync`. Le script
-> `node scripts/reorder-catalog.mjs` (après `make build-core`) réordonne en plus les
-> fichiers JSON (`resources/catalog/video_catalog.json` + copie mobile) pour que les
-> données elles-mêmes soient propres.
+> **Titres (`name`) = vérité YouTube.** Les titres du catalogue avaient été générés par
+> matching approximatif et étaient faux pour ~30 % des vidéos. Ils sont désormais
+> réconciliés sur les titres réels via `scripts/youtube-titles.cjs` (qui écrit
+> `youtube_titles.json`). Pour un même `youtube_video_id`, le `name` est identique partout.
+
+> **Ordre des vidéos.** Le tri par numéro d'épisode (`Part X/N`, `Session X/N`) est
+> appliqué **dans le code** (`buildCatalogIndex` / `buildIndex`). Le script
+> `node scripts/reorder-catalog.mjs` (après `make build-core`) réordonne aussi les
+> fichiers JSON pour que les données soient propres.
 
 C'est ce fichier que **parsent** `@arset/core` (`parseCatalog` + `buildCatalogIndex`)
 et que **sert** le backend.
@@ -92,18 +96,19 @@ définit **le parcours affiché en premier** dans la sidebar (les modules `organ
 Les modules `other_modules/*` du catalogue apparaissent ensuite dans
 « Modules complémentaires ».
 
-## Synchronisation (`make sync`)
+## Mise à jour des ressources
+
+Le catalogue est **édité directement** dans `resources/` (source de vérité). Il n'y a plus
+d'import externe destructif. Après une modification du catalogue ou du parcours, recopier
+les JSON bundlés du mobile :
 
 ```bash
-make sync                          # depuis ~/Documents/Remote Sensing Classes
-make sync ARSET_SOURCE=/autre/path # source personnalisée
+make sync-mobile   # resources/… → apps/mobile/assets/
 ```
 
-Ce que fait `sync` :
+Outils associés :
 
-1. `video_catalog.json` + `video_urls.json` → `resources/catalog/`
-2. `Plan.md`, `notes.md`, `Transcripts/` → `resources/notes/`
-3. `video_catalog.json` + `learning_path.json` → `apps/mobile/assets/` (bundlé pour Android)
+- `node scripts/youtube-titles.cjs` — régénère `youtube_titles.json` (vérité YouTube).
+- `node scripts/reorder-catalog.mjs` — réordonne `source_video_ids` (après `make build-core`).
 
-> Les JSON copiés dans `apps/mobile/assets/` sont **committés** (catalogue + parcours
-> bundlés pour Android, régénérés par `make sync`).
+Les JSON de `apps/mobile/assets/` sont **committés** (catalogue + parcours bundlés pour Android).
