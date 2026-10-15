@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  // GitHub Pages sert le site sous /<repo>/ — base adaptée au mode "pages".
+  base: mode === "pages" ? "/Arset_program/" : "/",
   plugins: [react()],
   server: {
     port: 5173,
@@ -17,4 +19,4 @@ export default defineConfig({
       include: [/node_modules/, /packages\/core/],
     },
   },
-});
+}));

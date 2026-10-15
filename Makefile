@@ -15,7 +15,7 @@ FFMPEG   := $(shell command -v ffmpeg 2>/dev/null)
 
 .PHONY: help install install-js install-resources install-tools install-sdk ensure-data \
         sync sync-catalog sync-notes build-core dev-server dev-desktop pc \
-        dev-mobile build-desktop typecheck test clean \
+        dev-mobile build-desktop build-desktop-pages typecheck test clean \
         android-eas android-dev-client android-login android-local android-check build-android
 
 ## ── Cibles principales ──────────────────────────────────────────────────────
@@ -31,6 +31,7 @@ help:
 	@printf "  make dev-mobile        Expo (Android)\n"
 	@printf "  make build-core        Compile @arset/core\n"
 	@printf "  make build-desktop     Build production React\n"
+	@printf "  make build-desktop-pages  Build statique pour GitHub Pages\n"
 	@printf "  make build-android     Build local Android (vérifie JDK/SDK puis compile via USB)\n"
 	@printf "  make android-eas       APK Android via EAS (cloud, sans SDK)\n"
 	@printf "  make android-check     Vérifie les prérequis du build local\n"
@@ -127,6 +128,10 @@ dev-mobile:
 
 build-desktop: build-core
 	$(NPM) run build -w @arset/desktop
+
+# build-desktop-pages: build statique pour GitHub Pages (sans backend, base /Arset_program/)
+build-desktop-pages: build-core
+	$(NPM) run build:pages -w @arset/desktop
 
 ## ── Android ─────────────────────────────────────────────────────────────────
 

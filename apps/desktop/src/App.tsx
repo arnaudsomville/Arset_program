@@ -5,7 +5,7 @@ import {
   type LearningPath,
   type VideoView,
 } from "@arset/core";
-import { api } from "./api";
+import { api, supportsLocalDownload } from "./api";
 import type {
   ComplementaryGroup,
   DownloadEntry,
@@ -400,14 +400,17 @@ function VideoCard({
         <div className="card-meta">{formatDuration(video.durationSeconds)}</div>
 
         <div className="card-actions">
-          {video.downloaded ? (
-            <span className="tag tag-done">✓ Téléchargée</span>
-          ) : (
-            <button className="btn" onClick={startDownload} disabled={downloading}>
-              {downloading ? `Téléchargement… ${Math.round(dl?.progress ?? 0)}%` : "⬇ Télécharger"}
-            </button>
+          {supportsLocalDownload &&
+            (video.downloaded ? (
+              <span className="tag tag-done">✓ Téléchargée</span>
+            ) : (
+              <button className="btn" onClick={startDownload} disabled={downloading}>
+                {downloading ? `Téléchargement… ${Math.round(dl?.progress ?? 0)}%` : "⬇ Télécharger"}
+              </button>
+            ))}
+          {supportsLocalDownload && dl?.status === "error" && (
+            <span className="tag tag-error">{dl.error}</span>
           )}
-          {dl?.status === "error" && <span className="tag tag-error">{dl.error}</span>}
           <button className={`watch-btn ${watched ? "is-seen" : ""}`} onClick={() => onToggleWatched(video.id)}>
             {watched ? "✓ Vue" : "Marquer vue"}
           </button>

@@ -4,6 +4,8 @@ node_modules/
 # Builds / artefacts
 dist/
 build/
+# Données statiques générées pour le build Pages (copiées depuis resources/)
+apps/desktop/public/data/
 .gradle/
 .expo/
 .expo-shared/

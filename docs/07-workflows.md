@@ -46,6 +46,32 @@ npx serve apps/desktop/dist         # ou un serveur statique quelconque
 > s'en charge. Pour la prod : reverse-proxy (nginx) devant le serveur Express, ou
 > recompiler le frontend avec l'URL du backend (variable d'env Vite).
 
+### Version web statique (GitHub Pages)
+
+Sans backend, le desktop peut être buildé en **site 100 % statique** et hébergé sur
+GitHub Pages : `https://arnaudsomville.github.io/Arset_program/`.
+
+```bash
+make build-desktop-pages      # ou : npm run build:pages -w @arset/desktop
+```
+
+Ce build (`--mode pages`) :
+
+- copie `resources/catalog/video_catalog.json` + `resources/learning_path.json` dans
+  `apps/desktop/public/data/` (via `scripts/sync-data.mjs`) ;
+- calcule l'index côté navigateur avec `@arset/core` (aucun serveur) ;
+- persiste la progression dans **`localStorage`** (par navigateur, non synchronisée) ;
+- **désactive le téléchargement local** (yt-dlp est impossible dans un navigateur) ;
+  la lecture se fait via l'iframe YouTube ;
+- utilise une `base` Vite `/Arset_program/` (configurée dans `vite.config.ts` selon le mode).
+
+`src/api.ts` choisit automatiquement l'implémentation : client HTTP (back-end, dev) ou
+client statique (`src/staticApi.ts`, mode `pages`).
+
+> Déploiement : `.github/workflows/pages.yml` build `@arset/core` + le desktop puis publie
+> `apps/desktop/dist`. Déclenchement sur push `main` (fichiers concernés) ou manuel.
+> **Une seule fois** : activer Pages dans *Settings → Pages → Source = GitHub Actions*.
+
 ## Android
 
 > ⚠️ Le **téléchargement local** repose sur un module natif local (`modules/youtubedl`,
