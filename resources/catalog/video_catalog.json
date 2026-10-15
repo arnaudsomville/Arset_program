@@ -11,10 +11,10 @@
   },
   "summary": {
     "local_video_instances": 410,
-    "unique_sources": 269,
+    "unique_sources": 270,
     "duplicate_instances_collapsed": 141,
     "url_status_counts": {
-      "duration_verified": 64,
+      "duration_verified": 65,
       "manual_verified": 19,
       "verified": 186
     }
@@ -142,7 +142,9 @@
       "title": "Module 10 — Harmful Algal Blooms (HABs) and Cyanobacteria Monitoring",
       "source_video_ids": [
         106,
-        166
+        166,
+        270,
+        26
       ]
     },
     {
@@ -2284,7 +2286,8 @@
         10,
         25,
         31,
-        51
+        51,
+        12
       ],
       "local_filenames": [
         "NASA ARSET： Introduction to Image Processing & Data Access, Session 2⧸3.mp4",
@@ -8417,6 +8420,21 @@
           "sha256": "ff0c41ea085b8e5e0945d2f71b8971b3a822e4a19d26c75d46bc0ebd6eb6e076"
         }
       ]
+    },
+    {
+      "id": 270,
+      "sha256": "",
+      "name": "Platforms and Sensors for Ocean Observations, Data Access, & Processing Tools, Part 2/4",
+      "duration_seconds": 5509,
+      "youtube_url": "https://www.youtube.com/watch?v=UFDEllzDxE4",
+      "youtube_video_id": "UFDEllzDxE4",
+      "url_status": "duration_verified",
+      "canonical_module_id": 12,
+      "module_ids": [
+        12
+      ],
+      "local_filenames": [],
+      "instances": []
     }
   ]
 }
