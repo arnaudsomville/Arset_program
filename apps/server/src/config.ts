@@ -15,6 +15,10 @@ export function progressFile(): string {
   return path.join(dataDir(), "progress.json");
 }
 
+export function watchlistFile(): string {
+  return path.join(dataDir(), "watchlist.json");
+}
+
 /** Remonte les répertoires jusqu'à trouver la racine du repo (contient resources/catalog/). */
 function findRepoRoot(start: string): string {
   let dir = path.resolve(start);

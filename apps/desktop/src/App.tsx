@@ -30,6 +30,7 @@ export default function App() {
     modules: {},
     videos: {},
   });
+  const [watchlist, setWatchlist] = useState<string[]>([]);
   const [selected, setSelected] = useState<ModuleSelection | null>(null);
   const [videos, setVideos] = useState<VideoView[]>([]);
   const [loadingVideos, setLoadingVideos] = useState(false);
@@ -39,9 +40,14 @@ export default function App() {
   useEffect(() => {
     (async () => {
       try {
-        const [cat, prog] = await Promise.all([api.catalog(), api.progress()]);
+        const [cat, prog, wl] = await Promise.all([
+          api.catalog(),
+          api.progress(),
+          api.watchlist(),
+        ]);
         setCatalog(cat);
         setProgress(prog);
+        setWatchlist(wl);
       } catch (e) {
         setError(e instanceof Error ? e.message : String(e));
       }
@@ -68,6 +74,10 @@ export default function App() {
 
   const toggleVideo = useCallback(async (id: number) => {
     setProgress(await api.toggleVideo(id));
+  }, []);
+
+  const toggleWatchlist = useCallback(async (key: string) => {
+    setWatchlist(await api.toggleWatchlist(key));
   }, []);
 
   const markVideoDownloaded = useCallback((id: number) => {
@@ -97,11 +107,13 @@ export default function App() {
         <Sidebar
           catalog={catalog}
           progress={progress}
+          watchlist={watchlist}
           search={search}
           setSearch={setSearch}
           selectedKey={selected?.key}
           onSelect={selectModule}
           onToggleModule={toggleModule}
+          onToggleWatchlist={toggleWatchlist}
         />
 
         <main className="main">
@@ -151,15 +163,27 @@ export default function App() {
 interface SidebarProps {
   catalog: CatalogCategory[];
   progress: ProgressData;
+  watchlist: string[];
   search: string;
   setSearch: (s: string) => void;
   selectedKey?: string;
   onSelect: (key: string, title: string) => void;
   onToggleModule: (key: string) => void;
+  onToggleWatchlist: (key: string) => void;
 }
 
 function Sidebar(props: SidebarProps) {
-  const { catalog, progress, search, setSearch, selectedKey, onSelect, onToggleModule } = props;
+  const {
+    catalog,
+    progress,
+    watchlist,
+    search,
+    setSearch,
+    selectedKey,
+    onSelect,
+    onToggleModule,
+    onToggleWatchlist,
+  } = props;
   const [open, setOpen] = useState<Record<string, boolean>>({});
 
   const q = search.trim().toLowerCase();
@@ -177,7 +201,20 @@ function Sidebar(props: SidebarProps) {
 
   return (
     <aside className="sidebar">
-      <h3 className="section-title">Recherche</h3>
+      <h3 className="section-title">My Watchlist</h3>
+      <WatchlistTree
+        catalog={catalog}
+        watchlist={watchlist}
+        progress={progress}
+        selectedKey={selectedKey}
+        onSelect={onSelect}
+        onToggleModule={onToggleModule}
+        onToggleWatchlist={onToggleWatchlist}
+      />
+
+      <h3 className="section-title" style={{ marginTop: "1rem" }}>
+        Recherche
+      </h3>
       <input
         className="search"
         placeholder="Nom du module…"
@@ -211,6 +248,8 @@ function Sidebar(props: SidebarProps) {
                     active={selectedKey === m.key}
                     onSelect={() => onSelect(m.key, m.title)}
                     onToggle={() => onToggleModule(m.key)}
+                    inWatchlist={watchlist.includes(m.key)}
+                    onToggleWatchlist={() => onToggleWatchlist(m.key)}
                   />
                 ))}
                 {cat.subcategories.map((sub) => (
@@ -224,6 +263,8 @@ function Sidebar(props: SidebarProps) {
                         active={selectedKey === m.key}
                         onSelect={() => onSelect(m.key, m.title)}
                         onToggle={() => onToggleModule(m.key)}
+                        inWatchlist={watchlist.includes(m.key)}
+                        onToggleWatchlist={() => onToggleWatchlist(m.key)}
                       />
                     ))}
                   </div>
@@ -237,18 +278,108 @@ function Sidebar(props: SidebarProps) {
   );
 }
 
+function WatchlistTree({
+  catalog,
+  watchlist,
+  progress,
+  selectedKey,
+  onSelect,
+  onToggleModule,
+  onToggleWatchlist,
+}: {
+  catalog: CatalogCategory[];
+  watchlist: string[];
+  progress: ProgressData;
+  selectedKey?: string;
+  onSelect: (key: string, title: string) => void;
+  onToggleModule: (key: string) => void;
+  onToggleWatchlist: (key: string) => void;
+}) {
+  const [open, setOpen] = useState<Record<string, boolean>>({});
+  const saved = new Set(watchlist);
+
+  const groups = catalog
+    .map((cat) => ({
+      title: cat.title,
+      modules: cat.modules.filter((m) => saved.has(m.key)),
+      subcategories: cat.subcategories
+        .map((sub) => ({
+          key: sub.key,
+          title: sub.title,
+          modules: sub.modules.filter((m) => saved.has(m.key)),
+        }))
+        .filter((sub) => sub.modules.length > 0),
+    }))
+    .filter((cat) => cat.modules.length > 0 || cat.subcategories.length > 0);
+
+  if (!groups.length) {
+    return <p className="watchlist-empty">Aucun module dans la watchlist.</p>;
+  }
+
+  const renderModule = (m: CatalogModuleSummary) => (
+    <ModuleRow
+      key={m.key}
+      module={m}
+      completed={!!progress.modules[m.key]?.completed}
+      active={selectedKey === m.key}
+      inWatchlist
+      onSelect={() => onSelect(m.key, m.title)}
+      onToggle={() => onToggleModule(m.key)}
+      onToggleWatchlist={() => onToggleWatchlist(m.key)}
+    />
+  );
+
+  return (
+    <>
+      {groups.map((cat) => {
+        const count =
+          cat.modules.length +
+          cat.subcategories.reduce((n, sub) => n + sub.modules.length, 0);
+        const isOpen = open[cat.title] ?? false;
+        return (
+          <div className="cat" key={cat.title}>
+            <div
+              className="cat-head"
+              onClick={() => setOpen((o) => ({ ...o, [cat.title]: !isOpen }))}
+            >
+              <span className={`arrow ${isOpen ? "open" : ""}`}>▶</span>
+              <span className="cat-name">{cat.title}</span>
+              <span className="cat-count">{count}</span>
+            </div>
+            {isOpen && (
+              <div className="cat-list">
+                {cat.modules.map(renderModule)}
+                {cat.subcategories.map((sub) => (
+                  <div key={sub.key}>
+                    <div className="phase-head">{sub.title}</div>
+                    {sub.modules.map(renderModule)}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
 function ModuleRow({
   module,
   completed,
   active,
+  inWatchlist,
   onSelect,
   onToggle,
+  onToggleWatchlist,
 }: {
   module: CatalogModuleSummary;
   completed: boolean;
   active: boolean;
+  inWatchlist: boolean;
   onSelect: () => void;
   onToggle: () => void;
+  onToggleWatchlist: () => void;
 }) {
   const badge = statusLabel(module.status);
   return (
@@ -272,6 +403,17 @@ function ModuleRow({
           {badge}
         </span>
       )}
+      <button
+        className={`star ${inWatchlist ? "is-starred" : ""}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggleWatchlist();
+        }}
+        title={inWatchlist ? "Retirer de ma watchlist" : "Ajouter à ma watchlist"}
+        aria-label={inWatchlist ? "Retirer de ma watchlist" : "Ajouter à ma watchlist"}
+      >
+        {inWatchlist ? "★" : "☆"}
+      </button>
     </div>
   );
 }

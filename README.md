@@ -122,6 +122,7 @@ Ou, dans deux terminaux séparés : `make dev-server` puis `make dev-desktop`.
 | « ⬇ Télécharger » | `yt-dlp` télécharge la vidéo dans `~/.arset-data/videos/` |
 | Une fois téléchargée | Lecture locale (`<video>`, HTTP Range) |
 | « Marquer vue » / « Terminer » | Progression sauvegardée dans `~/.arset-data/progress.json` |
+| ★ sur un module | Ajoute/retire le module de **My Watchlist** (section au-dessus de Recherche) |
 
 ### Exporter en production
 

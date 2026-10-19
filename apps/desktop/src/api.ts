@@ -42,6 +42,8 @@ export interface ProgressData {
 export interface ArsetApi {
   catalog(): Promise<CatalogCategory[]>;
   progress(): Promise<ProgressData>;
+  watchlist(): Promise<string[]>;
+  toggleWatchlist(key: string): Promise<string[]>;
   moduleVideos(key: string): Promise<ModuleVideos>;
   toggleModule(key: string, completed?: boolean): Promise<ProgressData>;
   toggleVideo(id: number, watched?: boolean): Promise<ProgressData>;
@@ -69,6 +71,9 @@ async function postJSON<T>(path: string, body?: unknown): Promise<T> {
 const httpApi: ArsetApi = {
   catalog: () => getJSON<CatalogCategory[]>("/api/catalog"),
   progress: () => getJSON<ProgressData>("/api/progress"),
+  watchlist: () => getJSON<string[]>("/api/watchlist"),
+  toggleWatchlist: (key: string) =>
+    postJSON<string[]>(`/api/watchlist/${encodeURIComponent(key)}`),
   moduleVideos: (key: string) =>
     getJSON<ModuleVideos>(`/api/modules/${encodeURIComponent(key)}/videos`),
   toggleModule: (key: string, completed?: boolean) =>

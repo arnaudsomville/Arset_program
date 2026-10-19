@@ -13,6 +13,8 @@ Base : `http://localhost:4000` (en dev). Toutes les réponses sont en JSON.
 | GET | `/api/catalog` | Catalogue : catégories > sous-catégories > modules |
 | GET | `/api/modules/:key/videos` | Vidéos d'un module |
 | GET | `/api/progress` | Progression complète |
+| GET | `/api/watchlist` | Modules en watchlist (clés) |
+| POST | `/api/watchlist/:key` | Ajoute/retire un module (toggle) |
 | POST | `/api/progress/module/:key` | Marquer/terminer un module |
 | POST | `/api/progress/video/:id` | Marquer une vidéo vue |
 | POST | `/api/videos/:id/download` | Lancer le téléchargement |
@@ -89,6 +91,21 @@ Le champ `downloaded` détermine si le frontend affiche `<video src=streamUrl>`
   "videos":  { "244": { "watched": true, "updated": "..." } }
 }
 ```
+
+
+### `GET /api/watchlist`
+
+```json
+[
+  "air-quality-health/air-quality/01-lidar-profiling-satellite-observations-for-air-quality-applications"
+]
+```
+
+### `POST /api/watchlist/:key`
+
+Ajoute le module s'il n'est pas présent, le retire sinon. Renvoie la liste complète
+des clés (même forme que `GET /api/watchlist`). `404` si la clé n'existe pas dans le
+catalogue.
 
 ### `POST /api/progress/module/:key`
 

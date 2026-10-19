@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { progressFile } from "./config";
+import { progressFile, watchlistFile } from "./config";
 
 interface ModuleProgress {
   completed: boolean;
@@ -76,4 +76,39 @@ export function toggleVideoWatched(id: string): boolean {
   const prev = data.videos[id]?.watched ?? false;
   setVideoWatched(id, !prev);
   return !prev;
+}
+
+// ── Watchlist ───────────────────────────────────────────────────────────────
+
+let watchlistCache: string[] | null = null;
+
+export function loadWatchlist(): string[] {
+  if (watchlistCache) return watchlistCache;
+  try {
+    const raw = JSON.parse(fs.readFileSync(watchlistFile(), "utf8")) as {
+      modules?: unknown;
+    };
+    watchlistCache = Array.isArray(raw.modules)
+      ? raw.modules.filter((k): k is string => typeof k === "string")
+      : [];
+  } catch {
+    watchlistCache = [];
+  }
+  return watchlistCache;
+}
+
+function persistWatchlist(modules: string[]): void {
+  fs.mkdirSync(path.dirname(watchlistFile()), { recursive: true });
+  fs.writeFileSync(watchlistFile(), JSON.stringify({ modules }, null, 2));
+}
+
+/** Ajoute/retire un module de la watchlist et renvoie la liste à jour. */
+export function toggleWatchlist(key: string): string[] {
+  const modules = [...loadWatchlist()];
+  const i = modules.indexOf(key);
+  if (i === -1) modules.unshift(key);
+  else modules.splice(i, 1);
+  watchlistCache = modules;
+  persistWatchlist(modules);
+  return modules;
 }

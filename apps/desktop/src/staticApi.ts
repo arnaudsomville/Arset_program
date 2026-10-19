@@ -18,6 +18,7 @@ import type {
 } from "./api";
 
 const PROGRESS_KEY = "arset.progress.v1";
+const WATCHLIST_KEY = "arset.watchlist.v1";
 
 async function getJSON<T>(name: string): Promise<T> {
   const r = await fetch(`${import.meta.env.BASE_URL}data/${name}`);
@@ -57,6 +58,25 @@ function writeProgress(data: ProgressData): void {
 
 function now(): string {
   return new Date().toISOString();
+}
+
+function readWatchlist(): string[] {
+  try {
+    const raw = localStorage.getItem(WATCHLIST_KEY);
+    if (!raw) return [];
+    const list = JSON.parse(raw) as unknown;
+    return Array.isArray(list) ? list.filter((k): k is string => typeof k === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeWatchlist(list: string[]): void {
+  try {
+    localStorage.setItem(WATCHLIST_KEY, JSON.stringify(list));
+  } catch {
+    /* ignore */
+  }
 }
 
 function moduleSummary(index: CatalogIndex, key: string): CatalogModuleSummary {
@@ -103,6 +123,19 @@ export const staticApi: ArsetApi = {
 
   async progress(): Promise<ProgressData> {
     return readProgress();
+  },
+
+  async watchlist(): Promise<string[]> {
+    return readWatchlist();
+  },
+
+  async toggleWatchlist(key: string): Promise<string[]> {
+    const list = readWatchlist();
+    const i = list.indexOf(key);
+    if (i === -1) list.unshift(key);
+    else list.splice(i, 1);
+    writeWatchlist(list);
+    return list;
   },
 
   async moduleVideos(key: string): Promise<ModuleVideos> {

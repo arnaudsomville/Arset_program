@@ -3,6 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const WATCHED_KEY = "arset.watched.v1";
 const COMPLETED_KEY = "arset.completed.v1";
 const DOWNLOADS_KEY = "arset.downloads.v1";
+const WATCHLIST_KEY = "arset.watchlist.v1";
 
 async function readSet(key: string): Promise<Set<string>> {
   try {
@@ -47,6 +48,22 @@ export async function toggleCompleted(key: string): Promise<Set<string>> {
 
 export async function saveCompleted(set: Set<string>): Promise<void> {
   await writeSet(COMPLETED_KEY, set);
+}
+
+export async function loadWatchlist(): Promise<Set<string>> {
+  return readSet(WATCHLIST_KEY);
+}
+
+export async function toggleWatchlist(key: string): Promise<Set<string>> {
+  const set = await readSet(WATCHLIST_KEY);
+  if (set.has(key)) set.delete(key);
+  else set.add(key);
+  await writeSet(WATCHLIST_KEY, set);
+  return set;
+}
+
+export async function saveWatchlist(set: Set<string>): Promise<void> {
+  await writeSet(WATCHLIST_KEY, set);
 }
 
 /** Map videoId → uri local du fichier téléchargé. */

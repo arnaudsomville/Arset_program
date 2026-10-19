@@ -158,6 +158,33 @@ header .sub {
   color: #0a0e17;
 }
 
+.star {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #4a6080;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.star:hover {
+  color: #f5c542;
+}
+
+.star.is-starred {
+  color: #f5c542;
+}
+
+.watchlist-empty {
+  padding: 0.35rem 0.7rem;
+  color: #6a7a90;
+  font-size: 0.75rem;
+}
+
 .search {
   width: 100%;
   padding: 0.6rem 0.9rem;

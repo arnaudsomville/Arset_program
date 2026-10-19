@@ -12,8 +12,10 @@ import {
 import { catalogFile, PORT } from "./config";
 import {
   loadProgress,
+  loadWatchlist,
   mutateProgress,
   now,
+  toggleWatchlist,
 } from "./store";
 import { isDownloaded, startDownload, statusOf, videoFile } from "./downloads";
 
@@ -86,6 +88,18 @@ app.get("/api/modules/:key/videos", (req: Request, res: Response) => {
 
 app.get("/api/progress", (_req, res) => {
   res.json(loadProgress());
+});
+
+app.get("/api/watchlist", (_req, res) => {
+  res.json(loadWatchlist());
+});
+
+app.post("/api/watchlist/:key", (req: Request, res: Response) => {
+  const key = req.params.key;
+  if (!index.modulesByKey.has(key)) {
+    return res.status(404).json({ error: "Module introuvable" });
+  }
+  res.json(toggleWatchlist(key));
 });
 
 // Module terminé ⟺ toutes ses vidéos vues. Les deux routes renvoient la

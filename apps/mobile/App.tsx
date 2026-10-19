@@ -16,15 +16,17 @@ import { WebView } from "react-native-webview";
 import { useVideoPlayer, VideoView } from "expo-video";
 
 import catalogJson from "./assets/video_catalog.json";
-import type { Video, VideoCatalog, ModuleStatus } from "./src/types";
+import type { Video, VideoCatalog, ModuleStatus, CatalogCategory, CatalogModule } from "./src/types";
 import { buildIndex, formatDuration } from "./src/catalog";
 import {
   loadCompleted,
   loadDownloads,
   loadWatched,
+  loadWatchlist,
   saveCompleted,
   saveDownload,
   saveWatched,
+  toggleWatchlist as toggleWatchlistStored,
 } from "./src/storage";
 import {
   downloadVideo,
@@ -75,6 +77,106 @@ function buildSections(query: string): Section[] {
   return sections;
 }
 
+function WatchlistBlock({
+  categories,
+  watchlist,
+  onSelect,
+  onToggle,
+}: {
+  categories: CatalogCategory[];
+  watchlist: Set<string>;
+  onSelect: (entry: ModuleEntry) => void;
+  onToggle: (key: string) => void;
+}) {
+  const [open, setOpen] = useState<Record<string, boolean>>({});
+  const groups = categories
+    .map((cat) => ({
+      title: cat.label,
+      modules: cat.modules.filter((m) => watchlist.has(m.key)),
+      subcategories: cat.subcategories
+        .map((sub) => ({
+          key: sub.key,
+          title: sub.label,
+          modules: sub.modules.filter((m) => watchlist.has(m.key)),
+        }))
+        .filter((sub) => sub.modules.length > 0),
+    }))
+    .filter((cat) => cat.modules.length > 0 || cat.subcategories.length > 0);
+
+  return (
+    <View>
+      <Text style={styles.watchlistTitle}>My Watchlist</Text>
+      {groups.length === 0 ? (
+        <Text style={styles.watchlistEmpty}>Aucun module dans la watchlist.</Text>
+      ) : (
+        groups.map((cat) => {
+          const count =
+            cat.modules.length +
+            cat.subcategories.reduce((n, sub) => n + sub.modules.length, 0);
+          const isOpen = open[cat.title] ?? false;
+          return (
+            <View key={cat.title}>
+              <TouchableOpacity
+                style={styles.watchlistCat}
+                onPress={() => setOpen((o) => ({ ...o, [cat.title]: !isOpen }))}
+              >
+                <Text style={styles.watchlistArrow}>{isOpen ? "▾" : "▸"}</Text>
+                <Text style={styles.watchlistCatName}>{cat.title}</Text>
+                <Text style={styles.watchlistCount}>{count}</Text>
+              </TouchableOpacity>
+              {isOpen && (
+                <View>
+                  {cat.modules.map((m) => (
+                    <WatchlistRow key={m.key} module={m} onSelect={onSelect} onToggle={onToggle} />
+                  ))}
+                  {cat.subcategories.map((sub) => (
+                    <View key={sub.key}>
+                      <Text style={styles.watchlistSub}>{sub.title}</Text>
+                      {sub.modules.map((m) => (
+                        <WatchlistRow key={m.key} module={m} onSelect={onSelect} onToggle={onToggle} />
+                      ))}
+                    </View>
+                  ))}
+                </View>
+              )}
+            </View>
+          );
+        })
+      )}
+    </View>
+  );
+}
+
+function WatchlistRow({
+  module,
+  onSelect,
+  onToggle,
+}: {
+  module: CatalogModule;
+  onSelect: (entry: ModuleEntry) => void;
+  onToggle: (key: string) => void;
+}) {
+  return (
+    <View style={styles.moduleRow}>
+      <TouchableOpacity
+        style={styles.moduleMain}
+        onPress={() => onSelect({ key: module.key, title: module.title, status: module.status })}
+      >
+        <Text style={styles.moduleTitle} numberOfLines={2}>
+          {module.title}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.starBtn}
+        onPress={() => onToggle(module.key)}
+        accessibilityLabel="Retirer de ma watchlist"
+      >
+        <Text style={[styles.star, styles.starActive]}>★</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
 type Screen = "modules" | "module" | "player";
 
 type DownloadState = {
@@ -90,6 +192,7 @@ function watchUrl(video: Video): string {
 export default function App() {
   const [watched, setWatched] = useState<Set<string>>(new Set());
   const [completed, setCompleted] = useState<Set<string>>(new Set());
+  const [watchlist, setWatchlist] = useState<Set<string>>(new Set());
   const [downloadedFiles, setDownloadedFiles] = useState<Record<string, string>>({});
   const [query, setQuery] = useState("");
   const [screen, setScreen] = useState<Screen>("modules");
@@ -101,6 +204,7 @@ export default function App() {
     (async () => {
       setWatched(await loadWatched());
       setCompleted(await loadCompleted());
+      setWatchlist(await loadWatchlist());
       setDownloadedFiles(await loadDownloads());
     })();
   }, []);
@@ -189,6 +293,10 @@ export default function App() {
     },
     [completed, watched],
   );
+
+  const toggleWatchlist = useCallback(async (key: string) => {
+    setWatchlist(await toggleWatchlistStored(key));
+  }, []);
 
   const startDownload = useCallback(async (video: Video) => {
     const id = String(video.id);
@@ -333,31 +441,56 @@ export default function App() {
         <Text style={styles.sub}>Catalogue ARSET</Text>
       </View>
 
-      <TextInput
-        style={styles.search}
-        placeholder="Rechercher un module…"
-        placeholderTextColor="#4a5a70"
-        value={query}
-        onChangeText={setQuery}
-      />
       <SectionList
         sections={sections}
+        ListHeaderComponent={
+          <>
+            <WatchlistBlock
+              categories={index.categories}
+              watchlist={watchlist}
+              onSelect={openModule}
+              onToggle={toggleWatchlist}
+            />
+            <TextInput
+              style={styles.search}
+              placeholder="Rechercher un module…"
+              placeholderTextColor="#4a5a70"
+              value={query}
+              onChangeText={setQuery}
+            />
+          </>
+        }
         keyExtractor={(item) => item.key}
         renderSectionHeader={({ section }) => (
           <Text style={styles.sectionHeader}>{section.title}</Text>
         )}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.moduleRow} onPress={() => openModule(item)}>
-            <Text style={styles.moduleTitle} numberOfLines={2}>
-              {item.title}
-            </Text>
-            {item.status !== "ok" && (
-              <Text style={styles.statusBadge}>
-                {item.status === "upcoming" ? "à venir" : "partiel"}
+          <View style={styles.moduleRow}>
+            <TouchableOpacity style={styles.moduleMain} onPress={() => openModule(item)}>
+              <Text style={styles.moduleTitle} numberOfLines={2}>
+                {item.title}
               </Text>
-            )}
+              {item.status !== "ok" && (
+                <Text style={styles.statusBadge}>
+                  {item.status === "upcoming" ? "à venir" : "partiel"}
+                </Text>
+              )}
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.starBtn}
+              onPress={() => toggleWatchlist(item.key)}
+              accessibilityLabel={
+                watchlist.has(item.key)
+                  ? "Retirer de ma watchlist"
+                  : "Ajouter à ma watchlist"
+              }
+            >
+              <Text style={[styles.star, watchlist.has(item.key) && styles.starActive]}>
+                {watchlist.has(item.key) ? "★" : "☆"}
+              </Text>
+            </TouchableOpacity>
             {completed.has(item.key) && <Text style={styles.doneMark}>✓</Text>}
-          </TouchableOpacity>
+          </View>
         )}
       />
     </SafeAreaView>
@@ -442,6 +575,43 @@ const styles = StyleSheet.create({
     borderColor: "rgba(255,255,255,0.1)",
     color: "#e8edf5",
   },
+  watchlistTitle: {
+    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingBottom: 6,
+    fontSize: 12,
+    fontWeight: "700",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    color: "#f5c542",
+  },
+  watchlistEmpty: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    fontSize: 12,
+    color: "#6a7a90",
+  },
+  watchlistCat: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+  },
+  watchlistArrow: { width: 16, fontSize: 11, color: "#4a6080" },
+  watchlistCatName: { flex: 1, fontSize: 13, fontWeight: "600", color: "#b0c0d8" },
+  watchlistCount: { fontSize: 11, color: "#6a7a90" },
+  watchlistSub: {
+    paddingHorizontal: 22,
+    paddingVertical: 6,
+    fontSize: 11,
+    color: "#64b5f6",
+    textTransform: "uppercase",
+    letterSpacing: 0.8,
+  },
+  moduleMain: { flex: 1, flexDirection: "row", alignItems: "center" },
+  starBtn: { paddingHorizontal: 8, paddingVertical: 4 },
+  star: { fontSize: 18, color: "#4a5a70" },
+  starActive: { color: "#f5c542" },
   sectionHeader: {
     paddingHorizontal: 16,
     paddingVertical: 8,
