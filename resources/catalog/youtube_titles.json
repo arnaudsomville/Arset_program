@@ -27,6 +27,10 @@
     "title": "NASA ARSET: Introduction to Polarimetric SAR, Session 3/4",
     "author": "NASA Video"
   },
+  "-yOInEUJTYM": {
+    "title": "NASA ARSET: Introducing TROPOMI - High Resolution NO2 Observations from Space, Part 2/3",
+    "author": "NASA Video"
+  },
   "0B_Zp9z-grw": {
     "title": "NASA ARSET: Scales of Phenology, Part 2/3",
     "author": "NASA Video"
@@ -71,6 +75,10 @@
     "title": "NASA ARSET: Overview of Phenology and Remote Sensing, Part 1/3",
     "author": "NASA Video"
   },
+  "2CKxV_mTuxk": {
+    "title": "NASA ARSET: Detecting and Monitoring Floods with SAR, Part 3/3",
+    "author": "NASA Video"
+  },
   "2GZfn6Z6v4Y": {
     "title": "NASA ARSET: Introduction to Full-Waveform Lidar Part 1/2",
     "author": "NASA Video"
@@ -83,12 +91,20 @@
     "title": "NASA ARSET: Synthetic Aperture Radar (SAR) Refresher, Part 1/5",
     "author": "NASA Video"
   },
+  "2Us91BGL3Q4": {
+    "title": "NASA ARSET: Introduction to Satellite-Based Active Fire Detection using FIRMS, Part 1/3",
+    "author": "NASA Video"
+  },
   "2bukmnvg5OA": {
     "title": "NASA ARSET: Airborne Data Applications for Invasive Species Mapping, Part 1/1",
     "author": "NASA Video"
   },
   "2in7i2qiIpw": {
     "title": "NASA ARSET: Visualizing Land Cover Change Part 2/2",
+    "author": "NASA Video"
+  },
+  "2pfoEFnsyEQ": {
+    "title": "NASA ARSET: Penetration of Light in the Water Column, Part 2/3",
     "author": "NASA Video"
   },
   "30x6XE6U4CU": {
@@ -123,12 +139,28 @@
     "title": "NASA ARSET: North American Geostationary Trace Gas Data Products for Air Quality, Part 1/2",
     "author": "NASA Video"
   },
+  "4H-OANBWxfg": {
+    "title": "NASA ARSET:  Overview of VIC Implementation in a River Basin, Part 3/3",
+    "author": "NASA Video"
+  },
   "4Y2giuRPCuc": {
     "title": "NASA ARSET:  SAR for Flood Mapping Using Google Earth Engine, Part 1/3",
     "author": "NASA Video"
   },
+  "4eFiIf-92Zs": {
+    "title": "NASA ARSET: Using NASA Products for a More Climate Resilient Energy Sector, Part 2/4",
+    "author": "NASA Video"
+  },
   "4tAmf3dBUxU": {
     "title": "NASA ARSET: NASA’s Citizen Science for Earth Systems Program, Part 2/3",
+    "author": "NASA Video"
+  },
+  "4vJSKCNKqq4": {
+    "title": "How Do You Choose a Projection Set for Your Application? Part 2/2",
+    "author": "NASA Video"
+  },
+  "51bB7frovtg": {
+    "title": "NASA ARSET: Introduction to the VIC Hydrological Model, Part 1/3",
     "author": "NASA Video"
   },
   "5BZvjVUfBG0": {
@@ -151,6 +183,18 @@
     "title": "NASA ARSET: Early and Established Applications of LIS for Drought Analysis in Operations, Part 2/3",
     "author": "NASA Video"
   },
+  "62-3V0nXfY0": {
+    "title": "NASA ARSET: Sensors and Products Available for Terrestrial Ecosystems, Part 2/5",
+    "author": "NASA Video"
+  },
+  "6AOyvADNOPk": {
+    "title": "NASA ARSET: Satellites, Sensors, & Models for Climate & Hydrologic-Based Applications, Part 1/6",
+    "author": "NASA Video"
+  },
+  "6Tv3QxGpMro": {
+    "title": "NASA ARSET: Improving a Supervised Land Cover Classification, Part 2/2",
+    "author": "NASA Video"
+  },
   "6_XKD3wrJ1g": {
     "title": "NASA ARSET: Solar Induced Chlorophyll Fluorescence (SIF) Measurements from Space Part 1/3",
     "author": "NASA Video"
@@ -163,8 +207,16 @@
     "title": "NASA ARSET: Calculation of Precipitation Statistics Using IMERG, Part 1/3",
     "author": "NASA Video"
   },
+  "70Zkm4Pg_ZE": {
+    "title": "NASA ARSET: Remote Sensing for Biodiversity, Session 2/2",
+    "author": "NASA Video"
+  },
   "74NKtluFQ1M": {
     "title": "NASA ARSET: Monitoring Aquatic Vegetation with Remote Sensing, Part 2/3",
+    "author": "NASA Video"
+  },
+  "76lzLPUjH7M": {
+    "title": "NASA ARSET: Overview of Climate Science and Data, Session 2/4",
     "author": "NASA Video"
   },
   "7A_SHnPbAGY": {
@@ -197,6 +249,14 @@
   },
   "AYehqG1j508": {
     "title": "NASA ARSET: Satellites and Sensors for Active Fire Monitoring (During-Fire), Part 3/6",
+    "author": "NASA Video"
+  },
+  "AeBy7lFKbgE": {
+    "title": "NASA ARSET: The Impact of Drought on CO2, Part 2/2",
+    "author": "NASA Video"
+  },
+  "B-Y1uz02Ccg": {
+    "title": "NASA ARSET: CO2 Measurements over a Large Urban Area, Part 3/3",
     "author": "NASA Video"
   },
   "B3_IGZLjCo8": {
@@ -259,6 +319,14 @@
     "title": "NASA ARSET: Applications of SMAP Data, Part 2/5",
     "author": "NASA Video"
   },
+  "DZfvTNYyzX8": {
+    "title": "Evaluating Ecosystem Services with Remote Sensing, Part 1/3",
+    "author": "NASA Video"
+  },
+  "DZw0V7wxIQA": {
+    "title": "Evaluating Ecosystem Services with Remote Sensing: August 30, 2022, Part 3/3",
+    "author": "NASA Video"
+  },
   "Dw9XFtDrgtA": {
     "title": "NASA ARSET: An Overview of SAR Data Sources and Tools, Part 3/3",
     "author": "NASA Video"
@@ -283,6 +351,10 @@
     "title": "NASA ARSET: Mapping Landslide Occurrence Using Earth Observations, Part 2/3",
     "author": "NASA Video"
   },
+  "FEEI6yNx4Us": {
+    "title": "NASA ARSET: Future Satellite Capabilities for Air Quality Monitoring and Review, Part 5/5",
+    "author": "NASA Video"
+  },
   "FguKFg-Y1zc": {
     "title": "NASA ARSET: Access of Earth Observations and Modeled Data for River Basin Monitoring, Part 1/3",
     "author": "NASA Video"
@@ -297,6 +369,10 @@
   },
   "FwhvAPoWq4Y": {
     "title": "NASA ARSET: Introduction to Mapping, GIS, and Drones, Session 1/3",
+    "author": "NASA Video"
+  },
+  "GbmrMWHkaWg": {
+    "title": "NASA ARSET: Mitigating UHI via Long-Term Urban Climate Monitoring, Part 3/3",
     "author": "NASA Video"
   },
   "GgfqEiVw_mM": {
@@ -331,12 +407,20 @@
     "title": "NASA ARSET: Overview of Sea Level Change – Regional to Global, Part 1/2",
     "author": "NASA Video"
   },
+  "Hfi9OaYtygU": {
+    "title": "NASA ARSET: Overview of Scenario Planning, Session 3/4",
+    "author": "NASA Video"
+  },
   "IDxBgK1VY_4": {
     "title": "NASA ARSET: SAR for Mapping Land Cover, Session 1/4",
     "author": "NASA Video"
   },
   "IJh13kRCFqA": {
     "title": "NASA ARSET: Introduction to Air Quality Forecasting, Part 1/3",
+    "author": "NASA Video"
+  },
+  "IPJ7GM5YVP0": {
+    "title": "NASA ARSET: Platforms and Sensors for Observations, Data Access, and Processing Tools, Part 2/4",
     "author": "NASA Video"
   },
   "IQXtWowwkAs": {
@@ -367,6 +451,10 @@
     "title": "NASA ARSET: Satellites and Sensors for Vegetation-Based Wildfire Applications (Pre-Fire), Part 2/6",
     "author": "NASA Video"
   },
+  "JxPZyXLsdTg": {
+    "title": "NASA ARSET: Assessing Climate Hazards at Refugee Camps, Part 4/4",
+    "author": "NASA Video"
+  },
   "K8sDFnp5bZI": {
     "title": "Access, Analysis, and Visualization of NASA Snow and Ice Data Products, Part 2/3",
     "author": "NASA Video"
@@ -383,16 +471,36 @@
     "title": "NASA ARSET: Black Marble Background, Use, and Applications, Part 1/1",
     "author": "NASA Video"
   },
+  "KYV2j3kwj2A": {
+    "title": "NASA ARSET: Land Surface Temperature-Based Urban Heat Island Mapping, Part 1/3",
+    "author": "NASA Video"
+  },
+  "KdaQgFGIxvI": {
+    "title": "NASA ARSET: Detecting and Monitoring Sea Ice with SAR, Part 1/3",
+    "author": "NASA Video"
+  },
   "KhZ1Gk9eQFI": {
     "title": "NASA ARSET: Overview of Species Distribution Models (SDMs), Part 1/3",
+    "author": "NASA Video"
+  },
+  "KitbOq7ARNQ": {
+    "title": "NASA ARSET: Time Series Analysis of Forest Change, Part 1/4",
     "author": "NASA Video"
   },
   "L4sGAgQB0a4": {
     "title": "NASA ARSET: Hyperspectral Data for Coastal and Ocean Systems, Part 3/3",
     "author": "NASA Video"
   },
+  "L9UTzIeIhKs": {
+    "title": "NASA ARSET: Extreme Event Statistics during 21st Century using NEX-GDDP Data, Part 2/2",
+    "author": "NASA Video"
+  },
   "LJXFd3fthlA": {
     "title": "NASA ARSET: Assessment Tools for Sea Level Change, Part 2/2",
+    "author": "NASA Video"
+  },
+  "LtM4X5J4OuI": {
+    "title": "NASA ARSET: Conducting Unsupervised and Supervised Land Cover Classifications, Part 2/2",
     "author": "NASA Video"
   },
   "LxaoPnsMP0w": {
@@ -435,6 +543,10 @@
     "title": "NASA ARSET: Using Hot-Humid Heat Estimates & Population Data to Map Heat Exposure Worldwide, Part 4",
     "author": "NASA Video"
   },
+  "PBlUiaW5r2s": {
+    "title": "NASA ARSET: Overview of Remote Sensing-Based Input Data for VIC, Part 2/3",
+    "author": "NASA Video"
+  },
   "PnkJPMstgco": {
     "title": "NASA ARSET: Using UN Biodiversity Lab to Support Biodiversity & Sustainable Development, Part 1/3",
     "author": "NASA Video"
@@ -449,6 +561,10 @@
   },
   "QHqWrO2HMco": {
     "title": "NASA ARSET: Introduction to OpenET, Part 1/3",
+    "author": "NASA Video"
+  },
+  "QKrG5jYZe10": {
+    "title": "NASA ARSET: SAR for Flood Mapping, Session 2/4",
     "author": "NASA Video"
   },
   "QP4VPaBovBk": {
@@ -491,6 +607,10 @@
     "title": "NASA ARSET: Climate Change Projections and Droughts, Part 3/4",
     "author": "NASA Video"
   },
+  "S_A4switNdU": {
+    "title": "NASA ARSET: Data Access and Visualization, Part 3/3",
+    "author": "NASA Video"
+  },
   "Sc20HX1zSZs": {
     "title": "NASA ARSET: Introduction to the Monitoring of Invasive Species with Remote Sensing Tools, Part 1/3",
     "author": "NASA Video"
@@ -523,8 +643,20 @@
     "title": "NASA ARSET: Platforms and Sensors for Ocean Observations, Data Access, & Processing Tools, Part 2/4",
     "author": null
   },
+  "UJOwwMwqvWA": {
+    "title": "NASA ARSET : Wildfire Monitoring and Evaluation, Part 2/3",
+    "author": "NASA Video"
+  },
+  "UMLlhO8y9CI": {
+    "title": "NASA ARSET: Overview of the Freshwater Health Index (FHI), Part 3/3",
+    "author": "NASA Video"
+  },
   "UaDybXuIW1c": {
     "title": "NASA ARSET: Overview of Remote Sensing Observations to Assess Water Quality, Part 1/3",
+    "author": "NASA Video"
+  },
+  "V0axHKpyYrw": {
+    "title": "Evaluating Ecosystem Services with Remote Sensing: August 25, 2022, Part 2/3",
     "author": "NASA Video"
   },
   "V0pwwG8YOUg": {
@@ -539,8 +671,16 @@
     "title": "NASA ARSET: Monitoring Aquatic Vegetation with Remote Sensing, Part 1/3",
     "author": "NASA Video"
   },
+  "VdukOyMswzI": {
+    "title": "NASA ARSET: Part 2: Remote Sensing-based Cholera Predictive Intelligence for Intervention, Part 2/2",
+    "author": "NASA Video"
+  },
   "VvZi5xIye-8": {
     "title": "NASA ARSET: Solar Induced Fluorescence and its Applications, Part 3/4",
+    "author": "NASA Video"
+  },
+  "VxtD9Op--tM": {
+    "title": "NASA ARSET: Carbon Estimation Techniques and Methods, Part 3/5",
     "author": "NASA Video"
   },
   "W-7gzSeHxS8": {
@@ -591,6 +731,10 @@
     "title": "NASA ARSET: Introduction to ECOSTRESS ET, Part 2/3",
     "author": "NASA Video"
   },
+  "YijXxj5FUUI": {
+    "title": "NASA ARSET: River Basin Delineation Based on NASA Digital Elevation Data, Part 1/1",
+    "author": "NASA Video"
+  },
   "ZkCcPGMWlLQ": {
     "title": "NASA ARSET: Introduction to Geostationary AQ Observations and AQ Products from Himawari, Part 1/3",
     "author": "NASA Video"
@@ -599,8 +743,16 @@
     "title": "NASA ARSET: Introduction to Land Cover Classification and QGIS, Part 1/2",
     "author": "NASA Video"
   },
+  "_1Fyyl4xDmY": {
+    "title": "NASA ARSET: NASA Aerosol Products for Particulate Matter Air Quality, Part 3/5",
+    "author": "NASA Video"
+  },
   "_FnVu_Wxc3o": {
     "title": "NASA ARSET: Technical Training: Exploring UN Biodiversity Lab Secure Workspaces, Part 3/3",
+    "author": "NASA Video"
+  },
+  "_LXgg2yzYH8": {
+    "title": "NASA ARSET: Overview of Monitoring Waterborne Diseases using Remote Sensing Observations, Part 1/2",
     "author": "NASA Video"
   },
   "_cZidf9taJ8": {
@@ -625,6 +777,10 @@
   },
   "aYcz80Ycir0": {
     "title": "NASA ARSET: Tracking Greenhouse Gases, Part 1/3",
+    "author": "NASA Video"
+  },
+  "arfqOCOuf9E": {
+    "title": "NASA ARSET: Overview of Ecological Forecasting, Session 1/4",
     "author": "NASA Video"
   },
   "bSEYGSGVugU": {
@@ -655,6 +811,14 @@
     "title": "NASA ARSET: Monitoring of Aquatic Invasive Species with Remote Sensing, Part 2/3",
     "author": "NASA Video"
   },
+  "dk4TWK0aOUI": {
+    "title": "NASA ARSET: Post-Fire Imagery and Smoke Monitoring Part 1/2",
+    "author": "NASA Video"
+  },
+  "dmSxjSpZetY": {
+    "title": "NASA ARSET: Foundational Concepts Part 1/2",
+    "author": "NASA Video"
+  },
   "du0fPyiZrpk": {
     "title": "NASA ARSET: Introduction to Change Detection, Session 1/2",
     "author": "NASA Video"
@@ -675,8 +839,24 @@
     "title": "NASA ARSET: Introduction to SDG 6.6 and Remote Sensing Techniques for Mangroves, Part 1/3",
     "author": "NASA Video"
   },
+  "ef6AVyDsdmU": {
+    "title": "NASA ARSET: Access & Visualization of PACE/OCI Data using Python/Jupyter Notebook Software, Part 3/3",
+    "author": "NASA Video"
+  },
   "egP0aoGXHDs": {
     "title": "NASA ARSET: Introduction to Interferometric SAR (InSAR)",
+    "author": "NASA Video"
+  },
+  "ez1TuzdAO0s": {
+    "title": "NASA ARSET: Water Budget Estimation using Global Land Data Assimilation Model, Part 3/3",
+    "author": "NASA Video"
+  },
+  "f681DNstmPg": {
+    "title": "NASA ARSET: Guidance, Reporting, and Verification, Part 5/5",
+    "author": "NASA Video"
+  },
+  "fIQJx3_xlEQ": {
+    "title": "NASA ARSET: Integrating In-Situ Observations with Satellite Imagery, Part 2/3",
     "author": "NASA Video"
   },
   "ffJ8-Pa7PuQ": {
@@ -691,12 +871,24 @@
     "title": "NASA ARSET: Utilización del UN Biodiversity Lab para Apoyar Biodiversidad y Desarrollo Sostenible",
     "author": "NASA Video"
   },
+  "gGM5Bnz0Gh8": {
+    "title": "What Makes Projection Sets Different? Part 1/2",
+    "author": "NASA Video"
+  },
   "gK50CZVi6K8": {
     "title": "NASA ARSET: El Monitoreo de Aguas Subterráneas Usando Observaciones de las Misiones GRACE de la NASA",
     "author": "NASA Video"
   },
   "gLjcfxX-2OQ": {
     "title": "NASA ARSET: Review of Aquatic Remote Sensing & Freshwater Habitats, Part 1/3",
+    "author": "NASA Video"
+  },
+  "gQAm3IwinNI": {
+    "title": "NASA ARSET: Satellites, Sensors, & Models for Climate & Hydrologic-Based Applications, Part 5/6",
+    "author": "NASA Video"
+  },
+  "hJBrbbK5Nyk": {
+    "title": "NASA ARSET: Remote Sensing of Shorelines, Part 3/3",
     "author": "NASA Video"
   },
   "hS0jzXIxBJQ": {
@@ -719,12 +911,20 @@
     "title": "NASA ARSET: Monitoring Aquatic Vegetation with Remote Sensing, Part 3/3",
     "author": "NASA Video"
   },
+  "hx-m1XMJlfc": {
+    "title": "NASA ARSET: Smoke Modeling and Forecasting, Part 4/6",
+    "author": "NASA Video"
+  },
   "hyJ_ZG3qrPY": {
     "title": "NASA ARSET:  Introduction to Remote Sensing for Land Management, Session 2/3",
     "author": "NASA Video"
   },
   "i94fHhsKoR0": {
     "title": "NASA ARSET: Monitoring Conditions During and After Tropical Storms, Session 2/2",
+    "author": "NASA Video"
+  },
+  "iNWlKhZSykU": {
+    "title": "NASA ARSET: Data Analysis and Visualization Part 2/2",
     "author": "NASA Video"
   },
   "irctKtTt0eE": {
@@ -755,6 +955,10 @@
     "title": "NASA ARSET: Satellite Data for Monitoring Urban Flooding, Part 2/2",
     "author": "NASA Video"
   },
+  "k4ub-CNo6Pg": {
+    "title": "NASA ARSET: Applications in Urban Heat Island Mapping Part 2/2",
+    "author": "NASA Video"
+  },
   "kFLDFxfsJ1A": {
     "title": "NASA ARSET: Developing Climate Adaptation Support for NASA Centers, Part 2/2",
     "author": "NASA Video"
@@ -763,8 +967,16 @@
     "title": "NASA ARSET: Lightning Data Products from Remote Sensing and Ground-Based Measurements, Part 2/3",
     "author": "NASA Video"
   },
+  "ks4R3L981bA": {
+    "title": "NASA ARSET: Coral Reefs, Part 4/4",
+    "author": "NASA Video"
+  },
   "kyfPIj27MR8": {
     "title": "NASA ARSET: Overview of Satellite Remote Sensing of Aquatic Environments, Part 1/4",
+    "author": "NASA Video"
+  },
+  "lAHM05jeQq0": {
+    "title": "NASA ARSET: The Soil & Water Assessment Tool (SWAT) for Assessing Post-Fire Water Quality: Part 2/3",
     "author": "NASA Video"
   },
   "lB_Eq8amD84": {
@@ -803,6 +1015,10 @@
     "title": "NASA ARSET: Monitoring Storms, Floods, and Landslides, Session 4/4",
     "author": "NASA Video"
   },
+  "nELx8r1iy1Q": {
+    "title": "NASA ARSET: Animal Movement, Part 3/4",
+    "author": "NASA Video"
+  },
   "nbtrJa50Bfo": {
     "title": "NASA ARSET: Utiliser le UN Biodiversity Lab pour biodiversité et le développement durable Partie 1/3",
     "author": "NASA Video"
@@ -831,6 +1047,10 @@
     "title": "NASA ARSET: Overview of SeaDAS 8.4.1 for the Processing, Analysis & Visualization of Optical Data",
     "author": "NASA Video"
   },
+  "oYfgAmntdcw": {
+    "title": "NASA ARSET: Overview of Carbon Monitoring for Terrestrial Ecosystems, Part 1/5",
+    "author": "NASA Video"
+  },
   "p0syKhg_IME": {
     "title": "NASA ARSET: Water Quality in the Coastal Zone, Part 1/3",
     "author": "NASA Video"
@@ -841,6 +1061,10 @@
   },
   "pdR4GbMcRiM": {
     "title": "NASA ARSET: Overview of Agricultural Remote Sensing, Part 1/4",
+    "author": "NASA Video"
+  },
+  "pi1arBgclfI": {
+    "title": "NASA ARSET: SWOT Mission Applications and Retrieving, Visualizing, and Manipulating Data, Part 2/2",
     "author": "NASA Video"
   },
   "poWjCS3bxb0": {
@@ -863,8 +1087,16 @@
     "title": "NASA ARSET: Biodiversity Applications for Airborne Imaging Systems, Part 3/4",
     "author": "NASA Video"
   },
+  "rVWfZH2eQY0": {
+    "title": "NASA ARSET: Fundamentals of Remote Sensing Imagery and Tools to Access, Part 2/5",
+    "author": "NASA Video"
+  },
   "raXA3gnb94Q": {
     "title": "NASA ARSET: Land Cover Classification with Radar and Optical Data, Part 2/4",
+    "author": "NASA Video"
+  },
+  "rcR-s3DbmjI": {
+    "title": "NASA ARSET: Water Budget Estimation using Remote Sensing Observations,   Part 2/3",
     "author": "NASA Video"
   },
   "rkyu9BWr28I": {
@@ -919,8 +1151,16 @@
     "title": "NASA ARSET: Spectral Indices for Land and Aquatic Applications, Part 1/3",
     "author": "NASA Video"
   },
+  "vGU4UqhHhAA": {
+    "title": "NASA ARSET: Overview of Webinar Series and an Introduction to Satellite Remote Sensing, Part 1/5",
+    "author": "NASA Video"
+  },
   "vJV50ThHc-U": {
     "title": "NASA ARSET: LiDAR Profiling Satellite Observations for Air Quality Applications, Part 1/2",
+    "author": "NASA Video"
+  },
+  "vS7r50EbFQY": {
+    "title": "NASA ARSET: Exploiting SAR to Monitor Agriculture, Part 2/2",
     "author": "NASA Video"
   },
   "vaBEHALn-js": {
@@ -955,6 +1195,10 @@
     "title": "NASA ARSET: Introduction to Datasets, Part 1/3",
     "author": "NASA Video"
   },
+  "wSCFtOjQw0o": {
+    "title": "NASA ARSET: Hands-On Analysis of AERONET Data, Part 2/5",
+    "author": "NASA Video"
+  },
   "wt6j4qP2bn8": {
     "title": "NASA ARSET: Operational Application of Remote Sensing for Disaster Management, Part 4/4",
     "author": "NASA Video"
@@ -963,12 +1207,20 @@
     "title": "NASA ARSET: Data Preparation of Imagery for Large-Scale ML Modeling, Part 1/3",
     "author": "NASA Video"
   },
+  "wx7hkbBWoCo": {
+    "title": "NASA's Earth-Observing Fleet, December 2019",
+    "author": "NASA Video"
+  },
   "x0Gg8COznJ8": {
     "title": "NASA ARSET: Introduction to the Aerosol Robotic Network (AERONET), Part 1/5",
     "author": "NASA Video"
   },
   "x7l6n7njVPo": {
     "title": "NASA ARSET: Hyperspectral Data for Land Management, Part 2/3",
+    "author": "NASA Video"
+  },
+  "x9BwaazUumc": {
+    "title": "NASA ARSET: Overview of the Riverscape Analysis Project (RAP), Part 2/3",
     "author": "NASA Video"
   },
   "xVFU4qHtvW8": {

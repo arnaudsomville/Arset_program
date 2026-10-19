@@ -1,0 +1,776 @@
+[
+ {
+  "category": "Self-Paced",
+  "subcategory": null,
+  "title": "Fundamentals of Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing"
+ },
+ {
+  "category": "Self-Paced",
+  "subcategory": null,
+  "title": "NASA’S Earth Observing Fleet",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing"
+ },
+ {
+  "category": "Self-Paced",
+  "subcategory": null,
+  "title": "Developing Sustainable Earth Science Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/developing-sustainable-earth-science-applications"
+ },
+ {
+  "category": "Self-Paced",
+  "subcategory": null,
+  "title": "Hyperspectral Data for Land and Coastal Systems (Self-Paced)",
+  "url": "https://appliedsciences.nasa.gov/join-mission/training/english/arset-hyperspectral-data-land-and-coastal-systems"
+ },
+ {
+  "category": "Agriculture",
+  "subcategory": null,
+  "title": "Satellite Remote Sensing for Agricultural Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/satellite-remote-sensing-agricultural-applications"
+ },
+ {
+  "category": "Agriculture",
+  "subcategory": null,
+  "title": "Agricultural Crop Classification with SAR and Optical Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/agricultural-crop-classification-synthetic-aperture-radar-optical-remote-sensing"
+ },
+ {
+  "category": "Agriculture",
+  "subcategory": null,
+  "title": "Large Scale Applications of Machine Learning using Remote Sensing for Building Agriculture Solutions",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Agriculture",
+  "subcategory": null,
+  "title": "Crop Mapping using Synthetic Aperture Radar (SAR) and Optical Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/crop-mapping-using-synthetic-aperture-radar-sar-optical-remote-sensing"
+ },
+ {
+  "category": "Agriculture",
+  "subcategory": null,
+  "title": "Mapping Crops and their Biophysical Characteristics with Polarimetric SAR and Optical Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/mapping-crops-biophysical-characteristics-polarimetric-sar-optical-remote-sensing"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "Lidar Profiling Satellite Observations for Air Quality Applications",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-lidar-profiling-satellite-observations-air-quality-applications"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "An Inside Look at How NASA Measures Air Pollution",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/inside-look-how-nasa-measures-air-pollution"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "High Temporal Resolution Air Quality Observations from Space",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/high-temporal-resolution-air-quality-observations-from-space"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "Introduction to Satellite Remote Sensing for Air Quality Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-satellite-remote-sensing-air-quality-applications"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "Geostationary Remote Sensing of Trace Gases for Air Quality Applications in North America",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/geostationary-remote-sensing-trace-gases-air-quality-applications-north-america"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "NASA Atmospheric Composition Ground Networks Supporting Air Quality and Climate Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/nasa-atmospheric-composition-ground-networks-supporting-air-quality-climate"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "Accessing and Analyzing Air Quality Data from Geostationary Satellites",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/accessing-analyzing-air-quality-data-from-geostationary-satellites"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "Tools for Analyzing NASA Air Quality Model Output",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/tools-analyzing-nasa-air-quality-model-output"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "Introduction and Access to Global Air Quality Forecasting Data and Tools",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-access-global-air-quality-forecasting-data-tools"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "MODIS to VIIRS Transition for Air Quality Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/modis-viirs-transition-air-quality-applications"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "High Resolution NO2 Monitoring From Space with TROPOMI",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/high-resolution-no2-monitoring-from-space-tropomi"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Air Quality",
+  "title": "Data Analysis Tools for High Resolution Air Quality Satellite Datasets",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/data-analysis-tools-high-resolution-air-quality-satellite-datasets"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Health",
+  "title": "Remote Sensing for Climate-Sensitive Infectious Diseases",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-climate-sensitive-infectious-diseases"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Health",
+  "title": "Fundamentals of Satellite Remote Sensing for Health Monitoring",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-satellite-remote-sensing-health-monitoring"
+ },
+ {
+  "category": "Air Quality & Health",
+  "subcategory": "Health",
+  "title": "Methods in Using NASA Remote Sensing for Health Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/methods-using-nasa-remote-sensing-health-applications"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Sea Level Change Tools for Planning and Decision Support",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/sea-level-change-tools-planning-decision-support"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Methane Observations for Large Emission Event Detection and Monitoring",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/methane-observations-large-emission-event-detection-monitoring"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Building Climate Risk Assessments from Local Vulnerability and Exposure",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/building-climate-risk-assessments-from-local-vulnerability-exposure"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Selecting Climate Change Projection Sets for Mitigation, Adaptation, and Risk Management Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/selecting-climate-change-projection-sets-mitigation-adaptation-risk-management"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Measuring Atmospheric Carbon Dioxide from Space in Support of Climate Related Studies",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/measuring-atmospheric-carbon-dioxide-from-space-support-climate-related-studies"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Atmospheric CO2 and CH4 Budgets to Support the Global Stocktake",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/atmospheric-co2-ch4-budgets-support-global-stocktake"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Earth Observations Toolkit for Sustainable Cities and Human Settlements",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/earth-observations-toolkit-sustainable-cities-human-settlements"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "NASA Earth Observations for Energy Management",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/nasa-earth-observations-energy-management"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Introduction to NASA Resources for Climate Change Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-nasa-resources-climate-change-applications"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Earth Observations of Blue Carbon Ecosystems",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/earth-observations-blue-carbon-ecosystems"
+ },
+ {
+  "category": "Climate",
+  "subcategory": null,
+  "title": "Applications of Carbon Dioxide Measurements for Climate-Related Studies",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/applications-carbon-dioxide-measurements-climate-related-studies"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Floods",
+  "title": "Monitoring Urban Floods using Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-urban-floods-using-remote-sensing"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Floods",
+  "title": "Monitoring and Modeling Floods using Earth Observations",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-modeling-floods-using-earth-observations"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Landslides",
+  "title": "Landslide Monitoring and Risk Assessment Using NASA Earth System Data",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Populations",
+  "title": "Humanitarian Applications using NASA Earth Observations",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/humanitarian-applications-using-nasa-earth-observations"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Populations",
+  "title": "Introduction to Population Grids and their Integration with Remote Sensing Data",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-population-grids-integration-remote-sensing-data-sustainable"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Populations",
+  "title": "Earth Observations for Humanitarian Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/earth-observations-humanitarian-applications"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Populations",
+  "title": "Transforming Earth Observation (EO) Data into Building Infrastructure Data Sets for Disaster Risk Modeling",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/transforming-earth-observation-data-building-infrastructure-data-sets-disaster-risk"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Solar Induced Fluorescence (SIF)",
+  "title": "Use of Solar Induced Fluorescence and LiDAR to Assess Vegetation Change and Vulnerability",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/use-solar-induced-fluorescence-lidar-assess-vegetation-change-vulnerability"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Solar Induced Fluorescence (SIF)",
+  "title": "Solar Induced Fluorescence (SIF) Observations for Assessing Vegetation Changes Related to Floods, Drought, and Fire Impacts",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/solar-induced-fluorescence-sif-observations-assessing-vegetation-changes-related"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Synthetic Aperture Radar (SAR)",
+  "title": "An Introduction to Synthetic Aperture Radar (SAR) and Its Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-synthetic-aperture-radar-sar-its-applications"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Synthetic Aperture Radar (SAR)",
+  "title": "Disaster Assessment using Synthetic Aperture Radar",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/disaster-assessment-using-synthetic-aperture-radar"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Synthetic Aperture Radar (SAR)",
+  "title": "SAR for Detecting and Monitoring Floods, Sea Ice, and Subsidence from Groundwater Extraction",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/sar-detecting-monitoring-floods-sea-ice-subsidence-from-groundwater-extraction"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Synthetic Aperture Radar (SAR)",
+  "title": "SAR for Landcover Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/sar-landcover-applications"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Synthetic Aperture Radar (SAR)",
+  "title": "SAR for Disasters and Hydrological Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/sar-disasters-hydrological-applications"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Synthetic Aperture Radar (SAR)",
+  "title": "Radar Remote Sensing for Land, Water, and Disaster Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/radar-remote-sensing-land-water-disaster-applications"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Urban Heat Islands (UHI)",
+  "title": "Satellite Remote Sensing for Urban Heat Islands",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/satellite-remote-sensing-urban-heat-islands"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Urban Heat Islands (UHI)",
+  "title": "Introduction to Thermal Remote Sensing and Applications in Urban Heat Island Mapping",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-thermal-remote-sensing-applications-urban-heat-island-mapping"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Urban Heat Islands (UHI)",
+  "title": "Satellite Remote Sensing for Measuring Urban Heat Islands and Constructing Heat Vulnerability Indices",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/satellite-remote-sensing-measuring-urban-heat-islands-constructing-heat"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Other",
+  "title": "Introduction to Lightning Observations and Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-lightning-observations-applications"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Other",
+  "title": "Introduction to NASA’s “Black Marble” Night Lights Data",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-nasas-black-marble-night-lights-data"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Other",
+  "title": "Earth Observations for Disaster Risk Assessment and Resilience",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/earth-observations-disaster-risk-assessment-resilience"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Other",
+  "title": "Monitoring Tropical Storms for Emergency Preparedness",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-tropical-storms-emergency-preparedness"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Other",
+  "title": "Overview of the Global Disasters Alert and Coordination System (GDACS)",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/overview-global-disaster-alert-coordination-system-gdacs"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Other",
+  "title": "Satellite Observations for Analyzing Natural Hazards on Small Island Nations",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/satellite-observations-analyzing-natural-hazards-small-island-nations"
+ },
+ {
+  "category": "Disasters",
+  "subcategory": "Other",
+  "title": "Remote Sensing for Disasters Scenarios",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-disasters-scenarios"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Introduction to the Integration of Animal Tracking and Remote Sensing",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Invasive Species Monitoring with Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/invasive-species-monitoring-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Evaluating Ecosystem Services with Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/evaluating-ecosystem-services-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Using the UN Biodiversity Lab to Support National Conservation and SDGs",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/using-un-biodiversity-lab-support-national-conservation-sustainable-development"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Understanding Phenology with Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/understanding-phenology-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "New Sensor Highlight: ECOSTRESS",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/new-sensor-highlight-ecostress"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Earth Observations for Indigenous-Led Land Management",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/earth-observations-indigenous-led-land-management"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Remote Sensing for Conservation and Biodiversity",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-conservation-biodiversity"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Introduction to Remote Sensing for Scenario-Based Ecoforecasting",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-remote-sensing-scenario-based-ecoforecasting"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Introduction to Remote Sensing for Conservation Management",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-remote-sensing-conservation-management"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Estimating Biomass and Change with GEDI and the OBIWAN API",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/estimating-biomass-change-gedi-obiwan-api"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Spaceborne Lidar for Monitoring Vegetation Structure and Biomass using GEDI",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/spaceborne-lidar-monitoring-vegetation-structure-biomass-using-gedi"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Biodiversity Applications for Airborne Imaging Systems",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/biodiversity-applications-airborne-imaging-systems"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Using the UN Biodiversity Lab to Monitor the Pulse of the Planet",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/using-un-biodiversity-lab-monitor-pulse-planet"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Species Distribution Modeling with Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/species-distribution-modeling-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Remote Sensing for Freshwater Habitats",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-freshwater-habitats"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Biodiversity and Ecosystems",
+  "title": "Airborne Data Applications for Invasive Species Mapping",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/airborne-data-applications-invasive-species-mapping"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Coastal and Oceans",
+  "title": "Monitoring Aquatic Vegetation with Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-aquatic-vegetation-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Coastal and Oceans",
+  "title": "Remote Sensing for Mangroves in Support of the UN Sustainable Development Goals",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-mangroves-support-un-sustainable-development-goals"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Coastal and Oceans",
+  "title": "Remote Sensing of Coastal Ecosystems",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-coastal-ecosystems"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Coastal and Oceans",
+  "title": "Introduction to Remote Sensing for Coastal and Ocean Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-remote-sensing-coastal-ocean-applications"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Visualizing Land Cover and Land Use Change with NASA Satellite Imagery",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/visualizing-land-cover-land-use-change-nasa-satellite-imagery"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Using Google Earth Engine for Land Monitoring Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/using-google-earth-engine-land-monitoring-applications"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Remote Sensing of Land Indicators for Sustainable Development Goal 15",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-land-indicators-sustainable-development-goal-15"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Remote Sensing of Forest Cover and Change Assessment for Carbon Monitoring",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-forest-cover-change-assessment-carbon-monitoring"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Remote Sensing for Monitoring Land Degradation and Sustainable Cities SDGs",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-monitoring-land-degradation-sustainable-cities-sdgs"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Investigating Time Series’ of Satellite Imagery",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/investigating-time-series-satellite-imagery"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Change Detection for Land Cover Mapping",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/change-detection-land-cover-mapping"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Accuracy Assessment of a Land Cover Classification",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/accuracy-assessment-land-cover-classification"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Land Cover and Change Detection",
+  "title": "Land Cover Classification with Satellite Imagery",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/land-cover-classification-satellite-imagery"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Spectral Indices",
+  "title": "Calculating Spectral Indices for Land and Aquatic Applications using QGIS",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Spectral Indices",
+  "title": "Spectral Indices for Land and Aquatic Applications",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/spectral-indices-land-aquatic-applications"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Synthetic Aperture Radar (SAR)",
+  "title": "Forest Mapping and Monitoring with SAR Data",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/forest-mapping-monitoring-sar-data"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Other",
+  "title": "Connecting Citizen Science with Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/connecting-citizen-science-remote-sensing"
+ },
+ {
+  "category": "Ecological Conservation",
+  "subcategory": "Other",
+  "title": "Remote Sensing of Drought",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-drought"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Monitoring Global Terrestrial Surface Water Height using Remote Sensing",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Introduction to Snow and Ice Data Products and Applications for Water Resources Management",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Application of NASA SPoRT-Land Information System (SPoRT-LIS) Soil Moisture Data for Drought",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/application-nasa-sport-land-information-system-sport-lis-soil-moisture-data-drought"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Groundwater Monitoring using Observations from NASA’S GRACE Missions",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/groundwater-monitoring-using-observations-from-nasas-gravity-recovery-climate"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Using Earth Observations to Monitor Water Budgets for River Basin Management",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/using-earth-observations-monitor-water-budgets-river-basin-management"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Introduction to Using the VIC Hydrologic Model with NASA Earth Observations",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-using-vic-hydrologic-model-nasa-earth-observations"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Water Resource Management using NASA Earth Science Data",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/water-resource-management-using-nasa-earth-science-data"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Applications of Remote Sensing-Based Evapotranspiration Data Products",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/applications-remote-sensing-based-evapotranspiration-data-products-agricultural"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Applications of Remote Sensing to Soil Moisture and Evapotranspiration",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/applications-remote-sensing-soil-moisture-evapotranspiration"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Monitoring Groundwater Changes for Water Resources Management",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Assessing Extreme Weather Statistics using NASA Earth eXchange Global Daily Downscaled Projections (NEX-GDDP-CMIP6)",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Drought Monitoring, Prediction, and Projection using NASA Earth System Data",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Applications of GPM IMERG Reanalysis for Assessing Extreme Dry and Wet Periods",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/applications-gpm-imerg-reanalysis-assessing-extreme-dry-wet-periods"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrology",
+  "title": "Using Earth Observations to Monitor Water Budgets for River Basin Management II",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/using-earth-observations-monitor-water-budgets-river-basin-management-ii"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrography",
+  "title": "Mapping and Monitoring Lakes and Reservoirs with Satellite Observations",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/mapping-monitoring-lakes-reservoirs-satellite-observations"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrography",
+  "title": "River Basin Delineation Based On NASA Digital Elevation Data",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/river-basin-delineation-based-nasa-digital-elevation-data"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Hydrography",
+  "title": "NASA Satellite Laser Altimetry for Coastal and Near-Shore Bathymetry",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/nasa-satellite-laser-altimetry-coastal-near-shore-bathymetry"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "The Application of Earth Observations for Assessing Waterborne Disease Risk",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Introduction to Plankton, Aerosol, Cloud, Ocean Ecosystem (PACE) Hyperspectral Observations for Water Quality Monitoring",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-plankton-aerosol-cloud-ocean-ecosystem-pace-hyperspectral-observations"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Introduction to Remote Sensing of Harmful Algal Blooms",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-remote-sensing-harmful-algal-blooms"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Monitoring Water Quality in Lakes and Coastal Regions Using STREAM",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-water-quality-lakes-coastal-regions-using-stream"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Monitoring Coastal and Estuarine Water Quality: Transitioning from MODIS to VIIRS",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-coastal-estuarine-water-quality-transitioning-from-modis-viirs"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Overview of SeaDAS 8.4.1 for the Processing, Analysis, and Visualization of Optical Remote Sensing Data for Water Quality Monitoring",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-overview-seadas-841-processing-analysis-and-visualization"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Monitoring Water Quality of Inland Lakes using Remote Sensing",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-water-quality-inland-lakes-using-remote-sensing"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Monitoring Coastal and Estuarine Water Quality using Remote Sensing and In Situ Data",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/monitoring-coastal-estuarine-water-quality-using-remote-sensing-situ-data"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Integrating Remote Sensing into a Water Quality Monitoring Program",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/integrating-remote-sensing-water-quality-monitoring-program"
+ },
+ {
+  "category": "Water Resources",
+  "subcategory": "Water Quality",
+  "title": "Processing Satellite Imagery for Monitoring Water Quality",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/processing-satellite-imagery-monitoring-water-quality"
+ },
+ {
+  "category": "Wildland Fire",
+  "subcategory": null,
+  "title": "Introduction to NASA Earth Observations and Tools for Wildfire Monitoring and Management",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Wildland Fire",
+  "subcategory": null,
+  "title": "Advanced NASA Earth Observations and Tools for Active Fire, Smoke, and Post-Fire Monitoring",
+  "url": "https://appliedsciences.nasa.gov/get-involved/training/english/arset-large-scale-applications-machine-learning-using-remote-sensing"
+ },
+ {
+  "category": "Wildland Fire",
+  "subcategory": null,
+  "title": "Satellite Observations and Tools for Fire Risk, Detection, and Analysis",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/satellite-observations-tools-fire-risk-detection-analysis"
+ },
+ {
+  "category": "Wildland Fire",
+  "subcategory": null,
+  "title": "Assessing the Impacts of Fires on Watershed Health",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/assessing-impacts-fires-watershed-health"
+ },
+ {
+  "category": "Wildland Fire",
+  "subcategory": null,
+  "title": "Using Earth Observations for Pre- and Post-Fire Monitoring",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/using-earth-observations-pre-post-fire-monitoring"
+ },
+ {
+  "category": "Skill-Building",
+  "subcategory": null,
+  "title": "Fundamentals of Machine Learning for Earth Science",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-machine-learning-earth-science"
+ },
+ {
+  "category": "Skill-Building",
+  "subcategory": null,
+  "title": "Remote Sensing Training: Methods & Best Practices",
+  "url": "https://www.earthdata.nasa.gov/learn/trainings/remote-sensing-training-methods-best-practices"
+ }
+]
