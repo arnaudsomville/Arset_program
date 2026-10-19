@@ -229,6 +229,19 @@ make sync-mobile
 Les titres vidéo ont été réconciliés avec YouTube (`resources/catalog/youtube_titles.json`,
 généré par `node scripts/youtube-titles.cjs`).
 
+Les **transcripts** YouTube de toutes les vidéos peuvent être tirés en local (pour analyse /
+mémo / cartes mentales via LLM, hors apps) :
+
+```bash
+make transcripts                 # toutes les vidéos → resources/notes/transcripts/
+make transcripts ARGS="--limit 5"   # test sur 5 vidéos
+make transcripts ARGS="--force"     # refetch (écrase les .md existants)
+```
+
+Sous-titres EN récupérés via `yt-dlp`, nettoyés (cues auto dédupliqués) et écrits en Markdown
+un fichier par vidéo, en miroir des modules du catalogue. Les `.vtt` bruts restent dans
+`resources/notes/transcripts/.raw/` (gitignoré) ; seul le Markdown est committé.
+
 ---
 
 ## Dépannage

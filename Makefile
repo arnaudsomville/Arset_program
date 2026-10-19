@@ -16,7 +16,7 @@ FFMPEG   := $(shell command -v ffmpeg 2>/dev/null)
 
 .PHONY: help install install-js install-tools install-sdk ensure-data \
         sync-mobile build-core dev-server dev-desktop pc \
-        dev-mobile build-desktop build-desktop-pages typecheck test clean \
+        dev-mobile build-desktop build-desktop-pages typecheck test clean transcripts \
         android-eas android-dev-client android-login android-local android-check build-android
 
 ## ── Cibles principales ──────────────────────────────────────────────────────
@@ -40,6 +40,7 @@ help:
 	@printf "  make typecheck         Typecheck core + server + desktop + mobile\n"
 	@printf "  make test              Lance les tests\n"
 	@printf "  make clean             Supprime node_modules et artefacts\n"
+	@printf "  make transcripts       Transcripts YouTube → Markdown (yt-dlp, analyse/mémo)\n"
 
 # install: installe toutes les ressources nécessaires
 install: install-js install-tools install-sdk ensure-data
@@ -85,6 +86,14 @@ sync-mobile:
 	@cp -f resources/catalog/video_catalog.json apps/mobile/assets/video_catalog.json
 	@cp -f resources/learning_path.json apps/mobile/assets/learning_path.json
 	@printf "✅ Assets mobile synchronisés.\n"
+
+# transcripts: récupère les transcripts YouTube de toutes les vidéos du catalogue
+# (sous-titres EN via yt-dlp) et les écrit en Markdown dans resources/notes/transcripts/.
+# Outil d'analyse/mémo uniquement (rien n'est embarqué dans les apps).
+# Options : ARGS="--force --limit 5" (voir scripts/fetch-transcripts.mjs).
+transcripts:
+	@printf "🎧 Extraction des transcripts (yt-dlp → Markdown)...\n"
+	@node scripts/fetch-transcripts.mjs $(ARGS)
 
 ## ── Développement ───────────────────────────────────────────────────────────
 

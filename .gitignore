@@ -37,6 +37,9 @@ resources/videos/
 resources/catalog/youtube_metadata_cache.json
 resources/catalog/youtube_search_cache.json
 
+# Transcripts : sous-titres bruts .vtt (régénérables via `make transcripts`)
+resources/notes/transcripts/.raw/
+
 # Environnement
 .env
 .env.*

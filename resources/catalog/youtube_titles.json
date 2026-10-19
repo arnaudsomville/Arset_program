@@ -511,9 +511,17 @@
     "title": "NASA ARSET: Introduction to Image Processing & Data Access, Session 2/3",
     "author": "NASA Video"
   },
+  "TH7y0YzPNSM": {
+    "title": "NASA ARSET: Understanding HABs in the Coastal Environment, Part 3/4",
+    "author": null
+  },
   "U-uJGnhD-zg": {
     "title": "NASA ARSET: Overview of Machine Learning, Part 1/3",
     "author": "NASA Video"
+  },
+  "UFDEllzDxE4": {
+    "title": "NASA ARSET: Platforms and Sensors for Ocean Observations, Data Access, & Processing Tools, Part 2/4",
+    "author": null
   },
   "UaDybXuIW1c": {
     "title": "NASA ARSET: Overview of Remote Sensing Observations to Assess Water Quality, Part 1/3",
@@ -613,6 +621,10 @@
   },
   "aXiKibOJWKg": {
     "title": "NASA ARSET: In Situ Data Acquisition using SeaBASS and Image Processing using SeaDAS, Part 1/2",
+    "author": "NASA Video"
+  },
+  "aYcz80Ycir0": {
+    "title": "NASA ARSET: Tracking Greenhouse Gases, Part 1/3",
     "author": "NASA Video"
   },
   "bSEYGSGVugU": {
@@ -982,13 +994,5 @@
   "zS3T-4Pnde8": {
     "title": "NASA ARSET: Introduction to the Tropospheric Ozone LiDAR Network (TOLNet), Part 4/5",
     "author": "NASA Video"
-  },
-  "UFDEllzDxE4": {
-    "title": "NASA ARSET: Platforms and Sensors for Ocean Observations, Data Access, & Processing Tools, Part 2/4",
-    "author": null
-  },
-  "TH7y0YzPNSM": {
-    "title": "NASA ARSET: Understanding HABs in the Coastal Environment, Part 3/4",
-    "author": null
   }
 }

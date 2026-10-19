@@ -11,6 +11,8 @@ resources/
 │   └── video_urls.json        #   mapping module → [{file, url}] (historique)
 ├── learning_path.json         # parcours 4 phases → clés de modules
 └── notes/                     # Plan.md, notes.md, transcripts (markdown)
+    └── transcripts/           #   transcripts YouTube, en miroir du catalogue
+                              #   (`make transcripts` — analyse/mémo, hors apps)
 ```
 
 ## `video_catalog.json` — structure
@@ -110,5 +112,12 @@ Outils associés :
 
 - `node scripts/youtube-titles.cjs` — régénère `youtube_titles.json` (vérité YouTube).
 - `node scripts/reorder-catalog.mjs` — réordonne `source_video_ids` (après `make build-core`).
+- `make transcripts` — récupère les transcripts EN de **toutes** les vidéos du catalogue
+  (sous-titres via `yt-dlp`) et les écrit en Markdown dans `resources/notes/transcripts/`,
+  en miroir des `module.key` (`<video_id>-<slug>.md`, une ligne `[mm:ss] texte` par segment).
+  Outil d'analyse/mémo (résumés, cartes mentales) — **rien n'est embarqué dans les apps**.
+  Les sous-titres bruts `.vtt` restent dans `.raw/` (gitignoré). Options : `ARGS="--force"`,
+  `ARGS="--limit 5"`, `ARGS="--only <id>"`, `ARGS="--no-merge"`. Un `_manifest.json` trace
+  l'état de chaque vidéo (ok / skipped / failed).
 
 Les JSON de `apps/mobile/assets/` sont **committés** (catalogue + parcours bundlés pour Android).
