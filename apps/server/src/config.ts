@@ -42,11 +42,4 @@ export function catalogFile(): string {
   );
 }
 
-export function learningPathFile(): string {
-  return (
-    process.env.ARSET_LEARNING_PATH ||
-    path.join(repoRoot(), "resources", "learning_path.json")
-  );
-}
-
 export const PORT = Number(process.env.PORT || 4000);

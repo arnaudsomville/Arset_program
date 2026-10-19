@@ -55,10 +55,10 @@ const [search, setSearch] = useState("");   // la valeur + la fonction pour la c
 ```tsx
 useEffect(() => {
   (async () => {
-    const [lp, comp, prog] = await Promise.all([
-      api.learningPath(), api.complementary(), api.progress(),
+    const [cat, prog] = await Promise.all([
+      api.catalog(), api.progress(),
     ]);
-    setLearningPath(lp); setComplementary(comp); setProgress(prog);
+    setCatalog(cat); setProgress(prog);
   })();
 }, []);   // [] = "ne lancer qu'une fois au montage"
 ```

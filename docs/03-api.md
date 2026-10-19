@@ -10,8 +10,7 @@ Base : `http://localhost:4000` (en dev). Toutes les réponses sont en JSON.
 | Méthode | Route | Description |
 |---|---|---|
 | GET | `/api/health` | Vérif que le serveur tourne |
-| GET | `/api/learning-path` | Parcours (4 phases → modules) |
-| GET | `/api/complementary` | Modules complémentaires groupés par catégorie |
+| GET | `/api/catalog` | Catalogue : catégories > sous-catégories > modules |
 | GET | `/api/modules/:key/videos` | Vidéos d'un module |
 | GET | `/api/progress` | Progression complète |
 | POST | `/api/progress/module/:key` | Marquer/terminer un module |
@@ -20,7 +19,7 @@ Base : `http://localhost:4000` (en dev). Toutes les réponses sont en JSON.
 | GET | `/api/videos/:id/download-status` | Suivi du téléchargement |
 | GET | `/api/videos/:id/stream` | Lire une vidéo téléchargée |
 
-> ⚠️ `:key` contient des `/` (ex. `organized/self-paced/01-...`). Il faut donc
+> ⚠️ `:key` contient des `/` (ex. `disasters/floods/01-...`). Il faut donc
 > **l'encoder** avec `encodeURIComponent()` côté client. C'est ce que fait `api.ts`.
 
 ## Détail des réponses
@@ -31,29 +30,28 @@ Base : `http://localhost:4000` (en dev). Toutes les réponses sont en JSON.
 { "ok": true, "time": "2026-10-14T09:53:03.049Z" }
 ```
 
-### `GET /api/learning-path`
-
-```json
-{
-  "phases": [
-    {
-      "name": "Phase 1 — Fondations",
-      "modules": [
-        { "key": "organized/self-paced/01-fundamentals-of-remote-sensing", "title": "Fundamentals of Remote Sensing" }
-      ]
-    }
-  ]
-}
-```
-
-### `GET /api/complementary`
+### `GET /api/catalog`
 
 ```json
 [
   {
-    "category": "air-quality",
-    "modules": [
-      { "key": "other_modules/air-quality/005-...", "title": "Lidar Profiling...", "videoCount": 2, "durationSeconds": 6300 }
+    "key": "disasters",
+    "title": "Disasters",
+    "modules": [],
+    "subcategories": [
+      {
+        "key": "floods",
+        "title": "Floods",
+        "modules": [
+          {
+            "key": "disasters/floods/01-monitoring-urban-floods-using-remote-sensing",
+            "title": "Monitoring Urban Floods using Remote Sensing",
+            "status": "ok",
+            "videoCount": 2,
+            "durationSeconds": 6300
+          }
+        ]
+      }
     ]
   }
 ]
@@ -63,8 +61,8 @@ Base : `http://localhost:4000` (en dev). Toutes les réponses sont en JSON.
 
 ```json
 {
-  "key": "organized/self-paced/01-fundamentals-of-remote-sensing",
-  "title": "Module 01 — Fundamentals of Remote Sensing",
+  "key": "self-paced/01-fundamentals-of-remote-sensing",
+  "title": "Fundamentals of Remote Sensing",
   "videos": [
     {
       "id": 244,
@@ -87,7 +85,7 @@ Le champ `downloaded` détermine si le frontend affiche `<video src=streamUrl>`
 
 ```json
 {
-  "modules": { "organized/...": { "completed": true, "updated": "..." } },
+  "modules": { "disasters/floods/01-...": { "completed": true, "updated": "..." } },
   "videos":  { "244": { "watched": true, "updated": "..." } }
 }
 ```

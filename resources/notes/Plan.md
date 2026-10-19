@@ -6,27 +6,31 @@ Ce plan de formation structuré est basé sur les **147 modules** du programme N
 
 ## 📊 Organisation des modules
 
-Les modules sont classés dans `organized/` par catégories (cf. [Online Resource Guide](https://www.earthdata.nasa.gov/s3fs-public/2026-06/OnlineResourceGuide_06_09_2026.pdf)).
+Le catalogue suit désormais **l'ordre officiel du guide PDF** (`resources/catalog/arset_taxonomy.json`),
+sans séparation « parcours perso / modules complémentaires » :
 
 ```
-organized/
-├── self-paced/              # Auto-formation
-├── skill-building/          # Compétences transverses
-├── water-resources/
-│   ├── hydrology/           # Hydrologie générale
-│   └── water-quality/       # Qualité des eaux
-├── disasters/
-│   ├── floods/
-│   └── urban-heat-islands/
-├── wildland-fire/
+resources/notes/transcripts/
+├── self-paced/
 ├── agriculture/
-├── air-quality/
+├── air-quality-health/
+│   ├── air-quality/
+│   └── health/
 ├── climate/
+├── disasters/
+│   ├── floods/  landslides/  populations/  sif/  sar/  urban-heat-islands/  other/
 ├── ecological-conservation/
-└── health/
+│   ├── biodiversity-ecosystems/  coastal-oceans/  land-cover-change/
+│   ├── spectral-indices/  sar/  other/
+├── water-resources/
+│   ├── hydrology/  hydrography/  water-quality/
+├── wildland-fire/
+├── skill-building/
+└── hors-guide/
 ```
 
-Les modules complémentaires (~117) sont dans `other_modules/` avec la même structure par catégories.
+Les modules vides ou incomplets sont marqués `upcoming` / `partial` dans le catalogue.
+Le parcours ci-dessous n'est plus utilisé par l'application : il reste comme note personnelle.
 
 ---
 

@@ -1,5 +1,5 @@
-// Copie les données statiques (catalogue + parcours) de resources/ vers
-// public/data/, qui est servi tel quel par Vite/Pages. Source unique : resources/.
+// Copie les données statiques (catalogue) de resources/ vers public/data/,
+// qui est servi tel quel par Vite/Pages. Source unique : resources/.
 import { cpSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -10,7 +10,7 @@ const destDir = resolve(here, "../public/data");
 
 const files = [
   ["resources/catalog/video_catalog.json", "video_catalog.json"],
-  ["resources/learning_path.json", "learning_path.json"],
+  ["resources/catalog/arset_taxonomy.json", "arset_taxonomy.json"],
 ];
 
 mkdirSync(destDir, { recursive: true });

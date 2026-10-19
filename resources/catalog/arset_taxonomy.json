@@ -1,0 +1,1306 @@
+{
+  "schema_version": 1,
+  "source": "OnlineResourceGuide_06_09_2026.pdf",
+  "modules": [
+    {
+      "category": "Self-Paced",
+      "subcategory": null,
+      "category_order": 1,
+      "order": 1,
+      "title": "Fundamentals of Remote Sensing",
+      "key": "self-paced/01-fundamentals-of-remote-sensing",
+      "module_id": 1,
+      "status": "ok"
+    },
+    {
+      "category": "Self-Paced",
+      "subcategory": null,
+      "category_order": 1,
+      "order": 2,
+      "title": "NASA's Earth Observing Fleet",
+      "key": "self-paced/02-nasa-s-earth-observing-fleet",
+      "module_id": 101,
+      "status": "upcoming"
+    },
+    {
+      "category": "Self-Paced",
+      "subcategory": null,
+      "category_order": 1,
+      "order": 3,
+      "title": "Developing Sustainable Earth Science Applications",
+      "key": "self-paced/03-developing-sustainable-earth-science-applications",
+      "module_id": 102,
+      "status": "ok"
+    },
+    {
+      "category": "Self-Paced",
+      "subcategory": null,
+      "category_order": 1,
+      "order": 4,
+      "title": "Hyperspectral Data for Land and Coastal Systems (Self-Paced)",
+      "key": "self-paced/04-hyperspectral-data-for-land-and-coastal-systems-self-paced",
+      "module_id": 103,
+      "status": "ok"
+    },
+    {
+      "category": "Agriculture",
+      "subcategory": null,
+      "category_order": 2,
+      "order": 1,
+      "title": "Satellite Remote Sensing for Agricultural Applications",
+      "key": "agriculture/01-satellite-remote-sensing-for-agricultural-applications",
+      "module_id": 8,
+      "status": "ok"
+    },
+    {
+      "category": "Agriculture",
+      "subcategory": null,
+      "category_order": 2,
+      "order": 2,
+      "title": "Agricultural Crop Classification with SAR and Optical Remote Sensing",
+      "key": "agriculture/02-agricultural-crop-classification-with-sar-and-optical-remote-sensing",
+      "module_id": 18,
+      "status": "partial"
+    },
+    {
+      "category": "Agriculture",
+      "subcategory": null,
+      "category_order": 2,
+      "order": 3,
+      "title": "Large Scale Applications of Machine Learning using Remote Sensing for Building Agriculture Solutions",
+      "key": "agriculture/03-large-scale-applications-of-machine-learning-using-remote-sensing-for-building-agriculture",
+      "module_id": 19,
+      "status": "ok"
+    },
+    {
+      "category": "Agriculture",
+      "subcategory": null,
+      "category_order": 2,
+      "order": 4,
+      "title": "Crop Mapping using Synthetic Aperture Radar (SAR) and Optical Remote Sensing",
+      "key": "agriculture/04-crop-mapping-using-synthetic-aperture-radar-sar-and-optical-remote-sensing",
+      "module_id": 20,
+      "status": "partial"
+    },
+    {
+      "category": "Agriculture",
+      "subcategory": null,
+      "category_order": 2,
+      "order": 5,
+      "title": "Mapping Crops and their Biophysical Characteristics with Polarimetric SAR and Optical Remote Sensing",
+      "key": "agriculture/05-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remo",
+      "module_id": 21,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 1,
+      "title": "Lidar Profiling Satellite Observations for Air Quality Applications",
+      "key": "air-quality-health/air-quality/01-lidar-profiling-satellite-observations-for-air-quality-applications",
+      "module_id": 22,
+      "status": "partial"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 2,
+      "title": "An Inside Look at How NASA Measures Air Pollution",
+      "key": "air-quality-health/air-quality/02-an-inside-look-at-how-nasa-measures-air-pollution",
+      "module_id": 23,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 3,
+      "title": "High Temporal Resolution Air Quality Observations from Space",
+      "key": "air-quality-health/air-quality/03-high-temporal-resolution-air-quality-observations-from-space",
+      "module_id": 24,
+      "status": "partial"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 4,
+      "title": "Introduction to Satellite Remote Sensing for Air Quality Applications",
+      "key": "air-quality-health/air-quality/04-introduction-to-satellite-remote-sensing-for-air-quality-applications",
+      "module_id": 25,
+      "status": "partial"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 5,
+      "title": "Geostationary Remote Sensing of Trace Gases for Air Quality Applications in North America",
+      "key": "air-quality-health/air-quality/05-geostationary-remote-sensing-of-trace-gases-for-air-quality-applications-in-north-america",
+      "module_id": 26,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 6,
+      "title": "NASA Atmospheric Composition Ground Networks Supporting Air Quality and Climate Applications",
+      "key": "air-quality-health/air-quality/06-nasa-atmospheric-composition-ground-networks-supporting-air-quality-and-climate-applicatio",
+      "module_id": 27,
+      "status": "partial"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 7,
+      "title": "Accessing and Analyzing Air Quality Data from Geostationary Satellites",
+      "key": "air-quality-health/air-quality/07-accessing-and-analyzing-air-quality-data-from-geostationary-satellites",
+      "module_id": 28,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 8,
+      "title": "Tools for Analyzing NASA Air Quality Model Output",
+      "key": "air-quality-health/air-quality/08-tools-for-analyzing-nasa-air-quality-model-output",
+      "module_id": 29,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 9,
+      "title": "Introduction and Access to Global Air Quality Forecasting Data and Tools",
+      "key": "air-quality-health/air-quality/09-introduction-and-access-to-global-air-quality-forecasting-data-and-tools",
+      "module_id": 30,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 10,
+      "title": "MODIS to VIIRS Transition for Air Quality Applications",
+      "key": "air-quality-health/air-quality/10-modis-to-viirs-transition-for-air-quality-applications",
+      "module_id": 31,
+      "status": "partial"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 11,
+      "title": "High Resolution NO2 Monitoring From Space with TROPOMI",
+      "key": "air-quality-health/air-quality/11-high-resolution-no2-monitoring-from-space-with-tropomi",
+      "module_id": 32,
+      "status": "partial"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Air Quality",
+      "category_order": 3,
+      "order": 12,
+      "title": "Data Analysis Tools for High Resolution Air Quality Satellite Datasets",
+      "key": "air-quality-health/air-quality/12-data-analysis-tools-for-high-resolution-air-quality-satellite-datasets",
+      "module_id": 33,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Health",
+      "category_order": 3,
+      "order": 1,
+      "title": "Remote Sensing for Climate-Sensitive Infectious Diseases",
+      "key": "air-quality-health/health/01-remote-sensing-for-climate-sensitive-infectious-diseases",
+      "module_id": 98,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Health",
+      "category_order": 3,
+      "order": 2,
+      "title": "Fundamentals of Satellite Remote Sensing for Health Monitoring",
+      "key": "air-quality-health/health/02-fundamentals-of-satellite-remote-sensing-for-health-monitoring",
+      "module_id": 99,
+      "status": "ok"
+    },
+    {
+      "category": "Air Quality & Health",
+      "subcategory": "Health",
+      "category_order": 3,
+      "order": 3,
+      "title": "Methods in Using NASA Remote Sensing for Health Applications",
+      "key": "air-quality-health/health/03-methods-in-using-nasa-remote-sensing-for-health-applications",
+      "module_id": 100,
+      "status": "upcoming"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 1,
+      "title": "Sea Level Change Tools for Planning and Decision Support",
+      "key": "climate/01-sea-level-change-tools-for-planning-and-decision-support",
+      "module_id": 34,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 2,
+      "title": "Methane Observations for Large Emission Event Detection and Monitoring",
+      "key": "climate/02-methane-observations-for-large-emission-event-detection-and-monitoring",
+      "module_id": 35,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 3,
+      "title": "Building Climate Risk Assessments from Local Vulnerability and Exposure",
+      "key": "climate/03-building-climate-risk-assessments-from-local-vulnerability-and-exposure",
+      "module_id": 36,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 4,
+      "title": "Selecting Climate Change Projection Sets for Mitigation, Adaptation, and Risk Management Applications",
+      "key": "climate/04-selecting-climate-change-projection-sets-for-mitigation-adaptation-and-risk-management-app",
+      "module_id": 37,
+      "status": "upcoming"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 5,
+      "title": "Measuring Atmospheric Carbon Dioxide from Space in Support of Climate Related Studies",
+      "key": "climate/05-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies",
+      "module_id": 38,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 6,
+      "title": "Atmospheric CO2 and CH4 Budgets to Support the Global Stocktake",
+      "key": "climate/06-atmospheric-co2-and-ch4-budgets-to-support-the-global-stocktake",
+      "module_id": 39,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 7,
+      "title": "Earth Observations Toolkit for Sustainable Cities and Human Settlements",
+      "key": "climate/07-earth-observations-toolkit-for-sustainable-cities-and-human-settlements",
+      "module_id": 40,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 8,
+      "title": "NASA Earth Observations for Energy Management",
+      "key": "climate/08-nasa-earth-observations-for-energy-management",
+      "module_id": 41,
+      "status": "partial"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 9,
+      "title": "Introduction to NASA Resources for Climate Change Applications",
+      "key": "climate/09-introduction-to-nasa-resources-for-climate-change-applications",
+      "module_id": 42,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 10,
+      "title": "Earth Observations of Blue Carbon Ecosystems",
+      "key": "climate/10-earth-observations-of-blue-carbon-ecosystems",
+      "module_id": 43,
+      "status": "ok"
+    },
+    {
+      "category": "Climate",
+      "subcategory": null,
+      "category_order": 4,
+      "order": 11,
+      "title": "Applications of Carbon Dioxide Measurements for Climate-Related Studies",
+      "key": "climate/11-applications-of-carbon-dioxide-measurements-for-climate-related-studies",
+      "module_id": 44,
+      "status": "upcoming"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Floods",
+      "category_order": 5,
+      "order": 1,
+      "title": "Monitoring Urban Floods using Remote Sensing",
+      "key": "disasters/floods/01-monitoring-urban-floods-using-remote-sensing",
+      "module_id": 45,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Floods",
+      "category_order": 5,
+      "order": 2,
+      "title": "Monitoring and Modeling Floods using Earth Observations",
+      "key": "disasters/floods/02-monitoring-and-modeling-floods-using-earth-observations",
+      "module_id": 46,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Landslides",
+      "category_order": 5,
+      "order": 1,
+      "title": "Landslide Monitoring and Risk Assessment Using NASA Earth System Data",
+      "key": "disasters/landslides/01-landslide-monitoring-and-risk-assessment-using-nasa-earth-system-data",
+      "module_id": 47,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Populations",
+      "category_order": 5,
+      "order": 1,
+      "title": "Humanitarian Applications using NASA Earth Observations",
+      "key": "disasters/populations/01-humanitarian-applications-using-nasa-earth-observations",
+      "module_id": 48,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Populations",
+      "category_order": 5,
+      "order": 2,
+      "title": "Introduction to Population Grids and their Integration with Remote Sensing Data",
+      "key": "disasters/populations/02-introduction-to-population-grids-and-their-integration-with-remote-sensing-data",
+      "module_id": 49,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Populations",
+      "category_order": 5,
+      "order": 3,
+      "title": "Earth Observations for Humanitarian Applications",
+      "key": "disasters/populations/03-earth-observations-for-humanitarian-applications",
+      "module_id": 50,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Populations",
+      "category_order": 5,
+      "order": 4,
+      "title": "Transforming Earth Observation (EO) Data into Building Infrastructure Data Sets for Disaster Risk Modeling",
+      "key": "disasters/populations/04-transforming-earth-observation-eo-data-into-building-infrastructure-data-sets-for-disaster",
+      "module_id": 51,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Solar Induced Fluorescence (SIF)",
+      "category_order": 5,
+      "order": 1,
+      "title": "Use of Solar Induced Fluorescence and LiDAR to Assess Vegetation Change and Vulnerability",
+      "key": "disasters/sif/01-use-of-solar-induced-fluorescence-and-lidar-to-assess-vegetation-change-and-vulnerability",
+      "module_id": 52,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Solar Induced Fluorescence (SIF)",
+      "category_order": 5,
+      "order": 2,
+      "title": "Solar Induced Fluorescence (SIF) Observations for Assessing Vegetation Changes Related to Floods, Drought, and Fire Impacts",
+      "key": "disasters/sif/02-solar-induced-fluorescence-sif-observations-for-assessing-vegetation-changes-related-to-fl",
+      "module_id": 53,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Synthetic Aperture Radar (SAR)",
+      "category_order": 5,
+      "order": 1,
+      "title": "An Introduction to Synthetic Aperture Radar (SAR) and Its Applications",
+      "key": "disasters/sar/01-an-introduction-to-synthetic-aperture-radar-sar-and-its-applications",
+      "module_id": 5,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Synthetic Aperture Radar (SAR)",
+      "category_order": 5,
+      "order": 2,
+      "title": "Disaster Assessment using Synthetic Aperture Radar",
+      "key": "disasters/sar/02-disaster-assessment-using-synthetic-aperture-radar",
+      "module_id": 54,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Synthetic Aperture Radar (SAR)",
+      "category_order": 5,
+      "order": 3,
+      "title": "SAR for Detecting and Monitoring Floods, Sea Ice, and Subsidence from Groundwater Extraction",
+      "key": "disasters/sar/03-sar-for-detecting-and-monitoring-floods-sea-ice-and-subsidence-from-groundwater-extraction",
+      "module_id": 55,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Synthetic Aperture Radar (SAR)",
+      "category_order": 5,
+      "order": 4,
+      "title": "SAR for Landcover Applications",
+      "key": "disasters/sar/04-sar-for-landcover-applications",
+      "module_id": 56,
+      "status": "upcoming"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Synthetic Aperture Radar (SAR)",
+      "category_order": 5,
+      "order": 5,
+      "title": "SAR for Disasters and Hydrological Applications",
+      "key": "disasters/sar/05-sar-for-disasters-and-hydrological-applications",
+      "module_id": 57,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Synthetic Aperture Radar (SAR)",
+      "category_order": 5,
+      "order": 6,
+      "title": "Radar Remote Sensing for Land, Water, and Disaster Applications",
+      "key": "disasters/sar/06-radar-remote-sensing-for-land-water-and-disaster-applications",
+      "module_id": 58,
+      "status": "upcoming"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Urban Heat Islands (UHI)",
+      "category_order": 5,
+      "order": 1,
+      "title": "Satellite Remote Sensing for Urban Heat Islands",
+      "key": "disasters/urban-heat-islands/01-satellite-remote-sensing-for-urban-heat-islands",
+      "module_id": 301,
+      "status": "upcoming"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Urban Heat Islands (UHI)",
+      "category_order": 5,
+      "order": 2,
+      "title": "Introduction to Thermal Remote Sensing and Applications in Urban Heat Island Mapping",
+      "key": "disasters/urban-heat-islands/02-introduction-to-thermal-remote-sensing-and-applications-in-urban-heat-island-mapping",
+      "module_id": 302,
+      "status": "upcoming"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Urban Heat Islands (UHI)",
+      "category_order": 5,
+      "order": 3,
+      "title": "Satellite Remote Sensing for Measuring Urban Heat Islands and Constructing Heat Vulnerability Indices",
+      "key": "disasters/urban-heat-islands/03-satellite-remote-sensing-for-measuring-urban-heat-islands-and-constructing-heat-vulnerabil",
+      "module_id": 16,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Other",
+      "category_order": 5,
+      "order": 1,
+      "title": "Introduction to Lightning Observations and Applications",
+      "key": "disasters/other/01-introduction-to-lightning-observations-and-applications",
+      "module_id": 59,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Other",
+      "category_order": 5,
+      "order": 2,
+      "title": "Introduction to NASA's “Black Marble” Night Lights Data",
+      "key": "disasters/other/02-introduction-to-nasa-s-black-marble-night-lights-data",
+      "module_id": 60,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Other",
+      "category_order": 5,
+      "order": 3,
+      "title": "Earth Observations for Disaster Risk Assessment and Resilience",
+      "key": "disasters/other/03-earth-observations-for-disaster-risk-assessment-and-resilience",
+      "module_id": 303,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Other",
+      "category_order": 5,
+      "order": 4,
+      "title": "Monitoring Tropical Storms for Emergency Preparedness",
+      "key": "disasters/other/04-monitoring-tropical-storms-for-emergency-preparedness",
+      "module_id": 61,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Other",
+      "category_order": 5,
+      "order": 5,
+      "title": "Overview of the Global Disasters Alert and Coordination System (GDACS)",
+      "key": "disasters/other/05-overview-of-the-global-disasters-alert-and-coordination-system-gdacs",
+      "module_id": 62,
+      "status": "partial"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Other",
+      "category_order": 5,
+      "order": 6,
+      "title": "Satellite Observations for Analyzing Natural Hazards on Small Island Nations",
+      "key": "disasters/other/06-satellite-observations-for-analyzing-natural-hazards-on-small-island-nations",
+      "module_id": 63,
+      "status": "ok"
+    },
+    {
+      "category": "Disasters",
+      "subcategory": "Other",
+      "category_order": 5,
+      "order": 7,
+      "title": "Remote Sensing for Disasters Scenarios",
+      "key": "disasters/other/07-remote-sensing-for-disasters-scenarios",
+      "module_id": 64,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 1,
+      "title": "Introduction to the Integration of Animal Tracking and Remote Sensing",
+      "key": "ecological-conservation/biodiversity-ecosystems/01-introduction-to-the-integration-of-animal-tracking-and-remote-sensing",
+      "module_id": 65,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 2,
+      "title": "Invasive Species Monitoring with Remote Sensing",
+      "key": "ecological-conservation/biodiversity-ecosystems/02-invasive-species-monitoring-with-remote-sensing",
+      "module_id": 66,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 3,
+      "title": "Evaluating Ecosystem Services with Remote Sensing",
+      "key": "ecological-conservation/biodiversity-ecosystems/03-evaluating-ecosystem-services-with-remote-sensing",
+      "module_id": 67,
+      "status": "upcoming"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 4,
+      "title": "Using the UN Biodiversity Lab to Support National Conservation and SDGs",
+      "key": "ecological-conservation/biodiversity-ecosystems/04-using-the-un-biodiversity-lab-to-support-national-conservation-and-sdgs",
+      "module_id": 68,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 5,
+      "title": "Understanding Phenology with Remote Sensing",
+      "key": "ecological-conservation/biodiversity-ecosystems/05-understanding-phenology-with-remote-sensing",
+      "module_id": 69,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 6,
+      "title": "New Sensor Highlight: ECOSTRESS",
+      "key": "ecological-conservation/biodiversity-ecosystems/06-new-sensor-highlight-ecostress",
+      "module_id": 70,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 7,
+      "title": "Earth Observations for Indigenous-Led Land Management",
+      "key": "ecological-conservation/biodiversity-ecosystems/07-earth-observations-for-indigenous-led-land-management",
+      "module_id": 71,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 8,
+      "title": "Remote Sensing for Conservation and Biodiversity",
+      "key": "ecological-conservation/biodiversity-ecosystems/08-remote-sensing-for-conservation-and-biodiversity",
+      "module_id": 72,
+      "status": "upcoming"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 9,
+      "title": "Introduction to Remote Sensing for Scenario-Based Ecoforecasting",
+      "key": "ecological-conservation/biodiversity-ecosystems/09-introduction-to-remote-sensing-for-scenario-based-ecoforecasting",
+      "module_id": 304,
+      "status": "upcoming"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 10,
+      "title": "Introduction to Remote Sensing for Conservation Management",
+      "key": "ecological-conservation/biodiversity-ecosystems/10-introduction-to-remote-sensing-for-conservation-management",
+      "module_id": 73,
+      "status": "partial"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 11,
+      "title": "Estimating Biomass and Change with GEDI and the OBIWAN API",
+      "key": "ecological-conservation/biodiversity-ecosystems/11-estimating-biomass-and-change-with-gedi-and-the-obiwan-api",
+      "module_id": 74,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 12,
+      "title": "Spaceborne Lidar for Monitoring Vegetation Structure and Biomass using GEDI",
+      "key": "ecological-conservation/biodiversity-ecosystems/12-spaceborne-lidar-for-monitoring-vegetation-structure-and-biomass-using-gedi",
+      "module_id": 75,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 13,
+      "title": "Biodiversity Applications for Airborne Imaging Systems",
+      "key": "ecological-conservation/biodiversity-ecosystems/13-biodiversity-applications-for-airborne-imaging-systems",
+      "module_id": 76,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 14,
+      "title": "Using the UN Biodiversity Lab to Monitor the Pulse of the Planet",
+      "key": "ecological-conservation/biodiversity-ecosystems/14-using-the-un-biodiversity-lab-to-monitor-the-pulse-of-the-planet",
+      "module_id": 77,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 15,
+      "title": "Species Distribution Modeling with Remote Sensing",
+      "key": "ecological-conservation/biodiversity-ecosystems/15-species-distribution-modeling-with-remote-sensing",
+      "module_id": 78,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 16,
+      "title": "Remote Sensing for Freshwater Habitats",
+      "key": "ecological-conservation/biodiversity-ecosystems/16-remote-sensing-for-freshwater-habitats",
+      "module_id": 79,
+      "status": "partial"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Biodiversity and Ecosystems",
+      "category_order": 6,
+      "order": 17,
+      "title": "Airborne Data Applications for Invasive Species Mapping",
+      "key": "ecological-conservation/biodiversity-ecosystems/17-airborne-data-applications-for-invasive-species-mapping",
+      "module_id": 80,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Coastal and Oceans",
+      "category_order": 6,
+      "order": 1,
+      "title": "Monitoring Aquatic Vegetation with Remote Sensing",
+      "key": "ecological-conservation/coastal-oceans/01-monitoring-aquatic-vegetation-with-remote-sensing",
+      "module_id": 81,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Coastal and Oceans",
+      "category_order": 6,
+      "order": 2,
+      "title": "Remote Sensing for Mangroves in Support of the UN Sustainable Development Goals",
+      "key": "ecological-conservation/coastal-oceans/02-remote-sensing-for-mangroves-in-support-of-the-un-sustainable-development-goals",
+      "module_id": 82,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Coastal and Oceans",
+      "category_order": 6,
+      "order": 3,
+      "title": "Remote Sensing of Coastal Ecosystems",
+      "key": "ecological-conservation/coastal-oceans/03-remote-sensing-of-coastal-ecosystems",
+      "module_id": 83,
+      "status": "partial"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Coastal and Oceans",
+      "category_order": 6,
+      "order": 4,
+      "title": "Introduction to Remote Sensing for Coastal and Ocean Applications",
+      "key": "ecological-conservation/coastal-oceans/04-introduction-to-remote-sensing-for-coastal-and-ocean-applications",
+      "module_id": 84,
+      "status": "partial"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 1,
+      "title": "Visualizing Land Cover and Land Use Change with NASA Satellite Imagery",
+      "key": "ecological-conservation/land-cover-change/01-visualizing-land-cover-and-land-use-change-with-nasa-satellite-imagery",
+      "module_id": 85,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 2,
+      "title": "Using Google Earth Engine for Land Monitoring Applications",
+      "key": "ecological-conservation/land-cover-change/02-using-google-earth-engine-for-land-monitoring-applications",
+      "module_id": 86,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 3,
+      "title": "Remote Sensing of Land Indicators for Sustainable Development Goal 15",
+      "key": "ecological-conservation/land-cover-change/03-remote-sensing-of-land-indicators-for-sustainable-development-goal-15",
+      "module_id": 87,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 4,
+      "title": "Remote Sensing of Forest Cover and Change Assessment for Carbon Monitoring",
+      "key": "ecological-conservation/land-cover-change/04-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring",
+      "module_id": 88,
+      "status": "partial"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 5,
+      "title": "Remote Sensing for Monitoring Land Degradation and Sustainable Cities SDGs",
+      "key": "ecological-conservation/land-cover-change/05-remote-sensing-for-monitoring-land-degradation-and-sustainable-cities-sdgs",
+      "module_id": 89,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 6,
+      "title": "Investigating Time Series of Satellite Imagery",
+      "key": "ecological-conservation/land-cover-change/06-investigating-time-series-of-satellite-imagery",
+      "module_id": 90,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 7,
+      "title": "Change Detection for Land Cover Mapping",
+      "key": "ecological-conservation/land-cover-change/07-change-detection-for-land-cover-mapping",
+      "module_id": 91,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 8,
+      "title": "Accuracy Assessment of a Land Cover Classification",
+      "key": "ecological-conservation/land-cover-change/08-accuracy-assessment-of-a-land-cover-classification",
+      "module_id": 92,
+      "status": "partial"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Land Cover and Change Detection",
+      "category_order": 6,
+      "order": 9,
+      "title": "Land Cover Classification with Satellite Imagery",
+      "key": "ecological-conservation/land-cover-change/09-land-cover-classification-with-satellite-imagery",
+      "module_id": 93,
+      "status": "upcoming"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Spectral Indices",
+      "category_order": 6,
+      "order": 1,
+      "title": "Calculating Spectral Indices for Land and Aquatic Applications using QGIS",
+      "key": "ecological-conservation/spectral-indices/01-calculating-spectral-indices-for-land-and-aquatic-applications-using-qgis",
+      "module_id": 94,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Spectral Indices",
+      "category_order": 6,
+      "order": 2,
+      "title": "Spectral Indices for Land and Aquatic Applications",
+      "key": "ecological-conservation/spectral-indices/02-spectral-indices-for-land-and-aquatic-applications",
+      "module_id": 95,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Synthetic Aperture Radar (SAR)",
+      "category_order": 6,
+      "order": 1,
+      "title": "Forest Mapping and Monitoring with SAR Data",
+      "key": "ecological-conservation/sar/01-forest-mapping-and-monitoring-with-sar-data",
+      "module_id": 96,
+      "status": "partial"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Other",
+      "category_order": 6,
+      "order": 1,
+      "title": "Connecting Citizen Science with Remote Sensing",
+      "key": "ecological-conservation/other/01-connecting-citizen-science-with-remote-sensing",
+      "module_id": 97,
+      "status": "ok"
+    },
+    {
+      "category": "Ecological Conservation",
+      "subcategory": "Other",
+      "category_order": 6,
+      "order": 2,
+      "title": "Remote Sensing of Drought",
+      "key": "ecological-conservation/other/02-remote-sensing-of-drought",
+      "module_id": 6,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 1,
+      "title": "Monitoring Global Terrestrial Surface Water Height using Remote Sensing",
+      "key": "water-resources/hydrology/01-monitoring-global-terrestrial-surface-water-height-using-remote-sensing",
+      "module_id": 105,
+      "status": "partial"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 2,
+      "title": "Introduction to Snow and Ice Data Products and Applications for Water Resources Management",
+      "key": "water-resources/hydrology/02-introduction-to-snow-and-ice-data-products-and-applications-for-water-resources-management",
+      "module_id": 106,
+      "status": "partial"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 3,
+      "title": "Application of NASA SPoRT-Land Information System (SPoRT-LIS) Soil Moisture Data for Drought",
+      "key": "water-resources/hydrology/03-application-of-nasa-sport-land-information-system-sport-lis-soil-moisture-data-for-drought",
+      "module_id": 107,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 4,
+      "title": "Groundwater Monitoring using Observations from NASA's GRACE Missions",
+      "key": "water-resources/hydrology/04-groundwater-monitoring-using-observations-from-nasa-s-grace-missions",
+      "module_id": 108,
+      "status": "partial"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 5,
+      "title": "Using Earth Observations to Monitor Water Budgets for River Basin Management",
+      "key": "water-resources/hydrology/05-using-earth-observations-to-monitor-water-budgets-for-river-basin-management",
+      "module_id": 109,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 6,
+      "title": "Introduction to Using the VIC Hydrologic Model with NASA Earth Observations",
+      "key": "water-resources/hydrology/06-introduction-to-using-the-vic-hydrologic-model-with-nasa-earth-observations",
+      "module_id": 305,
+      "status": "upcoming"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 7,
+      "title": "Water Resource Management using NASA Earth Science Data",
+      "key": "water-resources/hydrology/07-water-resource-management-using-nasa-earth-science-data",
+      "module_id": 110,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 8,
+      "title": "Applications of Remote Sensing-Based Evapotranspiration Data Products",
+      "key": "water-resources/hydrology/08-applications-of-remote-sensing-based-evapotranspiration-data-products",
+      "module_id": 111,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 9,
+      "title": "Applications of Remote Sensing to Soil Moisture and Evapotranspiration",
+      "key": "water-resources/hydrology/09-applications-of-remote-sensing-to-soil-moisture-and-evapotranspiration",
+      "module_id": 112,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 10,
+      "title": "Monitoring Groundwater Changes for Water Resources Management",
+      "key": "water-resources/hydrology/10-monitoring-groundwater-changes-for-water-resources-management",
+      "module_id": 113,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 11,
+      "title": "Assessing Extreme Weather Statistics using NASA Earth eXchange Global Daily Downscaled Projections (NEX-GDDP-CMIP6)",
+      "key": "water-resources/hydrology/11-assessing-extreme-weather-statistics-using-nasa-earth-exchange-global-daily-downscaled-pro",
+      "module_id": 114,
+      "status": "partial"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 12,
+      "title": "Drought Monitoring, Prediction, and Projection using NASA Earth System Data",
+      "key": "water-resources/hydrology/12-drought-monitoring-prediction-and-projection-using-nasa-earth-system-data",
+      "module_id": 306,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 13,
+      "title": "Applications of GPM IMERG Reanalysis for Assessing Extreme Dry and Wet Periods",
+      "key": "water-resources/hydrology/13-applications-of-gpm-imerg-reanalysis-for-assessing-extreme-dry-and-wet-periods",
+      "module_id": 115,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrology",
+      "category_order": 7,
+      "order": 14,
+      "title": "Using Earth Observations to Monitor Water Budgets for River Basin Management II",
+      "key": "water-resources/hydrology/14-using-earth-observations-to-monitor-water-budgets-for-river-basin-management-ii",
+      "module_id": 116,
+      "status": "upcoming"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrography",
+      "category_order": 7,
+      "order": 1,
+      "title": "Mapping and Monitoring Lakes and Reservoirs with Satellite Observations",
+      "key": "water-resources/hydrography/01-mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations",
+      "module_id": 117,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrography",
+      "category_order": 7,
+      "order": 2,
+      "title": "River Basin Delineation Based On NASA Digital Elevation Data",
+      "key": "water-resources/hydrography/02-river-basin-delineation-based-on-nasa-digital-elevation-data",
+      "module_id": 118,
+      "status": "partial"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Hydrography",
+      "category_order": 7,
+      "order": 3,
+      "title": "NASA Satellite Laser Altimetry for Coastal and Near-Shore Bathymetry",
+      "key": "water-resources/hydrography/03-nasa-satellite-laser-altimetry-for-coastal-and-near-shore-bathymetry",
+      "module_id": 307,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 1,
+      "title": "The Application of Earth Observations for Assessing Waterborne Disease Risk",
+      "key": "water-resources/water-quality/01-the-application-of-earth-observations-for-assessing-waterborne-disease-risk",
+      "module_id": 308,
+      "status": "upcoming"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 2,
+      "title": "Introduction to Plankton, Aerosol, Cloud, Ocean Ecosystem (PACE) Hyperspectral Observations for Water Quality Monitoring",
+      "key": "water-resources/water-quality/02-introduction-to-plankton-aerosol-cloud-ocean-ecosystem-pace-hyperspectral-observations-for",
+      "module_id": 119,
+      "status": "partial"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 3,
+      "title": "Introduction to Remote Sensing of Harmful Algal Blooms",
+      "key": "water-resources/water-quality/03-introduction-to-remote-sensing-of-harmful-algal-blooms",
+      "module_id": 12,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 4,
+      "title": "Monitoring Water Quality in Lakes and Coastal Regions Using STREAM",
+      "key": "water-resources/water-quality/04-monitoring-water-quality-in-lakes-and-coastal-regions-using-stream",
+      "module_id": 11,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 5,
+      "title": "Monitoring Coastal and Estuarine Water Quality: Transitioning from MODIS to VIIRS",
+      "key": "water-resources/water-quality/05-monitoring-coastal-and-estuarine-water-quality-transitioning-from-modis-to-viirs",
+      "module_id": 120,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 6,
+      "title": "Overview of SeaDAS 8.4.1 for the Processing, Analysis, and Visualization of Optical Remote Sensing Data for Water Quality Monitoring",
+      "key": "water-resources/water-quality/06-overview-of-seadas-8-4-1-for-the-processing-analysis-and-visualization-of-optical-remote-s",
+      "module_id": 121,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 7,
+      "title": "Monitoring Water Quality of Inland Lakes using Remote Sensing",
+      "key": "water-resources/water-quality/07-monitoring-water-quality-of-inland-lakes-using-remote-sensing",
+      "module_id": 122,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 8,
+      "title": "Monitoring Coastal and Estuarine Water Quality using Remote Sensing and In Situ Data",
+      "key": "water-resources/water-quality/08-monitoring-coastal-and-estuarine-water-quality-using-remote-sensing-and-in-situ-data",
+      "module_id": 123,
+      "status": "partial"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 9,
+      "title": "Integrating Remote Sensing into a Water Quality Monitoring Program",
+      "key": "water-resources/water-quality/09-integrating-remote-sensing-into-a-water-quality-monitoring-program",
+      "module_id": 9,
+      "status": "ok"
+    },
+    {
+      "category": "Water Resources",
+      "subcategory": "Water Quality",
+      "category_order": 7,
+      "order": 10,
+      "title": "Processing Satellite Imagery for Monitoring Water Quality",
+      "key": "water-resources/water-quality/10-processing-satellite-imagery-for-monitoring-water-quality",
+      "module_id": 10,
+      "status": "ok"
+    },
+    {
+      "category": "Wildland Fire",
+      "subcategory": null,
+      "category_order": 8,
+      "order": 1,
+      "title": "Introduction to NASA Earth Observations and Tools for Wildfire Monitoring and Management",
+      "key": "wildland-fire/01-introduction-to-nasa-earth-observations-and-tools-for-wildfire-monitoring-and-management",
+      "module_id": 309,
+      "status": "upcoming"
+    },
+    {
+      "category": "Wildland Fire",
+      "subcategory": null,
+      "category_order": 8,
+      "order": 2,
+      "title": "Advanced NASA Earth Observations and Tools for Active Fire, Smoke, and Post-Fire Monitoring",
+      "key": "wildland-fire/02-advanced-nasa-earth-observations-and-tools-for-active-fire-smoke-and-post-fire-monitoring",
+      "module_id": 310,
+      "status": "upcoming"
+    },
+    {
+      "category": "Wildland Fire",
+      "subcategory": null,
+      "category_order": 8,
+      "order": 3,
+      "title": "Satellite Observations and Tools for Fire Risk, Detection, and Analysis",
+      "key": "wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis",
+      "module_id": 124,
+      "status": "partial"
+    },
+    {
+      "category": "Wildland Fire",
+      "subcategory": null,
+      "category_order": 8,
+      "order": 4,
+      "title": "Assessing the Impacts of Fires on Watershed Health",
+      "key": "wildland-fire/04-assessing-the-impacts-of-fires-on-watershed-health",
+      "module_id": 125,
+      "status": "upcoming"
+    },
+    {
+      "category": "Wildland Fire",
+      "subcategory": null,
+      "category_order": 8,
+      "order": 5,
+      "title": "Using Earth Observations for Pre- and Post-Fire Monitoring",
+      "key": "wildland-fire/05-using-earth-observations-for-pre-and-post-fire-monitoring",
+      "module_id": 126,
+      "status": "partial"
+    },
+    {
+      "category": "Skill Building",
+      "subcategory": null,
+      "category_order": 9,
+      "order": 1,
+      "title": "Fundamentals of Machine Learning for Earth Science",
+      "key": "skill-building/01-fundamentals-of-machine-learning-for-earth-science",
+      "module_id": 2,
+      "status": "ok"
+    },
+    {
+      "category": "Skill Building",
+      "subcategory": null,
+      "category_order": 9,
+      "order": 2,
+      "title": "Remote Sensing Training: Methods & Best Practices",
+      "key": "skill-building/02-remote-sensing-training-methods-best-practices",
+      "module_id": 104,
+      "status": "ok"
+    },
+    {
+      "category": "Hors guide",
+      "subcategory": null,
+      "category_order": 10,
+      "order": 1,
+      "title": "Vidéos sans training correspondant (à reclasser)",
+      "key": "hors-guide/01-videos-sans-training-correspondant-a-reclasser",
+      "module_id": 311,
+      "status": "ok"
+    }
+  ]
+}

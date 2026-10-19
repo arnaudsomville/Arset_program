@@ -3,15 +3,13 @@ import express, { type Request, type Response } from "express";
 import cors from "cors";
 import {
   buildCatalogIndex,
-  categoryOf,
   formatDuration,
   parseCatalog,
-  parseLearningPath,
   type CatalogIndex,
-  type LearningPath,
+  type CatalogModule,
   type VideoView,
 } from "@arset/core";
-import { catalogFile, learningPathFile, PORT } from "./config";
+import { catalogFile, PORT } from "./config";
 import {
   loadProgress,
   mutateProgress,
@@ -19,16 +17,12 @@ import {
 } from "./store";
 import { isDownloaded, startDownload, statusOf, videoFile } from "./downloads";
 
-function load(): { index: CatalogIndex; learningPath: LearningPath } {
+function load(): CatalogIndex {
   const catalog = parseCatalog(JSON.parse(fs.readFileSync(catalogFile(), "utf8")));
-  const index = buildCatalogIndex(catalog);
-  const learningPath = parseLearningPath(
-    JSON.parse(fs.readFileSync(learningPathFile(), "utf8")),
-  );
-  return { index, learningPath };
+  return buildCatalogIndex(catalog);
 }
 
-const { index, learningPath } = load();
+const index = load();
 
 function videoView(id: number): VideoView | null {
   const video = index.videosById.get(id);
@@ -54,33 +48,31 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true, time: new Date().toISOString() });
 });
 
-app.get("/api/learning-path", (_req, res) => {
-  res.json(learningPath);
+app.get("/api/catalog", (_req, res) => {
+  const categories = index.categories.map((cat) => ({
+    key: cat.key,
+    title: cat.label,
+    modules: cat.modules.map(moduleSummary),
+    subcategories: cat.subcategories.map((sub) => ({
+      key: sub.key,
+      title: sub.label,
+      modules: sub.modules.map(moduleSummary),
+    })),
+  }));
+  res.json(categories);
 });
 
-app.get("/api/complementary", (_req, res) => {
-  const groups = new Map<
-    string,
-    { key: string; title: string; videoCount: number; durationSeconds: number }[]
-  >();
-  for (const mod of index.complementaryModules) {
-    const cat = categoryOf(mod.key);
-    const videos = index.videosByModuleKey.get(mod.key) ?? [];
-    const durationSeconds = videos.reduce((s, v) => s + v.duration_seconds, 0);
-    const list = groups.get(cat) ?? [];
-    list.push({
-      key: mod.key,
-      title: mod.title,
-      videoCount: videos.length,
-      durationSeconds: Math.round(durationSeconds),
-    });
-    groups.set(cat, list);
-  }
-  const out = Array.from(groups.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([category, modules]) => ({ category, modules }));
-  res.json(out);
-});
+function moduleSummary(mod: CatalogModule) {
+  const videos = index.videosByModuleKey.get(mod.key) ?? [];
+  const durationSeconds = videos.reduce((s, v) => s + v.duration_seconds, 0);
+  return {
+    key: mod.key,
+    title: mod.title,
+    status: mod.status,
+    videoCount: videos.length,
+    durationSeconds: Math.round(durationSeconds),
+  };
+}
 
 app.get("/api/modules/:key/videos", (req: Request, res: Response) => {
   const key = req.params.key;

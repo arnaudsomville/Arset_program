@@ -58,7 +58,7 @@ make build-desktop-pages      # ou : npm run build:pages -w @arset/desktop
 
 Ce build (`--mode pages`) :
 
-- copie `resources/catalog/video_catalog.json` + `resources/learning_path.json` dans
+- copie `resources/catalog/video_catalog.json` + `arset_taxonomy.json` dans
   `apps/desktop/public/data/` (via `scripts/sync-data.mjs`) ;
 - calcule l'index côté navigateur avec `@arset/core` (aucun serveur) ;
 - persiste la progression dans **`localStorage`** (par navigateur, non synchronisée) ;

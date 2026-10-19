@@ -78,13 +78,12 @@ ensure-data:
 
 ## ── Ressources ──────────────────────────────────────────────────────────────
 
-# sync-mobile: recopie le catalogue + le parcours (source de vérité: resources/)
+# sync-mobile: recopie le catalogue (source de vérité: resources/)
 # vers les assets bundlés de l'app mobile.
 sync-mobile:
-	@printf "🔄 Copie catalog + parcours → apps/mobile/assets...\n"
+	@printf "🔄 Copie catalog → apps/mobile/assets...\n"
 	@mkdir -p apps/mobile/assets
 	@cp -f resources/catalog/video_catalog.json apps/mobile/assets/video_catalog.json
-	@cp -f resources/learning_path.json apps/mobile/assets/learning_path.json
 	@printf "✅ Assets mobile synchronisés.\n"
 
 # transcripts: récupère les transcripts YouTube de toutes les vidéos du catalogue

@@ -25,8 +25,7 @@ Arset_program/
 ├── Makefile                   # orchestration : install / sync / dev / build
 ├── package.json               # npm workspaces (apps/* + packages/*)
 ├── resources/                 # 🗂 ressources centralisées (committées, légères)
-│   ├── catalog/               #   video_catalog.json + video_urls.json (source de vérité)
-│   ├── learning_path.json     #   parcours 4 phases → clés de modules
+│   ├── catalog/               #   video_catalog.json, arset_taxonomy.json (source de vérité)
 │   └── notes/                 #   Plan.md, notes.md, transcripts
 ├── packages/
 │   └── core/                  # @arset/core — types + loaders partagés
@@ -211,9 +210,11 @@ téléchargement est indisponible** (message d'erreur explicite au clic).
 ## Ressources & données
 
 - **Catalogue** : snapshot committé dans `resources/catalog/video_catalog.json`
-  (269 vidéos, 126 modules, URLs YouTube, durées, déduplication sha256).
-- **Parcours** : `resources/learning_path.json` (4 phases, 17 modules) — éditable pour
-  ajouter les modules complémentaires de `Plan.md`.
+  (249 vidéos, 130 modules : 129 trainings du guide PDF + 1 module « hors guide »).
+  Dédoublonné par YouTube ID ; les anciens ids fusionnés sont conservés dans `legacy_ids`.
+- **Organisation** : `resources/catalog/arset_taxonomy.json` reprend l'ordre officiel du
+  guide PDF (catégorie > sous-catégorie > training). L'UI n'utilise plus de parcours
+  personnalisé ni de séparation « modules complémentaires ».
 - **Données runtime** : `~/.arset-data/` (vidéos + progression), hors repo, configurable via
   `ARSET_DATA_DIR`.
 

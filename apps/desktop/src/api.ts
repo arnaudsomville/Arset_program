@@ -1,4 +1,4 @@
-import type { LearningPath, VideoView } from "@arset/core";
+import type { ModuleStatus, VideoView } from "@arset/core";
 import { staticApi } from "./staticApi";
 
 export interface DownloadEntry {
@@ -13,16 +13,25 @@ export interface ModuleVideos {
   videos: VideoView[];
 }
 
-export interface ComplementaryModule {
+export interface CatalogModuleSummary {
   key: string;
   title: string;
+  status: ModuleStatus;
   videoCount: number;
   durationSeconds: number;
 }
 
-export interface ComplementaryGroup {
-  category: string;
-  modules: ComplementaryModule[];
+export interface CatalogSubcategory {
+  key: string;
+  title: string;
+  modules: CatalogModuleSummary[];
+}
+
+export interface CatalogCategory {
+  key: string;
+  title: string;
+  modules: CatalogModuleSummary[];
+  subcategories: CatalogSubcategory[];
 }
 
 export interface ProgressData {
@@ -31,8 +40,7 @@ export interface ProgressData {
 }
 
 export interface ArsetApi {
-  learningPath(): Promise<LearningPath>;
-  complementary(): Promise<ComplementaryGroup[]>;
+  catalog(): Promise<CatalogCategory[]>;
   progress(): Promise<ProgressData>;
   moduleVideos(key: string): Promise<ModuleVideos>;
   toggleModule(key: string, completed?: boolean): Promise<ProgressData>;
@@ -59,8 +67,7 @@ async function postJSON<T>(path: string, body?: unknown): Promise<T> {
 
 /** Client HTTP — backend Express (dev local / `make pc`). */
 const httpApi: ArsetApi = {
-  learningPath: () => getJSON<LearningPath>("/api/learning-path"),
-  complementary: () => getJSON<ComplementaryGroup[]>("/api/complementary"),
+  catalog: () => getJSON<CatalogCategory[]>("/api/catalog"),
   progress: () => getJSON<ProgressData>("/api/progress"),
   moduleVideos: (key: string) =>
     getJSON<ModuleVideos>(`/api/modules/${encodeURIComponent(key)}/videos`),

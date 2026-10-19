@@ -16,9 +16,8 @@ import { WebView } from "react-native-webview";
 import { useVideoPlayer, VideoView } from "expo-video";
 
 import catalogJson from "./assets/video_catalog.json";
-import learningPathJson from "./assets/learning_path.json";
-import type { Video, VideoCatalog, LearningPath } from "./src/types";
-import { buildIndex, categoryOf, formatDuration } from "./src/catalog";
+import type { Video, VideoCatalog, ModuleStatus } from "./src/types";
+import { buildIndex, formatDuration } from "./src/catalog";
 import {
   loadCompleted,
   loadDownloads,
@@ -36,29 +35,16 @@ import {
 } from "./src/ytdlp";
 
 const catalog = catalogJson as unknown as VideoCatalog;
-const learningPath = learningPathJson as unknown as LearningPath;
 const index = buildIndex(catalog);
 
 // YouTube exige désormais un en-tête `Referer` valide pour les vidéos embarquées
 // (sinon erreur 153). On utilise une origine factice valide au format URL.
 const YOUTUBE_REFERER = "https://arsetviewer.arnaudsomville.fr";
 
-const CATEGORY_LABELS: Record<string, string> = {
-  agriculture: "Agriculture",
-  "air-quality": "Qualité de l'air",
-  climate: "Climat",
-  disasters: "Catastrophes",
-  "ecological-conservation": "Écologie & Conservation",
-  health: "Santé",
-  "self-paced": "Auto-formation",
-  "skill-building": "Compétences",
-  "water-resources": "Ressources hydriques",
-  "wildland-fire": "Feux de forêt",
-};
-
 interface ModuleEntry {
   key: string;
   title: string;
+  status: ModuleStatus;
 }
 
 interface Section {
@@ -71,27 +57,20 @@ function buildSections(query: string): Section[] {
   const match = (t: string) => t.toLowerCase().includes(q);
 
   const sections: Section[] = [];
-  for (const phase of learningPath.phases) {
-    const data = phase.modules
-      .filter((m) => match(m.title))
-      .map((m) => ({ key: m.key, title: m.title }));
-    if (data.length) sections.push({ title: phase.name, data });
-  }
-
-  const cats = new Map<string, ModuleEntry[]>();
-  for (const [key, mod] of index.modulesByKey) {
-    if (!key.startsWith("other_modules/")) continue;
-    if (!match(mod.title)) continue;
-    const cat = categoryOf(key);
-    const list = cats.get(cat) ?? [];
-    list.push({ key, title: mod.title });
-    cats.set(cat, list);
-  }
-  for (const [cat, data] of cats) {
-    sections.push({
-      title: `Complementaire — ${CATEGORY_LABELS[cat] ?? cat}`,
-      data,
-    });
+  for (const cat of index.categories) {
+    if (cat.subcategories.length) {
+      for (const sub of cat.subcategories) {
+        const data = sub.modules
+          .filter((m) => match(m.title))
+          .map((m) => ({ key: m.key, title: m.title, status: m.status }));
+        if (data.length) sections.push({ title: `${cat.label} — ${sub.label}`, data });
+      }
+    } else {
+      const data = cat.modules
+        .filter((m) => match(m.title))
+        .map((m) => ({ key: m.key, title: m.title, status: m.status }));
+      if (data.length) sections.push({ title: cat.label, data });
+    }
   }
   return sections;
 }
@@ -351,7 +330,7 @@ export default function App() {
       <StatusBar style="light" />
       <View style={styles.topBar}>
         <Text style={styles.header}>Earth Viewer</Text>
-        <Text style={styles.sub}>Parcours ARSET</Text>
+        <Text style={styles.sub}>Catalogue ARSET</Text>
       </View>
 
       <TextInput
@@ -372,6 +351,11 @@ export default function App() {
             <Text style={styles.moduleTitle} numberOfLines={2}>
               {item.title}
             </Text>
+            {item.status !== "ok" && (
+              <Text style={styles.statusBadge}>
+                {item.status === "upcoming" ? "à venir" : "partiel"}
+              </Text>
+            )}
             {completed.has(item.key) && <Text style={styles.doneMark}>✓</Text>}
           </TouchableOpacity>
         )}
@@ -477,6 +461,13 @@ const styles = StyleSheet.create({
     borderBottomColor: "rgba(255,255,255,0.04)",
   },
   moduleTitle: { flex: 1, fontSize: 14, color: "#e8edf5" },
+  statusBadge: {
+    fontSize: 10,
+    color: "#8899b0",
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+    marginLeft: 6,
+  },
   doneMark: { color: "#42e695", fontWeight: "800", fontSize: 15 },
   playerTitle: { padding: 16, fontSize: 16, fontWeight: "700", color: "#e8edf5" },
   webview: { flex: 1, backgroundColor: "#000" },

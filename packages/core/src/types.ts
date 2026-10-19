@@ -1,4 +1,5 @@
 export type UrlStatus = "verified" | "duration_verified" | "manual_verified";
+export type ModuleStatus = "ok" | "partial" | "upcoming";
 
 export interface VideoInstance {
   module_id: number;
@@ -18,12 +19,19 @@ export interface Video {
   module_ids: number[];
   local_filenames: string[];
   instances: VideoInstance[];
+  /** Anciens ids d'entrées fusionnées (dédoublonnage par YouTube ID). */
+  legacy_ids?: number[];
 }
 
 export interface CatalogModule {
   id: number;
   key: string;
   title: string;
+  category: string;
+  subcategory: string | null;
+  category_order: number;
+  order: number;
+  status: ModuleStatus;
   source_video_ids: number[];
 }
 
@@ -47,20 +55,19 @@ export interface VideoCatalog {
   videos: Video[];
 }
 
-export interface LearningPathModule {
+/** Groupe de modules d'une sous-catégorie (ex. Disasters > Floods). */
+export interface CatalogSubcategory {
   key: string;
-  title: string;
+  label: string;
+  modules: CatalogModule[];
 }
 
-export interface LearningPhase {
-  name: string;
-  modules: LearningPathModule[];
-}
-
-export interface LearningPath {
-  schema_version: number;
-  description?: string;
-  phases: LearningPhase[];
+/** Groupe de modules d'une grande catégorie (ex. Disasters). */
+export interface CatalogCategory {
+  key: string;
+  label: string;
+  modules: CatalogModule[];
+  subcategories: CatalogSubcategory[];
 }
 
 /** Vidéo enrichie, prête pour l'UI. */

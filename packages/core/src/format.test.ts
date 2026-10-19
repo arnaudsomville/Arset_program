@@ -20,6 +20,6 @@ test("youtubeEmbedUrl", () => {
 });
 
 test("categoryOf", () => {
-  assert.strictEqual(categoryOf("other_modules/air-quality/005-xyz"), "air-quality");
-  assert.strictEqual(categoryOf("organized/self-paced/01-abc"), "self-paced");
+  assert.strictEqual(categoryOf("disasters/floods/01-xyz"), "disasters");
+  assert.strictEqual(categoryOf("self-paced/01-abc"), "self-paced");
 });

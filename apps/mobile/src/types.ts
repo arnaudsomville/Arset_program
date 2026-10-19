@@ -1,3 +1,5 @@
+export type ModuleStatus = "ok" | "partial" | "upcoming";
+
 export interface Video {
   id: number;
   name: string;
@@ -9,12 +11,18 @@ export interface Video {
   module_ids: number[];
   local_filenames: string[];
   instances: { module_id: number; path: string; sha256: string }[];
+  legacy_ids?: number[];
 }
 
 export interface CatalogModule {
   id: number;
   key: string;
   title: string;
+  category: string;
+  subcategory: string | null;
+  category_order: number;
+  order: number;
+  status: ModuleStatus;
   source_video_ids: number[];
 }
 
@@ -24,16 +32,15 @@ export interface VideoCatalog {
   videos: Video[];
 }
 
-export interface LearningPathModule {
+export interface CatalogSubcategory {
   key: string;
-  title: string;
+  label: string;
+  modules: CatalogModule[];
 }
 
-export interface LearningPhase {
-  name: string;
-  modules: LearningPathModule[];
-}
-
-export interface LearningPath {
-  phases: LearningPhase[];
+export interface CatalogCategory {
+  key: string;
+  label: string;
+  modules: CatalogModule[];
+  subcategories: CatalogSubcategory[];
 }

@@ -1,19 +1,17 @@
 // Implémentation « statique » de l'API, pour l'hébergement sans backend
-// (GitHub Pages). Le catalogue et le parcours sont bundlés dans public/data/,
-// l'index est calculé côté navigateur via @arset/core, et la progression est
-// persistée dans localStorage. Le téléchargement local (yt-dlp) est absent.
+// (GitHub Pages). Le catalogue est bundlé dans public/data/, l'index est calculé
+// côté navigateur via @arset/core, et la progression est persistée dans
+// localStorage. Le téléchargement local (yt-dlp) est absent.
 import {
   buildCatalogIndex,
-  categoryOf,
   parseCatalog,
-  parseLearningPath,
   type CatalogIndex,
-  type LearningPath,
   type VideoView,
 } from "@arset/core";
 import type {
   ArsetApi,
-  ComplementaryGroup,
+  CatalogCategory,
+  CatalogModuleSummary,
   DownloadEntry,
   ModuleVideos,
   ProgressData,
@@ -27,20 +25,13 @@ async function getJSON<T>(name: string): Promise<T> {
   return r.json() as Promise<T>;
 }
 
-let dataPromise: Promise<{ index: CatalogIndex; learningPath: LearningPath }> | null =
-  null;
+let dataPromise: Promise<CatalogIndex> | null = null;
 
-function load(): Promise<{ index: CatalogIndex; learningPath: LearningPath }> {
+function load(): Promise<CatalogIndex> {
   if (!dataPromise) {
     dataPromise = (async () => {
-      const [catalog, learningPath] = await Promise.all([
-        getJSON<unknown>("video_catalog.json"),
-        getJSON<unknown>("learning_path.json"),
-      ]);
-      return {
-        index: buildCatalogIndex(parseCatalog(catalog)),
-        learningPath: parseLearningPath(learningPath),
-      };
+      const catalog = await getJSON<unknown>("video_catalog.json");
+      return buildCatalogIndex(parseCatalog(catalog));
     })();
   }
   return dataPromise;
@@ -68,6 +59,18 @@ function now(): string {
   return new Date().toISOString();
 }
 
+function moduleSummary(index: CatalogIndex, key: string): CatalogModuleSummary {
+  const mod = index.modulesByKey.get(key);
+  const videos = index.videosByModuleKey.get(key) ?? [];
+  return {
+    key,
+    title: mod?.title ?? key,
+    status: mod?.status ?? "ok",
+    videoCount: videos.length,
+    durationSeconds: Math.round(videos.reduce((s, v) => s + v.duration_seconds, 0)),
+  };
+}
+
 function videoView(index: CatalogIndex, id: number): VideoView | null {
   const v = index.videosById.get(id);
   if (!v) return null;
@@ -84,29 +87,18 @@ function videoView(index: CatalogIndex, id: number): VideoView | null {
 }
 
 export const staticApi: ArsetApi = {
-  async learningPath(): Promise<LearningPath> {
-    return (await load()).learningPath;
-  },
-
-  async complementary(): Promise<ComplementaryGroup[]> {
-    const { index } = await load();
-    const groups = new Map<string, ComplementaryGroup["modules"]>();
-    for (const mod of index.complementaryModules) {
-      const cat = categoryOf(mod.key);
-      const videos = index.videosByModuleKey.get(mod.key) ?? [];
-      const durationSeconds = videos.reduce((s, v) => s + v.duration_seconds, 0);
-      const list = groups.get(cat) ?? [];
-      list.push({
-        key: mod.key,
-        title: mod.title,
-        videoCount: videos.length,
-        durationSeconds: Math.round(durationSeconds),
-      });
-      groups.set(cat, list);
-    }
-    return Array.from(groups.entries())
-      .sort(([a], [b]) => a.localeCompare(b))
-      .map(([category, modules]) => ({ category, modules }));
+  async catalog(): Promise<CatalogCategory[]> {
+    const index = await load();
+    return index.categories.map((cat) => ({
+      key: cat.key,
+      title: cat.label,
+      modules: cat.modules.map((m) => moduleSummary(index, m.key)),
+      subcategories: cat.subcategories.map((sub) => ({
+        key: sub.key,
+        title: sub.label,
+        modules: sub.modules.map((m) => moduleSummary(index, m.key)),
+      })),
+    }));
   },
 
   async progress(): Promise<ProgressData> {
@@ -114,7 +106,7 @@ export const staticApi: ArsetApi = {
   },
 
   async moduleVideos(key: string): Promise<ModuleVideos> {
-    const { index } = await load();
+    const index = await load();
     const mod = index.modulesByKey.get(key);
     if (!mod) throw new Error("Module introuvable");
     const videos = (index.videosByModuleKey.get(key) ?? [])
@@ -124,7 +116,7 @@ export const staticApi: ArsetApi = {
   },
 
   async toggleModule(key: string, completed?: boolean): Promise<ProgressData> {
-    const { index } = await load();
+    const index = await load();
     const data = readProgress();
     const value = completed ?? !(data.modules[key]?.completed ?? false);
     data.modules[key] = { completed: value, updated: now() };
@@ -136,7 +128,7 @@ export const staticApi: ArsetApi = {
   },
 
   async toggleVideo(id: number, watched?: boolean): Promise<ProgressData> {
-    const { index } = await load();
+    const index = await load();
     const data = readProgress();
     const k = String(id);
     const value = watched ?? !(data.videos[k]?.watched ?? false);

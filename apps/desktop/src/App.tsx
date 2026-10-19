@@ -2,42 +2,30 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   formatDuration,
   youtubeEmbedUrl,
-  type LearningPath,
+  type ModuleStatus,
   type VideoView,
 } from "@arset/core";
 import { api, supportsLocalDownload } from "./api";
 import type {
-  ComplementaryGroup,
+  CatalogCategory,
+  CatalogModuleSummary,
   DownloadEntry,
   ProgressData,
 } from "./api";
 
-const CATEGORY_LABELS: Record<string, string> = {
-  agriculture: "Agriculture",
-  "air-quality": "Qualité de l'air",
-  climate: "Climat",
-  disasters: "Catastrophes",
-  "ecological-conservation": "Écologie & Conservation",
-  health: "Santé",
-  "self-paced": "Auto-formation",
-  "skill-building": "Compétences",
-  "water-resources": "Ressources hydriques",
-  "wildland-fire": "Feux de forêt",
-};
-
-function categoryLabel(cat: string): string {
-  return CATEGORY_LABELS[cat] ?? cat;
-}
-
 interface ModuleSelection {
   key: string;
   title: string;
-  source: "path" | "complementary";
+}
+
+function statusLabel(status: ModuleStatus): string | null {
+  if (status === "upcoming") return "à venir";
+  if (status === "partial") return "partiel";
+  return null;
 }
 
 export default function App() {
-  const [learningPath, setLearningPath] = useState<LearningPath | null>(null);
-  const [complementary, setComplementary] = useState<ComplementaryGroup[]>([]);
+  const [catalog, setCatalog] = useState<CatalogCategory[]>([]);
   const [progress, setProgress] = useState<ProgressData>({
     modules: {},
     videos: {},
@@ -51,13 +39,8 @@ export default function App() {
   useEffect(() => {
     (async () => {
       try {
-        const [lp, comp, prog] = await Promise.all([
-          api.learningPath(),
-          api.complementary(),
-          api.progress(),
-        ]);
-        setLearningPath(lp);
-        setComplementary(comp);
+        const [cat, prog] = await Promise.all([api.catalog(), api.progress()]);
+        setCatalog(cat);
         setProgress(prog);
       } catch (e) {
         setError(e instanceof Error ? e.message : String(e));
@@ -65,8 +48,8 @@ export default function App() {
     })();
   }, []);
 
-  const selectModule = useCallback(async (key: string, title: string, source: "path" | "complementary") => {
-    setSelected({ key, title, source });
+  const selectModule = useCallback(async (key: string, title: string) => {
+    setSelected({ key, title });
     setLoadingVideos(true);
     try {
       const res = await api.moduleVideos(key);
@@ -79,12 +62,9 @@ export default function App() {
     }
   }, []);
 
-  const toggleModule = useCallback(
-    async (key: string) => {
-      setProgress(await api.toggleModule(key));
-    },
-    [],
-  );
+  const toggleModule = useCallback(async (key: string) => {
+    setProgress(await api.toggleModule(key));
+  }, []);
 
   const toggleVideo = useCallback(async (id: number) => {
     setProgress(await api.toggleVideo(id));
@@ -103,7 +83,7 @@ export default function App() {
     <div className="app">
       <header>
         <h1>Earth Viewer</h1>
-        <span className="sub">Parcours ARSET</span>
+        <span className="sub">Catalogue ARSET</span>
         <span className="badge">{watchedCount} vidéos vues</span>
       </header>
 
@@ -115,8 +95,7 @@ export default function App() {
 
       <div className="layout">
         <Sidebar
-          learningPath={learningPath}
-          complementary={complementary}
+          catalog={catalog}
           progress={progress}
           search={search}
           setSearch={setSearch}
@@ -141,7 +120,7 @@ export default function App() {
               {loadingVideos ? (
                 <p className="empty">Chargement…</p>
               ) : videos.length === 0 ? (
-                <p className="empty">Aucune vidéo pour ce module.</p>
+                <p className="empty">Aucune vidéo pour ce module (à venir).</p>
               ) : (
                 <div className="grid">
                   {videos.map((v) => (
@@ -160,7 +139,7 @@ export default function App() {
             <div className="empty">
               <div className="empty-icon">🛰️</div>
               <h3>Sélectionne un module</h3>
-              <p>Choisis dans le parcours ou dans les modules complémentaires.</p>
+              <p>Choisis un module dans le catalogue, par catégorie.</p>
             </div>
           )}
         </main>
@@ -170,54 +149,35 @@ export default function App() {
 }
 
 interface SidebarProps {
-  learningPath: LearningPath | null;
-  complementary: ComplementaryGroup[];
+  catalog: CatalogCategory[];
   progress: ProgressData;
   search: string;
   setSearch: (s: string) => void;
   selectedKey?: string;
-  onSelect: (key: string, title: string, source: "path" | "complementary") => void;
+  onSelect: (key: string, title: string) => void;
   onToggleModule: (key: string) => void;
 }
 
 function Sidebar(props: SidebarProps) {
-  const { learningPath, complementary, progress, search, setSearch, selectedKey, onSelect, onToggleModule } = props;
+  const { catalog, progress, search, setSearch, selectedKey, onSelect, onToggleModule } = props;
+  const [open, setOpen] = useState<Record<string, boolean>>({});
 
   const q = search.trim().toLowerCase();
-  const filteredGroups = complementary
-    .map((g) => ({
-      ...g,
-      modules: g.modules.filter((m) => m.title.toLowerCase().includes(q)),
+  const match = (title: string) => title.toLowerCase().includes(q);
+
+  const filtered = catalog
+    .map((cat) => ({
+      ...cat,
+      modules: cat.modules.filter((m) => match(m.title)),
+      subcategories: cat.subcategories
+        .map((sub) => ({ ...sub, modules: sub.modules.filter((m) => match(m.title)) }))
+        .filter((sub) => sub.modules.length > 0),
     }))
-    .filter((g) => g.modules.length > 0);
+    .filter((cat) => cat.modules.length > 0 || cat.subcategories.length > 0);
 
   return (
     <aside className="sidebar">
-      <h3 className="section-title">Parcours</h3>
-
-      {learningPath?.phases.map((phase) => {
-        const modules = phase.modules.filter((m) =>
-          m.title.toLowerCase().includes(q),
-        );
-        if (modules.length === 0) return null;
-        return (
-          <div className="phase" key={phase.name}>
-            <div className="phase-head">{phase.name}</div>
-            {modules.map((m) => (
-              <ModuleRow
-                key={m.key}
-                title={m.title}
-                completed={!!progress.modules[m.key]?.completed}
-                active={selectedKey === m.key}
-                onSelect={() => onSelect(m.key, m.title, "path")}
-                onToggle={() => onToggleModule(m.key)}
-              />
-            ))}
-          </div>
-        );
-      })}
-
-      <h3 className="section-title" style={{ marginTop: "1rem" }}>Recherche</h3>
+      <h3 className="section-title">Recherche</h3>
       <input
         className="search"
         placeholder="Nom du module…"
@@ -226,34 +186,71 @@ function Sidebar(props: SidebarProps) {
       />
 
       <h3 className="section-title" style={{ marginTop: "1rem" }}>
-        Modules complémentaires
+        Catalogue
       </h3>
-      {filteredGroups.map((group) => (
-        <CollapsibleCategory
-          key={group.category}
-          group={group}
-          progress={progress}
-          selectedKey={selectedKey}
-          onSelect={onSelect}
-        />
-      ))}
+
+      {filtered.map((cat) => {
+        const isOpen = open[cat.key] ?? false;
+        const count =
+          cat.modules.length +
+          cat.subcategories.reduce((n, sub) => n + sub.modules.length, 0);
+        return (
+          <div className="cat" key={cat.key}>
+            <div className="cat-head" onClick={() => setOpen((o) => ({ ...o, [cat.key]: !isOpen }))}>
+              <span className={`arrow ${isOpen ? "open" : ""}`}>▶</span>
+              <span className="cat-name">{cat.title}</span>
+              <span className="cat-count">{count}</span>
+            </div>
+            {isOpen && (
+              <div className="cat-list">
+                {cat.modules.map((m) => (
+                  <ModuleRow
+                    key={m.key}
+                    module={m}
+                    completed={!!progress.modules[m.key]?.completed}
+                    active={selectedKey === m.key}
+                    onSelect={() => onSelect(m.key, m.title)}
+                    onToggle={() => onToggleModule(m.key)}
+                  />
+                ))}
+                {cat.subcategories.map((sub) => (
+                  <div key={sub.key}>
+                    <div className="phase-head">{sub.title}</div>
+                    {sub.modules.map((m) => (
+                      <ModuleRow
+                        key={m.key}
+                        module={m}
+                        completed={!!progress.modules[m.key]?.completed}
+                        active={selectedKey === m.key}
+                        onSelect={() => onSelect(m.key, m.title)}
+                        onToggle={() => onToggleModule(m.key)}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </aside>
   );
 }
 
 function ModuleRow({
-  title,
+  module,
   completed,
   active,
   onSelect,
   onToggle,
 }: {
-  title: string;
+  module: CatalogModuleSummary;
   completed: boolean;
   active: boolean;
   onSelect: () => void;
   onToggle: () => void;
 }) {
+  const badge = statusLabel(module.status);
   return (
     <div className={`module-row ${completed ? "done" : ""} ${active ? "active" : ""}`} onClick={onSelect}>
       <button
@@ -265,43 +262,15 @@ function ModuleRow({
       >
         ✓
       </button>
-      <span className="title">{title}</span>
-    </div>
-  );
-}
-
-function CollapsibleCategory({
-  group,
-  progress,
-  selectedKey,
-  onSelect,
-}: {
-  group: ComplementaryGroup;
-  progress: ProgressData;
-  selectedKey?: string;
-  onSelect: (key: string, title: string, source: "path" | "complementary") => void;
-}) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="cat">
-      <div className="cat-head" onClick={() => setOpen((o) => !o)}>
-        <span className={`arrow ${open ? "open" : ""}`}>▶</span>
-        <span className="cat-name">{categoryLabel(group.category)}</span>
-        <span className="cat-count">{group.modules.length}</span>
-      </div>
-      {open && (
-        <div className="cat-list">
-          {group.modules.map((m) => (
-            <ModuleRow
-              key={m.key}
-              title={m.title}
-              completed={!!progress.modules[m.key]?.completed}
-              active={selectedKey === m.key}
-              onSelect={() => onSelect(m.key, m.title, "complementary")}
-              onToggle={() => onSelect(m.key, m.title, "complementary")}
-            />
-          ))}
-        </div>
+      <span className="title">{module.title}</span>
+      {badge && (
+        <span
+          className="tag"
+          style={{ marginLeft: 4, opacity: 0.8, fontSize: 11 }}
+          title={module.status}
+        >
+          {badge}
+        </span>
       )}
     </div>
   );

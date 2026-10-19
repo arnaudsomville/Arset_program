@@ -11,11 +11,10 @@ sequenceDiagram
     participant B as Navigateur (React)
     participant S as Serveur (Express)
 
-    B->>S: GET /api/learning-path
-    B->>S: GET /api/complementary
+    B->>S: GET /api/catalog
     B->>S: GET /api/progress
-    S-->>B: parcours + catégories + progression
-    Note over B: Affiche la sidebar (phases + modules)
+    S-->>B: catégories + sous-catégories + modules + progression
+    Note over B: Affiche la sidebar (catégories > trainings)
 
     B->>S: GET /api/modules/{key}/videos
     S-->>B: { key, title, videos[] }  (avec flag "downloaded")

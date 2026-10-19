@@ -11,8 +11,7 @@ Arset_program/
 ├── package.json               # racine : définit les "workspaces" et les scripts
 ├── docs/                      # cette documentation
 ├── resources/                 # 🗂 données centralisées (committées, légères)
-│   ├── catalog/               #   video_catalog.json + video_urls.json
-│   ├── learning_path.json     #   parcours 4 phases
+│   ├── catalog/               #   video_catalog.json + arset_taxonomy.json
 │   └── notes/                 #   Plan.md, notes.md, transcripts
 ├── packages/
 │   └── core/                  # @arset/core — code partagé (types + logique)
@@ -74,7 +73,7 @@ flowchart TB
 
     subgraph Resources["resources/"]
         CATALOG["video_catalog.json"]
-        PATH["learning_path.json"]
+        TAXO["arset_taxonomy.json"]
     end
 
     subgraph Mobile["apps/mobile (Expo)"]

@@ -6,10 +6,10 @@ Les données vivent dans `resources/`. Elles sont **committées** (légères : ~
 ```
 resources/
 ├── catalog/
-│   ├── video_catalog.json     # ← LA source de vérité (269 vidéos, 126 modules)
+│   ├── video_catalog.json     # ← LA source de vérité (249 vidéos, 130 modules)
+│   ├── arset_taxonomy.json    #   ordre officiel du guide PDF (catégories > trainings)
 │   ├── youtube_titles.json    #   titres YouTube de référence (id → titre/channel)
-│   └── video_urls.json        #   mapping module → [{file, url}] (historique)
-├── learning_path.json         # parcours 4 phases → clés de modules
+│   └── video_urls.json        #   mapping module → [{file, url}]
 └── notes/                     # Plan.md, notes.md, transcripts (markdown)
     └── transcripts/           #   transcripts YouTube, en miroir du catalogue
                               #   (`make transcripts` — analyse/mémo, hors apps)
@@ -19,20 +19,25 @@ resources/
 
 ```jsonc
 {
-  "schema_version": 2,
-  "generated_at": "2026-09-28T14:21:32+00:00",
-  "deduplication": { "method": "sha256", "..." : "..." },
+  "schema_version": 3,
+  "generated_at": "2026-10-19T...",
+  "deduplication": { "method": "youtube_video_id", "..." : "..." },
   "summary": {
     "local_video_instances": 410,
-    "unique_sources": 269,
+    "unique_sources": 249,
     "duplicate_instances_collapsed": 141,
-    "url_status_counts": { "verified": 186, "duration_verified": 64, "manual_verified": 19 }
+    "url_status_counts": { "verified": 171, "duration_verified": 61, "manual_verified": 17 }
   },
   "modules": [
     {
       "id": 1,
-      "key": "organized/self-paced/01-fundamentals-of-remote-sensing",
-      "title": "Module 01 — Fundamentals of Remote Sensing",
+      "key": "self-paced/01-fundamentals-of-remote-sensing",
+      "title": "Fundamentals of Remote Sensing",
+      "category": "Self-Paced",
+      "subcategory": null,
+      "category_order": 1,
+      "order": 1,
+      "status": "ok",
       "source_video_ids": [192, 244]
     }
   ],
@@ -58,9 +63,11 @@ resources/
 
 ### Points clés
 
-- Un **module** pointe vers des vidéos via `source_video_ids`.
-- Une **vidéo** est unique (dédupliquée par `sha256`) et porte l'URL YouTube, la durée,
-  le titre (`name`), et la liste des fichiers locaux d'origine (`instances`).
+- Un **module** porte sa place dans le guide (`category`, `subcategory`, `order`, `status`
+  `ok|partial|upcoming`) et pointe vers ses vidéos via `source_video_ids`.
+- Une **vidéo** est unique (dédupliquée par `youtube_video_id`) et porte l'URL YouTube, la
+  durée, le titre (`name`), et la liste des fichiers locaux d'origine (`instances`). Les
+  anciens ids d'entrées fusionnées sont conservés dans `legacy_ids`.
 - Le `summary.url_status_counts` indique le niveau de confiance des URLs
   (`verified` = titre + durée confirmés ; `duration_verified` = durée seule ; `manual_verified` = revu manuellement).
 
@@ -77,26 +84,14 @@ resources/
 C'est ce fichier que **parsent** `@arset/core` (`parseCatalog` + `buildCatalogIndex`)
 et que **sert** le backend.
 
-## `learning_path.json` — structure
+## `arset_taxonomy.json` — ordre officiel
 
-```jsonc
-{
-  "schema_version": 1,
-  "phases": [
-    {
-      "name": "Phase 1 — Fondations",
-      "modules": [
-        { "key": "organized/self-paced/01-fundamentals-of-remote-sensing", "title": "Fundamentals of Remote Sensing" }
-      ]
-    }
-  ]
-}
-```
-
-Chaque `key` doit correspondre à une clé de module du catalogue. C'est ce fichier qui
-définit **le parcours affiché en premier** dans la sidebar (les modules `organized/*`).
-Les modules `other_modules/*` du catalogue apparaissent ensuite dans
-« Modules complémentaires ».
+Ce fichier reprend les **129 trainings du guide PDF** (`OnlineResourceGuide_06_09_2026.pdf`),
+dans l'ordre : catégorie > sous-catégorie > training. Chaque entrée porte `category`,
+`subcategory`, `order`, `title`, `key`, `module_id` et `status` (`ok|partial|upcoming`).
+Il est la référence pour vérifier qu'aucun training ne manque et pour générer les clés du
+catalogue (`scripts/reorg-catalog.mjs`). Le module `hors-guide` contient les vidéos qui ne
+correspondent à aucun training PDF.
 
 ## Mise à jour des ressources
 

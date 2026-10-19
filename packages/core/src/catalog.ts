@@ -1,4 +1,10 @@
-import type { CatalogModule, Video, VideoCatalog } from "./types";
+import type {
+  CatalogCategory,
+  CatalogModule,
+  CatalogSubcategory,
+  Video,
+  VideoCatalog,
+} from "./types";
 import { episodeNumber } from "./episode";
 
 export interface CatalogIndex {
@@ -6,8 +12,8 @@ export interface CatalogIndex {
   modulesByKey: Map<string, CatalogModule>;
   /** module key -> ordered videos */
   videosByModuleKey: Map<string, Video[]>;
-  /** complementary modules (not part of the learning path, i.e. other_modules/...) */
-  complementaryModules: CatalogModule[];
+  /** Arbre catégorie > sous-catégorie > modules, dans l'ordre du guide PDF. */
+  categories: CatalogCategory[];
 }
 
 export function parseCatalog(data: unknown): VideoCatalog {
@@ -29,14 +35,10 @@ export function parseCatalog(data: unknown): VideoCatalog {
  */
 export function buildCatalogIndex(catalog: VideoCatalog): CatalogIndex {
   const videosById = new Map<number, Video>();
-  for (const v of catalog.videos) {
-    videosById.set(v.id, v);
-  }
+  for (const v of catalog.videos) videosById.set(v.id, v);
 
   const modulesByKey = new Map<string, CatalogModule>();
-  for (const m of catalog.modules) {
-    modulesByKey.set(m.key, m);
-  }
+  for (const m of catalog.modules) modulesByKey.set(m.key, m);
 
   const videosByModuleKey = new Map<string, Video[]>();
   for (const m of catalog.modules) {
@@ -47,15 +49,56 @@ export function buildCatalogIndex(catalog: VideoCatalog): CatalogIndex {
     videosByModuleKey.set(m.key, videos);
   }
 
-  const complementaryModules = catalog.modules.filter((m) =>
-    m.key.startsWith("other_modules/"),
-  );
+  const categories: CatalogCategory[] = [];
+  const catMap = new Map<string, CatalogCategory>();
+  const subMap = new Map<string, CatalogSubcategory>();
 
-  return { videosById, modulesByKey, videosByModuleKey, complementaryModules };
+  for (const m of catalog.modules) {
+    let cat = catMap.get(m.category);
+    if (!cat) {
+      cat = {
+        key: m.key.split("/")[0] ?? m.category,
+        label: m.category,
+        modules: [],
+        subcategories: [],
+      };
+      catMap.set(m.category, cat);
+      categories.push(cat);
+    }
+    if (m.subcategory) {
+      const subKey = `${cat.key}/${m.key.split("/")[1] ?? ""}`;
+      let sub = subMap.get(subKey);
+      if (!sub) {
+        sub = {
+          key: m.key.split("/")[1] ?? m.subcategory,
+          label: m.subcategory,
+          modules: [],
+        };
+        subMap.set(subKey, sub);
+        cat.subcategories.push(sub);
+      }
+      sub.modules.push(m);
+    } else {
+      cat.modules.push(m);
+    }
+  }
+
+  const byOrder = (a: CatalogModule, b: CatalogModule) => a.order - b.order;
+  for (const cat of categories) {
+    cat.modules.sort(byOrder);
+    for (const sub of cat.subcategories) sub.modules.sort(byOrder);
+  }
+
+  return { videosById, modulesByKey, videosByModuleKey, categories };
 }
 
-/** Extrait la catégorie d'une clé de module (ex: "other_modules/air-quality/005-..." -> "air-quality"). */
+/** Catégorie d'une clé de module (ex: "disasters/floods/01-..." -> "disasters"). */
 export function categoryOf(key: string): string {
+  return key.split("/")[0] ?? "autres";
+}
+
+/** Sous-catégorie d'une clé de module, ou null (ex: "disasters/floods/01-..." -> "floods"). */
+export function subcategoryOf(key: string): string | null {
   const parts = key.split("/");
-  return parts.length >= 2 ? parts[1] : parts[0] ?? "autres";
+  return parts.length >= 3 ? (parts[1] ?? null) : null;
 }
