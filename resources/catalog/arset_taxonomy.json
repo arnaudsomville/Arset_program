@@ -90,7 +90,7 @@
       "title": "Mapping Crops and their Biophysical Characteristics with Polarimetric SAR and Optical Remote Sensing",
       "key": "agriculture/05-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remo",
       "module_id": 21,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Air Quality & Health",
@@ -170,7 +170,7 @@
       "title": "Tools for Analyzing NASA Air Quality Model Output",
       "key": "air-quality-health/air-quality/08-tools-for-analyzing-nasa-air-quality-model-output",
       "module_id": 29,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Air Quality & Health",
@@ -200,7 +200,7 @@
       "title": "High Resolution NO2 Monitoring From Space with TROPOMI",
       "key": "air-quality-health/air-quality/11-high-resolution-no2-monitoring-from-space-with-tropomi",
       "module_id": 32,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Air Quality & Health",
@@ -210,7 +210,7 @@
       "title": "Data Analysis Tools for High Resolution Air Quality Satellite Datasets",
       "key": "air-quality-health/air-quality/12-data-analysis-tools-for-high-resolution-air-quality-satellite-datasets",
       "module_id": 33,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Air Quality & Health",
@@ -270,7 +270,7 @@
       "title": "Building Climate Risk Assessments from Local Vulnerability and Exposure",
       "key": "climate/03-building-climate-risk-assessments-from-local-vulnerability-and-exposure",
       "module_id": 36,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Climate",
@@ -290,7 +290,7 @@
       "title": "Measuring Atmospheric Carbon Dioxide from Space in Support of Climate Related Studies",
       "key": "climate/05-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies",
       "module_id": 38,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Climate",
@@ -330,7 +330,7 @@
       "title": "Introduction to NASA Resources for Climate Change Applications",
       "key": "climate/09-introduction-to-nasa-resources-for-climate-change-applications",
       "module_id": 42,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Climate",
@@ -750,7 +750,7 @@
       "title": "Species Distribution Modeling with Remote Sensing",
       "key": "ecological-conservation/biodiversity-ecosystems/15-species-distribution-modeling-with-remote-sensing",
       "module_id": 78,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Ecological Conservation",
@@ -840,7 +840,7 @@
       "title": "Remote Sensing of Land Indicators for Sustainable Development Goal 15",
       "key": "ecological-conservation/land-cover-change/03-remote-sensing-of-land-indicators-for-sustainable-development-goal-15",
       "module_id": 87,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Ecological Conservation",
@@ -970,7 +970,7 @@
       "title": "Introduction to Snow and Ice Data Products and Applications for Water Resources Management",
       "key": "water-resources/hydrology/02-introduction-to-snow-and-ice-data-products-and-applications-for-water-resources-management",
       "module_id": 106,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Water Resources",
@@ -1030,7 +1030,7 @@
       "title": "Applications of Remote Sensing-Based Evapotranspiration Data Products",
       "key": "water-resources/hydrology/08-applications-of-remote-sensing-based-evapotranspiration-data-products",
       "module_id": 111,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Water Resources",
@@ -1040,7 +1040,7 @@
       "title": "Applications of Remote Sensing to Soil Moisture and Evapotranspiration",
       "key": "water-resources/hydrology/09-applications-of-remote-sensing-to-soil-moisture-and-evapotranspiration",
       "module_id": 112,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Water Resources",
@@ -1050,7 +1050,7 @@
       "title": "Monitoring Groundwater Changes for Water Resources Management",
       "key": "water-resources/hydrology/10-monitoring-groundwater-changes-for-water-resources-management",
       "module_id": 113,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Water Resources",
@@ -1120,7 +1120,7 @@
       "title": "NASA Satellite Laser Altimetry for Coastal and Near-Shore Bathymetry",
       "key": "water-resources/hydrography/03-nasa-satellite-laser-altimetry-for-coastal-and-near-shore-bathymetry",
       "module_id": 307,
-      "status": "partial"
+      "status": "ok"
     },
     {
       "category": "Water Resources",

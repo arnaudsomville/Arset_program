@@ -9,7 +9,12 @@
       "url": "https://www.youtube.com/watch?v=1TBtJ8pTANQ"
     }
   ],
-  "self-paced/02-nasa-s-earth-observing-fleet": [],
+  "self-paced/02-nasa-s-earth-observing-fleet": [
+    {
+      "file": "NASA's Earth-Observing Fleet, December 2019",
+      "url": "https://www.youtube.com/watch?v=wx7hkbBWoCo"
+    }
+  ],
   "self-paced/03-developing-sustainable-earth-science-applications": [
     {
       "file": "NASA ARSET： Introduction to the EO Toolkit for Sustainable Cities and Human Settlements, Part 1⧸3.mp4",
@@ -114,6 +119,10 @@
     {
       "file": "NASA ARSET： Introduction to Polarimetric SAR, Session 3⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=-xU4oE66pgY"
+    },
+    {
+      "file": "Crop-Specific Time Series Analysis for Growth Monitoring, Part 4/4",
+      "url": "https://www.youtube.com/watch?v=wgTmTB3GlTI"
     }
   ],
   "air-quality-health/air-quality/01-lidar-profiling-satellite-observations-for-air-quality-applications": [
@@ -162,6 +171,22 @@
     {
       "file": "NASA ARSET： Introduction to Datasets, Part 1⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=wIXFw9W1M4E"
+    },
+    {
+      "file": "Overview of Webinar Series and an Introduction to Satellite Remote Sensing, Part 1/5",
+      "url": "https://www.youtube.com/watch?v=vGU4UqhHhAA"
+    },
+    {
+      "file": "Fundamentals of Remote Sensing Imagery and Tools to Access, Part 2/5",
+      "url": "https://www.youtube.com/watch?v=rVWfZH2eQY0"
+    },
+    {
+      "file": "NASA Aerosol Products for Particulate Matter Air Quality, Part 3/5",
+      "url": "https://www.youtube.com/watch?v=_1Fyyl4xDmY"
+    },
+    {
+      "file": "Future Satellite Capabilities for Air Quality Monitoring and Review, Part 5/5",
+      "url": "https://www.youtube.com/watch?v=FEEI6yNx4Us"
     }
   ],
   "air-quality-health/air-quality/05-geostationary-remote-sensing-of-trace-gases-for-air-quality-applications-in-north-america": [
@@ -190,6 +215,10 @@
     {
       "file": "NASA ARSET： Introduction to the Micro-Pulse LiDAR Network (MPLNET), Part 5⧸5.mp4",
       "url": "https://www.youtube.com/watch?v=3qfXlMonG0s"
+    },
+    {
+      "file": "Hands-On Analysis of AERONET Data, Part 2/5",
+      "url": "https://www.youtube.com/watch?v=wSCFtOjQw0o"
     }
   ],
   "air-quality-health/air-quality/07-accessing-and-analyzing-air-quality-data-from-geostationary-satellites": [
@@ -214,6 +243,10 @@
     {
       "file": "NASA ARSET： Interpreting Model Output for Air Quality Assessment, Part 3⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=HDXwk1r-QI0"
+    },
+    {
+      "file": "Review of NASA Air Quality Forecasts and Reanalysis, Part 1/3",
+      "url": "https://www.youtube.com/watch?v=U9w9vZbdrNM"
     }
   ],
   "air-quality-health/air-quality/09-introduction-and-access-to-global-air-quality-forecasting-data-and-tools": [
@@ -240,6 +273,14 @@
     {
       "file": "NASA ARSET： Remote Sensing of NO2 with OMI, Part 1⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=rvSjD-vGI4k"
+    },
+    {
+      "file": "Introducing TROPOMI - High Resolution NO2 Observations from Space, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=-yOInEUJTYM"
+    },
+    {
+      "file": "Read, Map, and Analyze OMI NO2 and SO2 Data, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=VZ0HBPPIo5A"
     }
   ],
   "air-quality-health/air-quality/12-data-analysis-tools-for-high-resolution-air-quality-satellite-datasets": [
@@ -250,6 +291,14 @@
     {
       "file": "NASA ARSET： UN Biodiversity Lab： Introduction and Training, Part 2⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=lpfYd2TKq-c"
+    },
+    {
+      "file": "Read, Map, and Analyze Level 2 MODIS AOD Data, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=eYyWTuWthyY"
+    },
+    {
+      "file": "Read, Map, and Analyze OMI NO2 and SO2 Data, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=VZ0HBPPIo5A"
     }
   ],
   "air-quality-health/health/01-remote-sensing-for-climate-sensitive-infectious-diseases": [
@@ -301,9 +350,22 @@
     {
       "file": "NASA ARSET： Developing Climate Adaptation Support for NASA Centers, Part 2⧸2.mp4",
       "url": "https://www.youtube.com/watch?v=kFLDFxfsJ1A"
+    },
+    {
+      "file": "Theoretical Framework for Demand-Driven Climate Adaptation Support, Part 1/2",
+      "url": "https://www.youtube.com/watch?v=4QKY-IxalyI"
     }
   ],
-  "climate/04-selecting-climate-change-projection-sets-for-mitigation-adaptation-and-risk-management-app": [],
+  "climate/04-selecting-climate-change-projection-sets-for-mitigation-adaptation-and-risk-management-app": [
+    {
+      "file": "What Makes Projection Sets Different? Part 1/2",
+      "url": "https://www.youtube.com/watch?v=gGM5Bnz0Gh8"
+    },
+    {
+      "file": "How Do You Choose a Projection Set for Your Application? Part 2/2",
+      "url": "https://www.youtube.com/watch?v=4vJSKCNKqq4"
+    }
+  ],
   "climate/05-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies": [
     {
       "file": "NASA ARSET： Creating Top-Down Atmospheric Budgets of CO2 and CH4 on Policy-Relevant Scales, Part 2⧸3.mp4",
@@ -316,6 +378,14 @@
     {
       "file": "NASA ARSET： XCO2 in Support of Local and Regional Climate Related Studies, Part 4⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=WjPq6gGI9Ig"
+    },
+    {
+      "file": "An Introduction to XCO2 with OCO-2 and OCO-3, Part 1/4",
+      "url": "https://www.youtube.com/watch?v=2551aFGyleY"
+    },
+    {
+      "file": "A Demonstration on how to Access and Visualize OCO-2/OCO-3 Data, Part 2/4",
+      "url": "https://www.youtube.com/watch?v=2ZILcjYB9Fk"
     }
   ],
   "climate/06-atmospheric-co2-and-ch4-budgets-to-support-the-global-stocktake": [
@@ -336,6 +406,10 @@
     {
       "file": "NASA ARSET： Introduction to the EO Toolkit for Sustainable Cities and Human Settlements, Part 1⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=0pt2SxQJGNM"
+    },
+    {
+      "file": "Use Cases from the National and City Level, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=yJQyIOsT_ws"
     }
   ],
   "climate/08-nasa-earth-observations-for-energy-management": [
@@ -350,12 +424,20 @@
     {
       "file": "NASA ARSET：Utilizing the NASA POWER Web Services for Energy Related Applications, Part 1⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=SdQaSM_DScU"
+    },
+    {
+      "file": "Using NASA Products for a More Climate Resilient Energy Sector, Part 2/4",
+      "url": "https://www.youtube.com/watch?v=4eFiIf-92Zs"
     }
   ],
   "climate/09-introduction-to-nasa-resources-for-climate-change-applications": [
     {
       "file": "NASA ARSET： Climate Change Monitoring & Impacts Using Remote Sensing and Modeled Data, Part 1⧸2.mp4",
       "url": "https://www.youtube.com/watch?v=SnnIz2C5Ny4"
+    },
+    {
+      "file": "Climate Change Future Scenarios, Impact Projection, and Adaptation, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=d6vC6_H_0iI"
     }
   ],
   "climate/10-earth-observations-of-blue-carbon-ecosystems": [
@@ -368,7 +450,16 @@
       "url": "https://www.youtube.com/watch?v=KPkzGr7ulIU"
     }
   ],
-  "climate/11-applications-of-carbon-dioxide-measurements-for-climate-related-studies": [],
+  "climate/11-applications-of-carbon-dioxide-measurements-for-climate-related-studies": [
+    {
+      "file": "CO2 Measurements over a Large Urban Area, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=B-Y1uz02Ccg"
+    },
+    {
+      "file": "The Impact of Drought on CO2, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=AeBy7lFKbgE"
+    }
+  ],
   "disasters/floods/01-monitoring-urban-floods-using-remote-sensing": [
     {
       "file": "NASA ARSET： Overview of Urban Flooding, Part 1⧸2.mp4",
@@ -431,6 +522,10 @@
     {
       "file": "NASA ARSET：Mapping Refugee Settlement Growth and Population Change, Part 3⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=3UPjH_tSJ_M"
+    },
+    {
+      "file": "Assessing Climate Hazards at Refugee Camps, Part 4/4",
+      "url": "https://www.youtube.com/watch?v=JxPZyXLsdTg"
     }
   ],
   "disasters/populations/04-transforming-earth-observation-eo-data-into-building-infrastructure-data-sets-for-disaster": [
@@ -469,6 +564,14 @@
     {
       "file": "NASA ARSET： Solar Induced Fluorescence and its Applications, Part 3⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=VvZi5xIye-8"
+    },
+    {
+      "file": "Overview of OCO-2 and OCO-3 Observing Modes and SIF Observations Part 2/3",
+      "url": "https://www.youtube.com/watch?v=ygdK8uMxi8A"
+    },
+    {
+      "file": "Working with Gap-Filled SIF Products Part 3/3",
+      "url": "https://www.youtube.com/watch?v=PU1PaHliBK8"
     }
   ],
   "disasters/sar/01-an-introduction-to-synthetic-aperture-radar-sar-and-its-applications": [
@@ -495,9 +598,22 @@
     {
       "file": "NASA ARSET：Measuring Surface Subsidence due to Groundwater Extraction with InSAR, Part 1⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=YE3DeQmd_IQ"
+    },
+    {
+      "file": "Detecting and Monitoring Sea Ice with SAR, Part 1/3",
+      "url": "https://www.youtube.com/watch?v=KdaQgFGIxvI"
+    },
+    {
+      "file": "Detecting and Monitoring Floods with SAR, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=2CKxV_mTuxk"
     }
   ],
-  "disasters/sar/04-sar-for-landcover-applications": [],
+  "disasters/sar/04-sar-for-landcover-applications": [
+    {
+      "file": "Exploiting SAR to Monitor Agriculture, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=vS7r50EbFQY"
+    }
+  ],
   "disasters/sar/05-sar-for-disasters-and-hydrological-applications": [
     {
       "file": "NASA ARSET：  SAR for Flood Mapping Using Google Earth Engine, Part 1⧸3.mp4",
@@ -506,11 +622,41 @@
     {
       "file": "NASA ARSET： Tema dos： Desastres hidrometeorológicos, Sesión 2 de 3.mp4",
       "url": "https://www.youtube.com/watch?v=c79bm_fBeRw"
+    },
+    {
+      "file": "SAR for Flood Mapping, Session 2/4",
+      "url": "https://www.youtube.com/watch?v=QKrG5jYZe10"
+    },
+    {
+      "file": "Introduction to SAR Interferometry, Session 4/4",
+      "url": "https://www.youtube.com/watch?v=9T1lBnta9P0"
     }
   ],
   "disasters/sar/06-radar-remote-sensing-for-land-water-and-disaster-applications": [],
-  "disasters/urban-heat-islands/01-satellite-remote-sensing-for-urban-heat-islands": [],
-  "disasters/urban-heat-islands/02-introduction-to-thermal-remote-sensing-and-applications-in-urban-heat-island-mapping": [],
+  "disasters/urban-heat-islands/01-satellite-remote-sensing-for-urban-heat-islands": [
+    {
+      "file": "Land Surface Temperature-Based Urban Heat Island Mapping, Part 1/3",
+      "url": "https://www.youtube.com/watch?v=KYV2j3kwj2A"
+    },
+    {
+      "file": "Integrating In-Situ Observations with Satellite Imagery, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=fIQJx3_xlEQ"
+    },
+    {
+      "file": "Mitigating UHI via Long-Term Urban Climate Monitoring, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=GbmrMWHkaWg"
+    }
+  ],
+  "disasters/urban-heat-islands/02-introduction-to-thermal-remote-sensing-and-applications-in-urban-heat-island-mapping": [
+    {
+      "file": "Foundational Concepts Part 1/2",
+      "url": "https://www.youtube.com/watch?v=dmSxjSpZetY"
+    },
+    {
+      "file": "Applications in Urban Heat Island Mapping Part 2/2",
+      "url": "https://www.youtube.com/watch?v=k4ub-CNo6Pg"
+    }
+  ],
   "disasters/urban-heat-islands/03-satellite-remote-sensing-for-measuring-urban-heat-islands-and-constructing-heat-vulnerabil": [
     {
       "file": "NASA ARSET： Land Surface Temperature-Based Surface Urban Heat Island Mapping, Part 1⧸4.mp4",
@@ -635,7 +781,20 @@
       "url": "https://www.youtube.com/watch?v=EGxUoCKbrFs"
     }
   ],
-  "ecological-conservation/biodiversity-ecosystems/03-evaluating-ecosystem-services-with-remote-sensing": [],
+  "ecological-conservation/biodiversity-ecosystems/03-evaluating-ecosystem-services-with-remote-sensing": [
+    {
+      "file": "Evaluating Ecosystem Services with Remote Sensing, Part 1/3",
+      "url": "https://www.youtube.com/watch?v=DZfvTNYyzX8"
+    },
+    {
+      "file": "Evaluating Ecosystem Services with Remote Sensing: August 25, 2022, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=V0axHKpyYrw"
+    },
+    {
+      "file": "Evaluating Ecosystem Services with Remote Sensing: August 30, 2022, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=DZw0V7wxIQA"
+    }
+  ],
   "ecological-conservation/biodiversity-ecosystems/04-using-the-un-biodiversity-lab-to-support-national-conservation-and-sdgs": [
     {
       "file": "NASA ARSET： Using UN Biodiversity Lab to Support Biodiversity & Sustainable Development, Part 1⧸3.mp4",
@@ -700,8 +859,26 @@
       "url": "https://www.youtube.com/watch?v=p85oa4mHPVM"
     }
   ],
-  "ecological-conservation/biodiversity-ecosystems/08-remote-sensing-for-conservation-and-biodiversity": [],
-  "ecological-conservation/biodiversity-ecosystems/09-introduction-to-remote-sensing-for-scenario-based-ecoforecasting": [],
+  "ecological-conservation/biodiversity-ecosystems/08-remote-sensing-for-conservation-and-biodiversity": [
+    {
+      "file": "Remote Sensing for Biodiversity, Session 2/2",
+      "url": "https://www.youtube.com/watch?v=70Zkm4Pg_ZE"
+    }
+  ],
+  "ecological-conservation/biodiversity-ecosystems/09-introduction-to-remote-sensing-for-scenario-based-ecoforecasting": [
+    {
+      "file": "Overview of Ecological Forecasting, Session 1/4",
+      "url": "https://www.youtube.com/watch?v=arfqOCOuf9E"
+    },
+    {
+      "file": "Overview of Climate Science and Data, Session 2/4",
+      "url": "https://www.youtube.com/watch?v=76lzLPUjH7M"
+    },
+    {
+      "file": "Overview of Scenario Planning, Session 3/4",
+      "url": "https://www.youtube.com/watch?v=Hfi9OaYtygU"
+    }
+  ],
   "ecological-conservation/biodiversity-ecosystems/10-introduction-to-remote-sensing-for-conservation-management": [
     {
       "file": "NASA ARSET： Remote Sensing for Conservation, Session 1⧸2.mp4",
@@ -784,12 +961,28 @@
     {
       "file": "NASA ARSET： Species Distribution and Simulation Modeling, Session 4⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=jJqXYQuvs5M"
+    },
+    {
+      "file": "Using Wallace to Model Species Niches and Distributions, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=VfXg3UsnufU"
+    },
+    {
+      "file": "Additional SDM Tools and Techniques, ASP Projects, and Summary, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=ZMJ-bTXtqHw"
     }
   ],
   "ecological-conservation/biodiversity-ecosystems/16-remote-sensing-for-freshwater-habitats": [
     {
       "file": "NASA ARSET： Review of Aquatic Remote Sensing & Freshwater Habitats, Part 1⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=gLjcfxX-2OQ"
+    },
+    {
+      "file": "Overview of the Riverscape Analysis Project (RAP), Part 2/3",
+      "url": "https://www.youtube.com/watch?v=x9BwaazUumc"
+    },
+    {
+      "file": "Overview of the Freshwater Health Index (FHI), Part 3/3",
+      "url": "https://www.youtube.com/watch?v=UMLlhO8y9CI"
     }
   ],
   "ecological-conservation/biodiversity-ecosystems/17-airborne-data-applications-for-invasive-species-mapping": [
@@ -830,6 +1023,14 @@
     {
       "file": "NASA ARSET： Fundamentals of Aquatic Remote Sensing.mp4",
       "url": "https://www.youtube.com/watch?v=1TBtJ8pTANQ"
+    },
+    {
+      "file": "Penetration of Light in the Water Column, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=2pfoEFnsyEQ"
+    },
+    {
+      "file": "Remote Sensing of Shorelines, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=hJBrbbK5Nyk"
     }
   ],
   "ecological-conservation/coastal-oceans/04-introduction-to-remote-sensing-for-coastal-and-ocean-applications": [
@@ -840,6 +1041,18 @@
     {
       "file": "NASA ARSET：Overview of Satellite Remote Sensing of Aquatic Environments, Part 2⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=kyfPIj27MR8"
+    },
+    {
+      "file": "Platforms and Sensors for Observations, Data Access, and Processing Tools, Part 2/4",
+      "url": "https://www.youtube.com/watch?v=IPJ7GM5YVP0"
+    },
+    {
+      "file": "Animal Movement, Part 3/4",
+      "url": "https://www.youtube.com/watch?v=nELx8r1iy1Q"
+    },
+    {
+      "file": "Coral Reefs, Part 4/4",
+      "url": "https://www.youtube.com/watch?v=ks4R3L981bA"
     }
   ],
   "ecological-conservation/land-cover-change/01-visualizing-land-cover-and-land-use-change-with-nasa-satellite-imagery": [
@@ -890,12 +1103,32 @@
     {
       "file": "NASA ARSET： Urban Mapping Using Trends.Earth for Computing SDG Indicator 11.3.1.mp4",
       "url": "https://www.youtube.com/watch?v=1eXzBn6vNmc"
+    },
+    {
+      "file": "SDG Target 15.3, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=tkvwzdyV0xQ"
     }
   ],
   "ecological-conservation/land-cover-change/04-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring": [
     {
       "file": "NASA ARSET：Mangrove Mapping, Part 4⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=RROJ_4Ud78g"
+    },
+    {
+      "file": "Overview of Carbon Monitoring for Terrestrial Ecosystems, Part 1/5",
+      "url": "https://www.youtube.com/watch?v=oYfgAmntdcw"
+    },
+    {
+      "file": "Sensors and Products Available for Terrestrial Ecosystems, Part 2/5",
+      "url": "https://www.youtube.com/watch?v=62-3V0nXfY0"
+    },
+    {
+      "file": "Carbon Estimation Techniques and Methods, Part 3/5",
+      "url": "https://www.youtube.com/watch?v=VxtD9Op--tM"
+    },
+    {
+      "file": "Guidance, Reporting, and Verification, Part 5/5",
+      "url": "https://www.youtube.com/watch?v=f681DNstmPg"
     }
   ],
   "ecological-conservation/land-cover-change/05-remote-sensing-for-monitoring-land-degradation-and-sustainable-cities-sdgs": [
@@ -910,6 +1143,10 @@
     {
       "file": "NASA ARSET： Using Remote Sensing Data & Trends.Earth for Monitoring SDG 15.mp4",
       "url": "https://www.youtube.com/watch?v=tG4vxF1IP6w"
+    },
+    {
+      "file": "Introduction to SDG Framework and Trends.Earth, Part 1/3",
+      "url": "https://www.youtube.com/watch?v=b_2tfsVE2mY"
     }
   ],
   "ecological-conservation/land-cover-change/06-investigating-time-series-of-satellite-imagery": [
@@ -952,9 +1189,18 @@
     {
       "file": "NASA ARSET： Carbon Monitoring Accuracy Assessment, Part 4⧸5.mp4",
       "url": "https://www.youtube.com/watch?v=C2Mdeuiqi-U"
+    },
+    {
+      "file": "Conducting Unsupervised and Supervised Land Cover Classifications, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=LtM4X5J4OuI"
     }
   ],
-  "ecological-conservation/land-cover-change/09-land-cover-classification-with-satellite-imagery": [],
+  "ecological-conservation/land-cover-change/09-land-cover-classification-with-satellite-imagery": [
+    {
+      "file": "Improving a Supervised Land Cover Classification, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=6Tv3QxGpMro"
+    }
+  ],
   "ecological-conservation/spectral-indices/01-calculating-spectral-indices-for-land-and-aquatic-applications-using-qgis": [
     {
       "file": "NASA ARSET： Calculating Spectral Indices for Land and Aquatic Applications Using QGIS.mp4",
@@ -991,6 +1237,10 @@
     {
       "file": "NASA ARSET：SAR for Mapping Land Cover, Part 2⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=raXA3gnb94Q"
+    },
+    {
+      "file": "Time Series Analysis of Forest Change, Part 1/4",
+      "url": "https://www.youtube.com/watch?v=KitbOq7ARNQ"
     }
   ],
   "ecological-conservation/other/01-connecting-citizen-science-with-remote-sensing": [
@@ -1029,6 +1279,10 @@
     {
       "file": "NASA ARSET： Groundwater Monitoring using Observations from NASA’s GRACE Missions.mp4",
       "url": "https://www.youtube.com/watch?v=3x76e2rsjIY"
+    },
+    {
+      "file": "SWOT Mission Applications and Retrieving, Visualizing, and Manipulating Data, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=pi1arBgclfI"
     }
   ],
   "water-resources/hydrology/02-introduction-to-snow-and-ice-data-products-and-applications-for-water-resources-management": [
@@ -1039,6 +1293,10 @@
     {
       "file": "NASA ARSET：Overview of NASA Snow and Ice Data Products, Part 2⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=K8sDFnp5bZI"
+    },
+    {
+      "file": "Monitoring Snowpack and Prediction of Water Availability in the Western US, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=MhU1e5PqS2M"
     }
   ],
   "water-resources/hydrology/03-application-of-nasa-sport-land-information-system-sport-lis-soil-moisture-data-for-drought": [
@@ -1075,7 +1333,20 @@
       "url": "https://www.youtube.com/watch?v=V1jgEc6wqm4"
     }
   ],
-  "water-resources/hydrology/06-introduction-to-using-the-vic-hydrologic-model-with-nasa-earth-observations": [],
+  "water-resources/hydrology/06-introduction-to-using-the-vic-hydrologic-model-with-nasa-earth-observations": [
+    {
+      "file": "Introduction to the VIC Hydrological Model, Part 1/3",
+      "url": "https://www.youtube.com/watch?v=51bB7frovtg"
+    },
+    {
+      "file": "Overview of Remote Sensing-Based Input Data for VIC, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=PBlUiaW5r2s"
+    },
+    {
+      "file": "Overview of VIC Implementation in a River Basin, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=4H-OANBWxfg"
+    }
+  ],
   "water-resources/hydrology/07-water-resource-management-using-nasa-earth-science-data": [
     {
       "file": "NASA ARSET： Observations for Monitoring Global Terrestrial Surface Water, Part 1⧸2.mp4",
@@ -1102,6 +1373,14 @@
     {
       "file": "NASA ARSET：Introduction to Soil Moisture, Evapotranspiration & the SMAP Satellite Mission, Part 3⧸5.mp4",
       "url": "https://www.youtube.com/watch?v=CKIqVpWu3c0"
+    },
+    {
+      "file": "The METRIC model and the EEFlux Portal, Part 4/5",
+      "url": "https://www.youtube.com/watch?v=_MPQgDQJxYw"
+    },
+    {
+      "file": "ALEXI and Soil Moisture, Evapotranspiration data from GLDAS/NLDAS, Part 5/5",
+      "url": "https://www.youtube.com/watch?v=tVf4ltA8SbI"
     }
   ],
   "water-resources/hydrology/09-applications-of-remote-sensing-to-soil-moisture-and-evapotranspiration": [
@@ -1116,18 +1395,38 @@
     {
       "file": "NASA ARSET：Introduction to Soil Moisture, Evapotranspiration & the SMAP Satellite Mission, Part 3⧸5.mp4",
       "url": "https://www.youtube.com/watch?v=CKIqVpWu3c0"
+    },
+    {
+      "file": "The METRIC model and the EEFlux Portal, Part 4/5",
+      "url": "https://www.youtube.com/watch?v=_MPQgDQJxYw"
+    },
+    {
+      "file": "ALEXI and Soil Moisture, Evapotranspiration data from GLDAS/NLDAS, Part 5/5",
+      "url": "https://www.youtube.com/watch?v=tVf4ltA8SbI"
     }
   ],
   "water-resources/hydrology/10-monitoring-groundwater-changes-for-water-resources-management": [
     {
       "file": "NASA ARSET： Overview and Applications of OPERA-DISP to Monitor Groundwater Changes Part 3⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=RbiYboadlLc"
+    },
+    {
+      "file": "Overview and Analysis of NASA Terrestrial Water Storage Data from GRACE/GRACE-FO Pt. 1/3",
+      "url": "https://www.youtube.com/watch?v=KlYIAvKii8M"
+    },
+    {
+      "file": "Overview and Applications of GLDAS Groundwater Data Products at Regional Scale Part 2/3",
+      "url": "https://www.youtube.com/watch?v=IaOGhf9NYDk"
     }
   ],
   "water-resources/hydrology/11-assessing-extreme-weather-statistics-using-nasa-earth-exchange-global-daily-downscaled-pro": [
     {
       "file": "NASA ARSET： NEX-GDDP-CMIP6 Overview, Data Access and Application using Google Earth Engine Part 1⧸2.mp4",
       "url": "https://www.youtube.com/watch?v=SxSA76J9NvI"
+    },
+    {
+      "file": "Extreme Event Statistics during 21st Century using NEX-GDDP Data, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=L9UTzIeIhKs"
     }
   ],
   "water-resources/hydrology/12-drought-monitoring-prediction-and-projection-using-nasa-earth-system-data": [
@@ -1154,7 +1453,16 @@
       "url": "https://www.youtube.com/watch?v=HDXwk1r-QI0"
     }
   ],
-  "water-resources/hydrology/14-using-earth-observations-to-monitor-water-budgets-for-river-basin-management-ii": [],
+  "water-resources/hydrology/14-using-earth-observations-to-monitor-water-budgets-for-river-basin-management-ii": [
+    {
+      "file": "Water Budget Estimation using Remote Sensing Observations,   Part 2/3",
+      "url": "https://www.youtube.com/watch?v=rcR-s3DbmjI"
+    },
+    {
+      "file": "Water Budget Estimation using Global Land Data Assimilation Model, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=ez1TuzdAO0s"
+    }
+  ],
   "water-resources/hydrography/01-mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations": [
     {
       "file": "NASA ARSET： Mapping and Monitoring Lakes and Reservoirs with Satellite Observations, Part 1⧸3.mp4",
@@ -1173,19 +1481,40 @@
     {
       "file": "NASA ARSET： Generating a Digital Elevation Model (DEM), Part 3⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=9PbFbHqRufQ"
+    },
+    {
+      "file": "River Basin Delineation Based on NASA Digital Elevation Data, Part 1/1",
+      "url": "https://www.youtube.com/watch?v=YijXxj5FUUI"
     }
   ],
   "water-resources/hydrography/03-nasa-satellite-laser-altimetry-for-coastal-and-near-shore-bathymetry": [
     {
       "file": "NASA ARSET： NASA ATL24 Bathymetric Data for Coastal and Near-Shore Applications Part 1⧸2.mp4",
       "url": "https://www.youtube.com/watch?v=FoOSm5VQ0lc"
+    },
+    {
+      "file": "Techniques for Plotting and Analyzing ATL24 Coastal Bathymetry Part 2/2",
+      "url": "https://www.youtube.com/watch?v=vLcK5-QnlOY"
     }
   ],
-  "water-resources/water-quality/01-the-application-of-earth-observations-for-assessing-waterborne-disease-risk": [],
+  "water-resources/water-quality/01-the-application-of-earth-observations-for-assessing-waterborne-disease-risk": [
+    {
+      "file": "Overview of Monitoring Waterborne Diseases using Remote Sensing Observations, Part 1/2",
+      "url": "https://www.youtube.com/watch?v=_LXgg2yzYH8"
+    },
+    {
+      "file": "Part 2: Remote Sensing-based Cholera Predictive Intelligence for Intervention, Part 2/2",
+      "url": "https://www.youtube.com/watch?v=VdukOyMswzI"
+    }
+  ],
   "water-resources/water-quality/02-introduction-to-plankton-aerosol-cloud-ocean-ecosystem-pace-hyperspectral-observations-for": [
     {
       "file": "NASA ARSET： Introduction to the PACE Mission for Water Quality Monitoring, Part 1⧸3.mp4",
       "url": "https://www.youtube.com/watch?v=CoqJUeyXgAA"
+    },
+    {
+      "file": "Access & Visualization of PACE/OCI Data using Python/Jupyter Notebook Software, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=ef6AVyDsdmU"
     }
   ],
   "water-resources/water-quality/03-introduction-to-remote-sensing-of-harmful-algal-blooms": [
@@ -1288,8 +1617,30 @@
       "url": "https://www.youtube.com/watch?v=YD-CHY0s5pU"
     }
   ],
-  "wildland-fire/01-introduction-to-nasa-earth-observations-and-tools-for-wildfire-monitoring-and-management": [],
-  "wildland-fire/02-advanced-nasa-earth-observations-and-tools-for-active-fire-smoke-and-post-fire-monitoring": [],
+  "wildland-fire/01-introduction-to-nasa-earth-observations-and-tools-for-wildfire-monitoring-and-management": [
+    {
+      "file": "Introduction to Satellite-Based Active Fire Detection using FIRMS, Part 1/3",
+      "url": "https://www.youtube.com/watch?v=2Us91BGL3Q4"
+    },
+    {
+      "file": "Wildfire Monitoring and Evaluation, Part 2/3",
+      "url": "https://www.youtube.com/watch?v=UJOwwMwqvWA"
+    },
+    {
+      "file": "Data Access and Visualization, Part 3/3",
+      "url": "https://www.youtube.com/watch?v=S_A4switNdU"
+    }
+  ],
+  "wildland-fire/02-advanced-nasa-earth-observations-and-tools-for-active-fire-smoke-and-post-fire-monitoring": [
+    {
+      "file": "Post-Fire Imagery and Smoke Monitoring Part 1/2",
+      "url": "https://www.youtube.com/watch?v=dk4TWK0aOUI"
+    },
+    {
+      "file": "Data Analysis and Visualization Part 2/2",
+      "url": "https://www.youtube.com/watch?v=iNWlKhZSykU"
+    }
+  ],
   "wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis": [
     {
       "file": "NASA ARSET： Using the Fire Mapping Tools to Map Fires, Part 1⧸2.mp4",
@@ -1314,9 +1665,26 @@
     {
       "file": "NASA ARSET： Satellites and Sensors for Vegetation-Based Wildfire Applications (Post-Fire), Part 6⧸6.mp4",
       "url": "https://www.youtube.com/watch?v=oG-pNayqaEo"
+    },
+    {
+      "file": "Satellites, Sensors, & Models for Climate & Hydrologic-Based Applications, Part 1/6",
+      "url": "https://www.youtube.com/watch?v=6AOyvADNOPk"
+    },
+    {
+      "file": "Smoke Modeling and Forecasting, Part 4/6",
+      "url": "https://www.youtube.com/watch?v=hx-m1XMJlfc"
+    },
+    {
+      "file": "Satellites, Sensors, & Models for Climate & Hydrologic-Based Applications, Part 5/6",
+      "url": "https://www.youtube.com/watch?v=gQAm3IwinNI"
     }
   ],
-  "wildland-fire/04-assessing-the-impacts-of-fires-on-watershed-health": [],
+  "wildland-fire/04-assessing-the-impacts-of-fires-on-watershed-health": [
+    {
+      "file": "The Soil & Water Assessment Tool (SWAT) for Assessing Post-Fire Water Quality: Part 2/3",
+      "url": "https://www.youtube.com/watch?v=lAHM05jeQq0"
+    }
+  ],
   "wildland-fire/05-using-earth-observations-for-pre-and-post-fire-monitoring": [
     {
       "file": "NASA ARSET： Pre-Fire Mapping, Part 1⧸2.mp4",
@@ -1375,6 +1743,10 @@
     {
       "file": "NASA ARSET：Climate Change Projections and Droughts, Part 1⧸4.mp4",
       "url": "https://www.youtube.com/watch?v=lIDXtxFJi6M"
+    },
+    {
+      "file": "NISAR Data Access and Tools, Session 2/3",
+      "url": "https://www.youtube.com/watch?v=B1HPbpfg4oI"
     }
   ]
 }

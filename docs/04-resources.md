@@ -6,7 +6,7 @@ Les données vivent dans `resources/`. Elles sont **committées** (légères : ~
 ```
 resources/
 ├── catalog/
-│   ├── video_catalog.json     # ← LA source de vérité (249 vidéos, 130 modules)
+│   ├── video_catalog.json     # ← LA source de vérité (335 vidéos, 130 modules)
 │   ├── arset_taxonomy.json    #   ordre officiel du guide PDF (catégories > trainings)
 │   ├── youtube_titles.json    #   titres YouTube de référence (id → titre/channel)
 │   └── video_urls.json        #   mapping module → [{file, url}]
@@ -24,9 +24,9 @@ resources/
   "deduplication": { "method": "youtube_video_id", "..." : "..." },
   "summary": {
     "local_video_instances": 410,
-    "unique_sources": 249,
+    "unique_sources": 335,
     "duplicate_instances_collapsed": 141,
-    "url_status_counts": { "verified": 171, "duration_verified": 61, "manual_verified": 17 }
+    "url_status_counts": { "verified": 171, "duration_verified": 61, "manual_verified": 103 }
   },
   "modules": [
     {

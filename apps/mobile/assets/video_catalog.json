@@ -12,12 +12,12 @@
   },
   "summary": {
     "local_video_instances": 410,
-    "unique_sources": 312,
+    "unique_sources": 335,
     "duplicate_instances_collapsed": 141,
     "url_status_counts": {
       "verified": 171,
       "duration_verified": 61,
-      "manual_verified": 80
+      "manual_verified": 103
     }
   },
   "modules": [
@@ -147,12 +147,13 @@
       "subcategory": null,
       "category_order": 2,
       "order": 5,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         76,
         37,
         144,
-        247
+        247,
+        337
       ]
     },
     {
@@ -271,10 +272,11 @@
       "subcategory": "Air Quality",
       "category_order": 3,
       "order": 8,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         70,
-        224
+        224,
+        338
       ]
     },
     {
@@ -313,10 +315,11 @@
       "subcategory": "Air Quality",
       "category_order": 3,
       "order": 11,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         252,
-        279
+        279,
+        339
       ]
     },
     {
@@ -327,10 +330,12 @@
       "subcategory": "Air Quality",
       "category_order": 3,
       "order": 12,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         154,
-        241
+        241,
+        340,
+        339
       ]
     },
     {
@@ -409,9 +414,10 @@
       "subcategory": null,
       "category_order": 4,
       "order": 3,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
-        27
+        27,
+        341
       ]
     },
     {
@@ -436,11 +442,13 @@
       "subcategory": null,
       "category_order": 4,
       "order": 5,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         246,
         210,
-        88
+        88,
+        342,
+        343
       ]
     },
     {
@@ -468,7 +476,8 @@
       "order": 7,
       "status": "partial",
       "source_video_ids": [
-        203
+        203,
+        344
       ]
     },
     {
@@ -495,9 +504,10 @@
       "subcategory": null,
       "category_order": 4,
       "order": 9,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
-        220
+        220,
+        345
       ]
     },
     {
@@ -655,7 +665,9 @@
       "status": "partial",
       "source_video_ids": [
         164,
-        116
+        116,
+        346,
+        347
       ]
     },
     {
@@ -726,7 +738,8 @@
       "source_video_ids": [
         127,
         50,
-        288
+        288,
+        359
       ]
     },
     {
@@ -1103,11 +1116,13 @@
       "subcategory": "Biodiversity and Ecosystems",
       "category_order": 6,
       "order": 15,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         86,
         89,
-        4
+        4,
+        348,
+        349
       ]
     },
     {
@@ -1239,12 +1254,13 @@
       "subcategory": "Land Cover and Change Detection",
       "category_order": 6,
       "order": 3,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         10,
         82,
         208,
-        190
+        190,
+        350
       ]
     },
     {
@@ -1276,7 +1292,8 @@
       "source_video_ids": [
         221,
         241,
-        49
+        49,
+        351
       ]
     },
     {
@@ -1436,10 +1453,11 @@
       "subcategory": "Hydrology",
       "category_order": 7,
       "order": 2,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         9,
-        139
+        139,
+        358
       ]
     },
     {
@@ -1523,11 +1541,13 @@
       "subcategory": "Hydrology",
       "category_order": 7,
       "order": 8,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         232,
         85,
-        13
+        13,
+        352,
+        353
       ]
     },
     {
@@ -1538,11 +1558,13 @@
       "subcategory": "Hydrology",
       "category_order": 7,
       "order": 9,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
         232,
         85,
-        13
+        13,
+        352,
+        353
       ]
     },
     {
@@ -1553,9 +1575,11 @@
       "subcategory": "Hydrology",
       "category_order": 7,
       "order": 10,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
-        188
+        188,
+        354,
+        355
       ]
     },
     {
@@ -1652,9 +1676,10 @@
       "subcategory": "Hydrography",
       "category_order": 7,
       "order": 3,
-      "status": "partial",
+      "status": "ok",
       "source_video_ids": [
-        95
+        95,
+        356
       ]
     },
     {
@@ -1923,7 +1948,8 @@
       "order": 1,
       "status": "partial",
       "source_video_ids": [
-        182
+        182,
+        357
       ]
     }
   ],
@@ -9590,6 +9616,354 @@
       "canonical_module_id": 304,
       "module_ids": [
         304
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 337,
+      "sha256": "",
+      "name": "Crop-Specific Time Series Analysis for Growth Monitoring, Part 4/4",
+      "duration_seconds": 7272,
+      "youtube_url": "https://www.youtube.com/watch?v=wgTmTB3GlTI",
+      "youtube_video_id": "wgTmTB3GlTI",
+      "url_status": "manual_verified",
+      "canonical_module_id": 21,
+      "module_ids": [
+        21
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 338,
+      "sha256": "",
+      "name": "Review of NASA Air Quality Forecasts and Reanalysis, Part 1/3",
+      "duration_seconds": 7302,
+      "youtube_url": "https://www.youtube.com/watch?v=U9w9vZbdrNM",
+      "youtube_video_id": "U9w9vZbdrNM",
+      "url_status": "manual_verified",
+      "canonical_module_id": 29,
+      "module_ids": [
+        29
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 339,
+      "sha256": "",
+      "name": "Read, Map, and Analyze OMI NO2 and SO2 Data, Part 3/3",
+      "duration_seconds": 7341,
+      "youtube_url": "https://www.youtube.com/watch?v=VZ0HBPPIo5A",
+      "youtube_video_id": "VZ0HBPPIo5A",
+      "url_status": "manual_verified",
+      "canonical_module_id": 32,
+      "module_ids": [
+        32,
+        33
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 340,
+      "sha256": "",
+      "name": "Read, Map, and Analyze Level 2 MODIS AOD Data, Part 2/3",
+      "duration_seconds": 7601,
+      "youtube_url": "https://www.youtube.com/watch?v=eYyWTuWthyY",
+      "youtube_video_id": "eYyWTuWthyY",
+      "url_status": "manual_verified",
+      "canonical_module_id": 33,
+      "module_ids": [
+        33
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 341,
+      "sha256": "",
+      "name": "Theoretical Framework for Demand-Driven Climate Adaptation Support, Part 1/2",
+      "duration_seconds": 5443,
+      "youtube_url": "https://www.youtube.com/watch?v=4QKY-IxalyI",
+      "youtube_video_id": "4QKY-IxalyI",
+      "url_status": "manual_verified",
+      "canonical_module_id": 36,
+      "module_ids": [
+        36
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 342,
+      "sha256": "",
+      "name": "An Introduction to XCO2 with OCO-2 and OCO-3, Part 1/4",
+      "duration_seconds": 5224,
+      "youtube_url": "https://www.youtube.com/watch?v=2551aFGyleY",
+      "youtube_video_id": "2551aFGyleY",
+      "url_status": "manual_verified",
+      "canonical_module_id": 38,
+      "module_ids": [
+        38
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 343,
+      "sha256": "",
+      "name": "A Demonstration on how to Access and Visualize OCO-2/OCO-3 Data, Part 2/4",
+      "duration_seconds": 5492,
+      "youtube_url": "https://www.youtube.com/watch?v=2ZILcjYB9Fk",
+      "youtube_video_id": "2ZILcjYB9Fk",
+      "url_status": "manual_verified",
+      "canonical_module_id": 38,
+      "module_ids": [
+        38
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 344,
+      "sha256": "",
+      "name": "Use Cases from the National and City Level, Part 3/3",
+      "duration_seconds": 5806,
+      "youtube_url": "https://www.youtube.com/watch?v=yJQyIOsT_ws",
+      "youtube_video_id": "yJQyIOsT_ws",
+      "url_status": "manual_verified",
+      "canonical_module_id": 40,
+      "module_ids": [
+        40
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 345,
+      "sha256": "",
+      "name": "Climate Change Future Scenarios, Impact Projection, and Adaptation, Part 2/2",
+      "duration_seconds": 7313,
+      "youtube_url": "https://www.youtube.com/watch?v=d6vC6_H_0iI",
+      "youtube_video_id": "d6vC6_H_0iI",
+      "url_status": "manual_verified",
+      "canonical_module_id": 42,
+      "module_ids": [
+        42
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 346,
+      "sha256": "",
+      "name": "Overview of OCO-2 and OCO-3 Observing Modes and SIF Observations Part 2/3",
+      "duration_seconds": 5677,
+      "youtube_url": "https://www.youtube.com/watch?v=ygdK8uMxi8A",
+      "youtube_video_id": "ygdK8uMxi8A",
+      "url_status": "manual_verified",
+      "canonical_module_id": 53,
+      "module_ids": [
+        53
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 347,
+      "sha256": "",
+      "name": "Working with Gap-Filled SIF Products Part 3/3",
+      "duration_seconds": 5291,
+      "youtube_url": "https://www.youtube.com/watch?v=PU1PaHliBK8",
+      "youtube_video_id": "PU1PaHliBK8",
+      "url_status": "manual_verified",
+      "canonical_module_id": 53,
+      "module_ids": [
+        53
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 348,
+      "sha256": "",
+      "name": "Using Wallace to Model Species Niches and Distributions, Part 2/3",
+      "duration_seconds": 5258,
+      "youtube_url": "https://www.youtube.com/watch?v=VfXg3UsnufU",
+      "youtube_video_id": "VfXg3UsnufU",
+      "url_status": "manual_verified",
+      "canonical_module_id": 78,
+      "module_ids": [
+        78
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 349,
+      "sha256": "",
+      "name": "Additional SDM Tools and Techniques, ASP Projects, and Summary, Part 3/3",
+      "duration_seconds": 5751,
+      "youtube_url": "https://www.youtube.com/watch?v=ZMJ-bTXtqHw",
+      "youtube_video_id": "ZMJ-bTXtqHw",
+      "url_status": "manual_verified",
+      "canonical_module_id": 78,
+      "module_ids": [
+        78
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 350,
+      "sha256": "",
+      "name": "SDG Target 15.3, Part 3/3",
+      "duration_seconds": 3352,
+      "youtube_url": "https://www.youtube.com/watch?v=tkvwzdyV0xQ",
+      "youtube_video_id": "tkvwzdyV0xQ",
+      "url_status": "manual_verified",
+      "canonical_module_id": 87,
+      "module_ids": [
+        87
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 351,
+      "sha256": "",
+      "name": "Introduction to SDG Framework and Trends.Earth, Part 1/3",
+      "duration_seconds": 6255,
+      "youtube_url": "https://www.youtube.com/watch?v=b_2tfsVE2mY",
+      "youtube_video_id": "b_2tfsVE2mY",
+      "url_status": "manual_verified",
+      "canonical_module_id": 89,
+      "module_ids": [
+        89
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 352,
+      "sha256": "",
+      "name": "The METRIC model and the EEFlux Portal, Part 4/5",
+      "duration_seconds": 6434,
+      "youtube_url": "https://www.youtube.com/watch?v=_MPQgDQJxYw",
+      "youtube_video_id": "_MPQgDQJxYw",
+      "url_status": "manual_verified",
+      "canonical_module_id": 111,
+      "module_ids": [
+        111,
+        112
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 353,
+      "sha256": "",
+      "name": "ALEXI and Soil Moisture, Evapotranspiration data from GLDAS/NLDAS, Part 5/5",
+      "duration_seconds": 4040,
+      "youtube_url": "https://www.youtube.com/watch?v=tVf4ltA8SbI",
+      "youtube_video_id": "tVf4ltA8SbI",
+      "url_status": "manual_verified",
+      "canonical_module_id": 111,
+      "module_ids": [
+        111,
+        112
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 354,
+      "sha256": "",
+      "name": "Overview and Analysis of NASA Terrestrial Water Storage Data from GRACE/GRACE-FO Pt. 1/3",
+      "duration_seconds": 5699,
+      "youtube_url": "https://www.youtube.com/watch?v=KlYIAvKii8M",
+      "youtube_video_id": "KlYIAvKii8M",
+      "url_status": "manual_verified",
+      "canonical_module_id": 113,
+      "module_ids": [
+        113
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 355,
+      "sha256": "",
+      "name": "Overview and Applications of GLDAS Groundwater Data Products at Regional Scale Part 2/3",
+      "duration_seconds": 5476,
+      "youtube_url": "https://www.youtube.com/watch?v=IaOGhf9NYDk",
+      "youtube_video_id": "IaOGhf9NYDk",
+      "url_status": "manual_verified",
+      "canonical_module_id": 113,
+      "module_ids": [
+        113
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 356,
+      "sha256": "",
+      "name": "Techniques for Plotting and Analyzing ATL24 Coastal Bathymetry Part 2/2",
+      "duration_seconds": 7353,
+      "youtube_url": "https://www.youtube.com/watch?v=vLcK5-QnlOY",
+      "youtube_video_id": "vLcK5-QnlOY",
+      "url_status": "manual_verified",
+      "canonical_module_id": 307,
+      "module_ids": [
+        307
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 357,
+      "sha256": "",
+      "name": "NISAR Data Access and Tools, Session 2/3",
+      "duration_seconds": 7629,
+      "youtube_url": "https://www.youtube.com/watch?v=B1HPbpfg4oI",
+      "youtube_video_id": "B1HPbpfg4oI",
+      "url_status": "manual_verified",
+      "canonical_module_id": 311,
+      "module_ids": [
+        311
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 358,
+      "sha256": "",
+      "name": "Monitoring Snowpack and Prediction of Water Availability in the Western US, Part 3/3",
+      "duration_seconds": 5436,
+      "youtube_url": "https://www.youtube.com/watch?v=MhU1e5PqS2M",
+      "youtube_video_id": "MhU1e5PqS2M",
+      "url_status": "manual_verified",
+      "canonical_module_id": 106,
+      "module_ids": [
+        106
+      ],
+      "local_filenames": [],
+      "instances": []
+    },
+    {
+      "id": 359,
+      "sha256": "",
+      "name": "Introduction to SAR Interferometry, Session 4/4",
+      "duration_seconds": 4044,
+      "youtube_url": "https://www.youtube.com/watch?v=9T1lBnta9P0",
+      "youtube_video_id": "9T1lBnta9P0",
+      "url_status": "manual_verified",
+      "canonical_module_id": 57,
+      "module_ids": [
+        57
       ],
       "local_filenames": [],
       "instances": []

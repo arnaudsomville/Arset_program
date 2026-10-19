@@ -210,7 +210,7 @@ téléchargement est indisponible** (message d'erreur explicite au clic).
 ## Ressources & données
 
 - **Catalogue** : snapshot committé dans `resources/catalog/video_catalog.json`
-  (249 vidéos, 130 modules : 129 trainings du guide PDF + 1 module « hors guide »).
+  (335 vidéos, 130 modules : 129 trainings du guide PDF + 1 module « hors guide »).
   Dédoublonné par YouTube ID ; les anciens ids fusionnés sont conservés dans `legacy_ids`.
 - **Organisation** : `resources/catalog/arset_taxonomy.json` reprend l'ordre officiel du
   guide PDF (catégorie > sous-catégorie > training). L'UI n'utilise plus de parcours
