@@ -1,0 +1,2523 @@
+{
+  "gEMrQsNr9rw": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:47:30.459Z"
+  },
+  "rkyu9BWr28I": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:47:30.812Z"
+  },
+  "jJqXYQuvs5M": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/15-species-distribution-modeling-with-remote-sensing/species-distribution-and-simulation-modeling-session-4-4.md",
+    "chars": 48612,
+    "segments": 416,
+    "source": "jJqXYQuvs5M.en.vtt",
+    "fetched_at": "2026-10-20T07:47:31.026Z"
+  },
+  "3qfXlMonG0s": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/06-nasa-atmospheric-composition-ground-networks-supporting-air-quality-and-climate-applicatio/introduction-to-the-micro-pulse-lidar-network-mplnet-part-5-5.md",
+    "chars": 83643,
+    "segments": 712,
+    "source": "3qfXlMonG0s.en.vtt",
+    "fetched_at": "2026-10-20T07:47:32.066Z"
+  },
+  "sliQ_o-P1wM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrography/01-mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations/mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations-part-1-3.md",
+    "chars": 67085,
+    "segments": 582,
+    "source": "sliQ_o-P1wM.en.vtt",
+    "fetched_at": "2026-10-20T07:47:34.295Z"
+  },
+  "1zrpkH7s18I": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/other/01-connecting-citizen-science-with-remote-sensing/citizen-science-at-nasa-with-land-applications-part-3-3.md",
+    "chars": 73476,
+    "segments": 628,
+    "source": "1zrpkH7s18I.en.vtt",
+    "fetched_at": "2026-10-20T07:47:34.884Z"
+  },
+  "3yEelQADHxc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/03-earth-observations-for-humanitarian-applications/mapping-refugee-settlement-growth-and-population-change-part-2-4.md",
+    "chars": 103337,
+    "segments": 915,
+    "source": "3yEelQADHxc.en.vtt",
+    "fetched_at": "2026-10-20T07:47:35.117Z"
+  },
+  "FguKFg-Y1zc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/05-using-earth-observations-to-monitor-water-budgets-for-river-basin-management/access-of-earth-observations-and-modeled-data-for-river-basin-monitoring-part-1-3.md",
+    "chars": 67938,
+    "segments": 582,
+    "source": "FguKFg-Y1zc.en.vtt",
+    "fetched_at": "2026-10-20T07:47:37.623Z"
+  },
+  "RsVEv0PboPI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/03-remote-sensing-of-land-indicators-for-sustainable-development-goal-15/overview-of-sdg-15-part-1-3.md",
+    "chars": 45130,
+    "segments": 365,
+    "source": "RsVEv0PboPI.en.vtt",
+    "fetched_at": "2026-10-20T07:47:39.069Z"
+  },
+  "hga94lkmtqM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/spectral-indices/02-spectral-indices-for-land-and-aquatic-applications/spectral-indices-for-land-and-aquatic-applications-part-2-3.md",
+    "chars": 59063,
+    "segments": 529,
+    "source": "hga94lkmtqM.en.vtt",
+    "fetched_at": "2026-10-20T07:47:39.297Z"
+  },
+  "IqiYndJxyrg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/02-introduction-to-snow-and-ice-data-products-and-applications-for-water-resources-management/overview-of-nasa-snow-and-ice-data-products-part-1-3.md",
+    "chars": 84016,
+    "segments": 732,
+    "source": "IqiYndJxyrg.en.vtt",
+    "fetched_at": "2026-10-20T07:47:39.365Z"
+  },
+  "p0syKhg_IME": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/09-integrating-remote-sensing-into-a-water-quality-monitoring-program/water-quality-in-the-coastal-zone-part-1-3.md",
+    "chars": 119348,
+    "segments": 1070,
+    "source": "p0syKhg_IME.en.vtt",
+    "fetched_at": "2026-10-20T07:47:42.072Z"
+  },
+  "-wVpoYszRCs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrography/01-mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations/mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations-part-3-3.md",
+    "chars": 67386,
+    "segments": 583,
+    "source": "-wVpoYszRCs.en.vtt",
+    "fetched_at": "2026-10-20T07:47:43.854Z"
+  },
+  "CKIqVpWu3c0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/08-applications-of-remote-sensing-based-evapotranspiration-data-products/accessing-smap-data-part-3-5.md",
+    "chars": 25136,
+    "segments": 227,
+    "source": "CKIqVpWu3c0.en.vtt",
+    "fetched_at": "2026-10-20T07:47:43.866Z"
+  },
+  "LxaoPnsMP0w": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/04-monitoring-water-quality-in-lakes-and-coastal-regions-using-stream/introduction-to-a-machine-learning-model-to-estimate-water-quality-parameters-part-2-2.md",
+    "chars": 65912,
+    "segments": 559,
+    "source": "LxaoPnsMP0w.en.vtt",
+    "fetched_at": "2026-10-20T07:47:44.229Z"
+  },
+  "OgWJtSx-sr0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/09-introduction-and-access-to-global-air-quality-forecasting-data-and-tools/global-air-quality-forecasting-by-nasa-part-2-3.md",
+    "chars": 67747,
+    "segments": 567,
+    "source": "OgWJtSx-sr0.en.vtt",
+    "fetched_at": "2026-10-20T07:47:46.988Z"
+  },
+  "V1jgEc6wqm4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/05-using-earth-observations-to-monitor-water-budgets-for-river-basin-management/applications-of-remote-sensing-for-river-basin-monitoring-mekong-basin-session-3-4.md",
+    "chars": 46690,
+    "segments": 401,
+    "source": "V1jgEc6wqm4.en.vtt",
+    "fetched_at": "2026-10-20T07:47:47.630Z"
+  },
+  "FwhvAPoWq4Y": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/07-earth-observations-for-indigenous-led-land-management/introduction-to-mapping-gis-and-drones-session-1-3.md",
+    "chars": 47885,
+    "segments": 402,
+    "source": "FwhvAPoWq4Y.en.vtt",
+    "fetched_at": "2026-10-20T07:47:47.948Z"
+  },
+  "KJTyMDyvBik": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:47:49.572Z"
+  },
+  "SxSA76J9NvI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/11-assessing-extreme-weather-statistics-using-nasa-earth-exchange-global-daily-downscaled-pro/nex-gddp-cmip6-overview-data-access-and-application-using-google-earth-engine-part-1-2.md",
+    "chars": 73836,
+    "segments": 632,
+    "source": "SxSA76J9NvI.en.vtt",
+    "fetched_at": "2026-10-20T07:47:50.863Z"
+  },
+  "Gi2PYyTk4QA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/13-biodiversity-applications-for-airborne-imaging-systems/biodiversity-applications-for-airborne-imaging-systems-part-1-4.md",
+    "chars": 60062,
+    "segments": 505,
+    "source": "Gi2PYyTk4QA.en.vtt",
+    "fetched_at": "2026-10-20T07:47:52.104Z"
+  },
+  "Mw3hg2w3xNg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/10-processing-satellite-imagery-for-monitoring-water-quality/image-processing-using-seadas-part-2-3.md",
+    "chars": 65540,
+    "segments": 581,
+    "source": "Mw3hg2w3xNg.en.vtt",
+    "fetched_at": "2026-10-20T07:47:52.343Z"
+  },
+  "llRk4mILEFA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/13-biodiversity-applications-for-airborne-imaging-systems/biodiversity-applications-for-airborne-imaging-systems-part-4-4.md",
+    "chars": 69557,
+    "segments": 595,
+    "source": "llRk4mILEFA.en.vtt",
+    "fetched_at": "2026-10-20T07:47:53.379Z"
+  },
+  "KSxlhBLOAc4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/02-introduction-to-nasa-s-black-marble-night-lights-data/black-marble-background-use-and-applications-part-1-1.md",
+    "chars": 113433,
+    "segments": 972,
+    "source": "KSxlhBLOAc4.en.vtt",
+    "fetched_at": "2026-10-20T07:47:54.843Z"
+  },
+  "kyfPIj27MR8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/04-introduction-to-remote-sensing-for-coastal-and-ocean-applications/overview-of-satellite-remote-sensing-of-aquatic-environments-part-1-4.md",
+    "chars": 44568,
+    "segments": 368,
+    "source": "kyfPIj27MR8.en.vtt",
+    "fetched_at": "2026-10-20T07:47:55.850Z"
+  },
+  "T1wLWzpgOVI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/10-processing-satellite-imagery-for-monitoring-water-quality/introduction-to-image-processing-data-access-session-2-3.md",
+    "chars": 57733,
+    "segments": 522,
+    "source": "T1wLWzpgOVI.en.vtt",
+    "fetched_at": "2026-10-20T07:47:57.678Z"
+  },
+  "7A_SHnPbAGY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/07-water-resource-management-using-nasa-earth-science-data/surface-water-budget-estimation-based-on-remote-sensing-session-4-4.md",
+    "chars": 56955,
+    "segments": 505,
+    "source": "7A_SHnPbAGY.en.vtt",
+    "fetched_at": "2026-10-20T07:47:58.595Z"
+  },
+  "kFLDFxfsJ1A": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:47:58.817Z"
+  },
+  "5RIoU9ImnH0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/skill-building/01-fundamentals-of-machine-learning-for-earth-science/training-data-and-land-cover-classification-example-part-2-3.md",
+    "chars": 72789,
+    "segments": 632,
+    "source": "5RIoU9ImnH0.en.vtt",
+    "fetched_at": "2026-10-20T07:48:00.759Z"
+  },
+  "Q2MDct5CoTQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/04-introduction-to-remote-sensing-for-coastal-and-ocean-applications/overview-of-coastal-ecosystems-and-remote-sensing-part-1-3.md",
+    "chars": 47650,
+    "segments": 406,
+    "source": "Q2MDct5CoTQ.en.vtt",
+    "fetched_at": "2026-10-20T07:48:01.284Z"
+  },
+  "YD-CHY0s5pU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/10-processing-satellite-imagery-for-monitoring-water-quality/image-processing-hands-on-exercise-session-3-3.md",
+    "chars": 62326,
+    "segments": 556,
+    "source": "YD-CHY0s5pU.en.vtt",
+    "fetched_at": "2026-10-20T07:48:02.215Z"
+  },
+  "hyJ_ZG3qrPY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/10-introduction-to-remote-sensing-for-conservation-management/introduction-to-remote-sensing-for-land-management-session-2-3.md",
+    "chars": 48811,
+    "segments": 408,
+    "source": "hyJ_ZG3qrPY.en.vtt",
+    "fetched_at": "2026-10-20T07:48:03.325Z"
+  },
+  "2bukmnvg5OA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/17-airborne-data-applications-for-invasive-species-mapping/airborne-data-applications-for-invasive-species-mapping-part-1-1.md",
+    "chars": 83026,
+    "segments": 726,
+    "source": "2bukmnvg5OA.en.vtt",
+    "fetched_at": "2026-10-20T07:48:04.160Z"
+  },
+  "V0pwwG8YOUg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/05-monitoring-coastal-and-estuarine-water-quality-transitioning-from-modis-to-viirs/monitoring-modis-and-viirs-based-water-quality-in-selected-estuaries-part-2-2.md",
+    "chars": 53551,
+    "segments": 481,
+    "source": "V0pwwG8YOUg.en.vtt",
+    "fetched_at": "2026-10-20T07:48:05.909Z"
+  },
+  "fzf_usG5dfE": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/floods/01-monitoring-urban-floods-using-remote-sensing/overview-of-urban-flooding-part-1-2.md",
+    "chars": 77168,
+    "segments": 673,
+    "source": "fzf_usG5dfE.en.vtt",
+    "fetched_at": "2026-10-20T07:48:06.304Z"
+  },
+  "aXiKibOJWKg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/08-monitoring-coastal-and-estuarine-water-quality-using-remote-sensing-and-in-situ-data/in-situ-data-acquisition-using-seabass-and-image-processing-using-seadas-part-1-2.md",
+    "chars": 59071,
+    "segments": 524,
+    "source": "aXiKibOJWKg.en.vtt",
+    "fetched_at": "2026-10-20T07:48:06.597Z"
+  },
+  "30x6XE6U4CU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/05-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remo/sar-polarimetry-with-sentinel-1-rcm-saocom-imagery-for-agriculture-part-2-4.md",
+    "chars": 113950,
+    "segments": 1019,
+    "source": "30x6XE6U4CU.en.vtt",
+    "fetched_at": "2026-10-20T07:48:07.686Z"
+  },
+  "C2Mdeuiqi-U": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/08-accuracy-assessment-of-a-land-cover-classification/carbon-monitoring-accuracy-assessment-part-4-5.md",
+    "chars": 62985,
+    "segments": 573,
+    "source": "C2Mdeuiqi-U.en.vtt",
+    "fetched_at": "2026-10-20T07:48:09.131Z"
+  },
+  "rnBxGWjRiXw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/other/02-remote-sensing-of-drought/drought-prediction-using-nasa-sub-seasonal-to-seasonal-s2s-predictions-part-2-4.md",
+    "chars": 65804,
+    "segments": 579,
+    "source": "rnBxGWjRiXw.en.vtt",
+    "fetched_at": "2026-10-20T07:48:09.989Z"
+  },
+  "74NKtluFQ1M": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/01-monitoring-aquatic-vegetation-with-remote-sensing/monitoring-aquatic-vegetation-with-remote-sensing-part-2-3.md",
+    "chars": 69994,
+    "segments": 639,
+    "source": "74NKtluFQ1M.en.vtt",
+    "fetched_at": "2026-10-20T07:48:10.170Z"
+  },
+  "truE3iCaGt8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/02-an-inside-look-at-how-nasa-measures-air-pollution/how-nasa-measures-nitrogen-dioxide-no2-part-1-2.md",
+    "chars": 64358,
+    "segments": 556,
+    "source": "truE3iCaGt8.en.vtt",
+    "fetched_at": "2026-10-20T07:48:11.188Z"
+  },
+  "nm3EGcR-dC0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/01-introduction-to-lightning-observations-and-applications/introduction-to-lightning-observations-and-applications-part-3-3.md",
+    "chars": 66420,
+    "segments": 576,
+    "source": "nm3EGcR-dC0.en.vtt",
+    "fetched_at": "2026-10-20T07:48:12.535Z"
+  },
+  "jxeUy2JZYB8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/08-accuracy-assessment-of-a-land-cover-classification/introduction-to-accuracy-assessments-part-1-2.md",
+    "chars": 67104,
+    "segments": 596,
+    "source": "jxeUy2JZYB8.en.vtt",
+    "fetched_at": "2026-10-20T07:48:14.856Z"
+  },
+  "ke2gPRRdXZY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/01-introduction-to-lightning-observations-and-applications/lightning-data-products-from-remote-sensing-and-ground-based-measurements-part-2-3.md",
+    "chars": 76583,
+    "segments": 677,
+    "source": "ke2gPRRdXZY.en.vtt",
+    "fetched_at": "2026-10-20T07:48:14.995Z"
+  },
+  "o-NBWXiyC3k": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:15.040Z"
+  },
+  "wt6j4qP2bn8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/03-earth-observations-for-disaster-risk-assessment-and-resilience/operational-application-of-remote-sensing-for-disaster-management-part-4-4.md",
+    "chars": 37386,
+    "segments": 311,
+    "source": "wt6j4qP2bn8.en.vtt",
+    "fetched_at": "2026-10-20T07:48:15.958Z"
+  },
+  "4tAmf3dBUxU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/07-earth-observations-for-indigenous-led-land-management/nasas-citizen-science-for-earth-systems-program-part-2-3.md",
+    "chars": 70860,
+    "segments": 619,
+    "source": "4tAmf3dBUxU.en.vtt",
+    "fetched_at": "2026-10-20T07:48:18.609Z"
+  },
+  "c79bm_fBeRw": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:18.958Z"
+  },
+  "tG4vxF1IP6w": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/05-remote-sensing-for-monitoring-land-degradation-and-sustainable-cities-sdgs/using-remote-sensing-data-trends-earth-for-monitoring-sdg-15.md",
+    "chars": 58911,
+    "segments": 525,
+    "source": "tG4vxF1IP6w.en.vtt",
+    "fetched_at": "2026-10-20T07:48:19.491Z"
+  },
+  "CoqJUeyXgAA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/02-introduction-to-plankton-aerosol-cloud-ocean-ecosystem-pace-hyperspectral-observations-for/introduction-to-the-pace-mission-for-water-quality-monitoring-part-1-3.md",
+    "chars": 72241,
+    "segments": 632,
+    "source": "CoqJUeyXgAA.en.vtt",
+    "fetched_at": "2026-10-20T07:48:20.242Z"
+  },
+  "BK4S1IXD4c4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/04-crop-mapping-using-synthetic-aperture-radar-sar-and-optical-remote-sensing/crop-classification-with-time-series-of-polarimetric-sar-data-part-2-3.md",
+    "chars": 108913,
+    "segments": 954,
+    "source": "BK4S1IXD4c4.en.vtt",
+    "fetched_at": "2026-10-20T07:48:22.633Z"
+  },
+  "i94fHhsKoR0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/04-monitoring-tropical-storms-for-emergency-preparedness/monitoring-conditions-during-and-after-tropical-storms-session-2-2.md",
+    "chars": 82592,
+    "segments": 754,
+    "source": "i94fHhsKoR0.en.vtt",
+    "fetched_at": "2026-10-20T07:48:23.235Z"
+  },
+  "5W_w5ZKX_BI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/03-application-of-nasa-sport-land-information-system-sport-lis-soil-moisture-data-for-drought/early-and-established-applications-of-lis-for-drought-analysis-in-operations-part-2-3.md",
+    "chars": 87196,
+    "segments": 725,
+    "source": "5W_w5ZKX_BI.en.vtt",
+    "fetched_at": "2026-10-20T07:48:23.379Z"
+  },
+  "w-zRfsTZBFY": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:24.000Z"
+  },
+  "RkyhBnZyyqc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/spectral-indices/02-spectral-indices-for-land-and-aquatic-applications/spectral-indices-for-land-and-aquatic-applications-part-3.md",
+    "chars": 48140,
+    "segments": 427,
+    "source": "RkyhBnZyyqc.en.vtt",
+    "fetched_at": "2026-10-20T07:48:25.995Z"
+  },
+  "qeMZa6BiQ2g": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/06-nasa-atmospheric-composition-ground-networks-supporting-air-quality-and-climate-applicatio/introduction-to-the-pandora-instrument-and-the-pandonia-global-network-part-3-5.md",
+    "chars": 65371,
+    "segments": 553,
+    "source": "qeMZa6BiQ2g.en.vtt",
+    "fetched_at": "2026-10-20T07:48:26.844Z"
+  },
+  "IJh13kRCFqA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/09-introduction-and-access-to-global-air-quality-forecasting-data-and-tools/introduction-to-air-quality-forecasting-part-1-3.md",
+    "chars": 76759,
+    "segments": 651,
+    "source": "IJh13kRCFqA.en.vtt",
+    "fetched_at": "2026-10-20T07:48:27.411Z"
+  },
+  "dyXtQ0uiscA": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:28.250Z"
+  },
+  "vJV50ThHc-U": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/01-lidar-profiling-satellite-observations-for-air-quality-applications/lidar-profiling-satellite-observations-for-air-quality-applications-part-1-2.md",
+    "chars": 52961,
+    "segments": 447,
+    "source": "vJV50ThHc-U.en.vtt",
+    "fetched_at": "2026-10-20T07:48:30.805Z"
+  },
+  "Qb8PMcZGs6w": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/01-humanitarian-applications-using-nasa-earth-observations/gauging-long-term-heat-stress-in-refugee-settings-part-2-2.md",
+    "chars": 110369,
+    "segments": 967,
+    "source": "Qb8PMcZGs6w.en.vtt",
+    "fetched_at": "2026-10-20T07:48:31.055Z"
+  },
+  "jVWsT91mhQk": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:31.057Z"
+  },
+  "yQY41ViDPKU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/05-using-earth-observations-for-pre-and-post-fire-monitoring/pre-fire-mapping-part-1-2.md",
+    "chars": 108058,
+    "segments": 955,
+    "source": "yQY41ViDPKU.en.vtt",
+    "fetched_at": "2026-10-20T07:48:32.042Z"
+  },
+  "cFCinjBP5FQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/02-methane-observations-for-large-emission-event-detection-and-monitoring/u-s-greenhouse-gas-center-us-ghg-and-remote-detection-of-methane-emissions-part-1-2.md",
+    "chars": 79170,
+    "segments": 670,
+    "source": "cFCinjBP5FQ.en.vtt",
+    "fetched_at": "2026-10-20T07:48:34.545Z"
+  },
+  "9PbFbHqRufQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrography/02-river-basin-delineation-based-on-nasa-digital-elevation-data/generating-a-digital-elevation-model-dem-part-3-3.md",
+    "chars": 61661,
+    "segments": 529,
+    "source": "9PbFbHqRufQ.en.vtt",
+    "fetched_at": "2026-10-20T07:48:34.649Z"
+  },
+  "x0Gg8COznJ8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/06-nasa-atmospheric-composition-ground-networks-supporting-air-quality-and-climate-applicatio/introduction-to-the-aerosol-robotic-network-aeronet-part-1-5.md",
+    "chars": 85847,
+    "segments": 712,
+    "source": "x0Gg8COznJ8.en.vtt",
+    "fetched_at": "2026-10-20T07:48:34.814Z"
+  },
+  "PnkJPMstgco": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/04-using-the-un-biodiversity-lab-to-support-national-conservation-and-sdgs/using-un-biodiversity-lab-to-support-biodiversity-sustainable-development-part-1-3.md",
+    "chars": 86202,
+    "segments": 734,
+    "source": "PnkJPMstgco.en.vtt",
+    "fetched_at": "2026-10-20T07:48:38.294Z"
+  },
+  "Cr6xtc_ITf4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/08-tools-for-analyzing-nasa-air-quality-model-output/introduction-to-python-tools-for-visualization-and-analysis-part-2-3.md",
+    "chars": 75177,
+    "segments": 680,
+    "source": "Cr6xtc_ITf4.en.vtt",
+    "fetched_at": "2026-10-20T07:48:38.517Z"
+  },
+  "yS0Ck29lCrc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/02-introduction-to-population-grids-and-their-integration-with-remote-sensing-data/introduction-to-population-grids-and-their-uses-part-1-2.md",
+    "chars": 102242,
+    "segments": 882,
+    "source": "yS0Ck29lCrc.en.vtt",
+    "fetched_at": "2026-10-20T07:48:38.707Z"
+  },
+  "o83KNj85AJw": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:39.174Z"
+  },
+  "CkhOoYoPzSA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/07-remote-sensing-for-disasters-scenarios/disasters-scenarios-flooding-session-2-3.md",
+    "chars": 47577,
+    "segments": 411,
+    "source": "CkhOoYoPzSA.en.vtt",
+    "fetched_at": "2026-10-20T07:48:41.871Z"
+  },
+  "YUrQGwTryk4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/01-satellite-remote-sensing-for-agricultural-applications/evapotranspiration-evaporative-stress-index-for-agricultural-applications-part-4-4.md",
+    "chars": 85535,
+    "segments": 744,
+    "source": "YUrQGwTryk4.en.vtt",
+    "fetched_at": "2026-10-20T07:48:43.011Z"
+  },
+  "GgfqEiVw_mM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/urban-heat-islands/03-satellite-remote-sensing-for-measuring-urban-heat-islands-and-constructing-heat-vulnerabil/integrating-socioeconomic-data-with-satellite-imagery-for-constructing-hvis-part-3-4.md",
+    "chars": 55351,
+    "segments": 479,
+    "source": "GgfqEiVw_mM.en.vtt",
+    "fetched_at": "2026-10-20T07:48:43.297Z"
+  },
+  "YE3DeQmd_IQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/03-sar-for-detecting-and-monitoring-floods-sea-ice-and-subsidence-from-groundwater-extraction/measuring-surface-subsidence-due-to-groundwater-extraction-with-insar-part-2-3.md",
+    "chars": 73798,
+    "segments": 656,
+    "source": "YE3DeQmd_IQ.en.vtt",
+    "fetched_at": "2026-10-20T07:48:44.261Z"
+  },
+  "-Mq5A9aXIuc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/05-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remo/sar-polarimetry-for-agriculture-theory-and-practice-part-1-4.md",
+    "chars": 119193,
+    "segments": 1014,
+    "source": "-Mq5A9aXIuc.en.vtt",
+    "fetched_at": "2026-10-20T07:48:46.909Z"
+  },
+  "5Venmt7t6BI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/02-remote-sensing-for-mangroves-in-support-of-the-un-sustainable-development-goals/mapping-mangrove-extent-part-2-3.md",
+    "chars": 82704,
+    "segments": 735,
+    "source": "5Venmt7t6BI.en.vtt",
+    "fetched_at": "2026-10-20T07:48:46.991Z"
+  },
+  "vAtm_rkKrlM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/spectral-indices/02-spectral-indices-for-land-and-aquatic-applications/spectral-indices-for-land-and-aquatic-applications-part-1-3.md",
+    "chars": 62785,
+    "segments": 559,
+    "source": "vAtm_rkKrlM.en.vtt",
+    "fetched_at": "2026-10-20T07:48:48.003Z"
+  },
+  "nARwVopZB1I": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/floods/02-monitoring-and-modeling-floods-using-earth-observations/monitoring-storms-floods-and-landslides-session-4-4.md",
+    "chars": 47911,
+    "segments": 409,
+    "source": "nARwVopZB1I.en.vtt",
+    "fetched_at": "2026-10-20T07:48:48.461Z"
+  },
+  "W-7gzSeHxS8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sif/01-use-of-solar-induced-fluorescence-and-lidar-to-assess-vegetation-change-and-vulnerability/accessing-and-analyzing-lidar-data-for-vegetation-studies-part-2-4.md",
+    "chars": 79391,
+    "segments": 693,
+    "source": "W-7gzSeHxS8.en.vtt",
+    "fetched_at": "2026-10-20T07:48:51.475Z"
+  },
+  "Q2L-iF_GKFI": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:52.512Z"
+  },
+  "1WAtjat365o": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:53.632Z"
+  },
+  "eFn00Q77HDY": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:54.110Z"
+  },
+  "2SGP30TGHXM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/04-crop-mapping-using-synthetic-aperture-radar-sar-and-optical-remote-sensing/synthetic-aperture-radar-sar-refresher-part-1-5.md",
+    "chars": 129147,
+    "segments": 1145,
+    "source": "2SGP30TGHXM.en.vtt",
+    "fetched_at": "2026-10-20T07:48:55.391Z"
+  },
+  "zS3T-4Pnde8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/01-lidar-profiling-satellite-observations-for-air-quality-applications/introduction-to-the-tropospheric-ozone-lidar-network-tolnet-part-4-5.md",
+    "chars": 71823,
+    "segments": 630,
+    "source": "zS3T-4Pnde8.en.vtt",
+    "fetched_at": "2026-10-20T07:48:55.950Z"
+  },
+  "DTQ1FPyCm_w": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/08-applications-of-remote-sensing-based-evapotranspiration-data-products/applications-of-smap-data-part-2-5.md",
+    "chars": 49520,
+    "segments": 434,
+    "source": "DTQ1FPyCm_w.en.vtt",
+    "fetched_at": "2026-10-20T07:48:56.795Z"
+  },
+  "AYehqG1j508": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/satellites-and-sensors-for-active-fire-monitoring-during-fire-part-3-6.md",
+    "chars": 107119,
+    "segments": 963,
+    "source": "AYehqG1j508.en.vtt",
+    "fetched_at": "2026-10-20T07:48:59.021Z"
+  },
+  "WjPq6gGI9Ig": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/05-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies/xco2-in-support-of-local-and-regional-climate-related-studies-part-4-4.md",
+    "chars": 69667,
+    "segments": 626,
+    "source": "WjPq6gGI9Ig.en.vtt",
+    "fetched_at": "2026-10-20T07:48:59.563Z"
+  },
+  "JhJGyzcEung": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:48:59.925Z"
+  },
+  "KhZ1Gk9eQFI": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:02.208Z"
+  },
+  "jwsymP9_PrE": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:02.659Z"
+  },
+  "L4sGAgQB0a4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/04-hyperspectral-data-for-land-and-coastal-systems-self-paced/hyperspectral-data-for-coastal-and-ocean-systems-part-3-3.md",
+    "chars": 83406,
+    "segments": 723,
+    "source": "L4sGAgQB0a4.en.vtt",
+    "fetched_at": "2026-10-20T07:49:03.032Z"
+  },
+  "vaBEHALn-js": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/02-remote-sensing-for-mangroves-in-support-of-the-un-sustainable-development-goals/mangrove-mapping-part-3-4.md",
+    "chars": 89710,
+    "segments": 819,
+    "source": "vaBEHALn-js.en.vtt",
+    "fetched_at": "2026-10-20T07:49:03.535Z"
+  },
+  "EGxUoCKbrFs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/02-invasive-species-monitoring-with-remote-sensing/mapping-invasive-grassland-plant-species-with-hyperspectral-remote-sensing-part-3-3.md",
+    "chars": 58871,
+    "segments": 511,
+    "source": "EGxUoCKbrFs.en.vtt",
+    "fetched_at": "2026-10-20T07:49:05.924Z"
+  },
+  "FoOSm5VQ0lc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrography/03-nasa-satellite-laser-altimetry-for-coastal-and-near-shore-bathymetry/nasa-atl24-bathymetric-data-for-coastal-and-near-shore-applications-part-1-2.md",
+    "chars": 76470,
+    "segments": 664,
+    "source": "FoOSm5VQ0lc.en.vtt",
+    "fetched_at": "2026-10-20T07:49:06.040Z"
+  },
+  "Wmagqj7_c8w": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/08-nasa-earth-observations-for-energy-management/introduction-to-earth-observations-eos-for-energy-management-part-1-4.md",
+    "chars": 65246,
+    "segments": 540,
+    "source": "Wmagqj7_c8w.en.vtt",
+    "fetched_at": "2026-10-20T07:49:06.429Z"
+  },
+  "0RR37KuohEk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/01-introduction-to-lightning-observations-and-applications/background-and-history-of-lightning-measurements-part-1-3.md",
+    "chars": 72892,
+    "segments": 629,
+    "source": "0RR37KuohEk.en.vtt",
+    "fetched_at": "2026-10-20T07:49:07.413Z"
+  },
+  "qiqUAlJK4vI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/01-fundamentals-of-remote-sensing/satellites-sensors-data-and-tools-for-land-management-and-wildfire-applications.md",
+    "chars": 35079,
+    "segments": 285,
+    "source": "qiqUAlJK4vI.en.vtt",
+    "fetched_at": "2026-10-20T07:49:09.353Z"
+  },
+  "OLLQXfaW3Cc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/health/01-remote-sensing-for-climate-sensitive-infectious-diseases/case-study-use-of-remote-sensing-for-climate-sensitive-infectious-diseases-part-2-2.md",
+    "chars": 81971,
+    "segments": 702,
+    "source": "OLLQXfaW3Cc.en.vtt",
+    "fetched_at": "2026-10-20T07:49:09.707Z"
+  },
+  "v-g1-gua5jg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/05-geostationary-remote-sensing-of-trace-gases-for-air-quality-applications-in-north-america/case-studies-in-trace-gas-monitoring-with-north-american-geostationary-sensors-part-2-2.md",
+    "chars": 64957,
+    "segments": 577,
+    "source": "v-g1-gua5jg.en.vtt",
+    "fetched_at": "2026-10-20T07:49:10.225Z"
+  },
+  "0B_Zp9z-grw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/05-understanding-phenology-with-remote-sensing/scales-of-phenology-part-2-3.md",
+    "chars": 67390,
+    "segments": 563,
+    "source": "0B_Zp9z-grw.en.vtt",
+    "fetched_at": "2026-10-20T07:49:12.324Z"
+  },
+  "gK50CZVi6K8": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:13.029Z"
+  },
+  "-IOiwRJPtlY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/01-visualizing-land-cover-and-land-use-change-with-nasa-satellite-imagery/conducting-a-change-detection-analysis-session-2-2.md",
+    "chars": 73108,
+    "segments": 649,
+    "source": "-IOiwRJPtlY.en.vtt",
+    "fetched_at": "2026-10-20T07:49:13.610Z"
+  },
+  "MuJZn6PqNvo": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:13.721Z"
+  },
+  "w7yYkF8pbvg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/03-introduction-to-remote-sensing-of-harmful-algal-blooms/overview-of-harmful-algal-blooms-part-1-4.md",
+    "chars": 64843,
+    "segments": 550,
+    "source": "w7yYkF8pbvg.en.vtt",
+    "fetched_at": "2026-10-20T07:49:16.588Z"
+  },
+  "M4oTCKS5mWg": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:17.817Z"
+  },
+  "lPb0wb_lZd8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/02-an-inside-look-at-how-nasa-measures-air-pollution/aq-products-from-gems-part-3-3.md",
+    "chars": 39384,
+    "segments": 339,
+    "source": "lPb0wb_lZd8.en.vtt",
+    "fetched_at": "2026-10-20T07:49:18.036Z"
+  },
+  "irctKtTt0eE": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:18.997Z"
+  },
+  "XLhi-pUMQi0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/07-monitoring-water-quality-of-inland-lakes-using-remote-sensing/water-quality-of-larger-inland-water-bodies-part-2-3.md",
+    "chars": 77795,
+    "segments": 665,
+    "source": "XLhi-pUMQi0.en.vtt",
+    "fetched_at": "2026-10-20T07:49:20.447Z"
+  },
+  "9afQmM6ph5Q": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/05-overview-of-the-global-disasters-alert-and-coordination-system-gdacs/onsite-training-part-2-3.md",
+    "chars": 42754,
+    "segments": 363,
+    "source": "9afQmM6ph5Q.en.vtt",
+    "fetched_at": "2026-10-20T07:49:21.937Z"
+  },
+  "C7HHhHpOxgg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/10-earth-observations-of-blue-carbon-ecosystems/overview-of-blue-carbon-ecosystems-mapping-mangrove-ecosystems-part-1-2.md",
+    "chars": 70745,
+    "segments": 587,
+    "source": "C7HHhHpOxgg.en.vtt",
+    "fetched_at": "2026-10-20T07:49:22.794Z"
+  },
+  "y9ZCf9Dt2Z4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/06-atmospheric-co2-and-ch4-budgets-to-support-the-global-stocktake/top-down-budgets-and-bottom-up-inventories-to-support-the-global-stocktake-part-3-3.md",
+    "chars": 99810,
+    "segments": 841,
+    "source": "y9ZCf9Dt2Z4.en.vtt",
+    "fetched_at": "2026-10-20T07:49:23.053Z"
+  },
+  "t88PpJEKteQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/urban-heat-islands/03-satellite-remote-sensing-for-measuring-urban-heat-islands-and-constructing-heat-vulnerabil/land-surface-temperature-based-surface-urban-heat-island-mapping-part-1-4.md",
+    "chars": 58714,
+    "segments": 497,
+    "source": "t88PpJEKteQ.en.vtt",
+    "fetched_at": "2026-10-20T07:49:23.998Z"
+  },
+  "VvZi5xIye-8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sif/02-solar-induced-fluorescence-sif-observations-for-assessing-vegetation-changes-related-to-fl/solar-induced-fluorescence-and-its-applications-part-3-4.md",
+    "chars": 108493,
+    "segments": 943,
+    "source": "VvZi5xIye-8.en.vtt",
+    "fetched_at": "2026-10-20T07:49:26.041Z"
+  },
+  "2GZfn6Z6v4Y": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/12-spaceborne-lidar-for-monitoring-vegetation-structure-and-biomass-using-gedi/introduction-to-full-waveform-lidar-part-1-2.md",
+    "chars": 84011,
+    "segments": 708,
+    "source": "2GZfn6Z6v4Y.en.vtt",
+    "fetched_at": "2026-10-20T07:49:26.727Z"
+  },
+  "iuTm1jJy2XY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sif/01-use-of-solar-induced-fluorescence-and-lidar-to-assess-vegetation-change-and-vulnerability/lidar-and-its-applications-part-1-4.md",
+    "chars": 98308,
+    "segments": 855,
+    "source": "iuTm1jJy2XY.en.vtt",
+    "fetched_at": "2026-10-20T07:49:27.399Z"
+  },
+  "U-uJGnhD-zg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/skill-building/01-fundamentals-of-machine-learning-for-earth-science/overview-of-machine-learning-part-1-3.md",
+    "chars": 76102,
+    "segments": 645,
+    "source": "U-uJGnhD-zg.en.vtt",
+    "fetched_at": "2026-10-20T07:49:27.548Z"
+  },
+  "8rLiHMb4OBw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/04-monitoring-water-quality-in-lakes-and-coastal-regions-using-stream/overview-of-remote-sensing-data-for-river-basin-monitoring-session-1-4.md",
+    "chars": 62571,
+    "segments": 531,
+    "source": "8rLiHMb4OBw.en.vtt",
+    "fetched_at": "2026-10-20T07:49:30.347Z"
+  },
+  "R5Pbrd9a6gk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/02-disaster-assessment-using-synthetic-aperture-radar/monitoring-urban-damage-with-multi-sensor-satellite-imagery-part-1-4.md",
+    "chars": 95359,
+    "segments": 831,
+    "source": "R5Pbrd9a6gk.en.vtt",
+    "fetched_at": "2026-10-20T07:49:31.286Z"
+  },
+  "DRhzDYvnWXM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/13-biodiversity-applications-for-airborne-imaging-systems/biodiversity-applications-for-airborne-imaging-systems-part-2-4.md",
+    "chars": 73663,
+    "segments": 622,
+    "source": "DRhzDYvnWXM.en.vtt",
+    "fetched_at": "2026-10-20T07:49:31.648Z"
+  },
+  "R5JdP8msTbE": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/04-transforming-earth-observation-eo-data-into-building-infrastructure-data-sets-for-disaster/development-of-site-specific-exposure-data-with-earth-observations-part-2-3.md",
+    "chars": 92324,
+    "segments": 789,
+    "source": "R5JdP8msTbE.en.vtt",
+    "fetched_at": "2026-10-20T07:49:31.819Z"
+  },
+  "LJXFd3fthlA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/01-sea-level-change-tools-for-planning-and-decision-support/assessment-tools-for-sea-level-change-part-2-2.md",
+    "chars": 78590,
+    "segments": 678,
+    "source": "LJXFd3fthlA.en.vtt",
+    "fetched_at": "2026-10-20T07:49:34.934Z"
+  },
+  "4Y2giuRPCuc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/05-sar-for-disasters-and-hydrological-applications/sar-for-flood-mapping-using-google-earth-engine-part-1-3.md",
+    "chars": 76159,
+    "segments": 678,
+    "source": "4Y2giuRPCuc.en.vtt",
+    "fetched_at": "2026-10-20T07:49:35.206Z"
+  },
+  "Dw9XFtDrgtA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/01-an-introduction-to-synthetic-aperture-radar-sar-and-its-applications/an-overview-of-sar-data-sources-and-tools-part-3-3.md",
+    "chars": 97330,
+    "segments": 874,
+    "source": "Dw9XFtDrgtA.en.vtt",
+    "fetched_at": "2026-10-20T07:49:35.439Z"
+  },
+  "Xlt3v99nNyY": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:35.878Z"
+  },
+  "5WZf1bBAqzg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/other/02-remote-sensing-of-drought/overview-of-drought-monitoring-data-and-tools-using-earth-observations-part-1-4.md",
+    "chars": 117521,
+    "segments": 1020,
+    "source": "5WZf1bBAqzg.en.vtt",
+    "fetched_at": "2026-10-20T07:49:38.947Z"
+  },
+  "H3Q1pI-NFL8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/satellite-observations-and-tools-for-fire-risk-part-1-3.md",
+    "chars": 78457,
+    "segments": 676,
+    "source": "H3Q1pI-NFL8.en.vtt",
+    "fetched_at": "2026-10-20T07:49:38.981Z"
+  },
+  "jzZ_5bS4FWY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/floods/01-monitoring-urban-floods-using-remote-sensing/satellite-data-for-monitoring-urban-flooding-part-2-2.md",
+    "chars": 81228,
+    "segments": 727,
+    "source": "jzZ_5bS4FWY.en.vtt",
+    "fetched_at": "2026-10-20T07:49:39.190Z"
+  },
+  "tetTo4i_Etg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/07-monitoring-water-quality-of-inland-lakes-using-remote-sensing/assess-water-quality-using-satellite-and-in-situ-observations-part-3-3.md",
+    "chars": 80517,
+    "segments": 698,
+    "source": "tetTo4i_Etg.en.vtt",
+    "fetched_at": "2026-10-20T07:49:40.125Z"
+  },
+  "CirebnPK9KE": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/05-geostationary-remote-sensing-of-trace-gases-for-air-quality-applications-in-north-america/nasa-trace-gas-products-part-4-5.md",
+    "chars": 50585,
+    "segments": 442,
+    "source": "CirebnPK9KE.en.vtt",
+    "fetched_at": "2026-10-20T07:49:42.077Z"
+  },
+  "Xemo2ZpduHA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/04-crop-mapping-using-synthetic-aperture-radar-sar-and-optical-remote-sensing/basics-of-synthetic-aperture-radar-sar-session-1-4.md",
+    "chars": 44267,
+    "segments": 298,
+    "source": "Xemo2ZpduHA.en.vtt",
+    "fetched_at": "2026-10-20T07:49:42.422Z"
+  },
+  "BNcJuB-TRuU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/10-processing-satellite-imagery-for-monitoring-water-quality/nasa-remote-sensing-for-monitoring-harmful-algal-blooms-session-1-3.md",
+    "chars": 72034,
+    "segments": 621,
+    "source": "BNcJuB-TRuU.en.vtt",
+    "fetched_at": "2026-10-20T07:49:42.819Z"
+  },
+  "raXA3gnb94Q": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/sar/01-forest-mapping-and-monitoring-with-sar-data/land-cover-classification-with-radar-and-optical-data-part-2-4.md",
+    "chars": 71724,
+    "segments": 641,
+    "source": "raXA3gnb94Q.en.vtt",
+    "fetched_at": "2026-10-20T07:49:43.510Z"
+  },
+  "wwhb14hDhEQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/03-large-scale-applications-of-machine-learning-using-remote-sensing-for-building-agriculture/data-preparation-of-imagery-for-large-scale-ml-modeling-part-1-3.md",
+    "chars": 98649,
+    "segments": 883,
+    "source": "wwhb14hDhEQ.en.vtt",
+    "fetched_at": "2026-10-20T07:49:45.755Z"
+  },
+  "K8sDFnp5bZI": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:46.396Z"
+  },
+  "IQXtWowwkAs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/05-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remo/sen4stat-open-source-toolbox-theory-and-practical-part-3-4.md",
+    "chars": 73881,
+    "segments": 644,
+    "source": "IQXtWowwkAs.en.vtt",
+    "fetched_at": "2026-10-20T07:49:47.086Z"
+  },
+  "2-c0tIZCOj4": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:47.998Z"
+  },
+  "GswAJ_fsF4Y": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/03-developing-sustainable-earth-science-applications/sustainable-development-goals-sdgs-and-relevant-air-quality-observations-part-1-3.md",
+    "chars": 54558,
+    "segments": 463,
+    "source": "GswAJ_fsF4Y.en.vtt",
+    "fetched_at": "2026-10-20T07:49:49.499Z"
+  },
+  "vpHREZBTuF8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/03-large-scale-applications-of-machine-learning-using-remote-sensing-for-building-agriculture/training-testing-ml-models-for-irregularly-spaced-time-series-of-imagery-part-3-3.md",
+    "chars": 80383,
+    "segments": 719,
+    "source": "vpHREZBTuF8.en.vtt",
+    "fetched_at": "2026-10-20T07:49:50.885Z"
+  },
+  "1QbpVlIuHsU": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:51.772Z"
+  },
+  "myCgQ_EzCEA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/04-transforming-earth-observation-eo-data-into-building-infrastructure-data-sets-for-disaster/access-data-at-organization-and-individual-levels-part-3-3.md",
+    "chars": 77024,
+    "segments": 669,
+    "source": "myCgQ_EzCEA.en.vtt",
+    "fetched_at": "2026-10-20T07:49:52.091Z"
+  },
+  "QHqWrO2HMco": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/06-new-sensor-highlight-ecostress/introduction-to-openet-part-1-3.md",
+    "chars": 87296,
+    "segments": 725,
+    "source": "QHqWrO2HMco.en.vtt",
+    "fetched_at": "2026-10-20T07:49:52.877Z"
+  },
+  "AUIUpFHgVx0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/01-an-introduction-to-synthetic-aperture-radar-sar-and-its-applications/an-introduction-to-synthetic-aperture-radar-sar-and-its-applications-part-1-3.md",
+    "chars": 106628,
+    "segments": 906,
+    "source": "AUIUpFHgVx0.en.vtt",
+    "fetched_at": "2026-10-20T07:49:55.568Z"
+  },
+  "dvxloblhpUs": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:49:56.954Z"
+  },
+  "3jQoJYAlwvs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/11-estimating-biomass-and-change-with-gedi-and-the-obiwan-api/estimating-biomass-change-with-gedi-and-the-obiwan-api-part-2-2.md",
+    "chars": 47700,
+    "segments": 415,
+    "source": "3jQoJYAlwvs.en.vtt",
+    "fetched_at": "2026-10-20T07:49:57.680Z"
+  },
+  "wIXFw9W1M4E": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/04-introduction-to-satellite-remote-sensing-for-air-quality-applications/introduction-to-datasets-part-1-3.md",
+    "chars": 69065,
+    "segments": 604,
+    "source": "wIXFw9W1M4E.en.vtt",
+    "fetched_at": "2026-10-20T07:49:59.234Z"
+  },
+  "gLjcfxX-2OQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/16-remote-sensing-for-freshwater-habitats/review-of-aquatic-remote-sensing-freshwater-habitats-part-1-3.md",
+    "chars": 46680,
+    "segments": 390,
+    "source": "gLjcfxX-2OQ.en.vtt",
+    "fetched_at": "2026-10-20T07:50:00.188Z"
+  },
+  "XHyYvsjN6bQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/07-remote-sensing-for-disasters-scenarios/disasters-scenarios-tropical-storms-session-1-3.md",
+    "chars": 34856,
+    "segments": 299,
+    "source": "XHyYvsjN6bQ.en.vtt",
+    "fetched_at": "2026-10-20T07:50:00.402Z"
+  },
+  "5BZvjVUfBG0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/06-investigating-time-series-of-satellite-imagery/landtrendr-overview-applications-session-2-2.md",
+    "chars": 80691,
+    "segments": 704,
+    "source": "5BZvjVUfBG0.en.vtt",
+    "fetched_at": "2026-10-20T07:50:01.081Z"
+  },
+  "RqVselZ5hKM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/02-using-google-earth-engine-for-land-monitoring-applications/time-series-analysis-and-change-detection-in-google-earth-engine-part-3-3.md",
+    "chars": 109756,
+    "segments": 996,
+    "source": "RqVselZ5hKM.en.vtt",
+    "fetched_at": "2026-10-20T07:50:02.597Z"
+  },
+  "qmE7FTyw6H8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/13-biodiversity-applications-for-airborne-imaging-systems/biodiversity-applications-for-airborne-imaging-systems-part-3-4.md",
+    "chars": 71083,
+    "segments": 597,
+    "source": "qmE7FTyw6H8.en.vtt",
+    "fetched_at": "2026-10-20T07:50:03.555Z"
+  },
+  "pdR4GbMcRiM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/01-satellite-remote-sensing-for-agricultural-applications/overview-of-agricultural-remote-sensing-part-1-4.md",
+    "chars": 71706,
+    "segments": 577,
+    "source": "pdR4GbMcRiM.en.vtt",
+    "fetched_at": "2026-10-20T07:50:03.867Z"
+  },
+  "EjJ0QTqi0ss": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:06.021Z"
+  },
+  "1bi6Q3oiWAM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/04-monitoring-tropical-storms-for-emergency-preparedness/an-overview-of-tropical-storms-and-their-impacts-session-1-2.md",
+    "chars": 79993,
+    "segments": 720,
+    "source": "1bi6Q3oiWAM.en.vtt",
+    "fetched_at": "2026-10-20T07:50:07.205Z"
+  },
+  "huw-ML5deg0": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:07.238Z"
+  },
+  "6_XKD3wrJ1g": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sif/02-solar-induced-fluorescence-sif-observations-for-assessing-vegetation-changes-related-to-fl/solar-induced-chlorophyll-fluorescence-sif-measurements-from-space-part-1-3.md",
+    "chars": 89863,
+    "segments": 762,
+    "source": "6_XKD3wrJ1g.en.vtt",
+    "fetched_at": "2026-10-20T07:50:07.491Z"
+  },
+  "yA7gX95oOBU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/03-application-of-nasa-sport-land-information-system-sport-lis-soil-moisture-data-for-drought/foundational-understanding-of-lis-static-forcing-models-output-part-1-3.md",
+    "chars": 76008,
+    "segments": 628,
+    "source": "yA7gX95oOBU.en.vtt",
+    "fetched_at": "2026-10-20T07:50:10.661Z"
+  },
+  "QP4VPaBovBk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/04-crop-mapping-using-synthetic-aperture-radar-sar-and-optical-remote-sensing/crop-classification-with-time-series-of-polarimetric-sar-data-part-1-3.md",
+    "chars": 110216,
+    "segments": 1002,
+    "source": "QP4VPaBovBk.en.vtt",
+    "fetched_at": "2026-10-20T07:50:10.885Z"
+  },
+  "aOBk75nE8b4": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:10.943Z"
+  },
+  "ro2UBNgjOh4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/12-drought-monitoring-prediction-and-projection-using-nasa-earth-system-data/remote-sensing-based-drought-monitoring-session-1-2.md",
+    "chars": 79048,
+    "segments": 541,
+    "source": "ro2UBNgjOh4.en.vtt",
+    "fetched_at": "2026-10-20T07:50:13.498Z"
+  },
+  "djhoE5NoSCA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/02-invasive-species-monitoring-with-remote-sensing/monitoring-of-aquatic-invasive-species-with-remote-sensing-part-2-3.md",
+    "chars": 71698,
+    "segments": 588,
+    "source": "djhoE5NoSCA.en.vtt",
+    "fetched_at": "2026-10-20T07:50:14.556Z"
+  },
+  "FjKVptgr3uU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/04-hyperspectral-data-for-land-and-coastal-systems-self-paced/overview-of-hyperspectral-data-part-1-3.md",
+    "chars": 67302,
+    "segments": 559,
+    "source": "FjKVptgr3uU.en.vtt",
+    "fetched_at": "2026-10-20T07:50:15.060Z"
+  },
+  "aWAqge0E1cM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/10-introduction-to-remote-sensing-for-conservation-management/remote-sensing-for-conservation-session-1-2.md",
+    "chars": 42523,
+    "segments": 285,
+    "source": "aWAqge0E1cM.en.vtt",
+    "fetched_at": "2026-10-20T07:50:15.663Z"
+  },
+  "6_bytSnJCc8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/02-agricultural-crop-classification-with-sar-and-optical-remote-sensing/operational-crop-classification-roadmap-using-optical-and-sar-imagery-part-3-5.md",
+    "chars": 105623,
+    "segments": 908,
+    "source": "6_bytSnJCc8.en.vtt",
+    "fetched_at": "2026-10-20T07:50:17.326Z"
+  },
+  "ZtSlipKIH8E": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/08-accuracy-assessment-of-a-land-cover-classification/introduction-to-land-cover-classification-and-qgis-part-1-2.md",
+    "chars": 111975,
+    "segments": 1022,
+    "source": "ZtSlipKIH8E.en.vtt",
+    "fetched_at": "2026-10-20T07:50:18.123Z"
+  },
+  "MISLC--HNxo": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/07-water-resource-management-using-nasa-earth-science-data/satellites-sensors-and-earth-systems-models-for-water-resources-management.md",
+    "chars": 38659,
+    "segments": 314,
+    "source": "MISLC--HNxo.en.vtt",
+    "fetched_at": "2026-10-20T07:50:18.298Z"
+  },
+  "x7l6n7njVPo": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/04-hyperspectral-data-for-land-and-coastal-systems-self-paced/hyperspectral-data-for-land-management-part-2-3.md",
+    "chars": 75136,
+    "segments": 648,
+    "source": "x7l6n7njVPo.en.vtt",
+    "fetched_at": "2026-10-20T07:50:19.286Z"
+  },
+  "ELgJ3hvaBUI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrography/01-mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations/mapping-and-monitoring-lakes-and-reservoirs-with-satellite-observations-part-2-3.md",
+    "chars": 52774,
+    "segments": 456,
+    "source": "ELgJ3hvaBUI.en.vtt",
+    "fetched_at": "2026-10-20T07:50:21.491Z"
+  },
+  "BlMnNNcCmrw": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:21.737Z"
+  },
+  "lIDXtxFJi6M": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/hors-guide/01-videos-sans-training-correspondant-a-reclasser/an-introduction-to-nisar-part-1-of-3.md",
+    "chars": 89823,
+    "segments": 740,
+    "source": "lIDXtxFJi6M.en.vtt",
+    "fetched_at": "2026-10-20T07:50:22.751Z"
+  },
+  "7Gn1rvDe-UI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/11-estimating-biomass-and-change-with-gedi-and-the-obiwan-api/estimating-biomass-using-gedi-part-1-2.md",
+    "chars": 45583,
+    "segments": 395,
+    "source": "7Gn1rvDe-UI.en.vtt",
+    "fetched_at": "2026-10-20T07:50:22.816Z"
+  },
+  "bg3ioNmLuEg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/04-transforming-earth-observation-eo-data-into-building-infrastructure-data-sets-for-disaster/development-of-regional-exposure-data-with-earth-observations-part-1-3.md",
+    "chars": 98466,
+    "segments": 837,
+    "source": "bg3ioNmLuEg.en.vtt",
+    "fetched_at": "2026-10-20T07:50:25.202Z"
+  },
+  "Ixmu1gsus6o": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/skill-building/02-remote-sensing-training-methods-best-practices/online-training-part-3-3.md",
+    "chars": 46361,
+    "segments": 397,
+    "source": "Ixmu1gsus6o.en.vtt",
+    "fetched_at": "2026-10-20T07:50:25.257Z"
+  },
+  "_jtKJbDcjoU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/02-an-inside-look-at-how-nasa-measures-air-pollution/aq-products-from-goes-part-2-3.md",
+    "chars": 113742,
+    "segments": 1043,
+    "source": "_jtKJbDcjoU.en.vtt",
+    "fetched_at": "2026-10-20T07:50:26.296Z"
+  },
+  "UaDybXuIW1c": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/07-monitoring-water-quality-of-inland-lakes-using-remote-sensing/overview-of-remote-sensing-observations-to-assess-water-quality-part-1-3.md",
+    "chars": 70526,
+    "segments": 603,
+    "source": "UaDybXuIW1c.en.vtt",
+    "fetched_at": "2026-10-20T07:50:27.385Z"
+  },
+  "vfT4VG7x0AY": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:30.101Z"
+  },
+  "RbiYboadlLc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/10-monitoring-groundwater-changes-for-water-resources-management/overview-and-applications-of-opera-disp-to-monitor-groundwater-changes-part-3-3.md",
+    "chars": 74987,
+    "segments": 660,
+    "source": "RbiYboadlLc.en.vtt",
+    "fetched_at": "2026-10-20T07:50:30.358Z"
+  },
+  "KPkzGr7ulIU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/10-earth-observations-of-blue-carbon-ecosystems/mapping-salt-marsh-and-seagrass-with-earth-observations-part-2-2.md",
+    "chars": 89446,
+    "segments": 766,
+    "source": "KPkzGr7ulIU.en.vtt",
+    "fetched_at": "2026-10-20T07:50:30.931Z"
+  },
+  "1eXzBn6vNmc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/03-remote-sensing-of-land-indicators-for-sustainable-development-goal-15/urban-mapping-using-trends-earth-for-computing-sdg-indicator-11-3-1.md",
+    "chars": 89761,
+    "segments": 791,
+    "source": "1eXzBn6vNmc.en.vtt",
+    "fetched_at": "2026-10-20T07:50:32.036Z"
+  },
+  "nbtrJa50Bfo": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:33.370Z"
+  },
+  "GuLDj2eBgGI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/07-monitoring-water-quality-of-inland-lakes-using-remote-sensing/assess-water-quality-using-satellite-and-in-situ-observations-part-2.md",
+    "chars": 73028,
+    "segments": 635,
+    "source": "GuLDj2eBgGI.en.vtt",
+    "fetched_at": "2026-10-20T07:50:34.168Z"
+  },
+  "2JscvT0ubts": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/02-introduction-to-population-grids-and-their-integration-with-remote-sensing-data/population-grid-application-areas-part-2-2.md",
+    "chars": 104432,
+    "segments": 901,
+    "source": "2JscvT0ubts.en.vtt",
+    "fetched_at": "2026-10-20T07:50:35.685Z"
+  },
+  "neDs0QZbytU": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:36.301Z"
+  },
+  "Gok9zsA_RFk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/13-applications-of-gpm-imerg-reanalysis-for-assessing-extreme-dry-and-wet-periods/calculate-spi-based-on-imerg-to-monitor-wet-and-dry-conditions-part-2-3.md",
+    "chars": 38921,
+    "segments": 338,
+    "source": "Gok9zsA_RFk.en.vtt",
+    "fetched_at": "2026-10-20T07:50:37.261Z"
+  },
+  "B3_IGZLjCo8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/spectral-indices/01-calculating-spectral-indices-for-land-and-aquatic-applications-using-qgis/calculating-spectral-indices-for-land-and-aquatic-applications-using-qgis.md",
+    "chars": 60676,
+    "segments": 517,
+    "source": "B3_IGZLjCo8.en.vtt",
+    "fetched_at": "2026-10-20T07:50:37.969Z"
+  },
+  "p85oa4mHPVM": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:40.952Z"
+  },
+  "poWjCS3bxb0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/post-fire-mapping-part-2-2.md",
+    "chars": 107653,
+    "segments": 956,
+    "source": "poWjCS3bxb0.en.vtt",
+    "fetched_at": "2026-10-20T07:50:41.016Z"
+  },
+  "IDxBgK1VY_4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/sar/01-forest-mapping-and-monitoring-with-sar-data/sar-for-mapping-land-cover-session-1-4.md",
+    "chars": 69219,
+    "segments": 605,
+    "source": "IDxBgK1VY_4.en.vtt",
+    "fetched_at": "2026-10-20T07:50:41.167Z"
+  },
+  "0pt2SxQJGNM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/03-developing-sustainable-earth-science-applications/introduction-to-the-eo-toolkit-for-sustainable-cities-and-human-settlements-part-1-3.md",
+    "chars": 74646,
+    "segments": 620,
+    "source": "0pt2SxQJGNM.en.vtt",
+    "fetched_at": "2026-10-20T07:50:42.474Z"
+  },
+  "mu6K4KopEyA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/10-modis-to-viirs-transition-for-air-quality-applications/modis-to-viirs-transition-for-air-quality-applications-part-1-1.md",
+    "chars": 80216,
+    "segments": 729,
+    "source": "mu6K4KopEyA.en.vtt",
+    "fetched_at": "2026-10-20T07:50:45.038Z"
+  },
+  "psYiwSxTfx0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/01-satellite-remote-sensing-for-agricultural-applications/soil-moisture-for-agricultural-applications-part-2-4.md",
+    "chars": 89208,
+    "segments": 783,
+    "source": "psYiwSxTfx0.en.vtt",
+    "fetched_at": "2026-10-20T07:50:45.366Z"
+  },
+  "Yc8QDt2f4hs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/06-new-sensor-highlight-ecostress/introduction-to-ecostress-et-part-2-3.md",
+    "chars": 50782,
+    "segments": 437,
+    "source": "Yc8QDt2f4hs.en.vtt",
+    "fetched_at": "2026-10-20T07:50:45.638Z"
+  },
+  "hSCqJ0BrqFY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/03-developing-sustainable-earth-science-applications/applications-of-the-eo-toolkit-to-measure-and-analyze-sdgs-part-2-3.md",
+    "chars": 60579,
+    "segments": 501,
+    "source": "hSCqJ0BrqFY.en.vtt",
+    "fetched_at": "2026-10-20T07:50:46.037Z"
+  },
+  "bSEYGSGVugU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/03-remote-sensing-of-land-indicators-for-sustainable-development-goal-15/sdg-target-15-1-part-2-3.md",
+    "chars": 44110,
+    "segments": 381,
+    "source": "bSEYGSGVugU.en.vtt",
+    "fetched_at": "2026-10-20T07:50:48.611Z"
+  },
+  "M369bW8FJpQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/skill-building/01-fundamentals-of-machine-learning-for-earth-science/model-tuning-parameter-optimization-additional-machine-learning-algorithms-part-3-3.md",
+    "chars": 86727,
+    "segments": 754,
+    "source": "M369bW8FJpQ.en.vtt",
+    "fetched_at": "2026-10-20T07:50:49.535Z"
+  },
+  "c84N22jegU4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/03-earth-observations-for-disaster-risk-assessment-and-resilience/assessing-the-risk-of-floods-and-cyclones-using-nasa-data-part-2-4.md",
+    "chars": 80142,
+    "segments": 725,
+    "source": "c84N22jegU4.en.vtt",
+    "fetched_at": "2026-10-20T07:50:49.893Z"
+  },
+  "-uxGCX8l1gI": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:52.142Z"
+  },
+  "C8t1isFGWrM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/12-spaceborne-lidar-for-monitoring-vegetation-structure-and-biomass-using-gedi/introduction-to-the-gedi-mission-and-its-derived-products-part-2-2.md",
+    "chars": 84706,
+    "segments": 718,
+    "source": "C8t1isFGWrM.en.vtt",
+    "fetched_at": "2026-10-20T07:50:52.413Z"
+  },
+  "du0fPyiZrpk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/01-visualizing-land-cover-and-land-use-change-with-nasa-satellite-imagery/introduction-to-change-detection-session-1-2.md",
+    "chars": 69649,
+    "segments": 622,
+    "source": "du0fPyiZrpk.en.vtt",
+    "fetched_at": "2026-10-20T07:50:53.516Z"
+  },
+  "3x76e2rsjIY": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:50:55.707Z"
+  },
+  "t09kon01dq8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/05-using-earth-observations-to-monitor-water-budgets-for-river-basin-management/applications-of-remote-sensing-for-river-basin-monitoring-nile-basin-session-2-4.md",
+    "chars": 68663,
+    "segments": 599,
+    "source": "t09kon01dq8.en.vtt",
+    "fetched_at": "2026-10-20T07:50:56.920Z"
+  },
+  "OS-0GYDniqM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/03-earth-observations-for-disaster-risk-assessment-and-resilience/nasa-remote-sensing-and-socioeconomic-data-for-disaster-risk-assessment-part-1-4.md",
+    "chars": 72368,
+    "segments": 610,
+    "source": "OS-0GYDniqM.en.vtt",
+    "fetched_at": "2026-10-20T07:50:59.448Z"
+  },
+  "RROJ_4Ud78g": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/04-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring/forest-stand-height-with-guest-speaker-paul-siqueria-part-4-4.md",
+    "chars": 123328,
+    "segments": 1091,
+    "source": "RROJ_4Ud78g.en.vtt",
+    "fetched_at": "2026-10-20T07:50:59.831Z"
+  },
+  "SnnIz2C5Ny4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/09-introduction-to-nasa-resources-for-climate-change-applications/climate-change-monitoring-impacts-using-remote-sensing-and-modeled-data-part-1-2.md",
+    "chars": 132131,
+    "segments": 1064,
+    "source": "SnnIz2C5Ny4.en.vtt",
+    "fetched_at": "2026-10-20T07:51:01.207Z"
+  },
+  "Iw6kTO5KTn8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/05-remote-sensing-for-monitoring-land-degradation-and-sustainable-cities-sdgs/introduction-to-spatial-data-and-policies-for-biodiversity-part-1-3.md",
+    "chars": 72029,
+    "segments": 604,
+    "source": "Iw6kTO5KTn8.en.vtt",
+    "fetched_at": "2026-10-20T07:51:03.110Z"
+  },
+  "df4LzwVtYXA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/05-monitoring-coastal-and-estuarine-water-quality-transitioning-from-modis-to-viirs/monitoring-modis-and-viirs-based-water-quality-in-selected-estuaries-part-3-3.md",
+    "chars": 55518,
+    "segments": 485,
+    "source": "df4LzwVtYXA.en.vtt",
+    "fetched_at": "2026-10-20T07:51:03.139Z"
+  },
+  "0XvWJZdgxYs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/09-integrating-remote-sensing-into-a-water-quality-monitoring-program/aquatic-remote-sensing-skill-development-and-best-practices-part-3-3.md",
+    "chars": 134245,
+    "segments": 1214,
+    "source": "0XvWJZdgxYs.en.vtt",
+    "fetched_at": "2026-10-20T07:51:03.948Z"
+  },
+  "_FnVu_Wxc3o": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/04-using-the-un-biodiversity-lab-to-support-national-conservation-and-sdgs/technical-training-exploring-un-biodiversity-lab-secure-workspaces-part-3-3.md",
+    "chars": 57110,
+    "segments": 501,
+    "source": "_FnVu_Wxc3o.en.vtt",
+    "fetched_at": "2026-10-20T07:51:04.911Z"
+  },
+  "HDXwk1r-QI0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/08-tools-for-analyzing-nasa-air-quality-model-output/interpreting-model-output-for-air-quality-assessment-part-3-3.md",
+    "chars": 61192,
+    "segments": 559,
+    "source": "HDXwk1r-QI0.en.vtt",
+    "fetched_at": "2026-10-20T07:51:06.818Z"
+  },
+  "oG-pNayqaEo": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/satellites-and-sensors-for-vegetation-based-wildfire-applications-post-fire-part-6-6.md",
+    "chars": 110339,
+    "segments": 940,
+    "source": "oG-pNayqaEo.en.vtt",
+    "fetched_at": "2026-10-20T07:51:07.147Z"
+  },
+  "EvhCt0nan0A": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/landslides/01-landslide-monitoring-and-risk-assessment-using-nasa-earth-system-data/mapping-landslide-occurrence-using-earth-observations-part-2-3.md",
+    "chars": 93874,
+    "segments": 802,
+    "source": "EvhCt0nan0A.en.vtt",
+    "fetched_at": "2026-10-20T07:51:08.116Z"
+  },
+  "v5NsOoXWdjo": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:51:09.817Z"
+  },
+  "1TBtJ8pTANQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/self-paced/01-fundamentals-of-remote-sensing/fundamentals-of-aquatic-remote-sensing.md",
+    "chars": 36315,
+    "segments": 298,
+    "source": "1TBtJ8pTANQ.en.vtt",
+    "fetched_at": "2026-10-20T07:51:10.625Z"
+  },
+  "V_XfiGzA9dA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/01-monitoring-aquatic-vegetation-with-remote-sensing/monitoring-aquatic-vegetation-with-remote-sensing-part-1-3.md",
+    "chars": 71201,
+    "segments": 610,
+    "source": "V_XfiGzA9dA.en.vtt",
+    "fetched_at": "2026-10-20T07:51:11.150Z"
+  },
+  "DFjJbc6VBBs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/08-applications-of-remote-sensing-based-evapotranspiration-data-products/introduction-to-soil-moisture-evapotranspiration-the-smap-satellite-mission-part-1-5.md",
+    "chars": 56358,
+    "segments": 497,
+    "source": "DFjJbc6VBBs.en.vtt",
+    "fetched_at": "2026-10-20T07:51:13.273Z"
+  },
+  "RvgDLPlFr9s": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:51:14.238Z"
+  },
+  "vq5l3rfrMbU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/landslides/01-landslide-monitoring-and-risk-assessment-using-nasa-earth-system-data/remote-sensing-for-landslide-science-and-disaster-planning-part-1-3.md",
+    "chars": 94136,
+    "segments": 809,
+    "source": "vq5l3rfrMbU.en.vtt",
+    "fetched_at": "2026-10-20T07:51:15.289Z"
+  },
+  "ZkCcPGMWlLQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/02-an-inside-look-at-how-nasa-measures-air-pollution/introduction-to-geostationary-aq-observations-and-aq-products-from-himawari-part-1-3.md",
+    "chars": 87467,
+    "segments": 760,
+    "source": "ZkCcPGMWlLQ.en.vtt",
+    "fetched_at": "2026-10-20T07:51:16.157Z"
+  },
+  "n3UCO2BoALg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/using-the-fire-mapping-tools-to-map-fires-part-1-2.md",
+    "chars": 93314,
+    "segments": 845,
+    "source": "n3UCO2BoALg.en.vtt",
+    "fetched_at": "2026-10-20T07:51:17.191Z"
+  },
+  "hS0jzXIxBJQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/09-introduction-and-access-to-global-air-quality-forecasting-data-and-tools/global-air-quality-forecasting-by-copernicus-atmosphere-monitoring-service-part-3-3.md",
+    "chars": 90299,
+    "segments": 812,
+    "source": "hS0jzXIxBJQ.en.vtt",
+    "fetched_at": "2026-10-20T07:51:18.121Z"
+  },
+  "hTdiwiLgCGc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/14-using-the-un-biodiversity-lab-to-monitor-the-pulse-of-the-planet/technical-training-exploring-the-un-biodiversity-lab-public-platform-part-2-3.md",
+    "chars": 61731,
+    "segments": 533,
+    "source": "hTdiwiLgCGc.en.vtt",
+    "fetched_at": "2026-10-20T07:51:19.275Z"
+  },
+  "JnYJ2AFMKQo": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/satellites-and-sensors-for-vegetation-based-wildfire-applications-pre-fire-part-2-6.md",
+    "chars": 110897,
+    "segments": 952,
+    "source": "JnYJ2AFMKQo.en.vtt",
+    "fetched_at": "2026-10-20T07:51:20.088Z"
+  },
+  "3UPjH_tSJ_M": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/03-earth-observations-for-humanitarian-applications/detecting-agricultural-vegetation-changes-surrounding-refugee-settlements-part-3-4.md",
+    "chars": 89877,
+    "segments": 790,
+    "source": "3UPjH_tSJ_M.en.vtt",
+    "fetched_at": "2026-10-20T07:51:20.965Z"
+  },
+  "-6YsozJoNLk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/01-lidar-profiling-satellite-observations-for-air-quality-applications/lidar-profiling-satellite-observations-for-air-quality-applications-part-2-2.md",
+    "chars": 39531,
+    "segments": 342,
+    "source": "-6YsozJoNLk.en.vtt",
+    "fetched_at": "2026-10-20T07:51:21.702Z"
+  },
+  "lpfYd2TKq-c": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:51:23.290Z"
+  },
+  "Sc20HX1zSZs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/02-invasive-species-monitoring-with-remote-sensing/introduction-to-the-monitoring-of-invasive-species-with-remote-sensing-tools-part-1-3.md",
+    "chars": 37973,
+    "segments": 305,
+    "source": "Sc20HX1zSZs.en.vtt",
+    "fetched_at": "2026-10-20T07:51:23.542Z"
+  },
+  "XGN_uFU1Vtw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/03-high-temporal-resolution-air-quality-observations-from-space/aerosol-observations-from-goes-r-series-geostationary-satellites-session-2-4.md",
+    "chars": 71368,
+    "segments": 631,
+    "source": "XGN_uFU1Vtw.en.vtt",
+    "fetched_at": "2026-10-20T07:51:24.718Z"
+  },
+  "dxsGsrvYGzU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/05-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies/creating-top-down-atmospheric-budgets-of-co2-and-ch4-on-policy-relevant-scales-part-2-3.md",
+    "chars": 97895,
+    "segments": 854,
+    "source": "dxsGsrvYGzU.en.vtt",
+    "fetched_at": "2026-10-20T07:51:25.703Z"
+  },
+  "-xU4oE66pgY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/05-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remo/introduction-to-polarimetric-sar-session-3-4.md",
+    "chars": 28282,
+    "segments": 255,
+    "source": "-xU4oE66pgY.en.vtt",
+    "fetched_at": "2026-10-20T07:51:26.907Z"
+  },
+  "_cZidf9taJ8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/02-agricultural-crop-classification-with-sar-and-optical-remote-sensing/operational-crop-classification-roadmap-using-optical-and-sar-imagery-2-part-4-5.md",
+    "chars": 118186,
+    "segments": 1040,
+    "source": "_cZidf9taJ8.en.vtt",
+    "fetched_at": "2026-10-20T07:51:27.897Z"
+  },
+  "xVFU4qHtvW8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/01-introduction-to-the-integration-of-animal-tracking-and-remote-sensing/integration-of-animal-tracking-and-remote-sensing-data-part-2-2.md",
+    "chars": 77854,
+    "segments": 692,
+    "source": "xVFU4qHtvW8.en.vtt",
+    "fetched_at": "2026-10-20T07:51:29.457Z"
+  },
+  "E9CiSZKZxC8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/other/05-overview-of-the-global-disasters-alert-and-coordination-system-gdacs/the-global-disaster-alert-and-coordination-system-gdacs-part-1-1.md",
+    "chars": 63275,
+    "segments": 540,
+    "source": "E9CiSZKZxC8.en.vtt",
+    "fetched_at": "2026-10-20T07:51:29.677Z"
+  },
+  "lB_Eq8amD84": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/02-methane-observations-for-large-emission-event-detection-and-monitoring/emit-data-products-and-visualization-part-2-2.md",
+    "chars": 74391,
+    "segments": 660,
+    "source": "lB_Eq8amD84.en.vtt",
+    "fetched_at": "2026-10-20T07:51:31.610Z"
+  },
+  "egP0aoGXHDs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/01-an-introduction-to-synthetic-aperture-radar-sar-and-its-applications/introduction-to-interferometric-sar-insar.md",
+    "chars": 80595,
+    "segments": 728,
+    "source": "egP0aoGXHDs.en.vtt",
+    "fetched_at": "2026-10-20T07:51:33.619Z"
+  },
+  "rvSjD-vGI4k": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:51:33.694Z"
+  },
+  "3zlqrftGU7c": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/05-geostationary-remote-sensing-of-trace-gases-for-air-quality-applications-in-north-america/north-american-geostationary-trace-gas-data-products-for-air-quality-part-1-2.md",
+    "chars": 76224,
+    "segments": 653,
+    "source": "3zlqrftGU7c.en.vtt",
+    "fetched_at": "2026-10-20T07:51:35.673Z"
+  },
+  "HFq_a4VEHfo": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:51:36.289Z"
+  },
+  "oGwupIMKvdw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/06-overview-of-seadas-8-4-1-for-the-processing-analysis-and-visualization-of-optical-remote-s/overview-of-seadas-8-4-1-for-the-processing-analysis-visualization-of-optical-data.md",
+    "chars": 101912,
+    "segments": 944,
+    "source": "oGwupIMKvdw.en.vtt",
+    "fetched_at": "2026-10-20T07:51:37.540Z"
+  },
+  "SdQaSM_DScU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/08-nasa-earth-observations-for-energy-management/utilizing-the-nasa-power-web-services-for-energy-related-applications-part-4-4.md",
+    "chars": 74191,
+    "segments": 648,
+    "source": "SdQaSM_DScU.en.vtt",
+    "fetched_at": "2026-10-20T07:51:37.748Z"
+  },
+  "ffJ8-Pa7PuQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/03-introduction-to-remote-sensing-of-harmful-algal-blooms/large-scale-monitoring-using-remote-sensing-and-citizen-science-part-4-4.md",
+    "chars": 68232,
+    "segments": 600,
+    "source": "ffJ8-Pa7PuQ.en.vtt",
+    "fetched_at": "2026-10-20T07:51:39.572Z"
+  },
+  "9pjNfRAz7TA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/07-water-resource-management-using-nasa-earth-science-data/observations-for-monitoring-global-terrestrial-surface-water-part-1-2.md",
+    "chars": 74413,
+    "segments": 652,
+    "source": "9pjNfRAz7TA.en.vtt",
+    "fetched_at": "2026-10-20T07:51:40.357Z"
+  },
+  "6sbuIKunCGU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/13-applications-of-gpm-imerg-reanalysis-for-assessing-extreme-dry-and-wet-periods/calculation-of-precipitation-statistics-using-imerg-part-1-3.md",
+    "chars": 57052,
+    "segments": 520,
+    "source": "6sbuIKunCGU.en.vtt",
+    "fetched_at": "2026-10-20T07:51:42.688Z"
+  },
+  "2in7i2qiIpw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/01-visualizing-land-cover-and-land-use-change-with-nasa-satellite-imagery/visualizing-land-cover-change-part-2-2.md",
+    "chars": 40490,
+    "segments": 352,
+    "source": "2in7i2qiIpw.en.vtt",
+    "fetched_at": "2026-10-20T07:51:44.095Z"
+  },
+  "3WuW69A2uDc": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:51:44.218Z"
+  },
+  "w2MmBY3lhYE": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/05-using-earth-observations-for-pre-and-post-fire-monitoring/using-google-earth-engine-to-monitor-post-fire-impacts-part-3-3.md",
+    "chars": 66123,
+    "segments": 588,
+    "source": "w2MmBY3lhYE.en.vtt",
+    "fetched_at": "2026-10-20T07:51:46.109Z"
+  },
+  "P7i2cWpM9yc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/urban-heat-islands/03-satellite-remote-sensing-for-measuring-urban-heat-islands-and-constructing-heat-vulnerabil/using-hot-humid-heat-estimates-population-data-to-map-heat-exposure-worldwide-part-4.md",
+    "chars": 54781,
+    "segments": 481,
+    "source": "P7i2cWpM9yc.en.vtt",
+    "fetched_at": "2026-10-20T07:51:47.838Z"
+  },
+  "JFvxudueT_k": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/02-using-google-earth-engine-for-land-monitoring-applications/land-cover-classification-and-accuracy-assessment-in-google-earth-engine-part-2-3.md",
+    "chars": 106246,
+    "segments": 940,
+    "source": "JFvxudueT_k.en.vtt",
+    "fetched_at": "2026-10-20T07:51:48.077Z"
+  },
+  "-BwqcjgHh6A": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/02-using-google-earth-engine-for-land-monitoring-applications/google-earth-engine-basics-and-general-applications-part-1-3.md",
+    "chars": 110949,
+    "segments": 983,
+    "source": "-BwqcjgHh6A.en.vtt",
+    "fetched_at": "2026-10-20T07:51:48.356Z"
+  },
+  "UFDEllzDxE4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/03-introduction-to-remote-sensing-of-harmful-algal-blooms/platforms-and-sensors-for-ocean-observations-data-access-processing-tools-part-2-4.md",
+    "chars": 59475,
+    "segments": 527,
+    "source": "UFDEllzDxE4.en.vtt",
+    "fetched_at": "2026-10-20T07:51:50.096Z"
+  },
+  "wx7hkbBWoCo": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:51:51.325Z"
+  },
+  "TH7y0YzPNSM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/03-introduction-to-remote-sensing-of-harmful-algal-blooms/understanding-habs-in-the-coastal-environment-part-3-4.md",
+    "chars": 70421,
+    "segments": 595,
+    "source": "TH7y0YzPNSM.en.vtt",
+    "fetched_at": "2026-10-20T07:51:51.628Z"
+  },
+  "aYcz80Ycir0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/06-atmospheric-co2-and-ch4-budgets-to-support-the-global-stocktake/tracking-greenhouse-gases-part-1-3.md",
+    "chars": 108947,
+    "segments": 927,
+    "source": "aYcz80Ycir0.en.vtt",
+    "fetched_at": "2026-10-20T07:51:51.877Z"
+  },
+  "vGU4UqhHhAA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/04-introduction-to-satellite-remote-sensing-for-air-quality-applications/overview-of-webinar-series-and-an-introduction-to-satellite-remote-sensing-part-1-5.md",
+    "chars": 50426,
+    "segments": 429,
+    "source": "vGU4UqhHhAA.en.vtt",
+    "fetched_at": "2026-10-20T07:51:53.565Z"
+  },
+  "_1Fyyl4xDmY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/04-introduction-to-satellite-remote-sensing-for-air-quality-applications/nasa-aerosol-products-for-particulate-matter-air-quality-part-3-5.md",
+    "chars": 45041,
+    "segments": 391,
+    "source": "_1Fyyl4xDmY.en.vtt",
+    "fetched_at": "2026-10-20T07:51:55.252Z"
+  },
+  "rVWfZH2eQY0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/04-introduction-to-satellite-remote-sensing-for-air-quality-applications/fundamentals-of-remote-sensing-imagery-and-tools-to-access-part-2-5.md",
+    "chars": 49827,
+    "segments": 446,
+    "source": "rVWfZH2eQY0.en.vtt",
+    "fetched_at": "2026-10-20T07:51:55.508Z"
+  },
+  "FEEI6yNx4Us": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/04-introduction-to-satellite-remote-sensing-for-air-quality-applications/future-satellite-capabilities-for-air-quality-monitoring-and-review-part-5-5.md",
+    "chars": 48944,
+    "segments": 429,
+    "source": "FEEI6yNx4Us.en.vtt",
+    "fetched_at": "2026-10-20T07:51:56.418Z"
+  },
+  "wSCFtOjQw0o": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/06-nasa-atmospheric-composition-ground-networks-supporting-air-quality-and-climate-applicatio/hands-on-analysis-of-aeronet-data-part-2-5.md",
+    "chars": 76436,
+    "segments": 694,
+    "source": "wSCFtOjQw0o.en.vtt",
+    "fetched_at": "2026-10-20T07:51:58.194Z"
+  },
+  "-yOInEUJTYM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/11-high-resolution-no2-monitoring-from-space-with-tropomi/introducing-tropomi-high-resolution-no2-observations-from-space-part-2-3.md",
+    "chars": 63611,
+    "segments": 559,
+    "source": "-yOInEUJTYM.en.vtt",
+    "fetched_at": "2026-10-20T07:51:58.812Z"
+  },
+  "4eFiIf-92Zs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/08-nasa-earth-observations-for-energy-management/using-nasa-products-for-a-more-climate-resilient-energy-sector-part-2-4.md",
+    "chars": 53387,
+    "segments": 434,
+    "source": "4eFiIf-92Zs.en.vtt",
+    "fetched_at": "2026-10-20T07:51:59.077Z"
+  },
+  "B-Y1uz02Ccg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/11-applications-of-carbon-dioxide-measurements-for-climate-related-studies/co2-measurements-over-a-large-urban-area-part-3-3.md",
+    "chars": 90277,
+    "segments": 788,
+    "source": "B-Y1uz02Ccg.en.vtt",
+    "fetched_at": "2026-10-20T07:52:00.390Z"
+  },
+  "AeBy7lFKbgE": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/11-applications-of-carbon-dioxide-measurements-for-climate-related-studies/the-impact-of-drought-on-co2-part-2-2.md",
+    "chars": 94727,
+    "segments": 828,
+    "source": "AeBy7lFKbgE.en.vtt",
+    "fetched_at": "2026-10-20T07:52:01.784Z"
+  },
+  "JxPZyXLsdTg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/populations/03-earth-observations-for-humanitarian-applications/assessing-climate-hazards-at-refugee-camps-part-4-4.md",
+    "chars": 97763,
+    "segments": 851,
+    "source": "JxPZyXLsdTg.en.vtt",
+    "fetched_at": "2026-10-20T07:52:02.661Z"
+  },
+  "KdaQgFGIxvI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/03-sar-for-detecting-and-monitoring-floods-sea-ice-and-subsidence-from-groundwater-extraction/detecting-and-monitoring-sea-ice-with-sar-part-1-3.md",
+    "chars": 83423,
+    "segments": 744,
+    "source": "KdaQgFGIxvI.en.vtt",
+    "fetched_at": "2026-10-20T07:52:02.736Z"
+  },
+  "2CKxV_mTuxk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/03-sar-for-detecting-and-monitoring-floods-sea-ice-and-subsidence-from-groundwater-extraction/detecting-and-monitoring-floods-with-sar-part-3-3.md",
+    "chars": 101248,
+    "segments": 891,
+    "source": "2CKxV_mTuxk.en.vtt",
+    "fetched_at": "2026-10-20T07:52:04.122Z"
+  },
+  "vS7r50EbFQY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/04-sar-for-landcover-applications/exploiting-sar-to-monitor-agriculture-part-2-2.md",
+    "chars": 109941,
+    "segments": 965,
+    "source": "vS7r50EbFQY.en.vtt",
+    "fetched_at": "2026-10-20T07:52:05.951Z"
+  },
+  "QKrG5jYZe10": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sar/05-sar-for-disasters-and-hydrological-applications/sar-for-flood-mapping-session-2-4.md",
+    "chars": 87002,
+    "segments": 776,
+    "source": "QKrG5jYZe10.en.vtt",
+    "fetched_at": "2026-10-20T07:52:06.479Z"
+  },
+  "fIQJx3_xlEQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/urban-heat-islands/01-satellite-remote-sensing-for-urban-heat-islands/integrating-in-situ-observations-with-satellite-imagery-part-2-3.md",
+    "chars": 80171,
+    "segments": 687,
+    "source": "fIQJx3_xlEQ.en.vtt",
+    "fetched_at": "2026-10-20T07:52:09.115Z"
+  },
+  "KYV2j3kwj2A": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:52:09.504Z"
+  },
+  "GbmrMWHkaWg": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:52:12.012Z"
+  },
+  "dmSxjSpZetY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/urban-heat-islands/02-introduction-to-thermal-remote-sensing-and-applications-in-urban-heat-island-mapping/foundational-concepts-part-1-2.md",
+    "chars": 81188,
+    "segments": 673,
+    "source": "dmSxjSpZetY.en.vtt",
+    "fetched_at": "2026-10-20T07:52:12.491Z"
+  },
+  "k4ub-CNo6Pg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/urban-heat-islands/02-introduction-to-thermal-remote-sensing-and-applications-in-urban-heat-island-mapping/applications-in-urban-heat-island-mapping-part-2-2.md",
+    "chars": 96881,
+    "segments": 835,
+    "source": "k4ub-CNo6Pg.en.vtt",
+    "fetched_at": "2026-10-20T07:52:13.304Z"
+  },
+  "DZfvTNYyzX8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/03-evaluating-ecosystem-services-with-remote-sensing/evaluating-ecosystem-services-with-remote-sensing-part-1-3.md",
+    "chars": 68404,
+    "segments": 568,
+    "source": "DZfvTNYyzX8.en.vtt",
+    "fetched_at": "2026-10-20T07:52:13.753Z"
+  },
+  "DZw0V7wxIQA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/03-evaluating-ecosystem-services-with-remote-sensing/evaluating-ecosystem-services-with-remote-sensing-august-30-2022-part-3-3.md",
+    "chars": 70070,
+    "segments": 591,
+    "source": "DZw0V7wxIQA.en.vtt",
+    "fetched_at": "2026-10-20T07:52:16.139Z"
+  },
+  "V0axHKpyYrw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/03-evaluating-ecosystem-services-with-remote-sensing/evaluating-ecosystem-services-with-remote-sensing-august-25-2022-part-2-3.md",
+    "chars": 82879,
+    "segments": 698,
+    "source": "V0axHKpyYrw.en.vtt",
+    "fetched_at": "2026-10-20T07:52:17.468Z"
+  },
+  "x9BwaazUumc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/16-remote-sensing-for-freshwater-habitats/overview-of-the-riverscape-analysis-project-rap-part-2-3.md",
+    "chars": 45110,
+    "segments": 389,
+    "source": "x9BwaazUumc.en.vtt",
+    "fetched_at": "2026-10-20T07:52:18.567Z"
+  },
+  "70Zkm4Pg_ZE": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/08-remote-sensing-for-conservation-and-biodiversity/remote-sensing-for-biodiversity-session-2-2.md",
+    "chars": 48071,
+    "segments": 403,
+    "source": "70Zkm4Pg_ZE.en.vtt",
+    "fetched_at": "2026-10-20T07:52:18.710Z"
+  },
+  "UMLlhO8y9CI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/16-remote-sensing-for-freshwater-habitats/overview-of-the-freshwater-health-index-fhi-part-3-3.md",
+    "chars": 44867,
+    "segments": 380,
+    "source": "UMLlhO8y9CI.en.vtt",
+    "fetched_at": "2026-10-20T07:52:21.003Z"
+  },
+  "IPJ7GM5YVP0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/04-introduction-to-remote-sensing-for-coastal-and-ocean-applications/platforms-and-sensors-for-observations-data-access-and-processing-tools-part-2-4.md",
+    "chars": 39428,
+    "segments": 334,
+    "source": "IPJ7GM5YVP0.en.vtt",
+    "fetched_at": "2026-10-20T07:52:22.328Z"
+  },
+  "2pfoEFnsyEQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/03-remote-sensing-of-coastal-ecosystems/penetration-of-light-in-the-water-column-part-2-3.md",
+    "chars": 73317,
+    "segments": 644,
+    "source": "2pfoEFnsyEQ.en.vtt",
+    "fetched_at": "2026-10-20T07:52:23.208Z"
+  },
+  "nELx8r1iy1Q": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/04-introduction-to-remote-sensing-for-coastal-and-ocean-applications/animal-movement-part-3-4.md",
+    "chars": 57000,
+    "segments": 476,
+    "source": "nELx8r1iy1Q.en.vtt",
+    "fetched_at": "2026-10-20T07:52:25.456Z"
+  },
+  "ks4R3L981bA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/04-introduction-to-remote-sensing-for-coastal-and-ocean-applications/coral-reefs-part-4-4.md",
+    "chars": 52565,
+    "segments": 445,
+    "source": "ks4R3L981bA.en.vtt",
+    "fetched_at": "2026-10-20T07:52:25.773Z"
+  },
+  "oYfgAmntdcw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/04-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring/overview-of-carbon-monitoring-for-terrestrial-ecosystems-part-1-5.md",
+    "chars": 75433,
+    "segments": 650,
+    "source": "oYfgAmntdcw.en.vtt",
+    "fetched_at": "2026-10-20T07:52:26.836Z"
+  },
+  "VxtD9Op--tM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/04-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring/carbon-estimation-techniques-and-methods-part-3-5.md",
+    "chars": 58323,
+    "segments": 511,
+    "source": "VxtD9Op--tM.en.vtt",
+    "fetched_at": "2026-10-20T07:52:29.605Z"
+  },
+  "62-3V0nXfY0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/04-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring/sensors-and-products-available-for-terrestrial-ecosystems-part-2-5.md",
+    "chars": 40733,
+    "segments": 339,
+    "source": "62-3V0nXfY0.en.vtt",
+    "fetched_at": "2026-10-20T07:52:29.961Z"
+  },
+  "f681DNstmPg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/04-remote-sensing-of-forest-cover-and-change-assessment-for-carbon-monitoring/guidance-reporting-and-verification-part-5-5.md",
+    "chars": 83334,
+    "segments": 696,
+    "source": "f681DNstmPg.en.vtt",
+    "fetched_at": "2026-10-20T07:52:30.310Z"
+  },
+  "hJBrbbK5Nyk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/coastal-oceans/03-remote-sensing-of-coastal-ecosystems/remote-sensing-of-shorelines-part-3-3.md",
+    "chars": 74062,
+    "segments": 653,
+    "source": "hJBrbbK5Nyk.en.vtt",
+    "fetched_at": "2026-10-20T07:52:31.963Z"
+  },
+  "6Tv3QxGpMro": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/09-land-cover-classification-with-satellite-imagery/improving-a-supervised-land-cover-classification-part-2-2.md",
+    "chars": 85978,
+    "segments": 799,
+    "source": "6Tv3QxGpMro.en.vtt",
+    "fetched_at": "2026-10-20T07:52:33.892Z"
+  },
+  "KitbOq7ARNQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/sar/01-forest-mapping-and-monitoring-with-sar-data/time-series-analysis-of-forest-change-part-1-4.md",
+    "chars": 98232,
+    "segments": 877,
+    "source": "KitbOq7ARNQ.en.vtt",
+    "fetched_at": "2026-10-20T07:52:34.288Z"
+  },
+  "LtM4X5J4OuI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/08-accuracy-assessment-of-a-land-cover-classification/conducting-unsupervised-and-supervised-land-cover-classifications-part-2-2.md",
+    "chars": 37737,
+    "segments": 329,
+    "source": "LtM4X5J4OuI.en.vtt",
+    "fetched_at": "2026-10-20T07:52:34.625Z"
+  },
+  "pi1arBgclfI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/01-monitoring-global-terrestrial-surface-water-height-using-remote-sensing/swot-mission-applications-and-retrieving-visualizing-and-manipulating-data-part-2-2.md",
+    "chars": 68626,
+    "segments": 596,
+    "source": "pi1arBgclfI.en.vtt",
+    "fetched_at": "2026-10-20T07:52:35.674Z"
+  },
+  "51bB7frovtg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/06-introduction-to-using-the-vic-hydrologic-model-with-nasa-earth-observations/introduction-to-the-vic-hydrological-model-part-1-3.md",
+    "chars": 60299,
+    "segments": 534,
+    "source": "51bB7frovtg.en.vtt",
+    "fetched_at": "2026-10-20T07:52:37.487Z"
+  },
+  "4H-OANBWxfg": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/06-introduction-to-using-the-vic-hydrologic-model-with-nasa-earth-observations/overview-of-vic-implementation-in-a-river-basin-part-3-3.md",
+    "chars": 70869,
+    "segments": 635,
+    "source": "4H-OANBWxfg.en.vtt",
+    "fetched_at": "2026-10-20T07:52:39.837Z"
+  },
+  "PBlUiaW5r2s": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:52:40.023Z"
+  },
+  "L9UTzIeIhKs": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/11-assessing-extreme-weather-statistics-using-nasa-earth-exchange-global-daily-downscaled-pro/extreme-event-statistics-during-21st-century-using-nex-gddp-data-part-2-2.md",
+    "chars": 59506,
+    "segments": 521,
+    "source": "L9UTzIeIhKs.en.vtt",
+    "fetched_at": "2026-10-20T07:52:40.374Z"
+  },
+  "rcR-s3DbmjI": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:52:42.706Z"
+  },
+  "ez1TuzdAO0s": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/14-using-earth-observations-to-monitor-water-budgets-for-river-basin-management-ii/water-budget-estimation-using-global-land-data-assimilation-model-part-3-3.md",
+    "chars": 50844,
+    "segments": 458,
+    "source": "ez1TuzdAO0s.en.vtt",
+    "fetched_at": "2026-10-20T07:52:43.743Z"
+  },
+  "_LXgg2yzYH8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/01-the-application-of-earth-observations-for-assessing-waterborne-disease-risk/overview-of-monitoring-waterborne-diseases-using-remote-sensing-observations-part-1-2.md",
+    "chars": 53446,
+    "segments": 452,
+    "source": "_LXgg2yzYH8.en.vtt",
+    "fetched_at": "2026-10-20T07:52:43.984Z"
+  },
+  "YijXxj5FUUI": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:52:46.265Z"
+  },
+  "2Us91BGL3Q4": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/01-introduction-to-nasa-earth-observations-and-tools-for-wildfire-monitoring-and-management/introduction-to-satellite-based-active-fire-detection-using-firms-part-1-3.md",
+    "chars": 100560,
+    "segments": 867,
+    "source": "2Us91BGL3Q4.en.vtt",
+    "fetched_at": "2026-10-20T07:52:47.667Z"
+  },
+  "VdukOyMswzI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/01-the-application-of-earth-observations-for-assessing-waterborne-disease-risk/part-2-remote-sensing-based-cholera-predictive-intelligence-for-intervention-part-2-2.md",
+    "chars": 74789,
+    "segments": 654,
+    "source": "VdukOyMswzI.en.vtt",
+    "fetched_at": "2026-10-20T07:52:47.830Z"
+  },
+  "ef6AVyDsdmU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/water-quality/02-introduction-to-plankton-aerosol-cloud-ocean-ecosystem-pace-hyperspectral-observations-for/access-visualization-of-pace-oci-data-using-python-jupyter-notebook-software-part-3-3.md",
+    "chars": 74253,
+    "segments": 659,
+    "source": "ef6AVyDsdmU.en.vtt",
+    "fetched_at": "2026-10-20T07:52:49.098Z"
+  },
+  "UJOwwMwqvWA": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/01-introduction-to-nasa-earth-observations-and-tools-for-wildfire-monitoring-and-management/wildfire-monitoring-and-evaluation-part-2-3.md",
+    "chars": 76561,
+    "segments": 675,
+    "source": "UJOwwMwqvWA.en.vtt",
+    "fetched_at": "2026-10-20T07:52:49.853Z"
+  },
+  "S_A4switNdU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/01-introduction-to-nasa-earth-observations-and-tools-for-wildfire-monitoring-and-management/data-access-and-visualization-part-3-3.md",
+    "chars": 59242,
+    "segments": 533,
+    "source": "S_A4switNdU.en.vtt",
+    "fetched_at": "2026-10-20T07:52:51.263Z"
+  },
+  "dk4TWK0aOUI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/02-advanced-nasa-earth-observations-and-tools-for-active-fire-smoke-and-post-fire-monitoring/post-fire-imagery-and-smoke-monitoring-part-1-2.md",
+    "chars": 46857,
+    "segments": 405,
+    "source": "dk4TWK0aOUI.en.vtt",
+    "fetched_at": "2026-10-20T07:52:51.464Z"
+  },
+  "iNWlKhZSykU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/02-advanced-nasa-earth-observations-and-tools-for-active-fire-smoke-and-post-fire-monitoring/data-analysis-and-visualization-part-2-2.md",
+    "chars": 43723,
+    "segments": 384,
+    "source": "iNWlKhZSykU.en.vtt",
+    "fetched_at": "2026-10-20T07:52:52.365Z"
+  },
+  "6AOyvADNOPk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/satellites-sensors-models-for-climate-hydrologic-based-applications-part-1-6.md",
+    "chars": 95581,
+    "segments": 804,
+    "source": "6AOyvADNOPk.en.vtt",
+    "fetched_at": "2026-10-20T07:52:53.564Z"
+  },
+  "hx-m1XMJlfc": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/smoke-modeling-and-forecasting-part-4-6.md",
+    "chars": 62227,
+    "segments": 536,
+    "source": "hx-m1XMJlfc.en.vtt",
+    "fetched_at": "2026-10-20T07:52:54.791Z"
+  },
+  "gQAm3IwinNI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/03-satellite-observations-and-tools-for-fire-risk-detection-and-analysis/satellites-sensors-models-for-climate-hydrologic-based-applications-part-5-6.md",
+    "chars": 90128,
+    "segments": 781,
+    "source": "gQAm3IwinNI.en.vtt",
+    "fetched_at": "2026-10-20T07:52:55.250Z"
+  },
+  "lAHM05jeQq0": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/wildland-fire/04-assessing-the-impacts-of-fires-on-watershed-health/the-soil-water-assessment-tool-swat-for-assessing-post-fire-water-quality-part-2-3.md",
+    "chars": 62531,
+    "segments": 541,
+    "source": "lAHM05jeQq0.en.vtt",
+    "fetched_at": "2026-10-20T07:52:57.085Z"
+  },
+  "gGM5Bnz0Gh8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/04-selecting-climate-change-projection-sets-for-mitigation-adaptation-and-risk-management-app/what-makes-projection-sets-different-part-1-2.md",
+    "chars": 79458,
+    "segments": 670,
+    "source": "gGM5Bnz0Gh8.en.vtt",
+    "fetched_at": "2026-10-20T07:52:57.120Z"
+  },
+  "4vJSKCNKqq4": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:53:00.197Z"
+  },
+  "Hfi9OaYtygU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/09-introduction-to-remote-sensing-for-scenario-based-ecoforecasting/overview-of-scenario-planning-session-3-4.md",
+    "chars": 58000,
+    "segments": 507,
+    "source": "Hfi9OaYtygU.en.vtt",
+    "fetched_at": "2026-10-20T07:53:00.742Z"
+  },
+  "arfqOCOuf9E": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:53:02.718Z"
+  },
+  "76lzLPUjH7M": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:53:03.644Z"
+  },
+  "wgTmTB3GlTI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/agriculture/05-mapping-crops-and-their-biophysical-characteristics-with-polarimetric-sar-and-optical-remo/crop-specific-time-series-analysis-for-growth-monitoring-part-4-4.md",
+    "chars": 69765,
+    "segments": 609,
+    "source": "wgTmTB3GlTI.en.vtt",
+    "fetched_at": "2026-10-20T07:53:03.799Z"
+  },
+  "U9w9vZbdrNM": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/08-tools-for-analyzing-nasa-air-quality-model-output/review-of-nasa-air-quality-forecasts-and-reanalysis-part-1-3.md",
+    "chars": 71369,
+    "segments": 643,
+    "source": "U9w9vZbdrNM.en.vtt",
+    "fetched_at": "2026-10-20T07:53:04.537Z"
+  },
+  "VZ0HBPPIo5A": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/11-high-resolution-no2-monitoring-from-space-with-tropomi/read-map-and-analyze-omi-no2-and-so2-data-part-3-3.md",
+    "chars": 80406,
+    "segments": 736,
+    "source": "VZ0HBPPIo5A.en.vtt",
+    "fetched_at": "2026-10-20T07:53:06.476Z"
+  },
+  "eYyWTuWthyY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/air-quality-health/air-quality/12-data-analysis-tools-for-high-resolution-air-quality-satellite-datasets/read-map-and-analyze-level-2-modis-aod-data-part-2-3.md",
+    "chars": 81514,
+    "segments": 773,
+    "source": "eYyWTuWthyY.en.vtt",
+    "fetched_at": "2026-10-20T07:53:07.420Z"
+  },
+  "2551aFGyleY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/05-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies/an-introduction-to-xco2-with-oco-2-and-oco-3-part-1-4.md",
+    "chars": 62333,
+    "segments": 540,
+    "source": "2551aFGyleY.en.vtt",
+    "fetched_at": "2026-10-20T07:53:08.022Z"
+  },
+  "4QKY-IxalyI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/03-building-climate-risk-assessments-from-local-vulnerability-and-exposure/theoretical-framework-for-demand-driven-climate-adaptation-support-part-1-2.md",
+    "chars": 83377,
+    "segments": 695,
+    "source": "4QKY-IxalyI.en.vtt",
+    "fetched_at": "2026-10-20T07:53:09.064Z"
+  },
+  "2ZILcjYB9Fk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/05-measuring-atmospheric-carbon-dioxide-from-space-in-support-of-climate-related-studies/a-demonstration-on-how-to-access-and-visualize-oco-2-oco-3-data-part-2-4.md",
+    "chars": 64777,
+    "segments": 594,
+    "source": "2ZILcjYB9Fk.en.vtt",
+    "fetched_at": "2026-10-20T07:53:10.544Z"
+  },
+  "d6vC6_H_0iI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/09-introduction-to-nasa-resources-for-climate-change-applications/climate-change-future-scenarios-impact-projection-and-adaptation-part-2-2.md",
+    "chars": 103825,
+    "segments": 900,
+    "source": "d6vC6_H_0iI.en.vtt",
+    "fetched_at": "2026-10-20T07:53:11.780Z"
+  },
+  "yJQyIOsT_ws": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/climate/07-earth-observations-toolkit-for-sustainable-cities-and-human-settlements/use-cases-from-the-national-and-city-level-part-3-3.md",
+    "chars": 64719,
+    "segments": 564,
+    "source": "yJQyIOsT_ws.en.vtt",
+    "fetched_at": "2026-10-20T07:53:12.004Z"
+  },
+  "ygdK8uMxi8A": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sif/02-solar-induced-fluorescence-sif-observations-for-assessing-vegetation-changes-related-to-fl/overview-of-oco-2-and-oco-3-observing-modes-and-sif-observations-part-2-3.md",
+    "chars": 69579,
+    "segments": 601,
+    "source": "ygdK8uMxi8A.en.vtt",
+    "fetched_at": "2026-10-20T07:53:12.823Z"
+  },
+  "PU1PaHliBK8": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/disasters/sif/02-solar-induced-fluorescence-sif-observations-for-assessing-vegetation-changes-related-to-fl/working-with-gap-filled-sif-products-part-3-3.md",
+    "chars": 65915,
+    "segments": 568,
+    "source": "PU1PaHliBK8.en.vtt",
+    "fetched_at": "2026-10-20T07:53:14.334Z"
+  },
+  "VfXg3UsnufU": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/biodiversity-ecosystems/15-species-distribution-modeling-with-remote-sensing/using-wallace-to-model-species-niches-and-distributions-part-2-3.md",
+    "chars": 69270,
+    "segments": 612,
+    "source": "VfXg3UsnufU.en.vtt",
+    "fetched_at": "2026-10-20T07:53:15.275Z"
+  },
+  "ZMJ-bTXtqHw": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:53:15.845Z"
+  },
+  "tkvwzdyV0xQ": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/03-remote-sensing-of-land-indicators-for-sustainable-development-goal-15/sdg-target-15-3-part-3-3.md",
+    "chars": 37458,
+    "segments": 314,
+    "source": "tkvwzdyV0xQ.en.vtt",
+    "fetched_at": "2026-10-20T07:53:16.093Z"
+  },
+  "b_2tfsVE2mY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/ecological-conservation/land-cover-change/05-remote-sensing-for-monitoring-land-degradation-and-sustainable-cities-sdgs/introduction-to-sdg-framework-and-trends-earth-part-1-3.md",
+    "chars": 80774,
+    "segments": 554,
+    "source": "b_2tfsVE2mY.en.vtt",
+    "fetched_at": "2026-10-20T07:53:18.028Z"
+  },
+  "_MPQgDQJxYw": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/08-applications-of-remote-sensing-based-evapotranspiration-data-products/the-metric-model-and-the-eeflux-portal-part-4-5.md",
+    "chars": 81925,
+    "segments": 709,
+    "source": "_MPQgDQJxYw.en.vtt",
+    "fetched_at": "2026-10-20T07:53:18.702Z"
+  },
+  "tVf4ltA8SbI": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:53:19.673Z"
+  },
+  "KlYIAvKii8M": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/10-monitoring-groundwater-changes-for-water-resources-management/overview-and-analysis-of-nasa-terrestrial-water-storage-data-from-grace-grace-fo-pt-1-3.md",
+    "chars": 77171,
+    "segments": 681,
+    "source": "KlYIAvKii8M.en.vtt",
+    "fetched_at": "2026-10-20T07:53:20.748Z"
+  },
+  "vLcK5-QnlOY": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrography/03-nasa-satellite-laser-altimetry-for-coastal-and-near-shore-bathymetry/techniques-for-plotting-and-analyzing-atl24-coastal-bathymetry-part-2-2.md",
+    "chars": 100614,
+    "segments": 894,
+    "source": "vLcK5-QnlOY.en.vtt",
+    "fetched_at": "2026-10-20T07:53:22.392Z"
+  },
+  "IaOGhf9NYDk": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/10-monitoring-groundwater-changes-for-water-resources-management/overview-and-applications-of-gldas-groundwater-data-products-at-regional-scale-part-2-3.md",
+    "chars": 71180,
+    "segments": 634,
+    "source": "IaOGhf9NYDk.en.vtt",
+    "fetched_at": "2026-10-20T07:53:22.421Z"
+  },
+  "B1HPbpfg4oI": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/hors-guide/01-videos-sans-training-correspondant-a-reclasser/nisar-data-access-and-tools-session-2-3.md",
+    "chars": 103910,
+    "segments": 910,
+    "source": "B1HPbpfg4oI.en.vtt",
+    "fetched_at": "2026-10-20T07:53:23.366Z"
+  },
+  "MhU1e5PqS2M": {
+    "status": "ok",
+    "path": "resources/notes/transcripts/water-resources/hydrology/02-introduction-to-snow-and-ice-data-products-and-applications-for-water-resources-management/monitoring-snowpack-and-prediction-of-water-availability-in-the-western-us-part-3-3.md",
+    "chars": 76894,
+    "segments": 650,
+    "source": "MhU1e5PqS2M.en.vtt",
+    "fetched_at": "2026-10-20T07:53:24.657Z"
+  },
+  "9T1lBnta9P0": {
+    "status": "failed",
+    "error": "aucun sous-titre EN disponible",
+    "fetched_at": "2026-10-20T07:53:28.369Z"
+  }
+}
