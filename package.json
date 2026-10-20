@@ -9,10 +9,11 @@
   ],
   "scripts": {
     "build:core": "npm run build -w @arset/core",
+    "build:theme": "npm run build -w @arset/theme",
     "dev:server": "npm run dev -w @arset/server",
     "dev:desktop": "npm run dev -w @arset/desktop",
     "dev:mobile": "npm run start -w @arset/mobile",
-    "typecheck": "npm run typecheck -w @arset/core && npm run typecheck -w @arset/server && npm run typecheck -w @arset/desktop && npm run typecheck -w @arset/mobile",
+    "typecheck": "npm run typecheck -w @arset/theme && npm run typecheck -w @arset/core && npm run typecheck -w @arset/server && npm run typecheck -w @arset/desktop && npm run typecheck -w @arset/mobile",
     "lint": "echo \"no linter configured yet\""
   },
   "devDependencies": {

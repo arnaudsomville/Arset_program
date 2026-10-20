@@ -66,6 +66,10 @@ app.get("/api/catalog", (_req, res) => {
   res.json(categories);
 });
 
+app.get("/api/catalog/stats", (_req, res) => {
+  res.json({ modules: index.modulesByKey.size, videos: index.videosById.size });
+});
+
 function moduleSummary(mod: CatalogModule) {
   const videos = index.videosByModuleKey.get(mod.key) ?? [];
   const durationSeconds = videos.reduce((s, v) => s + v.duration_seconds, 0);

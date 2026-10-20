@@ -28,7 +28,8 @@ Arset_program/
 │   ├── catalog/               #   video_catalog.json, arset_taxonomy.json (source de vérité)
 │   └── notes/                 #   Plan.md, notes.md, transcripts
 ├── packages/
-│   └── core/                  # @arset/core — types + loaders partagés
+│   ├── core/                  # @arset/core — types + loaders partagés
+│   └── theme/                 # @arset/theme — tokens de design partagés (CSS + RN)
 └── apps/
     ├── server/                # backend Node/Express
     ├── desktop/               # app React (Vite) — PC

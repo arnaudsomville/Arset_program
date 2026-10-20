@@ -47,8 +47,14 @@ export interface PlaybackEntry {
 
 export type PlaybackMap = Record<string, PlaybackEntry>;
 
+export interface CatalogStats {
+  modules: number;
+  videos: number;
+}
+
 export interface ArsetApi {
   catalog(): Promise<CatalogCategory[]>;
+  stats(): Promise<CatalogStats>;
   progress(): Promise<ProgressData>;
   watchlist(): Promise<string[]>;
   toggleWatchlist(key: string): Promise<string[]>;
@@ -80,6 +86,7 @@ async function postJSON<T>(path: string, body?: unknown): Promise<T> {
 /** Client HTTP — backend Express (dev local / `make pc`). */
 const httpApi: ArsetApi = {
   catalog: () => getJSON<CatalogCategory[]>("/api/catalog"),
+  stats: () => getJSON<CatalogStats>("/api/catalog/stats"),
   progress: () => getJSON<ProgressData>("/api/progress"),
   watchlist: () => getJSON<string[]>("/api/watchlist"),
   toggleWatchlist: (key: string) =>

@@ -1,0 +1,19 @@
+{
+  "name": "@arset/theme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Design tokens partagés (CSS desktop + StyleSheet mobile) pour ARSET Viewer.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

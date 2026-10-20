@@ -32,8 +32,10 @@ Fichiers :
 | `src/main.tsx` | Point d'entrée React : `createRoot(...).render(<App/>)`. |
 | `src/App.tsx` | Tout le composant : sidebar, cartes vidéo, gestion d'état. |
 | `src/api.ts` | Client HTTP : enveloppe `fetch` pour chaque route de l'API. |
-| `src/styles.css` | Styles (thème sombre). |
-| `vite.config.ts` | Config Vite (proxy `/api`, pré-bundling de `@arset/core`). |
+| `src/styles.css` | Styles (thème sombre zinc) — consomme les custom properties de `@arset/theme`. |
+| `src/icons.tsx` | Icônes SVG locales (chemins Lucide, licence ISC). |
+| `src/main.tsx` | Injecte les tokens (`cssVariables()`) et charge les polices (fontsource). |
+| `vite.config.ts` | Config Vite (proxy `/api`, pré-bundling de `@arset/core` + `@arset/theme`). |
 
 Principes React à connaître (voir aussi [08-getting-started.md](08-getting-started.md)) :
 
@@ -44,8 +46,14 @@ Principes React à connaître (voir aussi [08-getting-started.md](08-getting-sta
   s'occupe de mettre à jour le DOM.
 
 Flux principal : `App` charge le parcours + les catégories + la progression → l'utilisateur
-clique un module → `selectModule` charge les vidéos → `VideoCard` affiche soit un
-`<video>` (téléchargé) soit un `<iframe>` YouTube + un bouton « Télécharger ».
+clique un module → `selectModule` charge les vidéos → `VideoCard` affiche une vignette
+YouTube (chargée à la demande) puis, au clic, un `<video>` (téléchargé) ou un `<iframe>`
+YouTube + un bouton « Télécharger ».
+
+> **Design system** : `packages/theme` (`@arset/theme`) est la source unique des couleurs,
+> espacements, rayons et échelles typographiques. Le desktop les sérialise en custom
+> properties CSS (`cssVariables()`), le mobile les consomme directement dans
+> `StyleSheet.create()`.
 
 ## `apps/mobile` (Expo / React Native)
 

@@ -15,7 +15,7 @@ YT_DLP   := $(shell command -v yt-dlp 2>/dev/null)
 FFMPEG   := $(shell command -v ffmpeg 2>/dev/null)
 
 .PHONY: help install install-js install-tools install-sdk ensure-data \
-        sync-mobile build-core dev-server dev-desktop pc \
+        sync-mobile build-core build-theme dev-server dev-desktop pc \
         dev-mobile build-desktop build-desktop-pages typecheck test clean transcripts \
         android-eas android-dev-client android-login android-local android-check build-android
 
@@ -99,14 +99,17 @@ transcripts:
 build-core:
 	$(NPM) run build -w @arset/core
 
-dev-server: build-core
+build-theme:
+	$(NPM) run build -w @arset/theme
+
+dev-server: build-core build-theme
 	$(NPM) run dev -w @arset/server
 
-dev-desktop: build-core
+dev-desktop: build-core build-theme
 	$(NPM) run dev -w @arset/desktop
 
 # pc: backend + desktop en parallèle
-pc: build-core
+pc: build-core build-theme
 	@printf "🚀 Lancement backend (4000) + desktop (5173)...\n"
 	$(NPM) exec -- concurrently -k -n server,desktop \
 		"$(NPM) run dev -w @arset/server" \
@@ -117,11 +120,11 @@ dev-mobile:
 
 ## ── Build ───────────────────────────────────────────────────────────────────
 
-build-desktop: build-core
+build-desktop: build-core build-theme
 	$(NPM) run build -w @arset/desktop
 
 # build-desktop-pages: build statique pour GitHub Pages (sans backend, base /Arset_program/)
-build-desktop-pages: build-core
+build-desktop-pages: build-core build-theme
 	$(NPM) run build:pages -w @arset/desktop
 
 ## ── Android ─────────────────────────────────────────────────────────────────
@@ -163,7 +166,7 @@ build-android-release: android-check
 
 ## ── Qualité ─────────────────────────────────────────────────────────────────
 
-typecheck: build-core
+typecheck: build-core build-theme
 	$(NPM) run typecheck
 
 test:

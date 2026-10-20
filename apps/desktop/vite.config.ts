@@ -12,11 +12,11 @@ export default defineConfig(({ mode }) => ({
     },
   },
   optimizeDeps: {
-    include: ["@arset/core"],
+    include: ["@arset/core", "@arset/theme"],
   },
   build: {
     commonjsOptions: {
-      include: [/node_modules/, /packages\/core/],
+      include: [/node_modules/, /packages\/core/, /packages\/theme/],
     },
   },
 }));

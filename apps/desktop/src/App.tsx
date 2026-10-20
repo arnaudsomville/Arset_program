@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import {
   formatDuration,
   formatPosition,
@@ -6,10 +6,26 @@ import {
   type ModuleStatus,
   type VideoView,
 } from "@arset/core";
+import {
+  AlertTriangleIcon as AlertTriangle,
+  CheckCircleIcon as CheckCircle2,
+  CheckIcon as Check,
+  ChevronRightIcon as ChevronRight,
+  CompassIcon as Compass,
+  DownloadIcon as Download,
+  LoaderIcon as Loader2,
+  MenuIcon as Menu,
+  PlayIcon as Play,
+  SatelliteIcon as Satellite,
+  SearchIcon as Search,
+  StarIcon as Star,
+  XIcon as X,
+} from "./icons";
 import { api, supportsLocalDownload } from "./api";
 import type {
   CatalogCategory,
   CatalogModuleSummary,
+  CatalogStats,
   DownloadEntry,
   PlaybackEntry,
   PlaybackMap,
@@ -21,14 +37,58 @@ interface ModuleSelection {
   title: string;
 }
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 function statusLabel(status: ModuleStatus): string | null {
   if (status === "upcoming") return "à venir";
   if (status === "partial") return "partiel";
   return null;
 }
 
+function countModules(catalog: CatalogCategory[]): number {
+  return catalog.reduce(
+    (n, cat) =>
+      n +
+      cat.modules.length +
+      cat.subcategories.reduce((m, sub) => m + sub.modules.length, 0),
+    0,
+  );
+}
+
+function countVideos(catalog: CatalogCategory[]): number {
+  const all = catalog.flatMap((cat) => [
+    ...cat.modules,
+    ...cat.subcategories.flatMap((sub) => sub.modules),
+  ]);
+  return all.reduce((n, m) => n + m.videoCount, 0);
+}
+
+function moduleContext(
+  catalog: CatalogCategory[],
+  key: string,
+): { category: string; subcategory: string | null } {
+  for (const cat of catalog) {
+    if (cat.modules.some((m) => m.key === key)) {
+      return { category: cat.title, subcategory: null };
+    }
+    for (const sub of cat.subcategories) {
+      if (sub.modules.some((m) => m.key === key)) {
+        return { category: cat.title, subcategory: sub.title };
+      }
+    }
+  }
+  return { category: "", subcategory: null };
+}
+
+// YouTube renvoie une vignette grise 120×90 (HTTP 404) quand la qualité demandée
+// n'existe pas : on démarre en 640×480 et on contrôle la taille au chargement.
+function thumbnailUrl(videoId: string, quality: "sd" | "mq"): string {
+  return `https://i.ytimg.com/vi/${videoId}/${quality === "sd" ? "sddefault" : "mqdefault"}.jpg`;
+}
+
 export default function App() {
   const [catalog, setCatalog] = useState<CatalogCategory[]>([]);
+  const [stats, setStats] = useState<CatalogStats | null>(null);
   const [progress, setProgress] = useState<ProgressData>({
     modules: {},
     videos: {},
@@ -40,17 +100,22 @@ export default function App() {
   const [loadingVideos, setLoadingVideos] = useState(false);
   const [search, setSearch] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     (async () => {
       try {
-        const [cat, prog, wl, pb] = await Promise.all([
+        const [cat, prog, wl, pb, catStats] = await Promise.all([
           api.catalog(),
           api.progress(),
           api.watchlist(),
           api.playback(),
+          api.stats(),
         ]);
         setCatalog(cat);
+        setStats(catStats);
         setProgress(prog);
         setWatchlist(wl);
         setPlayback(pb);
@@ -60,9 +125,24 @@ export default function App() {
     })();
   }, []);
 
+  useEffect(() => {
+    if (!sidebarOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSidebarOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [sidebarOpen]);
+
   const selectModule = useCallback(async (key: string, title: string) => {
     setSelected({ key, title });
+    setSidebarOpen(false);
     setLoadingVideos(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     try {
       const res = await api.moduleVideos(key);
       setVideos(res.videos);
@@ -112,19 +192,72 @@ export default function App() {
     [progress],
   );
 
+  const moduleCount = stats?.modules ?? countModules(catalog);
+  const videoCount = stats?.videos ?? countVideos(catalog);
+
+  const context = useMemo(
+    () => (selected ? moduleContext(catalog, selected.key) : null),
+    [catalog, selected],
+  );
+
+  const firstModule = useMemo(() => {
+    const cat = catalog.find(
+      (c) => c.modules.length > 0 || c.subcategories.some((s) => s.modules.length > 0),
+    );
+    if (!cat) return null;
+    return cat.modules[0] ?? cat.subcategories.flatMap((s) => s.modules)[0] ?? null;
+  }, [catalog]);
+
+  const watchedInModule = useMemo(
+    () => videos.filter((v) => progress.videos[String(v.id)]?.watched).length,
+    [videos, progress],
+  );
+
   return (
     <div className="app">
-      <header>
-        <h1>Earth Viewer</h1>
-        <span className="sub">Catalogue ARSET</span>
-        <span className="badge">{watchedCount} vidéos vues</span>
-      </header>
+      <div className="backdrop" aria-hidden="true">
+        <div className="backdrop-map" />
+        <div className="backdrop-glow" />
+      </div>
 
-      {error && (
-        <div className="error-banner" onClick={() => setError(null)}>
-          ⚠️ {error} (cliquer pour fermer)
+      <header className="topbar">
+        <button
+          className="icon-btn menu-btn"
+          onClick={() => setSidebarOpen(true)}
+          aria-label="Ouvrir le catalogue"
+        >
+          <Menu size={18} />
+        </button>
+
+        <div className="brand">
+          <span className="brand-tile">
+            <img src={asset("img/arset-logo.png")} alt="Logo ARSET" />
+          </span>
+          <span className="brand-text">
+            <span className="brand-title">Earth Viewer</span>
+            <span className="brand-sub">Catalogue ARSET</span>
+          </span>
         </div>
-      )}
+
+        <div className="topbar-spacer" />
+
+        <div
+          className="progress-pill"
+          title={`${watchedCount} vidéos vues sur ${videoCount}`}
+        >
+          <span className="progress-count">
+            <strong>{watchedCount}</strong>
+            <span className="progress-total"> / {videoCount}</span>
+          </span>
+          <span className="progress-unit">vidéos</span>
+          <span className="progress-track">
+            <span
+              className="progress-fill"
+              style={{ width: `${videoCount ? (watchedCount / videoCount) * 100 : 0}%` }}
+            />
+          </span>
+        </div>
+      </header>
 
       <div className="layout">
         <Sidebar
@@ -133,29 +266,84 @@ export default function App() {
           watchlist={watchlist}
           search={search}
           setSearch={setSearch}
+          searchRef={searchRef}
           selectedKey={selected?.key}
+          open={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
           onSelect={selectModule}
           onToggleModule={toggleModule}
           onToggleWatchlist={toggleWatchlist}
+        />
+
+        <div
+          className={`sidebar-scrim ${sidebarOpen ? "is-open" : ""}`}
+          onClick={() => setSidebarOpen(false)}
+          aria-hidden="true"
         />
 
         <main className="main">
           {selected ? (
             <>
               <div className="module-header">
-                <h2>{selected.title}</h2>
+                <div className="module-heading">
+                  <div className="breadcrumb">
+                    {context?.category && <span>{context.category}</span>}
+                    {context?.subcategory && (
+                      <>
+                        <span className="sep">/</span>
+                        <span>{context.subcategory}</span>
+                      </>
+                    )}
+                  </div>
+                  <h2>{selected.title}</h2>
+                  {videos.length > 0 && (
+                    <div className="module-progress">
+                      <span>
+                        {watchedInModule} / {videos.length} vidéos vues
+                      </span>
+                      <span className="progress-track">
+                        <span
+                          className="progress-fill"
+                          style={{ width: `${(watchedInModule / videos.length) * 100}%` }}
+                        />
+                      </span>
+                    </div>
+                  )}
+                </div>
                 <button
                   className={`done-btn ${progress.modules[selected.key]?.completed ? "is-done" : ""}`}
                   onClick={() => toggleModule(selected.key)}
                 >
-                  {progress.modules[selected.key]?.completed ? "✓ Terminé" : "Marquer terminé"}
+                  {progress.modules[selected.key]?.completed ? (
+                    <>
+                      <CheckCircle2 /> Terminé
+                    </>
+                  ) : (
+                    <>
+                      <Check /> Marquer terminé
+                    </>
+                  )}
                 </button>
               </div>
 
               {loadingVideos ? (
-                <p className="empty">Chargement…</p>
+                <div className="grid" aria-label="Chargement des vidéos">
+                  {[0, 1, 2].map((i) => (
+                    <div className="skeleton-card" key={i}>
+                      <div className="skeleton skeleton-media" />
+                      <div className="skeleton skeleton-line" />
+                      <div className="skeleton skeleton-line short" />
+                    </div>
+                  ))}
+                </div>
               ) : videos.length === 0 ? (
-                <p className="empty">Aucune vidéo pour ce module (à venir).</p>
+                <div className="empty">
+                  <span className="empty-icon">
+                    <Satellite size={20} />
+                  </span>
+                  <h3>Aucune vidéo pour ce module</h3>
+                  <p>Ce contenu est annoncé mais pas encore disponible.</p>
+                </div>
               ) : (
                 <div className="grid">
                   {videos.map((v) => (
@@ -174,14 +362,71 @@ export default function App() {
               )}
             </>
           ) : (
-            <div className="empty">
-              <div className="empty-icon">🛰️</div>
-              <h3>Sélectionne un module</h3>
-              <p>Choisis un module dans le catalogue, par catégorie.</p>
-            </div>
+            <section className="hero">
+              <img className="hero-bg" src={asset("img/earth-iss.jpg")} alt="" />
+              <div className="hero-overlay" />
+              <div className="hero-content">
+                <span className="hero-logo-tile">
+                  <img src={asset("img/arset-logo.png")} alt="Logo ARSET" />
+                </span>
+                <h2>L'observation de la Terre, guidée pas à pas.</h2>
+                <p>
+                  Retrouvez l'intégralité du parcours NASA ARSET : télédétection, qualité de
+                  l'air, feux, eau, climat et urbanisation. Sélectionnez un module pour
+                  accéder à ses vidéos.
+                </p>
+                <div className="hero-actions">
+                  {firstModule && (
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => selectModule(firstModule.key, firstModule.title)}
+                    >
+                      <Play /> Commencer par les fondamentaux
+                    </button>
+                  )}
+                  <button
+                    className="btn"
+                    onClick={() => {
+                      setSidebarOpen(true);
+                      window.setTimeout(() => searchRef.current?.focus(), 260);
+                    }}
+                  >
+                    <Compass /> Explorer le catalogue
+                  </button>
+                </div>
+                <div className="hero-stats">
+                  <div className="hero-stat">
+                    <strong>{moduleCount}</strong>
+                    <span>modules</span>
+                  </div>
+                  <div className="hero-stat">
+                    <strong>{videoCount}</strong>
+                    <span>vidéos</span>
+                  </div>
+                  <div className="hero-stat">
+                    <strong>{watchedCount}</strong>
+                    <span>vues</span>
+                  </div>
+                </div>
+              </div>
+            </section>
           )}
         </main>
       </div>
+
+      {error && (
+        <div className="toast" role="alert">
+          <AlertTriangle />
+          <span>{error}</span>
+          <button
+            className="icon-btn toast-close"
+            onClick={() => setError(null)}
+            aria-label="Fermer"
+          >
+            <X size={14} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -192,7 +437,10 @@ interface SidebarProps {
   watchlist: string[];
   search: string;
   setSearch: (s: string) => void;
+  searchRef: RefObject<HTMLInputElement>;
   selectedKey?: string;
+  open: boolean;
+  onClose: () => void;
   onSelect: (key: string, title: string) => void;
   onToggleModule: (key: string) => void;
   onToggleWatchlist: (key: string) => void;
@@ -205,12 +453,15 @@ function Sidebar(props: SidebarProps) {
     watchlist,
     search,
     setSearch,
+    searchRef,
     selectedKey,
+    open,
+    onClose,
     onSelect,
     onToggleModule,
     onToggleWatchlist,
   } = props;
-  const [open, setOpen] = useState<Record<string, boolean>>({});
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   const q = search.trim().toLowerCase();
   const match = (title: string) => title.toLowerCase().includes(q);
@@ -226,8 +477,35 @@ function Sidebar(props: SidebarProps) {
     .filter((cat) => cat.modules.length > 0 || cat.subcategories.length > 0);
 
   return (
-    <aside className="sidebar">
-      <h3 className="section-title">My Watchlist</h3>
+    <aside className={`sidebar ${open ? "is-open" : ""}`} aria-label="Catalogue">
+      <div className="sidebar-top">
+        <h3 className="section-title" style={{ margin: 0 }}>
+          Recherche
+        </h3>
+        <button
+          className="icon-btn sidebar-close"
+          onClick={onClose}
+          aria-label="Fermer le catalogue"
+        >
+          <X size={16} />
+        </button>
+      </div>
+
+      <div className="search-box">
+        <Search />
+        <input
+          ref={searchRef}
+          className="search"
+          placeholder="Nom du module…"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
+      <h3 className="section-title">
+        Ma sélection
+        <span className="section-count">{watchlist.length}</span>
+      </h3>
       <WatchlistTree
         catalog={catalog}
         watchlist={watchlist}
@@ -238,29 +516,22 @@ function Sidebar(props: SidebarProps) {
         onToggleWatchlist={onToggleWatchlist}
       />
 
-      <h3 className="section-title" style={{ marginTop: "1rem" }}>
-        Recherche
-      </h3>
-      <input
-        className="search"
-        placeholder="Nom du module…"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-
-      <h3 className="section-title" style={{ marginTop: "1rem" }}>
-        Catalogue
-      </h3>
+      <h3 className="section-title">Catalogue</h3>
 
       {filtered.map((cat) => {
-        const isOpen = open[cat.key] ?? false;
+        const isOpen = q ? true : (expanded[cat.key] ?? false);
         const count =
           cat.modules.length +
           cat.subcategories.reduce((n, sub) => n + sub.modules.length, 0);
         return (
           <div className="cat" key={cat.key}>
-            <div className="cat-head" onClick={() => setOpen((o) => ({ ...o, [cat.key]: !isOpen }))}>
-              <span className={`arrow ${isOpen ? "open" : ""}`}>▶</span>
+            <div
+              className="cat-head"
+              onClick={() => setExpanded((o) => ({ ...o, [cat.key]: !isOpen }))}
+            >
+              <span className={`arrow ${isOpen ? "open" : ""}`}>
+                <ChevronRight size={13} />
+              </span>
               <span className="cat-name">{cat.title}</span>
               <span className="cat-count">{count}</span>
             </div>
@@ -339,7 +610,11 @@ function WatchlistTree({
     .filter((cat) => cat.modules.length > 0 || cat.subcategories.length > 0);
 
   if (!groups.length) {
-    return <p className="watchlist-empty">Aucun module dans la watchlist.</p>;
+    return (
+      <p className="watchlist-empty">
+        Aucun module pour l'instant. Cliquez sur l'étoile d'un module pour le retrouver ici.
+      </p>
+    );
   }
 
   const renderModule = (m: CatalogModuleSummary) => (
@@ -361,14 +636,16 @@ function WatchlistTree({
         const count =
           cat.modules.length +
           cat.subcategories.reduce((n, sub) => n + sub.modules.length, 0);
-        const isOpen = open[cat.title] ?? false;
+        const isOpen = open[cat.title] ?? true;
         return (
           <div className="cat" key={cat.title}>
             <div
               className="cat-head"
               onClick={() => setOpen((o) => ({ ...o, [cat.title]: !isOpen }))}
             >
-              <span className={`arrow ${isOpen ? "open" : ""}`}>▶</span>
+              <span className={`arrow ${isOpen ? "open" : ""}`}>
+                <ChevronRight size={13} />
+              </span>
               <span className="cat-name">{cat.title}</span>
               <span className="cat-count">{count}</span>
             </div>
@@ -409,36 +686,33 @@ function ModuleRow({
 }) {
   const badge = statusLabel(module.status);
   return (
-    <div className={`module-row ${completed ? "done" : ""} ${active ? "active" : ""}`} onClick={onSelect}>
+    <div
+      className={`module-row ${completed ? "done" : ""} ${active ? "active" : ""}`}
+      onClick={onSelect}
+    >
       <button
         className="check"
         onClick={(e) => {
           e.stopPropagation();
           onToggle();
         }}
+        aria-label={completed ? "Marquer comme non terminé" : "Marquer comme terminé"}
       >
-        ✓
+        <Check />
       </button>
+      <span className="status-dot" aria-hidden="true" />
       <span className="title">{module.title}</span>
-      {badge && (
-        <span
-          className="tag"
-          style={{ marginLeft: 4, opacity: 0.8, fontSize: 11 }}
-          title={module.status}
-        >
-          {badge}
-        </span>
-      )}
+      {badge && <span className="tag">{badge}</span>}
       <button
         className={`star ${inWatchlist ? "is-starred" : ""}`}
         onClick={(e) => {
           e.stopPropagation();
           onToggleWatchlist();
         }}
-        title={inWatchlist ? "Retirer de ma watchlist" : "Ajouter à ma watchlist"}
-        aria-label={inWatchlist ? "Retirer de ma watchlist" : "Ajouter à ma watchlist"}
+        title={inWatchlist ? "Retirer de ma sélection" : "Ajouter à ma sélection"}
+        aria-label={inWatchlist ? "Retirer de ma sélection" : "Ajouter à ma sélection"}
       >
-        {inWatchlist ? "★" : "☆"}
+        <Star size={15} />
       </button>
     </div>
   );
@@ -470,11 +744,11 @@ function VideoCard({
 }) {
   const initialSaved = useRef(saved).current;
   const resumable = isResumable(initialSaved, video.durationSeconds);
-  const [choice, setChoice] = useState<"pending" | "resume" | "restart">(
-    resumable ? "pending" : "restart",
-  );
+  const [playing, setPlaying] = useState(false);
+  const [showResume, setShowResume] = useState(resumable);
   const [startAt, setStartAt] = useState(0);
   const [autoPlay, setAutoPlay] = useState(false);
+  const [thumbQuality, setThumbQuality] = useState<"sd" | "mq" | "none">("sd");
   const [dl, setDl] = useState<DownloadEntry | null>(null);
   const timerRef = useRef<number | null>(null);
 
@@ -542,79 +816,148 @@ function VideoCard({
 
   const downloading = dl?.status === "downloading";
 
-  return (
-    <div className={`card ${watched ? "seen" : ""}`}>
-      <div className="player">
-        {choice === "pending" && initialSaved ? (
-          <div className="resume-prompt">
-            <div className="resume-label">Reprendre la lecture ?</div>
-            <div className="resume-time">à {formatPosition(initialSaved.seconds)}</div>
-            <div className="resume-actions">
-              <button
-                className="btn"
-                onClick={() => {
-                  setStartAt(initialSaved.seconds);
-                  setAutoPlay(true);
-                  setChoice("resume");
-                }}
-              >
-                Reprendre
-              </button>
-              <button
-                className="btn btn-ghost"
-                onClick={() => {
-                  onClearPlayback(video.id);
-                  setStartAt(0);
-                  setAutoPlay(true);
-                  setChoice("restart");
-                }}
-              >
-                Recommencer
-              </button>
-            </div>
-          </div>
-        ) : video.downloaded ? (
-          <LocalVideo
-            src={video.streamUrl}
-            startAt={startAt}
-            autoPlay={autoPlay}
-            onProgress={handleProgress}
-            onEnded={handleEnded}
-          />
-        ) : video.youtubeVideoId ? (
-          <YouTubePlayer
-            videoId={video.youtubeVideoId}
-            title={video.title}
-            startAt={startAt}
-            autoPlay={autoPlay}
-            onProgress={handleProgress}
-            onEnded={handleEnded}
+  const play = (from = 0, autoplay = false) => {
+    setShowResume(false);
+    setStartAt(from);
+    setAutoPlay(autoplay);
+    setPlaying(true);
+  };
+
+  const handleThumbClick = () => {
+    if (showResume) return;
+    play();
+  };
+
+  const media = playing ? (
+    video.downloaded ? (
+      <LocalVideo
+        src={video.streamUrl}
+        startAt={startAt}
+        autoPlay={autoPlay}
+        onProgress={handleProgress}
+        onEnded={handleEnded}
+      />
+    ) : video.youtubeVideoId ? (
+      <YouTubePlayer
+        videoId={video.youtubeVideoId}
+        title={video.title}
+        startAt={startAt}
+        autoPlay={autoPlay}
+        onProgress={handleProgress}
+        onEnded={handleEnded}
+      />
+    ) : (
+      <div className="no-player">Aucune source vidéo</div>
+    )
+  ) : (
+    <>
+      <button
+        className="thumb"
+        onClick={handleThumbClick}
+        aria-label={`Lire ${video.title}`}
+      >
+        {video.youtubeVideoId && thumbQuality !== "none" ? (
+          <img
+            key={thumbQuality}
+            src={thumbnailUrl(video.youtubeVideoId, thumbQuality)}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            onLoad={(e) => {
+              if (e.currentTarget.naturalWidth <= 160) {
+                setThumbQuality((q) => (q === "sd" ? "mq" : "none"));
+              }
+            }}
+            onError={() => setThumbQuality((q) => (q === "sd" ? "mq" : "none"))}
           />
         ) : (
-          <div className="no-player">Aucune source vidéo</div>
+          <span className="thumb-fallback" />
         )}
-      </div>
+        <span className="thumb-shade" />
+        <span className="play">
+          <Play />
+        </span>
+        <span className="duration">{formatDuration(video.durationSeconds)}</span>
+        {watched && (
+          <span className="watched-badge" aria-label="Vue">
+            <Check />
+          </span>
+        )}
+      </button>
+      {showResume && initialSaved && (
+        <div className="resume-prompt">
+          <div className="resume-label">Reprendre la lecture ?</div>
+          <div className="resume-time">à {formatPosition(initialSaved.seconds)}</div>
+          <div className="resume-actions">
+            <button className="btn btn-primary" onClick={() => play(initialSaved.seconds, true)}>
+              <Play /> Reprendre
+            </button>
+            <button
+              className="btn btn-ghost"
+              onClick={() => {
+                onClearPlayback(video.id);
+                setShowResume(false);
+                play(0, true);
+              }}
+            >
+              Recommencer
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+
+  return (
+    <div className={`card ${watched ? "is-watched" : ""}`}>
+      <div className="card-media">{media}</div>
 
       <div className="card-body">
         <div className="card-title">{video.title}</div>
-        <div className="card-meta">{formatDuration(video.durationSeconds)}</div>
+        <div className="card-meta">
+          {formatDuration(video.durationSeconds)} · NASA ARSET
+        </div>
 
         <div className="card-actions">
           {supportsLocalDownload &&
             (video.downloaded ? (
-              <span className="tag tag-done">✓ Téléchargée</span>
+              <span className="tag tag-done">Téléchargée</span>
             ) : (
               <button className="btn" onClick={startDownload} disabled={downloading}>
-                {downloading ? `Téléchargement… ${Math.round(dl?.progress ?? 0)}%` : "⬇ Télécharger"}
+                {downloading ? (
+                  <>
+                    <Loader2 size={13} className="spin" />
+                    {Math.round(dl?.progress ?? 0)}%
+                  </>
+                ) : (
+                  <>
+                    <Download /> Télécharger
+                  </>
+                )}
               </button>
             ))}
           {supportsLocalDownload && dl?.status === "error" && (
             <span className="tag tag-error">{dl.error}</span>
           )}
-          <button className={`watch-btn ${watched ? "is-seen" : ""}`} onClick={() => onToggleWatched(video.id)}>
-            {watched ? "✓ Vue" : "Marquer vue"}
+          <button
+            className={`watch-btn ${watched ? "is-seen" : ""}`}
+            onClick={() => onToggleWatched(video.id)}
+          >
+            {watched ? (
+              <>
+                <Check /> Vue
+              </>
+            ) : (
+              <>Marquer vue</>
+            )}
           </button>
         </div>
+
+        {downloading && (
+          <div className="dl-progress">
+            <span style={{ width: `${Math.round((dl?.progress ?? 0) * 100)}%` }} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import {
   Alert,
   BackHandler,
   FlatList,
+  Image,
   SectionList,
   StyleSheet,
   Text,
@@ -14,6 +15,9 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
 import { useVideoPlayer, VideoView } from "expo-video";
+import { LinearGradient } from "expo-linear-gradient";
+import { Ionicons } from "@expo/vector-icons";
+import { tokens } from "@arset/theme";
 
 import catalogJson from "./assets/video_catalog.json";
 import type {
@@ -49,10 +53,17 @@ import {
 
 const catalog = catalogJson as unknown as VideoCatalog;
 const index = buildIndex(catalog);
+const totalVideos = catalog.videos.length;
 
 // YouTube exige désormais un en-tête `Referer` valide pour les vidéos embarquées
 // (sinon erreur 153). On utilise une origine factice valide au format URL.
 const YOUTUBE_REFERER = "https://arsetviewer.arnaudsomville.fr";
+
+const c = tokens.colors;
+const sp = tokens.space;
+const r = tokens.radius;
+const f = tokens.fontSize;
+const w = tokens.fontWeight;
 
 interface ModuleEntry {
   key: string;
@@ -62,6 +73,7 @@ interface ModuleEntry {
 
 interface Section {
   title: string;
+  count: number;
   data: ModuleEntry[];
 }
 
@@ -73,16 +85,20 @@ function buildSections(query: string): Section[] {
   for (const cat of index.categories) {
     if (cat.subcategories.length) {
       for (const sub of cat.subcategories) {
-        const data = sub.modules
-          .filter((m) => match(m.title))
-          .map((m) => ({ key: m.key, title: m.title, status: m.status }));
-        if (data.length) sections.push({ title: `${cat.label} — ${sub.label}`, data });
+        const filtered = sub.modules.filter((m) => match(m.title));
+        const data = filtered.map((m) => ({ key: m.key, title: m.title, status: m.status }));
+        if (data.length) {
+          sections.push({
+            title: `${cat.label} — ${sub.label}`,
+            count: filtered.length,
+            data,
+          });
+        }
       }
     } else {
-      const data = cat.modules
-        .filter((m) => match(m.title))
-        .map((m) => ({ key: m.key, title: m.title, status: m.status }));
-      if (data.length) sections.push({ title: cat.label, data });
+      const filtered = cat.modules.filter((m) => match(m.title));
+      const data = filtered.map((m) => ({ key: m.key, title: m.title, status: m.status }));
+      if (data.length) sections.push({ title: cat.label, count: filtered.length, data });
     }
   }
   return sections;
@@ -115,36 +131,59 @@ function WatchlistBlock({
     .filter((cat) => cat.modules.length > 0 || cat.subcategories.length > 0);
 
   return (
-    <View>
-      <Text style={styles.watchlistTitle}>My Watchlist</Text>
+    <View style={styles.watchlistBlock}>
+      <View style={styles.sectionTitleRow}>
+        <Ionicons name="star" size={12} color={c.star} />
+        <Text style={styles.sectionTitle}>Ma sélection</Text>
+        <View style={styles.countPill}>
+          <Text style={styles.countPillText}>{watchlist.size}</Text>
+        </View>
+      </View>
+
       {groups.length === 0 ? (
-        <Text style={styles.watchlistEmpty}>Aucun module dans la watchlist.</Text>
+        <Text style={styles.watchlistEmpty}>
+          Aucun module pour l'instant. Touchez l'étoile d'un module pour le retrouver ici.
+        </Text>
       ) : (
         groups.map((cat) => {
           const count =
             cat.modules.length +
             cat.subcategories.reduce((n, sub) => n + sub.modules.length, 0);
-          const isOpen = open[cat.title] ?? false;
+          const isOpen = open[cat.title] ?? true;
           return (
-            <View key={cat.title}>
+            <View key={cat.title} style={styles.watchlistGroup}>
               <TouchableOpacity
                 style={styles.watchlistCat}
                 onPress={() => setOpen((o) => ({ ...o, [cat.title]: !isOpen }))}
               >
-                <Text style={styles.watchlistArrow}>{isOpen ? "▾" : "▸"}</Text>
+                <Ionicons
+                  name={isOpen ? "chevron-down" : "chevron-forward"}
+                  size={13}
+                  color={c.textFaint}
+                />
                 <Text style={styles.watchlistCatName}>{cat.title}</Text>
                 <Text style={styles.watchlistCount}>{count}</Text>
               </TouchableOpacity>
               {isOpen && (
                 <View>
                   {cat.modules.map((m) => (
-                    <WatchlistRow key={m.key} module={m} onSelect={onSelect} onToggle={onToggle} />
+                    <WatchlistRow
+                      key={m.key}
+                      module={m}
+                      onSelect={onSelect}
+                      onToggle={onToggle}
+                    />
                   ))}
                   {cat.subcategories.map((sub) => (
                     <View key={sub.key}>
                       <Text style={styles.watchlistSub}>{sub.title}</Text>
                       {sub.modules.map((m) => (
-                        <WatchlistRow key={m.key} module={m} onSelect={onSelect} onToggle={onToggle} />
+                        <WatchlistRow
+                          key={m.key}
+                          module={m}
+                          onSelect={onSelect}
+                          onToggle={onToggle}
+                        />
                       ))}
                     </View>
                   ))}
@@ -168,7 +207,7 @@ function WatchlistRow({
   onToggle: (key: string) => void;
 }) {
   return (
-    <View style={styles.moduleRow}>
+    <View style={styles.watchlistRow}>
       <TouchableOpacity
         style={styles.moduleMain}
         onPress={() => onSelect({ key: module.key, title: module.title, status: module.status })}
@@ -178,11 +217,11 @@ function WatchlistRow({
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.starBtn}
+        style={styles.iconBtn}
         onPress={() => onToggle(module.key)}
-        accessibilityLabel="Retirer de ma watchlist"
+        accessibilityLabel="Retirer de ma sélection"
       >
-        <Text style={[styles.star, styles.starActive]}>★</Text>
+        <Ionicons name="star" size={17} color={c.star} />
       </TouchableOpacity>
     </View>
   );
@@ -382,18 +421,27 @@ export default function App() {
 
   if (screen === "player" && currentVideo) {
     const localUri = downloadedFiles[String(currentVideo.id)];
+    const isWatched = watched.has(String(currentVideo.id));
     return (
       <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
         <StatusBar style="light" />
         <View style={styles.topBar}>
-          <TouchableOpacity onPress={() => setScreen("module")}>
-            <Text style={styles.back}>← Retour</Text>
+          <TouchableOpacity style={styles.backBtn} onPress={() => setScreen("module")}>
+            <Ionicons name="chevron-back" size={18} color={c.accent} />
+            <Text style={styles.back}>Module</Text>
           </TouchableOpacity>
+          <View style={styles.flex1} />
           <TouchableOpacity
+            style={[styles.pillBtn, isWatched && styles.pillBtnOn]}
             onPress={() => markVideo(currentVideo.id)}
           >
-            <Text style={styles.action}>
-              {watched.has(String(currentVideo.id)) ? "✓ Vue" : "Marquer vue"}
+            <Ionicons
+              name={isWatched ? "checkmark-circle" : "ellipse-outline"}
+              size={14}
+              color={isWatched ? c.success : c.textSecondary}
+            />
+            <Text style={[styles.pillBtnText, isWatched && styles.pillBtnTextOn]}>
+              {isWatched ? "Vue" : "Marquer vue"}
             </Text>
           </TouchableOpacity>
         </View>
@@ -402,6 +450,10 @@ export default function App() {
         </Text>
         {resumeChoice === "pending" && playback[String(currentVideo.id)] ? (
           <View style={styles.resumePrompt}>
+            <LinearGradient
+              colors={["rgba(9,9,11,0.2)", "rgba(9,9,11,0.95)"]}
+              style={StyleSheet.absoluteFill}
+            />
             <Text style={styles.resumeLabel}>Reprendre la lecture ?</Text>
             <Text style={styles.resumeTime}>
               à {formatPosition(playback[String(currentVideo.id)].seconds)}
@@ -414,6 +466,7 @@ export default function App() {
                   setResumeChoice("resume");
                 }}
               >
+                <Ionicons name="play" size={14} color={c.accent} />
                 <Text style={styles.resumeBtnText}>Reprendre</Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -432,14 +485,18 @@ export default function App() {
           <LocalVideoPlayer
             uri={localUri}
             startAt={startAt}
-            onProgress={(seconds, duration) => savePlayback(currentVideo.id, seconds, duration || currentVideo.duration_seconds)}
+            onProgress={(seconds, duration) =>
+              savePlayback(currentVideo.id, seconds, duration || currentVideo.duration_seconds)
+            }
             onEnded={() => clearPlayback(currentVideo.id)}
           />
         ) : (
           <YouTubePlayer
             videoId={currentVideo.youtube_video_id}
             startAt={startAt}
-            onProgress={(seconds, duration) => savePlayback(currentVideo.id, seconds, duration || currentVideo.duration_seconds)}
+            onProgress={(seconds, duration) =>
+              savePlayback(currentVideo.id, seconds, duration || currentVideo.duration_seconds)
+            }
             onEnded={() => clearPlayback(currentVideo.id)}
           />
         )}
@@ -449,18 +506,27 @@ export default function App() {
 
   if (screen === "module" && currentModule) {
     const videos = index.videosByKey.get(currentModule.key) ?? [];
+    const isDone = completed.has(currentModule.key);
     return (
       <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
         <StatusBar style="light" />
         <View style={styles.topBar}>
-          <TouchableOpacity onPress={() => setScreen("modules")}>
-            <Text style={styles.back}>← Modules</Text>
+          <TouchableOpacity style={styles.backBtn} onPress={() => setScreen("modules")}>
+            <Ionicons name="chevron-back" size={18} color={c.accent} />
+            <Text style={styles.back}>Modules</Text>
           </TouchableOpacity>
+          <View style={styles.flex1} />
           <TouchableOpacity
+            style={[styles.pillBtn, isDone && styles.pillBtnOn]}
             onPress={() => markModule(currentModule.key)}
           >
-            <Text style={styles.action}>
-              {completed.has(currentModule.key) ? "✓ Terminé" : "Terminer"}
+            <Ionicons
+              name={isDone ? "checkmark-circle" : "checkmark"}
+              size={14}
+              color={isDone ? c.success : c.textSecondary}
+            />
+            <Text style={[styles.pillBtnText, isDone && styles.pillBtnTextOn]}>
+              {isDone ? "Terminé" : "Terminer"}
             </Text>
           </TouchableOpacity>
         </View>
@@ -472,18 +538,40 @@ export default function App() {
           renderItem={({ item }) => {
             const dl = downloads[String(item.id)];
             const downloaded = !!downloadedFiles[String(item.id)];
+            const seen = watched.has(String(item.id));
             return (
               <View style={styles.videoRow}>
                 <TouchableOpacity
-                  style={styles.videoInfo}
+                  style={styles.videoThumbWrap}
                   onPress={() => openVideo(item)}
+                  accessibilityLabel={`Lire ${item.name}`}
                 >
-                  <Text style={styles.videoTitle} numberOfLines={2}>
+                  <VideoThumb videoId={item.youtube_video_id} />
+                  <View style={styles.videoPlay}>
+                    <Ionicons name="play" size={13} color="#fff" />
+                  </View>
+                  <View style={styles.videoDuration}>
+                    <Text style={styles.videoDurationText}>
+                      {formatDuration(item.duration_seconds)}
+                    </Text>
+                  </View>
+                  {seen && (
+                    <View style={styles.videoSeen}>
+                      <Ionicons name="checkmark" size={10} color={c.success} />
+                    </View>
+                  )}
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.videoInfo} onPress={() => openVideo(item)}>
+                  <Text
+                    style={[styles.videoTitle, seen && styles.videoTitleSeen]}
+                    numberOfLines={2}
+                  >
                     {item.name}
                   </Text>
                   <Text style={styles.videoMeta}>
                     {formatDuration(item.duration_seconds)}
-                    {downloaded ? "  ·  ✓ téléchargé" : ""}
+                    {downloaded ? "  ·  téléchargé" : ""}
                   </Text>
                 </TouchableOpacity>
 
@@ -493,82 +581,158 @@ export default function App() {
                   onDownload={() => startDownload(item)}
                 />
 
-                <TouchableOpacity
-                  onPress={() => markVideo(item.id)}
-                >
-                  <Text style={styles.action}>
-                    {watched.has(String(item.id)) ? "✓" : "○"}
-                  </Text>
+                <TouchableOpacity style={styles.iconBtn} onPress={() => markVideo(item.id)}>
+                  <Ionicons
+                    name={seen ? "checkmark-circle" : "ellipse-outline"}
+                    size={22}
+                    color={seen ? c.success : c.textFaint}
+                  />
                 </TouchableOpacity>
               </View>
             );
           }}
+          ListEmptyComponent={
+            <View style={styles.empty}>
+              <Ionicons name="planet-outline" size={22} color={c.accent} />
+              <Text style={styles.emptyTitle}>Aucune vidéo pour ce module</Text>
+              <Text style={styles.emptyText}>Ce contenu est annoncé mais pas encore disponible.</Text>
+            </View>
+          }
         />
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
+    <SafeAreaView style={styles.safe} edges={["top"]}>
       <StatusBar style="light" />
-      <View style={styles.topBar}>
-        <Text style={styles.header}>Earth Viewer</Text>
-        <Text style={styles.sub}>Catalogue ARSET</Text>
+      <View style={styles.homeHeader}>
+        <Image source={require("./assets/earth-iss.jpg")} style={styles.headerBg} />
+        <LinearGradient
+          colors={["rgba(9,9,11,0.35)", "rgba(9,9,11,0.82)", c.bg]}
+          style={StyleSheet.absoluteFill}
+        />
+        <View style={styles.topBar}>
+          <View style={styles.brandTile}>
+            <Image source={require("./assets/arset-logo.png")} style={styles.brandLogo} />
+          </View>
+          <View style={styles.flex1}>
+            <Text style={styles.header}>Earth Viewer</Text>
+            <Text style={styles.sub}>Catalogue ARSET</Text>
+          </View>
+          <View style={styles.progressPill}>
+            <Text style={styles.progressText}>
+              <Text style={styles.progressStrong}>{watched.size}</Text> / {totalVideos}
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.searchBox}>
+          <Ionicons name="search" size={15} color={c.textFaint} />
+          <TextInput
+            style={styles.search}
+            placeholder="Rechercher un module…"
+            placeholderTextColor={c.textFaint}
+            value={query}
+            onChangeText={setQuery}
+          />
+          {query.length > 0 && (
+            <TouchableOpacity onPress={() => setQuery("")} accessibilityLabel="Effacer">
+              <Ionicons name="close-circle" size={16} color={c.textFaint} />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
 
       <SectionList
         sections={sections}
-        ListHeaderComponent={
-          <>
-            <WatchlistBlock
-              categories={index.categories}
-              watchlist={watchlist}
-              onSelect={openModule}
-              onToggle={toggleWatchlist}
-            />
-            <TextInput
-              style={styles.search}
-              placeholder="Rechercher un module…"
-              placeholderTextColor="#4a5a70"
-              value={query}
-              onChangeText={setQuery}
-            />
-          </>
-        }
+        contentContainerStyle={styles.list}
         keyExtractor={(item) => item.key}
+        keyboardShouldPersistTaps="handled"
+        stickySectionHeadersEnabled={false}
+        ListHeaderComponent={
+          <WatchlistBlock
+            categories={index.categories}
+            watchlist={watchlist}
+            onSelect={openModule}
+            onToggle={toggleWatchlist}
+          />
+        }
+        ListEmptyComponent={
+          <View style={styles.empty}>
+            <Ionicons name="search-outline" size={22} color={c.accent} />
+            <Text style={styles.emptyTitle}>Aucun module trouvé</Text>
+            <Text style={styles.emptyText}>Essayez un autre mot-clé.</Text>
+          </View>
+        }
         renderSectionHeader={({ section }) => (
-          <Text style={styles.sectionHeader}>{section.title}</Text>
-        )}
-        renderItem={({ item }) => (
-          <View style={styles.moduleRow}>
-            <TouchableOpacity style={styles.moduleMain} onPress={() => openModule(item)}>
-              <Text style={styles.moduleTitle} numberOfLines={2}>
-                {item.title}
-              </Text>
-              {item.status !== "ok" && (
-                <Text style={styles.statusBadge}>
-                  {item.status === "upcoming" ? "à venir" : "partiel"}
-                </Text>
-              )}
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.starBtn}
-              onPress={() => toggleWatchlist(item.key)}
-              accessibilityLabel={
-                watchlist.has(item.key)
-                  ? "Retirer de ma watchlist"
-                  : "Ajouter à ma watchlist"
-              }
-            >
-              <Text style={[styles.star, watchlist.has(item.key) && styles.starActive]}>
-                {watchlist.has(item.key) ? "★" : "☆"}
-              </Text>
-            </TouchableOpacity>
-            {completed.has(item.key) && <Text style={styles.doneMark}>✓</Text>}
+          <View style={styles.sectionHeaderRow}>
+            <Text style={styles.sectionHeader}>{section.title}</Text>
+            <View style={styles.countPill}>
+              <Text style={styles.countPillText}>{section.count}</Text>
+            </View>
           </View>
         )}
+        renderItem={({ item }) => {
+          const starred = watchlist.has(item.key);
+          const done = completed.has(item.key);
+          return (
+            <View style={styles.moduleRow}>
+              <TouchableOpacity style={styles.moduleMain} onPress={() => openModule(item)}>
+                <Text
+                  style={[styles.moduleTitle, done && styles.moduleTitleDone]}
+                  numberOfLines={2}
+                >
+                  {item.title}
+                </Text>
+                {item.status !== "ok" && (
+                  <Text style={styles.statusBadge}>
+                    {item.status === "upcoming" ? "À venir" : "Partiel"}
+                  </Text>
+                )}
+                {done && (
+                  <Ionicons name="checkmark-circle" size={15} color={c.success} />
+                )}
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.iconBtn}
+                onPress={() => toggleWatchlist(item.key)}
+                accessibilityLabel={
+                  starred ? "Retirer de ma sélection" : "Ajouter à ma sélection"
+                }
+              >
+                <Ionicons
+                  name={starred ? "star" : "star-outline"}
+                  size={18}
+                  color={starred ? c.star : c.textFaint}
+                />
+              </TouchableOpacity>
+            </View>
+          );
+        }}
       />
     </SafeAreaView>
+  );
+}
+
+function VideoThumb({ videoId }: { videoId: string }) {
+  const [quality, setQuality] = useState<"sd" | "mq" | "none">("sd");
+  if (!videoId || quality === "none") {
+    return <View style={[styles.videoThumb, styles.videoThumbFallback]} />;
+  }
+  return (
+    <Image
+      source={{
+        uri: `https://i.ytimg.com/vi/${videoId}/${quality === "sd" ? "sddefault" : "mqdefault"}.jpg`,
+      }}
+      style={styles.videoThumb}
+      onLoad={(e) => {
+        if (e.nativeEvent.source.width <= 160) {
+          setQuality((q) => (q === "sd" ? "mq" : "none"));
+        }
+      }}
+      onError={() => setQuality((q) => (q === "sd" ? "mq" : "none"))}
+    />
   );
 }
 
@@ -774,7 +938,7 @@ function DownloadButton({
   if (downloaded) {
     return (
       <View style={styles.dlDone}>
-        <Text style={styles.dlDoneText}>✓</Text>
+        <Ionicons name="checkmark" size={16} color={c.success} />
       </View>
     );
   }
@@ -788,169 +952,424 @@ function DownloadButton({
   if (entry?.status === "error") {
     return (
       <TouchableOpacity style={styles.dlBadge} onPress={onDownload}>
-        <Text style={styles.dlTextError}>↻</Text>
+        <Ionicons name="refresh" size={15} color={c.danger} />
       </TouchableOpacity>
     );
   }
   return (
     <TouchableOpacity style={styles.dlBadge} onPress={onDownload}>
-      <Text style={styles.dlText}>⬇</Text>
+      <Ionicons name="download-outline" size={16} color={c.accent} />
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: "#0a0e17" },
+  safe: { flex: 1, backgroundColor: c.bg },
+  flex1: { flex: 1 },
+
+  /* ── Header / barres ─────────────────────────────────────────────────── */
+
+  homeHeader: {
+    paddingBottom: sp[3],
+    borderBottomWidth: 1,
+    borderBottomColor: c.border,
+    backgroundColor: c.bg,
+  },
+  headerBg: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 210,
+    resizeMode: "cover",
+    opacity: 0.85,
+  },
   topBar: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 12,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: "rgba(100,180,255,0.15)",
-    backgroundColor: "#0a0e17",
+    gap: sp[3],
+    paddingHorizontal: sp[4],
+    paddingVertical: sp[3],
   },
-  header: { fontSize: 18, fontWeight: "800", color: "#64b5f6" },
-  sub: { flex: 1, fontSize: 12, color: "#8899b0" },
-  back: { fontSize: 15, color: "#64b5f6" },
-  action: { fontSize: 14, color: "#42e695", fontWeight: "600" },
-  search: {
-    margin: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    borderRadius: 8,
-    backgroundColor: "rgba(255,255,255,0.05)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.1)",
-    color: "#e8edf5",
+  brandTile: {
+    width: 40,
+    height: 40,
+    borderRadius: 11,
+    padding: 3,
+    backgroundColor: c.tile,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  watchlistTitle: {
-    paddingHorizontal: 16,
-    paddingTop: 12,
-    paddingBottom: 6,
-    fontSize: 12,
-    fontWeight: "700",
+  brandLogo: { width: "100%", height: "100%", resizeMode: "contain" },
+  header: {
+    fontSize: f.lg,
+    fontWeight: w.extrabold,
+    color: c.text,
+    letterSpacing: -0.2,
+  },
+  sub: {
+    fontSize: f.xxs,
+    color: c.textMuted,
+    letterSpacing: 0.9,
     textTransform: "uppercase",
-    letterSpacing: 1,
-    color: "#f5c542",
+    marginTop: 1,
+  },
+  progressPill: {
+    paddingHorizontal: sp[3],
+    paddingVertical: 5,
+    borderRadius: r.pill,
+    borderWidth: 1,
+    borderColor: c.border,
+    backgroundColor: c.surface,
+  },
+  progressText: {
+    fontSize: f.xs,
+    color: c.textSecondary,
+    fontVariant: ["tabular-nums"],
+  },
+  progressStrong: { color: c.text, fontWeight: w.bold },
+
+  backBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 2,
+    paddingVertical: 4,
+    paddingRight: 6,
+  },
+  back: { fontSize: f.base, color: c.accent, fontWeight: w.semibold },
+  pillBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    paddingHorizontal: sp[3],
+    paddingVertical: 6,
+    borderRadius: r.pill,
+    borderWidth: 1,
+    borderColor: c.border,
+    backgroundColor: c.surface,
+  },
+  pillBtnOn: {
+    backgroundColor: c.successSoft,
+    borderColor: c.successBorder,
+  },
+  pillBtnText: { fontSize: f.xs, fontWeight: w.semibold, color: c.textSecondary },
+  pillBtnTextOn: { color: c.success },
+
+  /* ── Recherche ───────────────────────────────────────────────────────── */
+
+  searchBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: sp[2],
+    marginHorizontal: sp[4],
+    marginTop: sp[1],
+    paddingHorizontal: sp[3],
+    height: 40,
+    borderRadius: r.md,
+    borderWidth: 1,
+    borderColor: c.border,
+    backgroundColor: "rgba(255,255,255,0.04)",
+  },
+  search: {
+    flex: 1,
+    fontSize: f.base,
+    color: c.text,
+    paddingVertical: 0,
+  },
+
+  /* ── Sections / listes ───────────────────────────────────────────────── */
+
+  list: { paddingBottom: sp[10] },
+  sectionTitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingHorizontal: sp[4],
+    marginTop: sp[5],
+    marginBottom: sp[2],
+  },
+  sectionTitle: {
+    fontSize: f.xxs,
+    fontWeight: w.bold,
+    letterSpacing: 1.3,
+    textTransform: "uppercase",
+    color: c.textFaint,
+    flex: 1,
+  },
+  sectionHeaderRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: sp[2],
+    paddingHorizontal: sp[4],
+    paddingTop: sp[5],
+    paddingBottom: sp[2],
+    backgroundColor: c.bg,
+  },
+  sectionHeader: {
+    flex: 1,
+    fontSize: f.xxs,
+    fontWeight: w.bold,
+    letterSpacing: 1.1,
+    textTransform: "uppercase",
+    color: c.accent,
+    opacity: 0.85,
+  },
+  countPill: {
+    paddingHorizontal: 7,
+    paddingVertical: 1,
+    borderRadius: r.pill,
+    backgroundColor: "rgba(255,255,255,0.05)",
+  },
+  countPillText: {
+    fontSize: f.xxs,
+    fontWeight: w.semibold,
+    color: c.textMuted,
+    fontVariant: ["tabular-nums"],
+  },
+
+  /* ── Watchlist ───────────────────────────────────────────────────────── */
+
+  watchlistBlock: { paddingTop: sp[1] },
+  watchlistGroup: {
+    marginHorizontal: sp[4],
+    marginBottom: sp[2],
+    borderRadius: r.md,
+    borderWidth: 1,
+    borderColor: c.border,
+    backgroundColor: c.surface,
+    overflow: "hidden",
   },
   watchlistEmpty: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    fontSize: 12,
-    color: "#6a7a90",
+    paddingHorizontal: sp[4],
+    paddingVertical: sp[2],
+    fontSize: f.sm,
+    lineHeight: 18,
+    color: c.textFaint,
   },
   watchlistCat: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 10,
+    gap: sp[2],
+    paddingHorizontal: sp[3],
+    paddingVertical: sp[3],
   },
-  watchlistArrow: { width: 16, fontSize: 11, color: "#4a6080" },
-  watchlistCatName: { flex: 1, fontSize: 13, fontWeight: "600", color: "#b0c0d8" },
-  watchlistCount: { fontSize: 11, color: "#6a7a90" },
+  watchlistCatName: { flex: 1, fontSize: f.md, fontWeight: w.semibold, color: c.textSecondary },
+  watchlistCount: { fontSize: f.xs, color: c.textFaint, fontVariant: ["tabular-nums"] },
   watchlistSub: {
-    paddingHorizontal: 22,
-    paddingVertical: 6,
-    fontSize: 11,
-    color: "#64b5f6",
+    paddingHorizontal: sp[3],
+    paddingTop: sp[2],
+    paddingBottom: 2,
+    fontSize: f.xxs,
+    color: c.accent,
     textTransform: "uppercase",
-    letterSpacing: 0.8,
+    letterSpacing: 0.9,
+    opacity: 0.8,
   },
-  moduleMain: { flex: 1, flexDirection: "row", alignItems: "center" },
-  starBtn: { paddingHorizontal: 8, paddingVertical: 4 },
-  star: { fontSize: 18, color: "#4a5a70" },
-  starActive: { color: "#f5c542" },
-  sectionHeader: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    fontSize: 12,
-    fontWeight: "700",
-    textTransform: "uppercase",
-    letterSpacing: 1,
-    color: "#64b5f6",
-    backgroundColor: "#0a0e17",
+  watchlistRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: sp[1],
+    paddingHorizontal: sp[3],
+    paddingVertical: sp[2],
+    borderTopWidth: 1,
+    borderTopColor: "rgba(255,255,255,0.04)",
   },
+
+  /* ── Lignes module ───────────────────────────────────────────────────── */
+
   moduleRow: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: "rgba(255,255,255,0.04)",
+    gap: sp[1],
+    marginHorizontal: sp[4],
+    marginBottom: 6,
+    paddingLeft: sp[3],
+    paddingRight: 4,
+    paddingVertical: sp[3],
+    borderRadius: r.md,
+    borderWidth: 1,
+    borderColor: c.border,
+    backgroundColor: c.surface,
   },
-  moduleTitle: { flex: 1, fontSize: 14, color: "#e8edf5" },
+  moduleMain: { flex: 1, flexDirection: "row", alignItems: "center", gap: 6 },
+  moduleTitle: { flexShrink: 1, fontSize: f.base, color: c.text, lineHeight: 19 },
+  moduleTitleDone: { color: c.textMuted },
   statusBadge: {
-    fontSize: 10,
-    color: "#8899b0",
+    fontSize: f.xxs,
+    color: c.textMuted,
     textTransform: "uppercase",
     letterSpacing: 0.5,
-    marginLeft: 6,
+    paddingHorizontal: 6,
+    paddingVertical: 1,
+    borderRadius: r.pill,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    overflow: "hidden",
   },
-  doneMark: { color: "#42e695", fontWeight: "800", fontSize: 15 },
-  playerTitle: { padding: 16, fontSize: 16, fontWeight: "700", color: "#e8edf5" },
+  iconBtn: {
+    width: 36,
+    height: 36,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: r.sm,
+  },
+
+  /* ── Écran module / vidéos ───────────────────────────────────────────── */
+
+  playerTitle: {
+    paddingHorizontal: sp[4],
+    paddingTop: sp[3],
+    paddingBottom: sp[2],
+    fontSize: f.xl,
+    fontWeight: w.bold,
+    color: c.text,
+    letterSpacing: -0.3,
+    lineHeight: 25,
+  },
+  videoList: { paddingBottom: sp[8], paddingTop: sp[2] },
+  videoRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: sp[2],
+    marginHorizontal: sp[4],
+    marginBottom: 8,
+    padding: sp[2],
+    borderRadius: r.md,
+    borderWidth: 1,
+    borderColor: c.border,
+    backgroundColor: c.surface,
+  },
+  videoThumbWrap: {
+    width: 104,
+    height: 58,
+    borderRadius: r.sm,
+    overflow: "hidden",
+    backgroundColor: "#000",
+  },
+  videoThumb: { width: "100%", height: "100%" },
+  videoThumbFallback: {
+    backgroundColor: "#121216",
+    borderWidth: 1,
+    borderColor: c.border,
+  },
+  videoPlay: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    width: 26,
+    height: 26,
+    marginTop: -13,
+    marginLeft: -13,
+    borderRadius: 13,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingLeft: 1,
+    backgroundColor: "rgba(255,255,255,0.14)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.28)",
+  },
+  videoDuration: {
+    position: "absolute",
+    right: 3,
+    bottom: 3,
+    paddingHorizontal: 4,
+    paddingVertical: 1,
+    borderRadius: 4,
+    backgroundColor: "rgba(0,0,0,0.72)",
+  },
+  videoDurationText: { fontSize: 9, fontWeight: w.semibold, color: "#ededf0" },
+  videoSeen: {
+    position: "absolute",
+    top: 3,
+    left: 3,
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(52,211,153,0.2)",
+    borderWidth: 1,
+    borderColor: "rgba(52,211,153,0.5)",
+  },
+  videoInfo: { flex: 1, gap: 2 },
+  videoTitle: { fontSize: f.md, color: c.text, lineHeight: 17 },
+  videoTitleSeen: { color: c.textSecondary },
+  videoMeta: { fontSize: f.xxs, color: c.textMuted, fontVariant: ["tabular-nums"] },
+
+  /* ── Reprise / player ────────────────────────────────────────────────── */
+
   resumePrompt: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    gap: 8,
-    padding: 24,
+    gap: 6,
+    padding: sp[6],
     backgroundColor: "#000",
+    overflow: "hidden",
   },
-  resumeLabel: { fontSize: 16, fontWeight: "700", color: "#e8edf5" },
-  resumeTime: { fontSize: 20, fontWeight: "800", color: "#64b5f6" },
-  resumeActions: { flexDirection: "row", gap: 12, marginTop: 12 },
+  resumeLabel: { fontSize: f.lg, fontWeight: w.bold, color: c.text },
+  resumeTime: { fontSize: f.xxl, fontWeight: w.extrabold, color: c.accent },
+  resumeActions: { flexDirection: "row", gap: sp[3], marginTop: sp[3] },
   resumeBtn: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 8,
-    backgroundColor: "rgba(100,180,255,0.15)",
-    borderWidth: 1,
-    borderColor: "rgba(100,180,255,0.4)",
-  },
-  resumeBtnText: { color: "#64b5f6", fontWeight: "700", fontSize: 14 },
-  resumeBtnAlt: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 8,
-    backgroundColor: "transparent",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.15)",
-  },
-  resumeBtnAltText: { color: "#8899b0", fontWeight: "600", fontSize: 14 },
-  webview: { flex: 1, backgroundColor: "#000" },
-  videoList: { paddingBottom: 24 },
-  videoRow: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: "rgba(255,255,255,0.04)",
+    gap: 6,
+    paddingHorizontal: sp[5],
+    paddingVertical: 10,
+    borderRadius: r.md,
+    backgroundColor: c.accentSoft,
+    borderWidth: 1,
+    borderColor: c.accentBorder,
   },
-  videoInfo: { flex: 1, marginRight: 8 },
-  videoTitle: { fontSize: 14, color: "#e8edf5", marginBottom: 4 },
-  videoMeta: { fontSize: 12, color: "#6a7a90" },
+  resumeBtnText: { color: c.accent, fontWeight: w.bold, fontSize: f.base },
+  resumeBtnAlt: {
+    paddingHorizontal: sp[5],
+    paddingVertical: 10,
+    borderRadius: r.md,
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: c.border,
+  },
+  resumeBtnAltText: { color: c.textSecondary, fontWeight: w.semibold, fontSize: f.base },
+  webview: { flex: 1, backgroundColor: "#000" },
+
+  /* ── Téléchargement ──────────────────────────────────────────────────── */
+
   dlBadge: {
     width: 34,
     height: 34,
     borderRadius: 17,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(100,180,255,0.12)",
-    marginHorizontal: 6,
+    backgroundColor: c.accentSoft,
+    borderWidth: 1,
+    borderColor: c.accentBorder,
   },
-  dlText: { color: "#64b5f6", fontWeight: "700", fontSize: 12 },
-  dlTextError: { color: "#ff9b9b", fontWeight: "700", fontSize: 14 },
+  dlText: { color: c.accent, fontWeight: w.bold, fontSize: f.xxs },
   dlDone: {
     width: 34,
     height: 34,
     borderRadius: 17,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(66,230,149,0.15)",
-    marginHorizontal: 6,
+    backgroundColor: c.successSoft,
+    borderWidth: 1,
+    borderColor: c.successBorder,
   },
-  dlDoneText: { color: "#42e695", fontWeight: "800", fontSize: 14 },
+
+  /* ── États vides ─────────────────────────────────────────────────────── */
+
+  empty: {
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    marginHorizontal: sp[4],
+    marginTop: sp[6],
+    padding: sp[6],
+    borderRadius: r.md,
+    borderWidth: 1,
+    borderStyle: "dashed",
+    borderColor: c.border,
+  },
+  emptyTitle: { fontSize: f.base, fontWeight: w.semibold, color: c.textSecondary },
+  emptyText: { fontSize: f.sm, color: c.textFaint, textAlign: "center" },
 });

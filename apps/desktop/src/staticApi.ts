@@ -10,6 +10,7 @@ import {
 } from "@arset/core";
 import type {
   ArsetApi,
+  CatalogStats,
   CatalogCategory,
   CatalogModuleSummary,
   DownloadEntry,
@@ -140,6 +141,11 @@ export const staticApi: ArsetApi = {
         modules: sub.modules.map((m) => moduleSummary(index, m.key)),
       })),
     }));
+  },
+
+  async stats(): Promise<CatalogStats> {
+    const index = await load();
+    return { modules: index.modulesByKey.size, videos: index.videosById.size };
   },
 
   async progress(): Promise<ProgressData> {
