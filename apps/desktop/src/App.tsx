@@ -817,7 +817,7 @@ function VideoCard({
 
   const downloading = dl?.status === "downloading";
 
-  const play = (from = 0, autoplay = false) => {
+  const play = (from = 0, autoplay = true) => {
     setShowResume(false);
     setStartAt(from);
     setAutoPlay(autoplay);
@@ -911,7 +911,22 @@ function VideoCard({
 
   return (
     <div className={`card ${watched ? "is-watched" : ""}`}>
-      <div className="card-media">{media}</div>
+      <div className="card-media">
+        {media}
+        {playing && (
+          <button
+            className="card-close"
+            onClick={() => {
+              setPlaying(false);
+              setShowResume(false);
+            }}
+            aria-label="Close player"
+            title="Close player"
+          >
+            <X />
+          </button>
+        )}
+      </div>
 
       <div className="card-body">
         <div className="card-title">{video.title}</div>
@@ -1111,9 +1126,9 @@ function YouTubePlayer({
     };
   }, []);
 
-  const src = `${youtubeEmbedUrl(videoId)}?enablejsapi=1&playsinline=1&origin=${encodeURIComponent(
-    window.location.origin,
-  )}`;
+  const src = `${youtubeEmbedUrl(videoId)}?enablejsapi=1&playsinline=1&rel=0&showinfo=0&modestbranding=1${
+    autoPlay ? "&autoplay=1" : ""
+  }&origin=${encodeURIComponent(window.location.origin)}`;
 
   return (
     <iframe
