@@ -40,8 +40,8 @@ interface ModuleSelection {
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 function statusLabel(status: ModuleStatus): string | null {
-  if (status === "upcoming") return "à venir";
-  if (status === "partial") return "partiel";
+  if (status === "upcoming") return "upcoming";
+  if (status === "partial") return "partial";
   return null;
 }
 
@@ -217,6 +217,7 @@ export default function App() {
     <div className="app">
       <div className="backdrop" aria-hidden="true">
         <div className="backdrop-map" />
+        <div className="backdrop-horizon" />
         <div className="backdrop-glow" />
       </div>
 
@@ -224,7 +225,7 @@ export default function App() {
         <button
           className="icon-btn menu-btn"
           onClick={() => setSidebarOpen(true)}
-          aria-label="Ouvrir le catalogue"
+          aria-label="Open the catalogue"
         >
           <Menu size={18} />
         </button>
@@ -235,7 +236,7 @@ export default function App() {
           </span>
           <span className="brand-text">
             <span className="brand-title">Earth Viewer</span>
-            <span className="brand-sub">Catalogue ARSET</span>
+            <span className="brand-sub">ARSET Catalogue</span>
           </span>
         </div>
 
@@ -243,13 +244,13 @@ export default function App() {
 
         <div
           className="progress-pill"
-          title={`${watchedCount} vidéos vues sur ${videoCount}`}
+          title={`${watchedCount} videos watched out of ${videoCount}`}
         >
           <span className="progress-count">
             <strong>{watchedCount}</strong>
             <span className="progress-total"> / {videoCount}</span>
           </span>
-          <span className="progress-unit">vidéos</span>
+          <span className="progress-unit">videos</span>
           <span className="progress-track">
             <span
               className="progress-fill"
@@ -299,7 +300,7 @@ export default function App() {
                   {videos.length > 0 && (
                     <div className="module-progress">
                       <span>
-                        {watchedInModule} / {videos.length} vidéos vues
+                        {watchedInModule} / {videos.length} videos watched
                       </span>
                       <span className="progress-track">
                         <span
@@ -316,18 +317,18 @@ export default function App() {
                 >
                   {progress.modules[selected.key]?.completed ? (
                     <>
-                      <CheckCircle2 /> Terminé
+                      <CheckCircle2 /> Complete
                     </>
                   ) : (
                     <>
-                      <Check /> Marquer terminé
+                      <Check /> Mark complete
                     </>
                   )}
                 </button>
               </div>
 
               {loadingVideos ? (
-                <div className="grid" aria-label="Chargement des vidéos">
+                <div className="grid" aria-label="Loading videos">
                   {[0, 1, 2].map((i) => (
                     <div className="skeleton-card" key={i}>
                       <div className="skeleton skeleton-media" />
@@ -341,8 +342,8 @@ export default function App() {
                   <span className="empty-icon">
                     <Satellite size={20} />
                   </span>
-                  <h3>Aucune vidéo pour ce module</h3>
-                  <p>Ce contenu est annoncé mais pas encore disponible.</p>
+                  <h3>No videos for this module</h3>
+                  <p>This content is announced but not available yet.</p>
                 </div>
               ) : (
                 <div className="grid">
@@ -369,11 +370,11 @@ export default function App() {
                 <span className="hero-logo-tile">
                   <img src={asset("img/arset-logo.png")} alt="Logo ARSET" />
                 </span>
-                <h2>L'observation de la Terre, guidée pas à pas.</h2>
+                <h2>Earth observation, step by step.</h2>
                 <p>
-                  Retrouvez l'intégralité du parcours NASA ARSET : télédétection, qualité de
-                  l'air, feux, eau, climat et urbanisation. Sélectionnez un module pour
-                  accéder à ses vidéos.
+                  Browse the full NASA ARSET curriculum: remote sensing, air quality,
+                  wildfires, water, climate and urbanisation. Pick a module to open its
+                  videos.
                 </p>
                 <div className="hero-actions">
                   {firstModule && (
@@ -381,7 +382,7 @@ export default function App() {
                       className="btn btn-primary"
                       onClick={() => selectModule(firstModule.key, firstModule.title)}
                     >
-                      <Play /> Commencer par les fondamentaux
+                      <Play /> Start with the fundamentals
                     </button>
                   )}
                   <button
@@ -391,7 +392,7 @@ export default function App() {
                       window.setTimeout(() => searchRef.current?.focus(), 260);
                     }}
                   >
-                    <Compass /> Explorer le catalogue
+                    <Compass /> Browse the catalogue
                   </button>
                 </div>
                 <div className="hero-stats">
@@ -401,11 +402,11 @@ export default function App() {
                   </div>
                   <div className="hero-stat">
                     <strong>{videoCount}</strong>
-                    <span>vidéos</span>
+                    <span>videos</span>
                   </div>
                   <div className="hero-stat">
                     <strong>{watchedCount}</strong>
-                    <span>vues</span>
+                    <span>watched</span>
                   </div>
                 </div>
               </div>
@@ -421,7 +422,7 @@ export default function App() {
           <button
             className="icon-btn toast-close"
             onClick={() => setError(null)}
-            aria-label="Fermer"
+            aria-label="Close"
           >
             <X size={14} />
           </button>
@@ -480,12 +481,12 @@ function Sidebar(props: SidebarProps) {
     <aside className={`sidebar ${open ? "is-open" : ""}`} aria-label="Catalogue">
       <div className="sidebar-top">
         <h3 className="section-title" style={{ margin: 0 }}>
-          Recherche
+          Search
         </h3>
         <button
           className="icon-btn sidebar-close"
           onClick={onClose}
-          aria-label="Fermer le catalogue"
+          aria-label="Close the catalogue"
         >
           <X size={16} />
         </button>
@@ -496,14 +497,14 @@ function Sidebar(props: SidebarProps) {
         <input
           ref={searchRef}
           className="search"
-          placeholder="Nom du module…"
+          placeholder="Module name…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
       <h3 className="section-title">
-        Ma sélection
+        My watchlist
         <span className="section-count">{watchlist.length}</span>
       </h3>
       <WatchlistTree
@@ -612,7 +613,7 @@ function WatchlistTree({
   if (!groups.length) {
     return (
       <p className="watchlist-empty">
-        Aucun module pour l'instant. Cliquez sur l'étoile d'un module pour le retrouver ici.
+        No modules yet. Click the star on a module to find it here.
       </p>
     );
   }
@@ -696,7 +697,7 @@ function ModuleRow({
           e.stopPropagation();
           onToggle();
         }}
-        aria-label={completed ? "Marquer comme non terminé" : "Marquer comme terminé"}
+        aria-label={completed ? "Mark as not complete" : "Mark as complete"}
       >
         <Check />
       </button>
@@ -709,8 +710,8 @@ function ModuleRow({
           e.stopPropagation();
           onToggleWatchlist();
         }}
-        title={inWatchlist ? "Retirer de ma sélection" : "Ajouter à ma sélection"}
-        aria-label={inWatchlist ? "Retirer de ma sélection" : "Ajouter à ma sélection"}
+        title={inWatchlist ? "Remove from watchlist" : "Add to watchlist"}
+        aria-label={inWatchlist ? "Remove from watchlist" : "Add to watchlist"}
       >
         <Star size={15} />
       </button>
@@ -847,14 +848,14 @@ function VideoCard({
         onEnded={handleEnded}
       />
     ) : (
-      <div className="no-player">Aucune source vidéo</div>
+      <div className="no-player">No video source</div>
     )
   ) : (
     <>
       <button
         className="thumb"
         onClick={handleThumbClick}
-        aria-label={`Lire ${video.title}`}
+        aria-label={`Play ${video.title}`}
       >
         {video.youtubeVideoId && thumbQuality !== "none" ? (
           <img
@@ -879,18 +880,18 @@ function VideoCard({
         </span>
         <span className="duration">{formatDuration(video.durationSeconds)}</span>
         {watched && (
-          <span className="watched-badge" aria-label="Vue">
+          <span className="watched-badge" aria-label="Watched">
             <Check />
           </span>
         )}
       </button>
       {showResume && initialSaved && (
         <div className="resume-prompt">
-          <div className="resume-label">Reprendre la lecture ?</div>
-          <div className="resume-time">à {formatPosition(initialSaved.seconds)}</div>
+          <div className="resume-label">Resume playback?</div>
+          <div className="resume-time">at {formatPosition(initialSaved.seconds)}</div>
           <div className="resume-actions">
             <button className="btn btn-primary" onClick={() => play(initialSaved.seconds, true)}>
-              <Play /> Reprendre
+              <Play /> Resume
             </button>
             <button
               className="btn btn-ghost"
@@ -900,7 +901,7 @@ function VideoCard({
                 play(0, true);
               }}
             >
-              Recommencer
+              Restart
             </button>
           </div>
         </div>
@@ -921,7 +922,7 @@ function VideoCard({
         <div className="card-actions">
           {supportsLocalDownload &&
             (video.downloaded ? (
-              <span className="tag tag-done">Téléchargée</span>
+              <span className="tag tag-done">Downloaded</span>
             ) : (
               <button className="btn" onClick={startDownload} disabled={downloading}>
                 {downloading ? (
@@ -931,7 +932,7 @@ function VideoCard({
                   </>
                 ) : (
                   <>
-                    <Download /> Télécharger
+                    <Download /> Download
                   </>
                 )}
               </button>
@@ -945,10 +946,10 @@ function VideoCard({
           >
             {watched ? (
               <>
-                <Check /> Vue
+                <Check /> Watched
               </>
             ) : (
-              <>Marquer vue</>
+              <>Mark as watched</>
             )}
           </button>
         </div>

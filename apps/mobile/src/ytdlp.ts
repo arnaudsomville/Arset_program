@@ -36,7 +36,7 @@ export function cancelDownload(processId: string): Promise<boolean> {
 /** Transforme une erreur en message lisible (français). */
 export function humanizeDownloadError(e: unknown): string {
   if (isExpoGo()) {
-    return "Téléchargement indisponible dans Expo Go. Installe un build de développement : make android-eas (APK) ou make android-local (USB).";
+    return "Download unavailable in Expo Go. Install a development build: make android-eas (APK) or make android-local (USB).";
   }
   return e instanceof Error ? e.message : String(e);
 }

@@ -134,7 +134,7 @@ function WatchlistBlock({
     <View style={styles.watchlistBlock}>
       <View style={styles.sectionTitleRow}>
         <Ionicons name="star" size={12} color={c.star} />
-        <Text style={styles.sectionTitle}>Ma sélection</Text>
+        <Text style={styles.sectionTitle}>My watchlist</Text>
         <View style={styles.countPill}>
           <Text style={styles.countPillText}>{watchlist.size}</Text>
         </View>
@@ -142,7 +142,7 @@ function WatchlistBlock({
 
       {groups.length === 0 ? (
         <Text style={styles.watchlistEmpty}>
-          Aucun module pour l'instant. Touchez l'étoile d'un module pour le retrouver ici.
+          No modules yet. Tap the star on a module to find it here.
         </Text>
       ) : (
         groups.map((cat) => {
@@ -219,7 +219,7 @@ function WatchlistRow({
       <TouchableOpacity
         style={styles.iconBtn}
         onPress={() => onToggle(module.key)}
-        accessibilityLabel="Retirer de ma sélection"
+        accessibilityLabel="Remove from watchlist"
       >
         <Ionicons name="star" size={17} color={c.star} />
       </TouchableOpacity>
@@ -392,8 +392,8 @@ export default function App() {
     const id = String(video.id);
     if (isExpoGo()) {
       Alert.alert(
-        "Téléchargement indisponible",
-        "Le téléchargement ne fonctionne pas dans Expo Go. Installe un build de développement : make android-eas (APK) ou make android-local (USB).",
+        "Download unavailable",
+        "Downloads do not work in Expo Go. Install a development build: make android-eas (APK) or make android-local (USB).",
       );
       return;
     }
@@ -415,7 +415,7 @@ export default function App() {
         ...d,
         [id]: { status: "error", progress: 0, error: msg },
       }));
-      Alert.alert("Échec du téléchargement", msg);
+      Alert.alert("Download failed", msg);
     }
   }, []);
 
@@ -441,7 +441,7 @@ export default function App() {
               color={isWatched ? c.success : c.textSecondary}
             />
             <Text style={[styles.pillBtnText, isWatched && styles.pillBtnTextOn]}>
-              {isWatched ? "Vue" : "Marquer vue"}
+              {isWatched ? "Watched" : "Mark as watched"}
             </Text>
           </TouchableOpacity>
         </View>
@@ -454,9 +454,9 @@ export default function App() {
               colors={["rgba(9,9,11,0.2)", "rgba(9,9,11,0.95)"]}
               style={StyleSheet.absoluteFill}
             />
-            <Text style={styles.resumeLabel}>Reprendre la lecture ?</Text>
+            <Text style={styles.resumeLabel}>Resume playback?</Text>
             <Text style={styles.resumeTime}>
-              à {formatPosition(playback[String(currentVideo.id)].seconds)}
+              at {formatPosition(playback[String(currentVideo.id)].seconds)}
             </Text>
             <View style={styles.resumeActions}>
               <TouchableOpacity
@@ -467,7 +467,7 @@ export default function App() {
                 }}
               >
                 <Ionicons name="play" size={14} color={c.accent} />
-                <Text style={styles.resumeBtnText}>Reprendre</Text>
+                <Text style={styles.resumeBtnText}>Resume</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.resumeBtnAlt}
@@ -477,7 +477,7 @@ export default function App() {
                   setResumeChoice("restart");
                 }}
               >
-                <Text style={styles.resumeBtnAltText}>Recommencer</Text>
+                <Text style={styles.resumeBtnAltText}>Restart</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -526,7 +526,7 @@ export default function App() {
               color={isDone ? c.success : c.textSecondary}
             />
             <Text style={[styles.pillBtnText, isDone && styles.pillBtnTextOn]}>
-              {isDone ? "Terminé" : "Terminer"}
+              {isDone ? "Complete" : "Mark complete"}
             </Text>
           </TouchableOpacity>
         </View>
@@ -544,7 +544,7 @@ export default function App() {
                 <TouchableOpacity
                   style={styles.videoThumbWrap}
                   onPress={() => openVideo(item)}
-                  accessibilityLabel={`Lire ${item.name}`}
+                  accessibilityLabel={`Play ${item.name}`}
                 >
                   <VideoThumb videoId={item.youtube_video_id} />
                   <View style={styles.videoPlay}>
@@ -571,7 +571,7 @@ export default function App() {
                   </Text>
                   <Text style={styles.videoMeta}>
                     {formatDuration(item.duration_seconds)}
-                    {downloaded ? "  ·  téléchargé" : ""}
+                    {downloaded ? "  ·  downloaded" : ""}
                   </Text>
                 </TouchableOpacity>
 
@@ -594,8 +594,8 @@ export default function App() {
           ListEmptyComponent={
             <View style={styles.empty}>
               <Ionicons name="planet-outline" size={22} color={c.accent} />
-              <Text style={styles.emptyTitle}>Aucune vidéo pour ce module</Text>
-              <Text style={styles.emptyText}>Ce contenu est annoncé mais pas encore disponible.</Text>
+              <Text style={styles.emptyTitle}>No videos for this module</Text>
+              <Text style={styles.emptyText}>This content is announced but not available yet.</Text>
             </View>
           }
         />
@@ -618,7 +618,7 @@ export default function App() {
           </View>
           <View style={styles.flex1}>
             <Text style={styles.header}>Earth Viewer</Text>
-            <Text style={styles.sub}>Catalogue ARSET</Text>
+            <Text style={styles.sub}>ARSET Catalogue</Text>
           </View>
           <View style={styles.progressPill}>
             <Text style={styles.progressText}>
@@ -631,17 +631,25 @@ export default function App() {
           <Ionicons name="search" size={15} color={c.textFaint} />
           <TextInput
             style={styles.search}
-            placeholder="Rechercher un module…"
+            placeholder="Search a module…"
             placeholderTextColor={c.textFaint}
             value={query}
             onChangeText={setQuery}
           />
           {query.length > 0 && (
-            <TouchableOpacity onPress={() => setQuery("")} accessibilityLabel="Effacer">
+            <TouchableOpacity onPress={() => setQuery("")} accessibilityLabel="Clear">
               <Ionicons name="close-circle" size={16} color={c.textFaint} />
             </TouchableOpacity>
           )}
         </View>
+      </View>
+
+      <View style={styles.pageBg} pointerEvents="none">
+        <Image source={require("./assets/earth-night.jpg")} style={styles.pageBgImage} />
+        <LinearGradient
+          colors={["rgba(9,9,11,0.35)", "rgba(9,9,11,0.72)"]}
+          style={StyleSheet.absoluteFill}
+        />
       </View>
 
       <SectionList
@@ -661,8 +669,8 @@ export default function App() {
         ListEmptyComponent={
           <View style={styles.empty}>
             <Ionicons name="search-outline" size={22} color={c.accent} />
-            <Text style={styles.emptyTitle}>Aucun module trouvé</Text>
-            <Text style={styles.emptyText}>Essayez un autre mot-clé.</Text>
+            <Text style={styles.emptyTitle}>No module found</Text>
+            <Text style={styles.emptyText}>Try another keyword.</Text>
           </View>
         }
         renderSectionHeader={({ section }) => (
@@ -687,7 +695,7 @@ export default function App() {
                 </Text>
                 {item.status !== "ok" && (
                   <Text style={styles.statusBadge}>
-                    {item.status === "upcoming" ? "À venir" : "Partiel"}
+                    {item.status === "upcoming" ? "Upcoming" : "Partial"}
                   </Text>
                 )}
                 {done && (
@@ -698,7 +706,7 @@ export default function App() {
                 style={styles.iconBtn}
                 onPress={() => toggleWatchlist(item.key)}
                 accessibilityLabel={
-                  starred ? "Retirer de ma sélection" : "Ajouter à ma sélection"
+                  starred ? "Remove from watchlist" : "Add to watchlist"
                 }
               >
                 <Ionicons
@@ -1080,6 +1088,23 @@ const styles = StyleSheet.create({
   /* ── Sections / listes ───────────────────────────────────────────────── */
 
   list: { paddingBottom: sp[10] },
+  pageBg: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    overflow: "hidden",
+  },
+  pageBgImage: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: "70%",
+    resizeMode: "cover",
+    opacity: 0.55,
+  },
   sectionTitleRow: {
     flexDirection: "row",
     alignItems: "center",

@@ -85,7 +85,7 @@ function moduleSummary(mod: CatalogModule) {
 app.get("/api/modules/:key/videos", (req: Request, res: Response) => {
   const key = req.params.key;
   const mod = index.modulesByKey.get(key);
-  if (!mod) return res.status(404).json({ error: "Module introuvable" });
+  if (!mod) return res.status(404).json({ error: "Module not found" });
   const videos = (index.videosByModuleKey.get(key) ?? [])
     .map((v) => videoView(v.id))
     .filter((v): v is VideoView => v !== null);
@@ -103,7 +103,7 @@ app.get("/api/watchlist", (_req, res) => {
 app.post("/api/watchlist/:key", (req: Request, res: Response) => {
   const key = req.params.key;
   if (!index.modulesByKey.has(key)) {
-    return res.status(404).json({ error: "Module introuvable" });
+    return res.status(404).json({ error: "Module not found" });
   }
   res.json(toggleWatchlist(key));
 });
@@ -115,7 +115,7 @@ app.get("/api/playback", (_req, res) => {
 app.post("/api/playback/:id", (req: Request, res: Response) => {
   const id = req.params.id;
   if (!index.videosById.has(Number(id))) {
-    return res.status(404).json({ error: "Vidéo introuvable" });
+    return res.status(404).json({ error: "Video not found" });
   }
   const seconds = Number(req.body?.seconds);
   const duration = Number(req.body?.duration);
@@ -165,7 +165,7 @@ app.post("/api/progress/video/:id", (req: Request, res: Response) => {
 app.post("/api/videos/:id/download", (req: Request, res: Response) => {
   const id = Number(req.params.id);
   const video = index.videosById.get(id);
-  if (!video) return res.status(404).json({ error: "Vidéo introuvable" });
+  if (!video) return res.status(404).json({ error: "Video not found" });
   const entry = startDownload(id, video.youtube_url);
   res.json(entry);
 });
@@ -177,7 +177,7 @@ app.get("/api/videos/:id/download-status", (req: Request, res: Response) => {
 app.get("/api/videos/:id/stream", (req: Request, res: Response) => {
   const id = req.params.id;
   if (!isDownloaded(id)) {
-    return res.status(404).json({ error: "Vidéo non téléchargée" });
+    return res.status(404).json({ error: "Video not downloaded" });
   }
   res.sendFile(videoFile(id));
 });
