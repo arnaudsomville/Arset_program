@@ -1,9 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import type { PlaybackMap } from "./types";
 
 const WATCHED_KEY = "arset.watched.v1";
 const COMPLETED_KEY = "arset.completed.v1";
 const DOWNLOADS_KEY = "arset.downloads.v1";
 const WATCHLIST_KEY = "arset.watchlist.v1";
+const PLAYBACK_KEY = "arset.playback.v1";
 
 async function readSet(key: string): Promise<Set<string>> {
   try {
@@ -84,4 +86,36 @@ export async function saveDownload(
   all[id] = uri;
   await AsyncStorage.setItem(DOWNLOADS_KEY, JSON.stringify(all));
   return all;
+}
+
+export async function loadPlayback(): Promise<PlaybackMap> {
+  try {
+    const raw = await AsyncStorage.getItem(PLAYBACK_KEY);
+    return raw ? (JSON.parse(raw) as PlaybackMap) : {};
+  } catch {
+    return {};
+  }
+}
+
+export async function savePlaybackPosition(
+  id: string,
+  seconds: number,
+  duration: number,
+): Promise<PlaybackMap> {
+  const data = await loadPlayback();
+  if (Number.isFinite(seconds) && seconds > 0) {
+    data[id] = {
+      seconds: Math.floor(seconds),
+      duration: Number.isFinite(duration) ? Math.round(duration) : 0,
+      updated: new Date().toISOString(),
+    };
+  } else {
+    delete data[id];
+  }
+  await AsyncStorage.setItem(PLAYBACK_KEY, JSON.stringify(data));
+  return data;
+}
+
+export async function clearPlaybackPosition(id: string): Promise<PlaybackMap> {
+  return savePlaybackPosition(id, 0, 0);
 }

@@ -39,11 +39,21 @@ export interface ProgressData {
   videos: Record<string, { watched: boolean; updated: string }>;
 }
 
+export interface PlaybackEntry {
+  seconds: number;
+  duration: number;
+  updated: string;
+}
+
+export type PlaybackMap = Record<string, PlaybackEntry>;
+
 export interface ArsetApi {
   catalog(): Promise<CatalogCategory[]>;
   progress(): Promise<ProgressData>;
   watchlist(): Promise<string[]>;
   toggleWatchlist(key: string): Promise<string[]>;
+  playback(): Promise<PlaybackMap>;
+  savePlayback(id: number, seconds: number, duration: number): Promise<PlaybackMap>;
   moduleVideos(key: string): Promise<ModuleVideos>;
   toggleModule(key: string, completed?: boolean): Promise<ProgressData>;
   toggleVideo(id: number, watched?: boolean): Promise<ProgressData>;
@@ -74,6 +84,9 @@ const httpApi: ArsetApi = {
   watchlist: () => getJSON<string[]>("/api/watchlist"),
   toggleWatchlist: (key: string) =>
     postJSON<string[]>(`/api/watchlist/${encodeURIComponent(key)}`),
+  playback: () => getJSON<PlaybackMap>("/api/playback"),
+  savePlayback: (id: number, seconds: number, duration: number) =>
+    postJSON<PlaybackMap>(`/api/playback/${id}`, { seconds, duration }),
   moduleVideos: (key: string) =>
     getJSON<ModuleVideos>(`/api/modules/${encodeURIComponent(key)}/videos`),
   toggleModule: (key: string, completed?: boolean) =>

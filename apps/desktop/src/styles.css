@@ -340,6 +340,40 @@ header .sub {
   background: #000;
 }
 
+.resume-prompt {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: radial-gradient(circle at 50% 40%, rgba(100, 180, 255, 0.12), #000 70%);
+  color: var(--text);
+}
+
+.resume-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.resume-time {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.resume-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
 .card-body {
   padding: 0.75rem;
 }

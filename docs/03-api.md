@@ -15,6 +15,8 @@ Base : `http://localhost:4000` (en dev). Toutes les réponses sont en JSON.
 | GET | `/api/progress` | Progression complète |
 | GET | `/api/watchlist` | Modules en watchlist (clés) |
 | POST | `/api/watchlist/:key` | Ajoute/retire un module (toggle) |
+| GET | `/api/playback` | Positions de lecture (id vidéo → secondes) |
+| POST | `/api/playback/:id` | Enregistre/efface une position de lecture |
 | POST | `/api/progress/module/:key` | Marquer/terminer un module |
 | POST | `/api/progress/video/:id` | Marquer une vidéo vue |
 | POST | `/api/videos/:id/download` | Lancer le téléchargement |
@@ -106,6 +108,20 @@ Le champ `downloaded` détermine si le frontend affiche `<video src=streamUrl>`
 Ajoute le module s'il n'est pas présent, le retire sinon. Renvoie la liste complète
 des clés (même forme que `GET /api/watchlist`). `404` si la clé n'existe pas dans le
 catalogue.
+
+
+### `GET /api/playback`
+
+```json
+{
+  "98": { "seconds": 120, "duration": 2643, "updated": "2026-10-20T08:00:00.000Z" }
+}
+```
+
+### `POST /api/playback/:id`
+
+Body `{ "seconds": 120, "duration": 2643 }`. Si `seconds <= 0`, la position est effacée.
+Renvoie la map complète (même forme que `GET /api/playback`).
 
 ### `POST /api/progress/module/:key`
 

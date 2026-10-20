@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { progressFile, watchlistFile } from "./config";
+import { playbackFile, progressFile, watchlistFile } from "./config";
 
 interface ModuleProgress {
   completed: boolean;
@@ -111,4 +111,54 @@ export function toggleWatchlist(key: string): string[] {
   watchlistCache = modules;
   persistWatchlist(modules);
   return modules;
+}
+
+// ── Reprise de lecture ──────────────────────────────────────────────────────
+
+export interface PlaybackEntry {
+  seconds: number;
+  duration: number;
+  updated: string;
+}
+
+export type PlaybackMap = Record<string, PlaybackEntry>;
+
+let playbackCache: PlaybackMap | null = null;
+
+export function loadPlayback(): PlaybackMap {
+  if (playbackCache) return playbackCache;
+  try {
+    const raw = JSON.parse(fs.readFileSync(playbackFile(), "utf8")) as unknown;
+    playbackCache =
+      typeof raw === "object" && raw !== null ? (raw as PlaybackMap) : {};
+  } catch {
+    playbackCache = {};
+  }
+  return playbackCache;
+}
+
+function persistPlayback(data: PlaybackMap): void {
+  fs.mkdirSync(path.dirname(playbackFile()), { recursive: true });
+  fs.writeFileSync(playbackFile(), JSON.stringify(data, null, 2));
+}
+
+/** Enregistre une position (ou l'efface si `seconds <= 0`). */
+export function setPlayback(
+  id: string,
+  seconds: number,
+  duration: number,
+): PlaybackMap {
+  const data = { ...loadPlayback() };
+  if (Number.isFinite(seconds) && seconds > 0) {
+    data[id] = {
+      seconds: Math.floor(seconds),
+      duration: Number.isFinite(duration) ? Math.round(duration) : 0,
+      updated: now(),
+    };
+  } else {
+    delete data[id];
+  }
+  playbackCache = data;
+  persistPlayback(data);
+  return data;
 }

@@ -14,11 +14,13 @@ import type {
   CatalogModuleSummary,
   DownloadEntry,
   ModuleVideos,
+  PlaybackMap,
   ProgressData,
 } from "./api";
 
 const PROGRESS_KEY = "arset.progress.v1";
 const WATCHLIST_KEY = "arset.watchlist.v1";
+const PLAYBACK_KEY = "arset.playback.v1";
 
 async function getJSON<T>(name: string): Promise<T> {
   const r = await fetch(`${import.meta.env.BASE_URL}data/${name}`);
@@ -74,6 +76,25 @@ function readWatchlist(): string[] {
 function writeWatchlist(list: string[]): void {
   try {
     localStorage.setItem(WATCHLIST_KEY, JSON.stringify(list));
+  } catch {
+    /* ignore */
+  }
+}
+
+function readPlayback(): PlaybackMap {
+  try {
+    const raw = localStorage.getItem(PLAYBACK_KEY);
+    if (!raw) return {};
+    const data = JSON.parse(raw) as unknown;
+    return typeof data === "object" && data !== null ? (data as PlaybackMap) : {};
+  } catch {
+    return {};
+  }
+}
+
+function writePlayback(data: PlaybackMap): void {
+  try {
+    localStorage.setItem(PLAYBACK_KEY, JSON.stringify(data));
   } catch {
     /* ignore */
   }
@@ -136,6 +157,26 @@ export const staticApi: ArsetApi = {
     else list.splice(i, 1);
     writeWatchlist(list);
     return list;
+  },
+
+  async playback(): Promise<PlaybackMap> {
+    return readPlayback();
+  },
+
+  async savePlayback(id: number, seconds: number, duration: number): Promise<PlaybackMap> {
+    const data = { ...readPlayback() };
+    const key = String(id);
+    if (Number.isFinite(seconds) && seconds > 0) {
+      data[key] = {
+        seconds: Math.floor(seconds),
+        duration: Number.isFinite(duration) ? Math.round(duration) : 0,
+        updated: now(),
+      };
+    } else {
+      delete data[key];
+    }
+    writePlayback(data);
+    return data;
   },
 
   async moduleVideos(key: string): Promise<ModuleVideos> {

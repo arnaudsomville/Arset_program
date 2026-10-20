@@ -123,6 +123,7 @@ Ou, dans deux terminaux séparés : `make dev-server` puis `make dev-desktop`.
 | Une fois téléchargée | Lecture locale (`<video>`, HTTP Range) |
 | « Marquer vue » / « Terminer » | Progression sauvegardée dans `~/.arset-data/progress.json` |
 | ★ sur un module | Ajoute/retire le module de **My Watchlist** (section au-dessus de Recherche) |
+| Reprise de lecture | Proposition « Reprendre à mm:ss / Recommencer » (vidéos locales et YouTube) |
 
 ### Exporter en production
 

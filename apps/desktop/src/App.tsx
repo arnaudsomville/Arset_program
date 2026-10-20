@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   formatDuration,
+  formatPosition,
   youtubeEmbedUrl,
   type ModuleStatus,
   type VideoView,
@@ -10,6 +11,8 @@ import type {
   CatalogCategory,
   CatalogModuleSummary,
   DownloadEntry,
+  PlaybackEntry,
+  PlaybackMap,
   ProgressData,
 } from "./api";
 
@@ -31,6 +34,7 @@ export default function App() {
     videos: {},
   });
   const [watchlist, setWatchlist] = useState<string[]>([]);
+  const [playback, setPlayback] = useState<PlaybackMap>({});
   const [selected, setSelected] = useState<ModuleSelection | null>(null);
   const [videos, setVideos] = useState<VideoView[]>([]);
   const [loadingVideos, setLoadingVideos] = useState(false);
@@ -40,14 +44,16 @@ export default function App() {
   useEffect(() => {
     (async () => {
       try {
-        const [cat, prog, wl] = await Promise.all([
+        const [cat, prog, wl, pb] = await Promise.all([
           api.catalog(),
           api.progress(),
           api.watchlist(),
+          api.playback(),
         ]);
         setCatalog(cat);
         setProgress(prog);
         setWatchlist(wl);
+        setPlayback(pb);
       } catch (e) {
         setError(e instanceof Error ? e.message : String(e));
       }
@@ -72,9 +78,26 @@ export default function App() {
     setProgress(await api.toggleModule(key));
   }, []);
 
-  const toggleVideo = useCallback(async (id: number) => {
-    setProgress(await api.toggleVideo(id));
+  const savePlayback = useCallback(
+    async (id: number, seconds: number, duration: number) => {
+      if (!Number.isFinite(seconds) || seconds < 1) return;
+      setPlayback(await api.savePlayback(id, seconds, duration));
+    },
+    [],
+  );
+
+  const clearPlayback = useCallback(async (id: number) => {
+    setPlayback(await api.savePlayback(id, 0, 0));
   }, []);
+
+  const toggleVideo = useCallback(
+    async (id: number) => {
+      const next = await api.toggleVideo(id);
+      setProgress(next);
+      if (next.videos[String(id)]?.watched) await clearPlayback(id);
+    },
+    [clearPlayback],
+  );
 
   const toggleWatchlist = useCallback(async (key: string) => {
     setWatchlist(await api.toggleWatchlist(key));
@@ -140,8 +163,11 @@ export default function App() {
                       key={v.id}
                       video={v}
                       watched={!!progress.videos[String(v.id)]?.watched}
+                      saved={playback[String(v.id)]}
                       onToggleWatched={toggleVideo}
                       onDownloaded={markVideoDownloaded}
+                      onSavePlayback={savePlayback}
+                      onClearPlayback={clearPlayback}
                     />
                   ))}
                 </div>
@@ -418,25 +444,60 @@ function ModuleRow({
   );
 }
 
+function isResumable(saved: PlaybackEntry | undefined, duration: number): boolean {
+  if (!saved || !Number.isFinite(saved.seconds) || saved.seconds < 5) return false;
+  const total = saved.duration || duration || 0;
+  if (total > 0 && saved.seconds > total * 0.95) return false;
+  return true;
+}
+
 function VideoCard({
   video,
   watched,
+  saved,
   onToggleWatched,
   onDownloaded,
+  onSavePlayback,
+  onClearPlayback,
 }: {
   video: VideoView;
   watched: boolean;
+  saved?: PlaybackEntry;
   onToggleWatched: (id: number) => void;
   onDownloaded: (id: number) => void;
+  onSavePlayback: (id: number, seconds: number, duration: number) => void;
+  onClearPlayback: (id: number) => void;
 }) {
+  const initialSaved = useRef(saved).current;
+  const resumable = isResumable(initialSaved, video.durationSeconds);
+  const [choice, setChoice] = useState<"pending" | "resume" | "restart">(
+    resumable ? "pending" : "restart",
+  );
+  const [startAt, setStartAt] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(false);
   const [dl, setDl] = useState<DownloadEntry | null>(null);
   const timerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (initialSaved && !resumable) onClearPlayback(video.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     return () => {
       if (timerRef.current !== null) window.clearInterval(timerRef.current);
     };
   }, []);
+
+  const handleProgress = useCallback(
+    (seconds: number, duration: number) =>
+      onSavePlayback(video.id, seconds, duration || video.durationSeconds),
+    [video.id, video.durationSeconds, onSavePlayback],
+  );
+  const handleEnded = useCallback(
+    () => onClearPlayback(video.id),
+    [video.id, onClearPlayback],
+  );
 
   const poll = useCallback(
     (id: number) => {
@@ -484,14 +545,50 @@ function VideoCard({
   return (
     <div className={`card ${watched ? "seen" : ""}`}>
       <div className="player">
-        {video.downloaded ? (
-          <video controls preload="metadata" src={video.streamUrl} />
+        {choice === "pending" && initialSaved ? (
+          <div className="resume-prompt">
+            <div className="resume-label">Reprendre la lecture ?</div>
+            <div className="resume-time">à {formatPosition(initialSaved.seconds)}</div>
+            <div className="resume-actions">
+              <button
+                className="btn"
+                onClick={() => {
+                  setStartAt(initialSaved.seconds);
+                  setAutoPlay(true);
+                  setChoice("resume");
+                }}
+              >
+                Reprendre
+              </button>
+              <button
+                className="btn btn-ghost"
+                onClick={() => {
+                  onClearPlayback(video.id);
+                  setStartAt(0);
+                  setAutoPlay(true);
+                  setChoice("restart");
+                }}
+              >
+                Recommencer
+              </button>
+            </div>
+          </div>
+        ) : video.downloaded ? (
+          <LocalVideo
+            src={video.streamUrl}
+            startAt={startAt}
+            autoPlay={autoPlay}
+            onProgress={handleProgress}
+            onEnded={handleEnded}
+          />
         ) : video.youtubeVideoId ? (
-          <iframe
-            src={youtubeEmbedUrl(video.youtubeVideoId)}
+          <YouTubePlayer
+            videoId={video.youtubeVideoId}
             title={video.title}
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+            startAt={startAt}
+            autoPlay={autoPlay}
+            onProgress={handleProgress}
+            onEnded={handleEnded}
           />
         ) : (
           <div className="no-player">Aucune source vidéo</div>
@@ -520,5 +617,168 @@ function VideoCard({
         </div>
       </div>
     </div>
+  );
+}
+
+function LocalVideo({
+  src,
+  startAt,
+  autoPlay,
+  onProgress,
+  onEnded,
+}: {
+  src: string;
+  startAt: number;
+  autoPlay: boolean;
+  onProgress: (seconds: number, duration: number) => void;
+  onEnded: () => void;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const seeded = useRef(false);
+  const last = useRef(0);
+  const progressRef = useRef(onProgress);
+  progressRef.current = onProgress;
+  const endedRef = useRef(onEnded);
+  endedRef.current = onEnded;
+
+  useEffect(() => {
+    return () => {
+      const v = ref.current;
+      if (v && Number.isFinite(v.currentTime) && v.currentTime > 1 && !v.ended) {
+        progressRef.current(v.currentTime, v.duration);
+      }
+    };
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      controls
+      preload="metadata"
+      src={src}
+      onLoadedMetadata={(e) => {
+        if (!seeded.current) {
+          e.currentTarget.currentTime = startAt;
+          seeded.current = true;
+          if (autoPlay) e.currentTarget.play().catch(() => {});
+        }
+      }}
+      onTimeUpdate={(e) => {
+        const now = Date.now();
+        if (now - last.current >= 5000) {
+          last.current = now;
+          progressRef.current(e.currentTarget.currentTime, e.currentTarget.duration);
+        }
+      }}
+      onPause={(e) => progressRef.current(e.currentTarget.currentTime, e.currentTarget.duration)}
+      onEnded={() => endedRef.current()}
+    />
+  );
+}
+
+function YouTubePlayer({
+  videoId,
+  title,
+  startAt,
+  autoPlay,
+  onProgress,
+  onEnded,
+}: {
+  videoId: string;
+  title: string;
+  startAt: number;
+  autoPlay: boolean;
+  onProgress: (seconds: number, duration: number) => void;
+  onEnded: () => void;
+}) {
+  const ref = useRef<HTMLIFrameElement>(null);
+  const [ready, setReady] = useState(false);
+  const last = useRef(0);
+  const lastTime = useRef(0);
+  const lastDuration = useRef(0);
+  const progressRef = useRef(onProgress);
+  progressRef.current = onProgress;
+  const endedRef = useRef(onEnded);
+  endedRef.current = onEnded;
+
+  const send = useCallback((message: unknown) => {
+    ref.current?.contentWindow?.postMessage(JSON.stringify(message), "*");
+  }, []);
+
+  useEffect(() => {
+    const onMessage = (event: MessageEvent) => {
+      if (event.source !== ref.current?.contentWindow) return;
+      let data: any;
+      try {
+        data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+      } catch {
+        return;
+      }
+      if (!data || !data.event) return;
+      if (data.event === "onReady") {
+        setReady(true);
+        send({ event: "listening", id: "arset" });
+      }
+      if (data.event === "infoDelivery" && data.info) {
+        const t = data.info.currentTime;
+        if (typeof t === "number") {
+          lastTime.current = t;
+          lastDuration.current = data.info.duration ?? 0;
+          const now = Date.now();
+          if (now - last.current >= 5000) {
+            last.current = now;
+            progressRef.current(t, data.info.duration ?? 0);
+          }
+        }
+        if (data.info.playerState === 0) endedRef.current();
+      }
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, [send]);
+
+  useEffect(() => {
+    if (!ready || (!autoPlay && startAt <= 0)) return;
+    send({ event: "command", func: "seekTo", args: [startAt, true] });
+    if (autoPlay) send({ event: "command", func: "playVideo", args: [] });
+    const interval = window.setInterval(
+      () => send({ event: "command", func: "getCurrentTime", args: [] }),
+      2000,
+    );
+    const retry =
+      startAt > 5
+        ? window.setTimeout(() => {
+            if (lastTime.current < 5) {
+              send({ event: "command", func: "seekTo", args: [startAt, true] });
+            }
+          }, 4000)
+        : null;
+    return () => {
+      window.clearInterval(interval);
+      if (retry !== null) window.clearTimeout(retry);
+    };
+  }, [ready, startAt, autoPlay, send]);
+
+  useEffect(() => {
+    return () => {
+      if (lastTime.current > 1) {
+        progressRef.current(lastTime.current, lastDuration.current);
+      }
+    };
+  }, []);
+
+  const src = `${youtubeEmbedUrl(videoId)}?enablejsapi=1&playsinline=1&origin=${encodeURIComponent(
+    window.location.origin,
+  )}`;
+
+  return (
+    <iframe
+      ref={ref}
+      src={src}
+      title={title}
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      onLoad={() => send({ event: "listening", id: "arset" })}
+    />
   );
 }

@@ -44,3 +44,11 @@ export interface CatalogCategory {
   modules: CatalogModule[];
   subcategories: CatalogSubcategory[];
 }
+
+export interface PlaybackEntry {
+  seconds: number;
+  duration: number;
+  updated: string;
+}
+
+export type PlaybackMap = Record<string, PlaybackEntry>;

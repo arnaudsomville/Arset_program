@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Alert,
   BackHandler,
@@ -16,15 +16,26 @@ import { WebView } from "react-native-webview";
 import { useVideoPlayer, VideoView } from "expo-video";
 
 import catalogJson from "./assets/video_catalog.json";
-import type { Video, VideoCatalog, ModuleStatus, CatalogCategory, CatalogModule } from "./src/types";
+import type {
+  Video,
+  VideoCatalog,
+  ModuleStatus,
+  CatalogCategory,
+  CatalogModule,
+  PlaybackEntry,
+  PlaybackMap,
+} from "./src/types";
 import { buildIndex, formatDuration } from "./src/catalog";
 import {
+  clearPlaybackPosition,
   loadCompleted,
   loadDownloads,
+  loadPlayback,
   loadWatched,
   loadWatchlist,
   saveCompleted,
   saveDownload,
+  savePlaybackPosition,
   saveWatched,
   toggleWatchlist as toggleWatchlistStored,
 } from "./src/storage";
@@ -189,10 +200,32 @@ function watchUrl(video: Video): string {
   return video.youtube_url || `https://www.youtube.com/watch?v=${video.youtube_video_id}`;
 }
 
+function formatPosition(totalSeconds: number): string {
+  if (!Number.isFinite(totalSeconds) || totalSeconds < 0) return "0:00";
+  const seconds = Math.floor(totalSeconds);
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
+}
+
+function isResumable(saved: PlaybackEntry | undefined, duration: number): boolean {
+  if (!saved || !Number.isFinite(saved.seconds) || saved.seconds < 5) return false;
+  const total = saved.duration || duration || 0;
+  if (total > 0 && saved.seconds > total * 0.95) return false;
+  return true;
+}
+
 export default function App() {
   const [watched, setWatched] = useState<Set<string>>(new Set());
   const [completed, setCompleted] = useState<Set<string>>(new Set());
   const [watchlist, setWatchlist] = useState<Set<string>>(new Set());
+  const [playback, setPlayback] = useState<PlaybackMap>({});
+  const [resumeChoice, setResumeChoice] = useState<"pending" | "resume" | "restart">(
+    "restart",
+  );
+  const [startAt, setStartAt] = useState(0);
   const [downloadedFiles, setDownloadedFiles] = useState<Record<string, string>>({});
   const [query, setQuery] = useState("");
   const [screen, setScreen] = useState<Screen>("modules");
@@ -205,6 +238,7 @@ export default function App() {
       setWatched(await loadWatched());
       setCompleted(await loadCompleted());
       setWatchlist(await loadWatchlist());
+      setPlayback(await loadPlayback());
       setDownloadedFiles(await loadDownloads());
     })();
   }, []);
@@ -247,6 +281,10 @@ export default function App() {
   };
 
   const openVideo = (video: Video) => {
+    const saved = playback[String(video.id)];
+    const resumable = isResumable(saved, video.duration_seconds);
+    setResumeChoice(resumable ? "pending" : "restart");
+    setStartAt(0);
     setCurrentVideo(video);
     setScreen("player");
   };
@@ -272,6 +310,18 @@ export default function App() {
     [completed, watched],
   );
 
+  const savePlayback = useCallback(
+    async (id: number, seconds: number, duration: number) => {
+      if (!Number.isFinite(seconds) || seconds < 1) return;
+      setPlayback(await savePlaybackPosition(String(id), seconds, duration));
+    },
+    [],
+  );
+
+  const clearPlayback = useCallback(async (id: number) => {
+    setPlayback(await clearPlaybackPosition(String(id)));
+  }, []);
+
   const markVideo = useCallback(
     async (id: number) => {
       const sid = String(id);
@@ -288,10 +338,11 @@ export default function App() {
         else nextCompleted.delete(key);
       }
       await Promise.all([saveWatched(nextWatched), saveCompleted(nextCompleted)]);
+      if (nextWatched.has(sid)) await clearPlayback(id);
       setWatched(nextWatched);
       setCompleted(nextCompleted);
     },
-    [completed, watched],
+    [completed, watched, clearPlayback],
   );
 
   const toggleWatchlist = useCallback(async (key: string) => {
@@ -349,23 +400,47 @@ export default function App() {
         <Text style={styles.playerTitle} numberOfLines={2}>
           {currentVideo.name}
         </Text>
-        {localUri ? (
-          <LocalVideoPlayer uri={localUri} />
+        {resumeChoice === "pending" && playback[String(currentVideo.id)] ? (
+          <View style={styles.resumePrompt}>
+            <Text style={styles.resumeLabel}>Reprendre la lecture ?</Text>
+            <Text style={styles.resumeTime}>
+              à {formatPosition(playback[String(currentVideo.id)].seconds)}
+            </Text>
+            <View style={styles.resumeActions}>
+              <TouchableOpacity
+                style={styles.resumeBtn}
+                onPress={() => {
+                  setStartAt(playback[String(currentVideo.id)].seconds);
+                  setResumeChoice("resume");
+                }}
+              >
+                <Text style={styles.resumeBtnText}>Reprendre</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.resumeBtnAlt}
+                onPress={async () => {
+                  await clearPlayback(currentVideo.id);
+                  setStartAt(0);
+                  setResumeChoice("restart");
+                }}
+              >
+                <Text style={styles.resumeBtnAltText}>Recommencer</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        ) : localUri ? (
+          <LocalVideoPlayer
+            uri={localUri}
+            startAt={startAt}
+            onProgress={(seconds, duration) => savePlayback(currentVideo.id, seconds, duration || currentVideo.duration_seconds)}
+            onEnded={() => clearPlayback(currentVideo.id)}
+          />
         ) : (
-          <WebView
-            style={styles.webview}
-            source={{
-              uri: `https://www.youtube.com/embed/${currentVideo.youtube_video_id}?autoplay=1&playsinline=1`,
-              headers: { Referer: YOUTUBE_REFERER },
-            }}
-            javaScriptEnabled
-            domStorageEnabled
-            thirdPartyCookiesEnabled
-            mediaPlaybackRequiresUserAction={false}
-            allowsFullscreenVideo
-            allowsInlineMediaPlayback
-            originWhitelist={["*"]}
-            startInLoadingState
+          <YouTubePlayer
+            videoId={currentVideo.youtube_video_id}
+            startAt={startAt}
+            onProgress={(seconds, duration) => savePlayback(currentVideo.id, seconds, duration || currentVideo.duration_seconds)}
+            onEnded={() => clearPlayback(currentVideo.id)}
           />
         )}
       </SafeAreaView>
@@ -497,17 +572,192 @@ export default function App() {
   );
 }
 
-function LocalVideoPlayer({ uri }: { uri: string }) {
+function LocalVideoPlayer({
+  uri,
+  startAt,
+  onProgress,
+  onEnded,
+}: {
+  uri: string;
+  startAt: number;
+  onProgress: (seconds: number, duration: number) => void;
+  onEnded: () => void;
+}) {
   const player = useVideoPlayer(uri, (p) => {
     p.loop = false;
+    p.timeUpdateEventInterval = 5;
     p.play();
   });
+  const seeded = useRef(false);
+  const last = useRef(0);
+  const progressRef = useRef(onProgress);
+  progressRef.current = onProgress;
+  const endedRef = useRef(onEnded);
+  endedRef.current = onEnded;
+
+  useEffect(() => {
+    const seed = () => {
+      if (seeded.current) return;
+      player.currentTime = startAt;
+      seeded.current = true;
+    };
+    if (player.status === "readyToPlay") seed();
+    const statusSub = player.addListener("statusChange", ({ status }) => {
+      if (status === "readyToPlay") seed();
+    });
+    const timeSub = player.addListener("timeUpdate", ({ currentTime }) => {
+      const now = Date.now();
+      if (now - last.current >= 5000) {
+        last.current = now;
+        progressRef.current(currentTime, player.duration);
+      }
+    });
+    const endSub = player.addListener("playToEnd", () => endedRef.current());
+    return () => {
+      statusSub.remove();
+      timeSub.remove();
+      endSub.remove();
+      if (player.currentTime > 1) {
+        progressRef.current(player.currentTime, player.duration);
+      }
+    };
+  }, [player, startAt]);
+
   return (
     <VideoView
       style={styles.webview}
       player={player}
       nativeControls
       contentFit="contain"
+    />
+  );
+}
+
+function YouTubePlayer({
+  videoId,
+  startAt,
+  onProgress,
+  onEnded,
+}: {
+  videoId: string;
+  startAt: number;
+  onProgress: (seconds: number, duration: number) => void;
+  onEnded: () => void;
+}) {
+  const webRef = useRef<WebView>(null);
+  const [ready, setReady] = useState(false);
+  const last = useRef(0);
+  const lastTime = useRef(0);
+  const lastDuration = useRef(0);
+  const progressRef = useRef(onProgress);
+  progressRef.current = onProgress;
+  const endedRef = useRef(onEnded);
+  endedRef.current = onEnded;
+
+  useEffect(() => {
+    if (!ready) return;
+    const retry = startAt > 5 ? setTimeout(() => {
+      if (lastTime.current < 5) {
+        webRef.current?.injectJavaScript(
+          `if (window.player && window.player.seekTo) { window.player.seekTo(${startAt}, true); window.player.playVideo(); } true;`,
+        );
+      }
+    }, 4000) : null;
+    return () => {
+      if (retry !== null) clearTimeout(retry);
+    };
+  }, [ready, startAt]);
+
+  useEffect(() => {
+    return () => {
+      if (lastTime.current > 1) {
+        progressRef.current(lastTime.current, lastDuration.current);
+      }
+    };
+  }, []);
+
+  const onMessage = (event: { nativeEvent: { data: string } }) => {
+    let data: any;
+    try {
+      data = JSON.parse(event.nativeEvent.data);
+    } catch {
+      return;
+    }
+    if (data.type === "ready") {
+      setReady(true);
+      webRef.current?.injectJavaScript(
+        `if (window.player && window.player.seekTo) { window.player.seekTo(${startAt}, true); window.player.playVideo(); } true;`,
+      );
+    }
+    if (data.type === "ended") {
+      endedRef.current();
+    }
+    if (data.type === "info") {
+      const t = Number(data.currentTime);
+      const d = Number(data.duration);
+      if (Number.isFinite(t)) {
+        lastTime.current = t;
+        lastDuration.current = Number.isFinite(d) ? d : 0;
+        const now = Date.now();
+        if (now - last.current >= 5000) {
+          last.current = now;
+          progressRef.current(t, Number.isFinite(d) ? d : 0);
+        }
+      }
+      if (data.playerState === 0) endedRef.current();
+    }
+  };
+
+  const html = `<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <style>html,body{margin:0;height:100%;background:#000;overflow:hidden}#player{width:100%;height:100%}</style>
+</head>
+<body>
+  <div id="player"></div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: '${videoId}',
+        playerVars: { autoplay: 1, playsinline: 1, rel: 0, origin: '${YOUTUBE_REFERER}' },
+        events: {
+          onReady: function() { window.ReactNativeWebView.postMessage(JSON.stringify({type:'ready'})); },
+          onStateChange: function(e) {
+            if (e.data === 0) window.ReactNativeWebView.postMessage(JSON.stringify({type:'ended'}));
+          }
+        }
+      });
+      setInterval(function() {
+        if (!player || !player.getCurrentTime) return;
+        window.ReactNativeWebView.postMessage(JSON.stringify({
+          type: 'info',
+          currentTime: player.getCurrentTime(),
+          duration: player.getDuration(),
+          playerState: player.getPlayerState()
+        }));
+      }, 2000);
+    }
+  </script>
+</body>
+</html>`;
+
+  return (
+    <WebView
+      ref={webRef}
+      style={styles.webview}
+      source={{ html, baseUrl: YOUTUBE_REFERER }}
+      javaScriptEnabled
+      domStorageEnabled
+      thirdPartyCookiesEnabled
+      mediaPlaybackRequiresUserAction={false}
+      allowsFullscreenVideo
+      allowsInlineMediaPlayback
+      originWhitelist={["*"]}
+      onMessage={onMessage}
+      startInLoadingState
     />
   );
 }
@@ -640,6 +890,35 @@ const styles = StyleSheet.create({
   },
   doneMark: { color: "#42e695", fontWeight: "800", fontSize: 15 },
   playerTitle: { padding: 16, fontSize: 16, fontWeight: "700", color: "#e8edf5" },
+  resumePrompt: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    padding: 24,
+    backgroundColor: "#000",
+  },
+  resumeLabel: { fontSize: 16, fontWeight: "700", color: "#e8edf5" },
+  resumeTime: { fontSize: 20, fontWeight: "800", color: "#64b5f6" },
+  resumeActions: { flexDirection: "row", gap: 12, marginTop: 12 },
+  resumeBtn: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+    backgroundColor: "rgba(100,180,255,0.15)",
+    borderWidth: 1,
+    borderColor: "rgba(100,180,255,0.4)",
+  },
+  resumeBtnText: { color: "#64b5f6", fontWeight: "700", fontSize: 14 },
+  resumeBtnAlt: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.15)",
+  },
+  resumeBtnAltText: { color: "#8899b0", fontWeight: "600", fontSize: 14 },
   webview: { flex: 1, backgroundColor: "#000" },
   videoList: { paddingBottom: 24 },
   videoRow: {

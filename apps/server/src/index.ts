@@ -11,10 +11,12 @@ import {
 } from "@arset/core";
 import { catalogFile, PORT } from "./config";
 import {
+  loadPlayback,
   loadProgress,
   loadWatchlist,
   mutateProgress,
   now,
+  setPlayback,
   toggleWatchlist,
 } from "./store";
 import { isDownloaded, startDownload, statusOf, videoFile } from "./downloads";
@@ -100,6 +102,23 @@ app.post("/api/watchlist/:key", (req: Request, res: Response) => {
     return res.status(404).json({ error: "Module introuvable" });
   }
   res.json(toggleWatchlist(key));
+});
+
+app.get("/api/playback", (_req, res) => {
+  res.json(loadPlayback());
+});
+
+app.post("/api/playback/:id", (req: Request, res: Response) => {
+  const id = req.params.id;
+  if (!index.videosById.has(Number(id))) {
+    return res.status(404).json({ error: "Vidéo introuvable" });
+  }
+  const seconds = Number(req.body?.seconds);
+  const duration = Number(req.body?.duration);
+  if (!Number.isFinite(seconds)) {
+    return res.status(400).json({ error: "seconds requis" });
+  }
+  res.json(setPlayback(id, seconds, Number.isFinite(duration) ? duration : 0));
 });
 
 // Module terminé ⟺ toutes ses vidéos vues. Les deux routes renvoient la
